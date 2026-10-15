@@ -1,0 +1,2164 @@
+=== 2026-10-01 23:50:37 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+caps:   file<=10.0MB  leaf-dir<=30.0MB
+kept:   4091 files, 92.00 MB
+skipped(ext):  30
+  - in_game\content_source\map_objects\masks\decals_mask.png
+  - in_game\content_source\map_objects\masks\dirt_mask.png
+  - in_game\content_source\map_objects\masks\grassmesh_mask.png
+  - in_game\content_source\map_objects\masks\jungle_dense_mask.png
+  - in_game\content_source\map_objects\masks\jungle_mask.png
+skipped(size): 0
+skipped(leaf-dir cap): 0 dirs
+elapsed: 9.0s
+
+=== 2026-10-01 23:56:38 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+caps:   file<=10.0MB  leaf-dir<=30.0MB
+kept:   4091 files, 92.00 MB
+skipped(ext):  30
+  - in_game\content_source\map_objects\masks\decals_mask.png
+  - in_game\content_source\map_objects\masks\dirt_mask.png
+  - in_game\content_source\map_objects\masks\grassmesh_mask.png
+  - in_game\content_source\map_objects\masks\jungle_dense_mask.png
+  - in_game\content_source\map_objects\masks\jungle_mask.png
+skipped(size): 0
+skipped(leaf-dir cap): 0 dirs
+elapsed: 6.7s
+
+=== 2026-10-02 00:33:46 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   51433 files, 8895.32 MB
+skipped(size): 208
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia_minarets.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_theodosian_walls.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_01.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_02.dds
+elapsed: 7.0s
+
+=== 2026-10-02 00:38:51 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   51433 files, 8895.32 MB
+skipped(size): 208
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia_minarets.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_theodosian_walls.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_01.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_02.dds
+elapsed: 123.9s
+
+=== 2026-10-02 00:58:23 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   51433 files, 8895.32 MB
+whitelist: 109 forced, 0 missing
+skipped(size): 208
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia_minarets.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_theodosian_walls.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_01.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_02.dds
+elapsed: 8.9s
+
+=== 2026-10-02 01:15:10 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   51433 files, 8895.32 MB
+whitelist: 109 forced, 0 missing
+skipped(size): 208
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia_minarets.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_theodosian_walls.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_01.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_02.dds
+elapsed: 6.5s
+
+=== 2026-10-02 01:23:09 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   51433 files, 8895.32 MB
+whitelist: 109 forced, 0 missing
+skipped(size): 208
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia_minarets.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_theodosian_walls.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_01.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_02.dds
+elapsed: 452.8s
+
+=== 2026-10-02 01:51:30 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   51433 files, 8895.32 MB
+whitelist: 109 forced, 0 missing
+skipped(size): 208
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_hagia_sofia_minarets.dds
+  - dlc\D008_fate_of_the_phoenix\in_game\gfx\interface\illustrations\location\D008_theodosian_walls.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_01.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\gfx\loading_screen_assets\00\images\D008_loading_screen_byzantine_02.dds
+elapsed: 7.7s
+
+=== 2026-10-02 02:19:26 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   13164 files, 339.82 MB
+whitelist: 109 forced, 0 missing
+skipped(extension): 38473
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\ancient_monuments_pack.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\ancient_monuments_pack_background.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\fate_of_the_phoenix.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\fate_of_the_phoenix_background.dds
+skipped(size): 4
+  - in_game\gfx\map\map_objects\generated\jungle_dense_generator_high.txt
+  - in_game\gfx\map\map_objects\generated\jungle_dense_generator_low.txt
+  - in_game\gfx\map\map_objects\generated\jungle_dense_generator_medium.txt
+  - loading_screen\sound\banks\windows\SoundbanksInfo.json
+elapsed: 7.3s
+
+=== 2026-10-02 02:22:09 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   13164 files, 339.82 MB
+whitelist: 109 forced, 0 missing
+skipped(extension): 38473
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\ancient_monuments_pack.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\ancient_monuments_pack_background.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\fate_of_the_phoenix.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\fate_of_the_phoenix_background.dds
+skipped(size): 4
+  - in_game\gfx\map\map_objects\generated\jungle_dense_generator_high.txt
+  - in_game\gfx\map\map_objects\generated\jungle_dense_generator_low.txt
+  - in_game\gfx\map\map_objects\generated\jungle_dense_generator_medium.txt
+  - loading_screen\sound\banks\windows\SoundbanksInfo.json
+elapsed: 112.9s
+
+=== 2026-10-02 02:29:18 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   13164 files, 339.82 MB
+whitelist: 109 forced, 0 missing
+skipped(extension): 38473
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\ancient_monuments_pack.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\ancient_monuments_pack_background.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\fate_of_the_phoenix.dds
+  - dlc\D000_shared\main_menu\gfx\interface\icons\dlcs\fate_of_the_phoenix_background.dds
+skipped(size): 4
+  - in_game\gfx\map\map_objects\generated\jungle_dense_generator_high.txt
+  - in_game\gfx\map\map_objects\generated\jungle_dense_generator_low.txt
+  - in_game\gfx\map\map_objects\generated\jungle_dense_generator_medium.txt
+  - loading_screen\sound\banks\windows\SoundbanksInfo.json
+elapsed: 6.1s
+
+=== 2026-10-02 02:42:06 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   8997 files, 288.86 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 25
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\sound\banks\windows\Media\37404474.wem
+  - dlc\D008_fate_of_the_phoenix\loading_screen\sound\banks\windows\Media\390692541.wem
+  - dlc\D008_fate_of_the_phoenix\loading_screen\sound\banks\windows\Media\418514166.wem
+skipped(size): 0
+skipped(path): 3
+  - in_game\terrain_decals.json
+  - in_game\gfx\map\ssr_settings.txt
+  - in_game\map_data\generated_locators_port.txt
+elapsed: 0.9s
+
+=== 2026-10-02 02:42:28 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   8997 files, 288.86 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 25
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\loading_screen\sound\banks\windows\Media\37404474.wem
+  - dlc\D008_fate_of_the_phoenix\loading_screen\sound\banks\windows\Media\390692541.wem
+  - dlc\D008_fate_of_the_phoenix\loading_screen\sound\banks\windows\Media\418514166.wem
+skipped(size): 0
+skipped(path): 3
+  - in_game\terrain_decals.json
+  - in_game\gfx\map\ssr_settings.txt
+  - in_game\map_data\generated_locators_port.txt
+elapsed: 7.9s
+
+=== 2026-10-02 02:47:31 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4118 files, 92.70 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1089
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 0.5s
+
+=== 2026-10-02 02:47:48 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4118 files, 92.70 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1089
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 4.5s
+
+=== 2026-10-02 03:00:33 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4017 files, 87.19 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1092
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 0.5s
+
+=== 2026-10-02 03:01:58 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4017 files, 87.19 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1092
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 3.0s
+
+=== 2026-10-02 03:02:44 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4017 files, 87.19 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1092
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 0.6s
+
+=== 2026-10-02 03:05:28 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4017 files, 87.19 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1092
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 0.6s
+
+=== 2026-10-02 03:07:18 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4017 files, 87.19 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1092
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 0.7s
+
+=== 2026-10-02 03:09:34 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4017 files, 87.19 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1092
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 0.5s
+
+=== 2026-10-02 03:12:54 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4017 files, 87.19 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1092
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 0.5s
+
+=== 2026-10-02 03:15:34 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4017 files, 87.19 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1092
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 0.5s
+
+=== 2026-10-02 03:18:15 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4017 files, 87.19 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1092
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 0.5s
+
+=== 2026-10-02 03:20:33 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4017 files, 87.19 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1092
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 0.7s
+
+=== 2026-10-02 03:22:54 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   4017 files, 87.19 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1092
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+  - dlc\D000_shared\main_menu\localization\dlc\korean\dlc_localizations_l_korean.yml
+elapsed: 0.6s
+
+=== 2026-10-02 03:25:41 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3758 files, 76.68 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1105
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.5s
+
+=== 2026-10-02 03:27:00 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3758 files, 76.68 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1105
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 3.3s
+
+=== 2026-10-02 03:28:06 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3757 files, 76.68 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1105
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 2.9s
+
+=== 2026-10-02 03:30:58 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3757 files, 76.68 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1105
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.8s
+
+=== 2026-10-02 03:34:59 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3757 files, 76.68 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1105
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.6s
+
+=== 2026-10-02 03:36:55 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3757 files, 76.68 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1105
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.5s
+
+=== 2026-10-02 03:38:32 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3733 files, 76.27 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1101
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.7s
+
+=== 2026-10-02 03:40:14 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3733 files, 76.27 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1101
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.6s
+
+=== 2026-10-02 03:49:39 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3724 files, 76.25 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1110
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.6s
+
+=== 2026-10-02 03:50:49 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3724 files, 76.25 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1110
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.6s
+
+=== 2026-10-02 04:05:12 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3954 files, 86.28 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1110
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.7s
+
+=== 2026-10-02 04:07:49 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3954 files, 86.28 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1110
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.7s
+
+=== 2026-10-02 04:10:49 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3954 files, 86.28 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1110
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.7s
+
+=== 2026-10-02 04:14:18 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3954 files, 86.28 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1110
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.8s
+
+=== 2026-10-02 04:16:36 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3954 files, 86.28 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1110
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.8s
+
+=== 2026-10-02 04:18:36 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3954 files, 86.28 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1110
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.6s
+
+=== 2026-10-02 04:21:38 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3954 files, 86.28 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1110
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.6s
+
+=== 2026-10-02 04:24:24 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3954 files, 86.28 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1110
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.9s
+
+=== 2026-10-02 04:41:20 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3949 files, 86.10 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1115
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.7s
+
+=== 2026-10-02 04:41:38 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3949 files, 86.10 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1115
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 5.4s
+
+=== 2026-10-02 04:47:15 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3949 files, 86.10 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1115
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.8s
+
+=== 2026-10-02 04:50:35 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3949 files, 86.10 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1115
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.9s
+
+=== 2026-10-02 04:53:25 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3949 files, 86.10 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1115
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.8s
+
+=== 2026-10-02 04:55:45 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3949 files, 86.10 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1115
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.9s
+
+=== 2026-10-02 04:59:01 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3946 files, 85.53 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1118
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.7s
+
+=== 2026-10-02 04:59:17 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3946 files, 85.53 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1118
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 4.8s
+
+=== 2026-10-02 05:02:08 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3946 files, 85.53 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1118
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.9s
+
+=== 2026-10-02 05:04:52 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3946 files, 85.53 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1118
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.9s
+
+=== 2026-10-02 05:09:48 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3946 files, 85.53 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1118
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 1.1s
+
+=== 2026-10-02 05:13:06 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3946 files, 85.53 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1118
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 1.0s
+
+=== 2026-10-02 05:16:55 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3946 files, 85.53 MB
+whitelist: 18 forced, 0 missing
+skipped(extension): 7
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\thumbnail.dds
+  - dlc\D017_sacred_sites_pack\thumbnail.dds
+  - in_game\map_data\locations.png
+skipped(size): 0
+skipped(path): 1118
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.9s
+
+=== 2026-10-02 05:29:01 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   2211 files, 25.10 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 2860
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.7s
+
+=== 2026-10-02 05:32:06 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   2211 files, 25.10 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 2860
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 23.3s
+
+=== 2026-10-02 05:37:43 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=8.0MB
+kept:   2211 files, 25.10 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 2860
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.7s
+
+=== 2026-10-02 05:43:17 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=8.0MB
+kept:   2211 files, 25.10 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 2860
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.7s
+
+=== 2026-10-02 05:45:46 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=8.0MB
+kept:   2211 files, 25.10 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 2860
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.8s
+
+=== 2026-10-02 05:54:33 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=8.0MB
+kept:   1509 files, 12.03 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 3127
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.7s
+
+=== 2026-10-02 05:56:18 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=8.0MB
+kept:   1509 files, 12.03 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 3127
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.7s
+
+=== 2026-10-02 06:03:43 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=8.0MB
+kept:   1509 files, 12.03 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 3127
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.7s
+
+=== 2026-10-02 06:04:00 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=8.0MB
+kept:   1509 files, 12.03 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 3127
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.7s
+
+=== 2026-10-02 06:08:06 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=8.0MB
+kept:   182 files, 2.22 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4454
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.7s
+
+=== 2026-10-02 06:12:11 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=8.0MB
+kept:   152 files, 2.02 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4484
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.7s
+
+=== 2026-10-02 06:12:49 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=8.0MB
+kept:   152 files, 2.02 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4484
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 2.6s
+
+=== 2026-10-02 06:17:51 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   152 files, 2.02 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4484
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.7s
+
+=== 2026-10-02 06:22:12 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   152 files, 2.02 MB
+whitelist: 14 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4484
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+elapsed: 0.7s
+
+=== 2026-10-02 06:26:33 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.7s
+
+=== 2026-10-02 06:27:55 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.7s
+
+=== 2026-10-02 06:28:07 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.8s
+
+=== 2026-10-02 06:33:29 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.8s
+
+=== 2026-10-02 06:36:37 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.7s
+
+=== 2026-10-02 06:36:46 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.7s
+
+=== 2026-10-02 06:37:07 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.7s
+
+=== 2026-10-02 06:38:40 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.8s
+
+=== 2026-10-02 06:39:22 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.7s
+
+=== 2026-10-02 06:39:37 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.7s
+
+=== 2026-10-02 06:42:56 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.8s
+
+=== 2026-10-02 06:45:45 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.7s
+
+=== 2026-10-02 06:49:43 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.9s
+
+=== 2026-10-02 06:51:47 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   144 files, 1.70 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 4492
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+elapsed: 0.8s
+
+=== 2026-10-02 06:57:56 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3644 files, 66.09 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 1177
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+elapsed: 0.8s
+
+=== 2026-10-02 07:03:00 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3644 files, 66.09 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 1177
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+elapsed: 1.0s
+
+=== 2026-10-02 07:06:08 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   3644 files, 66.09 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 0
+skipped(size): 0
+skipped(path): 1177
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+elapsed: 1.2s
+
+=== 2026-10-02 07:16:20 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   173 files, 1.99 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 0
+skipped(path): 4626
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 1.0s
+
+=== 2026-10-02 07:18:00 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   173 files, 1.99 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 0
+skipped(path): 4626
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 1.0s
+
+=== 2026-10-02 07:21:00 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   171 files, 1.98 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 0
+skipped(path): 4628
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 0.8s
+
+=== 2026-10-02 07:21:12 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   171 files, 1.98 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 0
+skipped(path): 4628
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 0.9s
+
+=== 2026-10-02 07:25:25 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   171 files, 1.98 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 0
+skipped(path): 4628
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 0.8s
+
+=== 2026-10-02 07:26:48 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   171 files, 1.98 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 0
+skipped(path): 4628
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 0.9s
+
+=== 2026-10-02 07:28:31 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   171 files, 1.98 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 0
+skipped(path): 4628
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 0.8s
+
+=== 2026-10-02 07:30:56 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=10.0MB
+kept:   171 files, 1.98 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 0
+skipped(path): 4628
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 1.5s
+
+=== 2026-10-02 07:41:06 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   169 files, 1.59 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 468
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 4183
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 0.9s
+
+=== 2026-10-02 07:41:17 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   169 files, 1.59 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 468
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 4183
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 0.9s
+
+=== 2026-10-02 07:44:54 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   169 files, 1.59 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 468
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 4183
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 0.9s
+
+=== 2026-10-02 07:49:03 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   169 files, 1.59 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 468
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 4183
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 1.2s
+
+=== 2026-10-02 07:50:29 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   169 files, 1.59 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 493
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 4169
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 0.8s
+
+=== 2026-10-02 07:52:46 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   169 files, 1.59 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 493
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 4169
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 0.7s
+
+=== 2026-10-02 07:55:03 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   169 files, 1.59 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 493
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 4169
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\common\dlc\ancient_monuments_pack.txt
+  - dlc\D000_shared\main_menu\common\dlc\fate_of_the_phoenix.txt
+  - dlc\D000_shared\main_menu\common\dlc\sacred_sites_pack.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+elapsed: 0.8s
+
+=== 2026-10-02 08:10:41 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   3656 files, 65.58 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 1153
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.9s
+
+=== 2026-10-02 08:11:26 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   3656 files, 65.58 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 1153
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 5.7s
+
+=== 2026-10-02 08:14:25 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   3656 files, 65.58 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 1153
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 1.2s
+
+=== 2026-10-02 08:17:36 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   3656 files, 65.58 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 1153
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.8s
+
+=== 2026-10-02 08:27:00 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   3644 files, 65.30 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 1165
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.9s
+
+=== 2026-10-02 08:28:30 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   3642 files, 65.30 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 1167
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.7s
+
+=== 2026-10-02 08:29:04 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   3642 files, 65.30 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 1167
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 13.0s
+
+=== 2026-10-02 08:32:42 [DRY-RUN] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+cap:    file<=1.0MB
+kept:   3642 files, 65.30 MB
+whitelist: 0 forced, 0 missing
+skipped(extension): 22
+  - dlc\D000_shared\D000_shared.dlc.json
+  - dlc\D000_shared\thumbnail.dds
+  - dlc\D008_fate_of_the_phoenix\D008_fate_of_the_phoenix.dlc.json
+  - dlc\D008_fate_of_the_phoenix\thumbnail.dds
+  - dlc\D015_ancient_monuments_pack\D015_ancient_monuments_pack.dlc.json
+skipped(size): 1
+  - main_menu\localization\english\advances_l_english.yml
+skipped(path): 1167
+  - dlc\D000_shared\checksum_manifest.txt
+  - dlc\D000_shared\main_menu\localization\dlc\braz_por\dlc_localizations_l_braz_por.yml
+  - dlc\D000_shared\main_menu\localization\dlc\french\dlc_localizations_l_french.yml
+  - dlc\D000_shared\main_menu\localization\dlc\german\dlc_localizations_l_german.yml
+  - dlc\D000_shared\main_menu\localization\dlc\japanese\dlc_localizations_l_japanese.yml
+elapsed: 0.7s
+
+=== 2026-10-03 14:06:08 [SYNC] EU5 version: unknown ===
+source: C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game
+dest:   C:\Users\Hades\Documents\code\eu5-modding-project\reference_game_files\game
+caps:   file<=10.0MB  leaf-dir<=30.0MB
+kept:   4091 files, 92.00 MB
+skipped(ext):  30
+  - in_game\content_source\map_objects\masks\decals_mask.png
+  - in_game\content_source\map_objects\masks\dirt_mask.png
+  - in_game\content_source\map_objects\masks\grassmesh_mask.png
+  - in_game\content_source\map_objects\masks\jungle_dense_mask.png
+  - in_game\content_source\map_objects\masks\jungle_mask.png
+skipped(size): 0
+skipped(leaf-dir cap): 0 dirs
+elapsed: 7.3s
+
+[2026-10-03T15:08:28] mode=dry-run source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4200 total_size_mb=93.0
+  skipped_binary_ext=303 skipped_binary_content=1248 skipped_locale_dir=18 skipped_locale_file=36
+  skipped_oversized_file=0 skipped_oversized_dir=1
+[2026-10-03T15:09:15] mode=sync source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4200 total_size_mb=93.0
+  skipped_binary_ext=303 skipped_binary_content=1248 skipped_locale_dir=18 skipped_locale_file=36
+  skipped_oversized_file=0 skipped_oversized_dir=1
+[2026-10-03T15:09:59] mode=dry-run source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4200 total_size_mb=93.0
+  skipped_binary_ext=303 skipped_binary_content=1248 skipped_locale_dir=18 skipped_locale_file=36
+  skipped_oversized_file=0 skipped_oversized_dir=1
+[2026-10-03T15:53:02] mode=sync source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4200 total_size_mb=93.0
+  skipped_binary_ext=303 skipped_binary_content=1248 skipped_locale_dir=18 skipped_locale_file=36
+  skipped_oversized_file=0 skipped_oversized_dir=1
+[2026-10-03T16:09:50] mode=sync source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4571 total_size_mb=101.0
+  skipped_binary_ext=303 skipped_binary_content=1677 skipped_locale_dir=18 skipped_locale_file=27
+  skipped_oversized_file=0 skipped_oversized_dir=1
+[2026-10-03T16:11:36] mode=sync source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4571 total_size_mb=101.0
+  skipped_binary_ext=303 skipped_binary_content=1677 skipped_locale_dir=18 skipped_locale_file=27
+  skipped_oversized_file=0 skipped_oversized_dir=1

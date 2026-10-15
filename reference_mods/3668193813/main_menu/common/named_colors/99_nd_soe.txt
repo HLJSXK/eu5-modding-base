@@ -1,0 +1,3 @@
+﻿colors = {
+	map_SOE = hsv360 { 185 75 50 }
+}

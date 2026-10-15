@@ -1,0 +1,90 @@
+{
+  "snapshots": {
+    "eu5-towards-victory/reference_game_files": {
+      "target": "reference_game_files",
+      "files_copied": 4572,
+      "source_branch": "beta",
+      "source_commit": "22473a406b26e73ac84a75dd5f3c9205b4d635b3"
+    },
+    "eu5-modding-project/reference_official_defines": {
+      "target": "reference_official_defines",
+      "files_copied": 36,
+      "source_branch": "substitution",
+      "source_commit": "6399cb25b10aaeae01522510c70c6f874b5b4409"
+    },
+    "eu5-modding-project/reference_mods": {
+      "target": "reference_mods",
+      "files_copied": 9075,
+      "source_branch": "substitution",
+      "source_commit": "6399cb25b10aaeae01522510c70c6f874b5b4409"
+    },
+    "eu5-towards-victory/reference_mods": {
+      "target": "reference_mods_variants/eu5-towards-victory",
+      "files_copied": 7411,
+      "source_branch": "beta",
+      "source_commit": "22473a406b26e73ac84a75dd5f3c9205b4d635b3"
+    }
+  },
+  "shared": {
+    "docs/technical/EU5_Modding_Knowledge_Base_SOL_Addendum.md": {
+      "source": "eu5-modding-project/docs/technical/EU5_Modding_Knowledge_Base.md",
+      "sha256": "bf62bd5536018c787b8d47856ec68ae361176fbf74ca5724f58a2c43e9327afa"
+    },
+    "docs/technical/EU5_Modding_Knowledge_Base.md": {
+      "source": "eu5-towards-victory/docs/technical/EU5_Modding_Knowledge_Base.md",
+      "sha256": "3f8598d8e9f73e8ea77ff7d7d5afa1380b27f2060f9833bc90e2335160b5871e"
+    },
+    "docs/technical/EU5_Mod_Framework_Guide.md": {
+      "source": "eu5-modding-project/docs/technical/EU5_Mod_Framework_Guide.md",
+      "sha256": "2705fc12b06f30f82ab7291d9dfd6c0f0c2a26f030201697617810b5b394fc88"
+    },
+    "docs/guides/EU5_GUI_Modding_Guide.md": {
+      "source": "eu5-modding-project/docs/guides/EU5_GUI_Modding_Guide.md",
+      "sha256": "f42b17d6bb3f796c5583575019a58620772a559a4c34a2d5264f70a047b1cafe"
+    },
+    "docs/knowledge/EU5_Gameplay_Reference.md": {
+      "source": "eu5-towards-victory/docs/knowledge/EU5_Gameplay_Reference.md",
+      "sha256": "71526132a47fd5a555e292a0f85fa7d5223862acfae5cb67c09ef70f76c83d67"
+    },
+    "docs/knowledge/gameplay/Official_Updates.md": {
+      "source": "eu5-towards-victory/docs/knowledge/gameplay/Official_Updates.md",
+      "sha256": "4847ca64c3c86336f4552dd22dded92452b30873c8d4a9b3012d28870225f59d"
+    },
+    "docs/knowledge/gameplay/Player_Cases.md": {
+      "source": "eu5-towards-victory/docs/knowledge/gameplay/Player_Cases.md",
+      "sha256": "7c989caf0bfebd751377638b5c3ac88d0f07326323b2ae56927d508afb5d2547"
+    },
+    "docs/knowledge/gameplay/Vanilla_Evidence.md": {
+      "source": "eu5-towards-victory/docs/knowledge/gameplay/Vanilla_Evidence.md",
+      "sha256": "8a5bfb818aabf8cdd42f26e4bb6871382d7ac2064ee5ade374dbe34b7022739f"
+    },
+    "docs/knowledge/gameplay/Video_Beginner_Tutorial.md": {
+      "source": "eu5-towards-victory/docs/knowledge/gameplay/Video_Beginner_Tutorial.md",
+      "sha256": "c553f0d583c674f57174d5856270ca13347299dfc7a1a86037c2325468e31f85"
+    },
+    "docs/knowledge/gameplay/Video_Cases.md": {
+      "source": "eu5-towards-victory/docs/knowledge/gameplay/Video_Cases.md",
+      "sha256": "08b5a57e5b11b3eb6cc2053afe5b7378ce5477a106a4badc903fd2478f93d399"
+    },
+    "docs/knowledge/gameplay/Video_Ming_Campaign.md": {
+      "source": "eu5-towards-victory/docs/knowledge/gameplay/Video_Ming_Campaign.md",
+      "sha256": "79e666c91f4d06547c491e9fe97b3b1e201b2e364ca95a3d14b7df2782856443"
+    },
+    "docs/knowledge/gameplay/Video_Official_Tutorial.md": {
+      "source": "eu5-towards-victory/docs/knowledge/gameplay/Video_Official_Tutorial.md",
+      "sha256": "05ae7d2e63d8e44a24880ce34ab6580c70d6b295cb0bf4d54b2c90b86aeb35c2"
+    },
+    "docs/knowledge/gameplay/Video_Ottomans_Economy_Parliament.md": {
+      "source": "eu5-towards-victory/docs/knowledge/gameplay/Video_Ottomans_Economy_Parliament.md",
+      "sha256": "36c3ea4423258e9589801c0922c94eeac8067f216ed7ff82a3bdc9b47758cf1d"
+    },
+    "vanilla_error_filters.txt": {
+      "sources": [
+        "eu5-modding-project",
+        "eu5-towards-victory"
+      ],
+      "unique_rules": 1590,
+      "source_snapshots": "reference_mods_variants/filters/"
+    }
+  }
+}

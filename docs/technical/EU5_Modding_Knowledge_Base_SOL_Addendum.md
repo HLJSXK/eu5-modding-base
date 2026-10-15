@@ -1,0 +1,437 @@
+# European Universalis 5 Modding Knowledge Base
+
+**Author:** Manus AI
+**Date:** Jan 22, 2026
+
+> **Note:** Generated 2026-01-22 as a baseline reference. May not reflect recent patches. Treat as background reading, not authoritative syntax — use `reference_official_defines/` and `reference_game_files/` to verify.
+
+## 1. Introduction
+
+European Universalis 5 (EU5), released in November 2025, is a grand strategy game developed by Paradox Development Studio. Built upon an updated version of the Clausewitz Engine and featuring the Jomini scripting layer, EU5 offers a powerful and flexible platform for modding. This document provides a comprehensive overview of the EU5 modding landscape, covering everything from fundamental concepts to advanced techniques, to serve as a foundational knowledge base for your modding projects.
+
+## 2. Game Architecture
+
+Understanding the technical foundation of EU5 is crucial for effective modding. The game's architecture is composed of two primary components: the Clausewitz Engine and the Jomini scripting layer.
+
+*   **Clausewitz Engine**: This is the core game engine that handles the underlying systems, rendering, and performance. The version used in EU5 features significant improvements over its predecessors, including better multi-core support, which addresses some of the performance bottlenecks present in earlier Paradox titles like EU4. [1]
+*   **Jomini Scripting Layer**: Jomini serves as an intermediate layer between the Clausewitz Engine and the game's content. It provides a standardized set of scripting tools and a scripting language that is shared across several modern Paradox titles, including Crusader Kings 3 and Victoria 3. This shared foundation means that experience with modding these other games is often transferable to EU5. [2]
+
+## 3. Getting Started with Modding
+
+This section outlines the initial steps to set up your development environment and create your first mod.
+
+### 3.1. Development Environment
+
+A proper development environment can significantly streamline the modding process. The recommended setup involves a source code editor with support for Paradox scripting languages.
+
+| Editor                  | Recommended Extensions         | Notes                                                                 |
+| ----------------------- | ------------------------------ | --------------------------------------------------------------------- |
+| **Visual Studio Code**  | CwTools, Paradox Highlight     | Free, powerful, and the most popular choice for Paradox modding.        |
+| **IntelliJ IDEA**       | Paradox Language Support       | Community Edition is free and offers robust features.                 |
+| **Notepad++**           | (Custom Language File)         | A lightweight alternative, suitable for minor edits.                  |
+
+### 3.2. Creating a New Mod
+
+All mods are located in the `Documents/Paradox Interactive/Europa Universalis V/mod` directory. Each mod must have its own subfolder, which serves as the mod's root directory.
+
+### 3.3. Debugging and Console Commands
+
+EU5 includes a robust debug mode that is indispensable for mod development. To enable it, add the `-debug_mode` launch option in Steam. This provides access to the in-game console and enables hot-reloading, which applies script changes without restarting the game.
+
+Key console commands for modders include:
+
+*   `script_docs`: Generates documentation for effects, triggers, and scopes.
+*   `dump_data_types`: Generates documentation for GUI scripting.
+*   `error.log`: The primary log file for identifying script errors, located in `Documents/Paradox Interactive/Europa Universalis V/logs`.
+
+## 4. Practical Mod Anatomy: A Community-Based Analysis
+
+To supplement the theoretical concepts, an analysis was conducted on a sample of 16 community mods from the Steam Workshop. This analysis revealed common structures and best practices that serve as a practical guide for new modders. [3]
+
+### 4.1. Standard Directory Structure
+
+The analysis shows a consistent top-level directory structure. While only the `.metadata` directory is strictly mandatory, a typical mod utilizes several other folders to organize its content.
+
+```
+/my_mod_name
+├── .metadata/          # (Mandatory) Contains metadata.json for the launcher
+├── in_game/            # (Optional) Core gameplay files (scripts, events, GUI)
+├── main_menu/          # (Optional) Localization and main menu graphics
+├── loading_screen/     # (Optional) Custom loading screen assets
+└── thumbnail.png       # (Optional) Preview image for the launcher
+```
+
+### 4.2. The `metadata.json` File
+
+This file, located in the `.metadata` directory, is essential for the game to recognize and load the mod. It contains key information that is displayed in the game launcher.
+
+| Key                      | Type    | Description                                                               |
+| ------------------------ | ------- | ------------------------------------------------------------------------- |
+| `name`                   | String  | The display name of the mod.                                              |
+| `id`                     | String  | A unique identifier, often in the format `author.modname`. Can be empty.  |
+| `version`                | String  | The version number of the mod (e.g., "1.0.0").                            |
+| `supported_game_version` | String  | The compatible game version (e.g., "1.0.7" or "1.*.*").                   |
+| `short_description`      | String  | A brief description, which can include BBCode for formatting on Steam.    |
+| `tags`                   | Array   | A list of strings categorizing the mod (e.g., "Gameplay", "Graphics").    |
+| `relationships`          | Array   | Required, including for independent mods: use `[]` when there are no dependencies. Runtime metadata errors confirmed this on 2026-10-13. |
+| `game_custom_data`       | Object  | Contains game-specific flags, such as `"multiplayer_synchronized": true`. |
+| `picture` / `thumbnail`  | String  | The filename of the mod's preview image (e.g., "thumbnail.png").        |
+
+### 4.3. Content Directory Deep Dive
+
+The `in_game` and `main_menu` folders are the heart of most mods, containing the files that alter game content.
+
+*   **/in_game/**: This folder mirrors the game's own file structure for core mechanics. The most frequently used subfolder is `common`, which houses scripts for a vast array of game features, from government reforms to unit types.
+*   **/main_menu/**: This folder primarily contains `localization` files, which handle all in-game text, and `gfx` files for custom graphics and interface elements.
+
+### 4.4. Common File Types and Formats
+
+Modders primarily work with a few text-based file formats:
+
+| Extension | Purpose                                  | Notes                                       |
+| --------- | ---------------------------------------- | ------------------------------------------- |
+| `.json`   | Metadata                                 | Used for `metadata.json`.                   |
+| `.txt`    | Game Scripts (Events, Decisions, etc.)   | The primary format for scripting game logic.  |
+| `.yml`    | Localization                             | Must be saved with **UTF-8-BOM** encoding.  |
+| `.gui`    | User Interface Layouts                   | Defines the structure and look of UI windows. |
+
+### 4.5. Observed Best Practices
+
+The community analysis highlighted several best practices for creating clean, compatible, and maintainable mods:
+
+*   **Avoid Overwriting Vanilla Files**: Instead of editing game files directly, create new files with unique names. This prevents conflicts with other mods and game updates.
+*   **Use Prefixes**: Prefixing filenames with a unique identifier (e.g., `my_mod_events.txt`) helps organize files and prevent name collisions.
+*   **Isolate Content**: Keep all mod files within the mod's designated folder. Do not place files in the main game directory.
+*   **Manage Load Order**: ASCII filename prefixes (e.g., `00_`, `01_`) control order only where filename order is the applicable tiebreaker. Database operation type takes precedence when `INJECT`/`REPLACE` variants differ; see the compatibility rules below.
+*   **Use Version Control**: Employ tools like Git to track changes, collaborate with others, and revert to previous versions if needed.
+
+### 4.6. Multi-Mod Compatibility and Database Operation Priority
+
+EU5 uses two distinct conflict mechanisms that must not be conflated:
+
+*   **Exact-path file overwrite**: If two sources provide the same relative path and filename, the mod file overrides the base-game/DLC file, and the mod lower in the playlist overrides a mod higher in the playlist. Only the winning file is used.
+*   **Database object edits from different files**: Files load in ASCII order, with parent-directory files before files in subdirectories. When multiple files edit the same top-level object through database keywords, however, the engine processes operation types first and filenames second.
+
+For a whole-file GUI compatibility patch, the merge base must be the final
+downstream owner, not automatically vanilla. Audit every mod that provides the
+same relative path and read dependency metadata before merging. If UI mod B
+depends on UI mod A and B's file already contains A's hooks, start from B's
+file, add the third mod's minimal changes, and load the compatibility layer
+last. Starting from vanilla would make the compatibility file syntactically
+valid while silently deleting both B's layout and A's integrated controls.
+Source provenance and runtime ownership are separate decisions. A merged file
+may intentionally retain references to optional definitions supplied by another
+mod when the compatibility contract is load-order based. For the SOL/Glorp UI/
+Construction Manager location window, the correct result is the complete Glorp
+file plus SOL's button, including its `cm_*` references; Construction Manager
+being absent makes those lookups fail, but does not invalidate the Glorp/SOL
+layout. Do not strip optional references merely to make a copied file appear
+self-contained. Internalize or remove external widgets, scripted-GUI calls,
+map modes, or assets only when the feature is explicitly being removed or the
+compatibility contract requires a genuinely standalone implementation.
+
+The database operation order, from earliest to latest, is:
+
+```text
+INJECT_OR_CREATE -> REPLACE_OR_CREATE -> TRY_INJECT -> TRY_REPLACE -> INJECT -> REPLACE
+```
+
+Filename order resolves conflicts only between entries using the same operation type. A later-named `REPLACE_OR_CREATE:` cannot beat an earlier-named `REPLACE:`, because all `REPLACE:` operations are processed later. Likewise, an `INJECT:` can be erased by a later processing-stage `REPLACE:` regardless of the files' names.
+
+These keywords work only on top-level objects. `INJECT:` appends script to the object rather than deep-merging nested blocks. Appending a second singleton trigger section such as `allow = { ... }` produces `Trigger section already read earlier`; replace the verified complete object instead. Plain duplicate scripted-effect definitions are rejected with `Duplicated key ... will not be created`, even from a later `zz_` file, so changed effects need an explicit `REPLACE:`. `INJECT:` on scripted effects or scripted triggers behaves like replacement. Support for these keywords is database-type dependent and must be verified for the target folder.
+
+For static modifiers, numeric modifier entries are additive. When changing an existing modifier, prefer a `TRY_INJECT:` block containing only `desired final value - verified vanilla value`; omit `game_data` and every unchanged field. This preserves unrelated vanilla updates and lets other mods contribute independent deltas. A vanilla `-0.25` penalty changed to `-0.40`, for example, should inject `-0.15` rather than replace the complete modifier.
+
+Price objects are a critical exception to the static-modifier rule. When an injection repeats a scalar resource field such as `gold`, the later field replaces the earlier value instead of adding a delta. A negative compatibility injection therefore becomes the final negative price and may be clamped to zero at runtime; it does not cancel an earlier mod's positive injection. If two mods use the same operation type, filename order can select the intended price owner. Use a verified full replacement only when operation/filename ordering cannot express the intended final object. Fields absent from the existing price object may still be appended, but repeated fields must never be reasoned about as additive.
+
+Compatibility generators must distinguish engine schema from vanilla balance. In 1.4, `inverse_control` loses three military penalties, but `local_levy_size_modifier`, `local_manpower_modifier`, and `local_sailors_modifier` remain defined; preserve M&T's explicit values instead of treating those fields as invalid. Conversely, lumber's removed `location_wants_lumber_trigger` needs the verified current vegetation condition. New goods such as camels need a vanilla fallback when absent from M&T, and newly added wealth/development thresholds must be checked independently of calibrated demand quantities (wine gains a wealth gate in 1.4). Whole action removals need entry-point tracing: the old `create_colonial_charter` generic action is absent while the GUI now calls `ColonialCharterItem.CreateColonialCharter`, so the old `TRY_REPLACE` restriction cannot be certified from a successful script-generation check.
+
+The 1.4 GUI migration is another schema boundary. `header_action_button_left` was removed in favor of `header_action_button_left_uber`; copied 1.3 buttons must be converted to `scripted_action_tooltip` with the verified Uber visibility/enabled expressions. A generator that only renames the type still leaves obsolete action fields and is not a valid compatibility patch. Keep this conversion in the source generator and assert the expected button count so future reference snapshots fail closed.
+
+The same audit must include GUI global functions, not just widget types. Official 1.4 data-type changes remove `ShowRoadbuilder( Arg0 )` and add `ShowRoadBuilder( Arg0 )`; vanilla's location-window road button uses `ShowRoadBuilder(LocationView.GetLocation)`. A copied 1.3 Glorp or M&T window must migrate that call in its generator, with an exact match count, or its road button remains bound to a removed function.
+
+Upstream GUI snapshots do not all arrive at the same migration stage. A current
+source may already use the 1.4 API, while an older compatibility snapshot still
+needs conversion. Shared migration helpers must therefore be idempotent: apply
+the legacy conversion when legacy markers exist, accept a fully migrated source
+after checking that removed APIs are absent, and fail on mixed old/new content.
+
+The 1.4 input-action reimplementation also removed the GUI property
+`use_global_input_instance`. Current Glorp UI snapshots may still contain this
+stale field in shared types, so copying a current upstream file does not prove
+that every property is valid. Audit each active copied widget against vanilla's
+removal comments and runtime logs; SOL's local zoom-button support must omit the
+property.
+
+For the full decision procedure and compatibility checklist, see [EU5 Multi-Mod Compatibility](EU5_Multi_Mod_Compatibility.md).
+
+## 5. Core Modding Concepts
+
+EU5's scripting language revolves around a few core concepts: Triggers, Effects, and Scopes.
+
+### 5.1. Triggers and Effects
+
+*   **Triggers** are conditions that check the current game state. They are used to determine if an event can fire, an option is visible, or a decision can be taken. Triggers return a boolean value (true or false). [4]
+*   **Effects** are commands that change the game state. They are used to apply modifiers, change country ownership, create characters, and more. [5]
+
+Both triggers and effects can be *inline* (for simple operations) or *block* (for more complex logic) and are highly dependent on the current **scope**.
+
+Some triggers are parsed as simple assignments rather than general comparison expressions. For example, `building_category` only accepts `=` in the middle. Negate it with a boolean wrapper—`NOT = { building_category = government_category }`—instead of writing `building_category != government_category`; the latter produces a script-system compile error.
+
+### 5.2. Scopes and Scope Links
+
+A **scope** refers to the specific game object (e.g., a country, a character, a location) that a script is currently focused on. **Scope links** are used to access data from or apply effects to other scopes. For example, `c:FRA.gold` would access the treasury of the country with the tag FRA.
+
+A scripted trigger's valid entry scope is determined by its complete body, not
+by the scope of one nested condition. Vanilla `is_gaelic_clans`, for example,
+starts in pop scope, checks pop culture and foreign-building state, and only
+then follows `owner` to inspect country estate privileges. Calling it directly
+from country scope makes that `owner` link invalid. When the caller already has
+country scope, use the underlying country-valid privilege triggers instead.
+
+### 5.3. Script Values
+
+Script values are used for mathematical calculations and creating dynamic numerical values. They can be defined as reusable named values in the `common/script_values/` folder or created inline within other scripts. They support a wide range of arithmetic and logical operators. [6]
+
+#### Scope Navigation in Script Values — `location.` prefix rule
+
+Script values always execute in the scope they are *called from*, not from the scope implied by their name prefix. The `location.` prefix is a **scope navigation link** that transitions from an outer scope (pop, character, market, etc.) *to* a location. This means:
+
+- **Correct — pop-scope value calling a location-scope value:**
+  ```
+  sol_alcohol_demand_scale = {   # runs in pop scope
+      add = location.local_nobles_alcohol_demand_scale   # navigate to location
+  }
+  ```
+- **Correct — location-scope value referencing other location variables:**
+  ```
+  local_nobles_alcohol_demand_scale = {   # runs in location scope
+      value = local_nobles_savings_pressure   # already in location scope — no prefix
+      multiply = local_noble_gdp_per_capita_display
+  }
+  ```
+- **WRONG — using `location.` inside a location-scope value:**
+  ```
+  local_nobles_alcohol_demand_scale = {
+      value = location.local_nobles_savings_pressure   # ERROR: already in location scope
+  }
+  ```
+  Engine error: `Event target link 'location' did not get a matching scope type. Expected 'character, pop, …', but got 'location'`
+
+## 6. Game Content Modding
+
+This section covers the modding of specific game content types.
+
+### 6.1. Events
+
+Events are pop-up messages that present the player with information and choices. They are defined in `.txt` files within the `in_game/events/` folder. Unlike EU4, EU5 does not use `mean_time_to_happen` for events; all events must be fired explicitly through on_actions, decisions, or other scripts. [7]
+
+#### Event Option Tooltips
+
+When hovering over an option button, the tooltip is rendered by `ContextualTooltipType` (defined in `eventwindow.gui`). It has two parts:
+
+- **Title line**: `EventOption.GetText` — returns the option's `name` field as a plain string, **not** resolved through the localization system in this context. In debug mode this shows the raw key (e.g., `my_event.1.option_a`). This is expected behavior; vanilla options behave identically.
+- **Content**: `EventOption.GetTooltip` — shows the output of any `custom_tooltip` entries inside the option block.
+
+To add meaningful hover content, use `custom_tooltip = <key>` explicitly inside the option block and define the key in the localization file. The `.tt` suffix (e.g., `my_event.1.a.tt`) is a community convention — it must be referenced via `custom_tooltip`, it is **not** picked up automatically.
+
+```
+# event file
+option = {
+    name = my_event.1.a
+    custom_tooltip = my_event.1.a.tt
+    ...
+}
+
+# localization file
+my_event.1.a: "Option button text"
+my_event.1.a.tt: "Tooltip description shown on hover."
+```
+
+### 6.2. Goods Demand Groups
+
+In EU5 1.3.11, the goods demand key `upper` applies to `nobles`, `clergy`, `burghers`, `laborers`, and `soldiers`; it does not apply to `peasants` or `tribesmen`. This membership applies to both `demand_add` and `demand_multiply`. Demand calibration tools must expand the group before calculating net vanilla demand, otherwise compensating `demand_add` values for laborers and soldiers will be too high.
+
+### 6.3. Pop-Demand Development Controls
+
+EU5 applies development to pop demand through two independent layers. `NPop.DEVELOPMENT_SCALE_ON_DEMAND` is the global multiplier scale; vanilla `0.05` produces a multiplier of `(1 + development / 20)`. Individual goods can also declare `development_threshold`, which prevents their pop demand below that location-development gate.
+
+For a development-independent calibration baseline, both layers must be disabled. Override the define with `NPop = { DEVELOPMENT_SCALE_ON_DEMAND = 0 }`, then use late goods `INJECT` entries whose negative `development_threshold` exactly cancels each loaded positive threshold. Compatibility-mod goods require separate handling; for example, Prosper or Perish adds a threshold to `victuals` even after all vanilla thresholds have been neutralized.
+
+### 6.4. Pop-Demand Regional Modifiers
+
+Goods can also declare regional demand modifiers such as `continent_demand_modifier = { ... }` and `sub_continent_demand_modifier = { ... }`. Vanilla uses both forms, and compatibility mods may add their own keys. These blocks are goods-level final-demand modifiers, not just documentation or map metadata.
+
+When a compatibility patch takes ownership of final pop demand for a good, audit these blocks alongside `wealth_impact_threshold` and `development_threshold`. If the intended baseline is region-independent, emit late `INJECT` entries whose negative per-region values exactly cancel the source values. The SOL-JTG compatibility generator records these keys in `data/jtg_pop_demand.csv` and audits them against `reference_mods/3785316314` so future Just Goods updates cannot silently add a regional gate.
+
+### 6.5. Pop-Needs Income Scale
+
+Runtime testing shows that `NPop.POP_NEEDS_INCOME_SCALE` multiplies the expenditure charged to pops when they buy needs goods. Vanilla sets it to `1.33`, so a nominal goods basket costs the purchasing stratum 33% more than the goods prices imply. This is an independent purchase-side surcharge, not a demand-quantity or development multiplier.
+
+An income-closed demand system must override it with `NPop = { POP_NEEDS_INCOME_SCALE = 1 }`; otherwise measured stratum income and nominal basket costs cannot balance. Apply the override in every base deploy target that can run independently. Compatibility submods that require the full SOL target inherit its define and do not need a duplicate.
+
+### 6.5.1. Country-Level Per-Good Demand (1.4 Source Audit)
+
+`main_menu/common/modifier_type_definitions/00_modifier_types.txt:12773` onward declares generic `global_pop_demand` (country), `local_pop_demand` (location), and country-scoped `global_<good>_pop_demand` types. New country static modifiers belong under `main_menu/common/static_modifiers/`; vanilla `printing_press_books` is a concrete per-good example. The current SOL core's 56 goods have corresponding declarations. The audited vanilla/PP snapshots lack `global_victuals_pop_demand`, whereas Just Goods declares the types for all 26 of its direct-demand goods in its own modifier-type files. Audit the final loaded definitions rather than vanilla alone, then test actual custom-good demand linkage.
+
+**In-game measurement (2026-10, 1.4, HUN nobles in Buda, read from the per-pop demand breakdown tooltip):** each modifier *type* is its own factor `(1 + sum of that type's sources)`, and the factors multiply: `base x (1+sum global_<good>_pop_demand) x (1+global_pop_demand) x (1+local_pop_demand) x (1+sum vanilla percent rows such as low food / produced in market) x multiplier rows (religion, deficit, price, location)`. Two `global_legumes_pop_demand` sources of +0.5 gave x2.0 (not x2.25); +0.25 and -0.75 on sugar gave x0.5; a -1.5 fish source removed fish from the needs list entirely (clamped at 0). Per-good +0.5 with global +0.5 and local +1.0 gave x4.5 on wheat. Tooltip and needs list update immediately when a modifier is added; the actual market demand refresh is slow and irregular. So a target relative factor M against an external same-good offset e needs `size = (1+e)*(M-1)`, and per-good M multiplies cleanly with SOL's `local_pop_demand`. See [the source audit](SOL_Substitute_Groups_Global_Modifier_Audit.md) for evidence and migration boundaries.
+
+### 6.6. Countries
+
+#### Demand-system performance evidence (2026-10-14 source audit)
+
+Trace each effect from its monthly/yearly dispatcher before estimating global cost. The 2026-10-14 baseline audit found that clean reduced-frequency AI performed snapshot checks and country modifier application monthly; only dirty or yearly AI entered the full solve. Substitution refresh still runs before country-size and CMF solver gates. The former 7-to-215 increase in cache reads applied to location recomputation, not every clean AI month. The 2026-10-15 implementation aggregates by market/pop type, restores seven final-cost reads per location, and removes monthly country modifier reapplication; monthly location modifiers remain. Successful cache calculation does not prove a modifier loaded: the audited save contained 34,013 nonzero size caches and no corresponding modifier IDs, and the session log explicitly rejected the old name= identifier. Script operation counts, loader/save evidence, GUI error frequency and engine wall time remain distinct measurements. See [the original audit](SOL_Monthly_Performance_Audit_20261014.md) and [the optimization measurements](SOL_Monthly_Performance_Optimization_20261015.md).
+
+Countries are defined in two parts: a **country definition** file in `in_game/setup/countries/` that sets the tag, color, and culture, and a **country setup** file in `<top_folder>/setup/start/` that defines the starting situation, including owned provinces, capital, and ruler. [8]
+
+### 6.7. Conditional Estate Membership
+
+Population-backed estates are not necessarily enabled by a country-level
+`add_estate` effect or government reform. Each pop type can declare ordered
+estate mappings whose trigger is evaluated in pop scope. Vanilla nobles,
+clergy, burghers, laborers, soldiers, peasants, and slaves all contain:
+
+```
+dhimmi_estate = { is_dhimmi = yes }
+```
+
+The vanilla `is_dhimmi` scripted trigger requires the pop to belong to the
+Buddhist, Christian, Dharmic, Israelite, Mandaean, Manichaean, or Zoroastrian
+religion group; its owner must be Muslim; and the pop must not be linked to a
+foreign building. A qualifying pop is therefore assigned to `dhimmi_estate`
+instead of its ordinary estate. Tribesmen have no Dhimmi mapping.
+
+Keep four layers distinct when tracing an estate:
+
+- `common/estates` defines the estate type and its mechanics.
+- `common/pop_types` plus a pop-scoped trigger determine which pops belong to it.
+- `country_has_estate = estate_type:<key>` tests whether a country currently has it.
+- Setup-template `government.privilege` entries grant initial privileges; they do not define or create the estate membership rule.
+
+For example, `muslim_monarchy.txt` grants several Dhimmi privileges, while
+`muslim_monarchy_no_abrahamic_dhimmi.txt` still grants Dhimmi privileges. The
+`no_abrahamic_dhimmi` suffix only means that the template omits the starting
+`dhimmi_abrahamic_communities` privilege; it does not disable the Dhimmi estate.
+
+### 6.8. Resolutions
+
+Resolution AI scoring uses two script values: `ai_will_propose` for proposal frequency and `ai_will_do` (or `ai_vote_weight`) for votes. The resolution schema does not list `ai_will_select`. A player-only resolution can set both documented values to `0`, as vanilla does for vote suppression in `repeal_law.txt`.
+
+### 6.9. Localization
+
+All text displayed to the player is handled through the localization system. Localization files are in `.yml` format and must be encoded in **UTF-8-BOM**. Each language has its own subfolder and file naming convention (e.g., `_l_english.yml`). The system supports dynamic text, color formatting, and icons. [9]
+
+Each localization key needs one owner per language within a deploy target. Moving a caption into generated UI vocabulary requires removing its old handwritten definition; the runtime localizer reports duplicates across files. Check all files in each language and target, retaining the BOM when editing (SOL caption regression, 2026-10-13).
+
+## 7. Advanced Modding Topics
+
+### 7.1. Interface (GUI) Modding
+
+The user interface is highly moddable through `.gui` files. The system is modular, using templates and types to create reusable UI components. Creating new windows and widgets allows for the development of complex new game features. [10]
+
+In EU5 1.4 beta, `panels/situation/common.gui` creates the Outcome card outside the `Situation.GetOutcomes` datamodel. A situation with no outcomes therefore still shows an empty header. The outer card has no dedicated `blockoverride`; an information-only situation must hide it in a scoped copy of the common template, using `SituationView.GetActiveSituation.GetSituation.GetKey` so other situations keep their outcomes. Keep that copy synchronized with the current game GUI when updating versions.
+
+### 7.2. Map Modding
+
+EU5 includes a powerful map editor for modifying the game world. This tool allows for editing the heightmap, terrain textures, and location setup. However, it has high system requirements, recommending at least 32GB of RAM. [11]
+
+### 7.3. Graphics Modding
+
+Flags in EU5 are generated dynamically through a scripted coat of arms system, a significant change from the static `.tga` files of EU4. This allows for flags to change based on triggers and game conditions. [12]
+
+### 7.4. CMF/CMM Setting Registration
+
+CMM panel membership is rebuilt from each mod's registration effect. During
+`_cmm_register_group`, CMM clears the group's `cmm_group_setting_keys_*` list
+before registered settings are appended. A compatibility layer can therefore
+hide a removed feature by replacing the mod registration effect and omitting
+that setting ID and callback; the obsolete entry also disappears when an older
+save is loaded. Do not write directly to CMM's internal maps. Independently
+hard-disable the removed gameplay trigger so stale alias variables cannot
+reactivate the feature outside the UI.
+
+When a compatibility layer changes a legacy feature from enabled/hidden to an
+explicit default-off opt-in, do not reuse the old setting ID. CMM applies
+`default_value` only when the setting's variable-map key does not already
+exist, so an upgraded save can retain the legacy value. Register a fresh
+compatibility-specific setting ID with `default_value = 0`, omit the old ID,
+sync the new setting to the existing gameplay alias, and require that alias in
+the compatibility trigger. This preserves old-save defaults without directly
+rewriting CMM's internal maps.
+
+Removing a setting also requires removing every remaining read of its alias
+variable. EU5's variable validator only counts setters in reachable, used
+scripted objects; a setter left inside an unused effect or trigger does not
+prevent `Variable '...' is used but is never set`. Compatibility layers should
+prefer exact-path cleanup of obsolete script values and scripted GUIs: keep
+variable-free constant fallbacks where another parsed object still references a
+script value, and keep callbacks only for settings still registered.
+
+### 7.5. CMF Global Mod Log
+
+CMF also exposes a shared country-scoped action log for audit trails and
+host-tool reporting. The public effects are `cmf_log`,
+`cmf_log_with_args`, `cmf_log_with_scope_arg`, `cmf_log_with_scope_args`, and
+`cmf_clear_log`; the actor is always the current country scope. Log entries are
+stored in global variable maps keyed by `cmf_log_0` through `cmf_log_199`, and
+the GUI reads them through `CMFLogCount`, `CMFLogActorCountry`, and
+`CMFLogEntryText`. `cmf_log_with_args` expects localization-key flags, while
+the scope variants require saved country scopes in `cmf_log_arg1` and/or
+`cmf_log_arg2`. The clear button is hidden in multiplayer. See
+[CMF Mod Log Reference](CMF_Mod_Log_Reference.md) for the full note and
+examples.
+
+CMF action text is rendered as a single log row beside the actor. Treat row
+width as a design constraint: one entry should cover one diagnostic concept
+and contain at most four dynamic values. Use compact labels. If a vector is
+essential, split it into short rows of no more than four values; otherwise omit
+secondary fields. Staying below the 200-entry storage cap does not make an
+individually overloaded row readable.
+
+## 8. Best Practices and Resources
+
+*   **Ordered scopes need an explicit full-pass bound**: An `ordered_*` scope without `max` returns only its default single result; it does not mean unlimited traversal. For a loop intended to process every matching object, set an explicit sufficient `max` or a verified dynamic bound. Use `max = 1` (or the default) only when deliberately selecting the best candidate. This was confirmed by a SOL runtime test where 189 locations were scored but only one was assigned by an unbounded-looking `ordered_owned_location` pass.
+*   **Country pulse on_actions merge automatically**: For `monthly_country_pulse` and `yearly_country_pulse`, use the compact style `pulse = { on_actions = { my_dispatcher } }`. Duplicate pulse definitions merge their `on_actions`, so do not copy vanilla or framework entries just to preserve them.
+*   **First-month estate trade income gap**: EU5 does not include estate trade income during the first game month. Any country-level estate income/expense ratio that still depends on trade income should stay neutral before `current_date >= 1337.5.1`, then initialize once from a monthly country pulse if you still need a dependent modifier. The current SOL demand path no longer uses a poverty-compensation factor. Existing saves loaded after that date can refresh immediately.
+*   **Float precision limit**: The EU5 engine reads float literals to a maximum of **5 decimal places**. Any digits beyond the 5th are silently truncated. Always round generated or hand-written values to ≤5 dp (e.g. `0.08477` not `0.084771`). This is particularly relevant for generated script_values such as budget shares and demand scales.
+*   **Value-expression clamp direction**: In EU5 arithmetic blocks, `min` is the lower clamp and `max` is the upper clamp. Use `value = { value = var:X min = 0 }` to enforce nonnegativity; `max = 0` instead forces positive values down to zero. This matters for solver factors and other generated runtime values even when the expression has already passed a nonnegative validation check.
+*   **Local-effect min is a different operation**: Do not implement a floor with `change_local_variable = { name = X min = 0 }`. Three 2026-10-15 HUN debug saves contain 4,311 samples where live total equals actual own strength, so `1+total-own` must be1, but the effect left0. This caused mass external-dirty AI solves. Use an explicit `set_local_variable value={ value=1 add=... subtract=... min=0 }`, matching the refresh path and vanilla country_effects.txt:1660. Correct the offline local-effect model separately; the saves do not establish a reversed rule for persistent-variable effects. See `SOL_Three_Save_Performance_Fix_20261015.md`.
+*   **Commodity demand composition and live reads**: A country can read its current modifier with `modifier:<type>` (vanilla country_effects.txt:2376). The 2026-10-10 demand-tooltip test found same-type commodity offsets add and separate commodity/global/local types multiply. A relative substitution factor M therefore writes `(1+e)(M-1)`. SOL reads e by subtracting its present modifier's actually applied size from the live total, preserving unchanged modifiers rather than deleting and re-adding them. Internal spending uses the resulting nonnegative commodity factor once. Repeated-refresh logic has offline coverage; same-effect modifier read timing and actual engine demand refresh still require in-game acceptance.
+*   **Market-keyed caches**: Market scopes do not support direct persistent `set_variable` / `change_variable` storage, but they can be used as keys in `global_variable_map`. For data whose identity is the market, update the map with `remove_from_global_variable_map = { name = cache key = scope:market_cache }` followed by `add_to_global_variable_map = { name = cache key = scope:market_cache value = ... }`, then read it back with `global_variable_map(cache|scope:market_cache)` in script or `GetVariableFromGlobalVariableMap('cache', Market.MakeScope)` in GUI. `add_to_global_variable_map` is insert-only: if the key already exists, the old value is silently kept. Do not store SOL market data on the market center location as an artificial cache owner.
+*   **Variable-map values cannot be inline math blocks**: `add_to_global_variable_map.value` accepts a direct scalar or event target, but not `{ value = ... divide = ... }` script math. Inline math is parsed as an invalid event-target link and its operators become unreadable fields. Compute into a normal temporary variable first, write `value = var:<temporary>`, then remove the temporary variable.
+*   **Market POP demand triggers**: `demands_goods_by_pops = goods:<good>` is a shortage trigger, not a generic consumed-good test. When a script already has the market scope cached, check the good scope instead: `goods:<good> = { is_demanded_in_market_by_pops = scope:<market> }`.
+*   **GUI-only display caches**: Jomini's unused-variable validation does not count GUI/localization-only reads of scope variables or `global_variable_map` entries. Use `global_variable_map` when keyed storage is the right model, but also read the scope variable or map name in a live script path. For display-only map flags, a local-variable counter or no-op script-side read using `global_variable_map(name|scope:key)` is enough.
+*   **Temporary local-variable cleanup**: Treat `set_local_variable` and `change_local_variable` values as scratch state, not automatic stack temporaries. After the final `local_var:<name>` read, issue `remove_local_variable = <name>` at the matching evaluation scope. This is especially important inside recurring world/market/country loops; have code generators emit the cleanup list from the same source data as the declarations. Vanilla's `apply_union_levels` and the SYS reference mod both explicitly remove calculation locals after use.
+*   **Local variables cross scope boundaries**: `local_var` is a global event-target link within the script context, not independent storage on each market. Vanilla `location_effects.txt:145-168` sets `pops_to_add` inside the target scope and reads it after returning to root. Use market-keyed maps to isolate population or spending caches; offline fixtures must share locals across scope switches. Persistent market `set_variable` remains unsupported.
+*   **EU5 1.4 country modifier identifier**: Use `add_country_modifier = { modifier = <id> ... }`, following current `country_effects.txt:846`. The old official effects.log still shows `name=`, but the SOL 2026-10-14 runtime explicitly rejected that field before PostValidate. Source correction is verified; successful new-session demand application remains an engine acceptance check.
+*   **Requested size versus actual strength**: `country_modifier_strength(<modifier key>)` is an official value interface (triggers.log:3517-3523). Guard it with `has_country_modifier` and subtract the actual named strength when isolating an external additive offset. A last-request cache is useful for suppressing redundant writes, but is not proof of current strength. SOL separately snapshots live strength, detects/repairs own drift, and uses it in internal spending; unchanged raw-total guards do not query strength. A controlled mismatch test demonstrates the distinction, not an EU5 rounding bug.
+*   **Country substitution cache cadence**: For a country, market/pop-type basket response is independent of its individual locations, so aggregate market population first and cache seven final market spending totals with the country scope as owner. Invalidate on country factor refresh and world price/supply refresh. Use permanent country goods modifiers with applied-size tracking and change/missing-only writes; read external offsets by subtracting the present SOL modifier's applied size, without remove/re-add. Snapshot the observed raw modifier total for clean-month checks. This policy is separate from SOL's monthly one-month location modifier reapplication. See `SOL_Monthly_Performance_Optimization_20261015.md` for measured script counts and fixed-point limitations.
+*   **Situation panel mapmode selection**: Situation definitions can define data-map coloring (`is_data_map`, `map_color`, `tooltip`, `legend_key`) and script setup via `on_start`, but the references do not expose a situation-side field for selecting a separate custom mapmode. Add a zero-size `widget` directly to the situation-specific `situation_panel`; in a state with `trigger_on_create = yes`, call `on_start = "[PdxGuiWidget.PushMapModeOverride('<mapmode>')]"`. A situation child can be instantiated after its parent is already visible, so `_show` is not a reliable construction callback. The widget-owned override is removed with the widget when that panel is left, restoring the prior mapmode instead of globally forcing the default mapmode. Vanilla GUI uses `PushMapModeOverride` without explicit `PopMapModeOverride`, confirming that cleanup is tied to the widget lifecycle.
+*   **Modifier icons**: Modifier tooltip and modifier-row icons are resolved through `main_menu/common/modifier_icons/*.txt`, with blocks like `local_pop_demand = { positive = "gfx/..." negative = "gfx/..." }`. Do not try to put icon fields on `add_location_modifier` or the static modifier block. For a custom static modifier, map the static modifier id; only map the contained modifier type if that key is not already defined by vanilla or another loaded mod. Duplicate `modifier_icons` keys are rejected with `Duplicated key ... will not be created`.
+*   **Mapmode DDS icons**: `MapMode.GetIcon` resolves custom mapmode art by ID from `main_menu/gfx/interface/icons/map_modes/<map_mode_id>.dds`. Match reference DDS exports closely: DXT5 is fine, but include a full mip chain down to 1x1 and a Clausewitz-style 2D DDS header with `dwDepth = 1`; direct GUI texture widgets may tolerate incomplete mips, while the mapmode icon resolver may not.
+*   **Mapmode default pinning**: Do not add `pinned_by_default = yes/no` to `in_game/gfx/map/map_modes/*.txt` definitions unless a current official schema verifies that field. EU5 1.3.4 exposes `MapMode.IsMapModePinnedByDefault` to GUI, but `pinned_by_default = yes` in SOL's custom mapmode produced `Malformed token: yes` during file load. Keep `category` and `index` for discoverability and let the UI/user handle pin state.
+*   **Estate building counts**: To count estate buildings on a location, iterate `every_buildings_in_location` and filter building scope with `estate_type ?= estate_type:<estate>`. Avoid hard-coded building type lists or plain `num_buildings` when the logic depends on the owning estate type.
+*   **Use a proper IDE**: Tools like VS Code with the CwTools extension can catch errors and improve readability.
+*   **Avoid Overwriting Vanilla Files**: Create your own files and use the `replace_paths` feature or specific load orders to override game content. This improves mod compatibility.
+*   **Use Version Control**: Git is an invaluable tool for tracking changes and collaborating with others.
+*   **Consult Community Resources**: The official EU5 Wiki, the Paradox Forums, and community Discord servers are essential resources for any modder.
+
+## 9. Conclusion
+
+The modding architecture of European Universalis 5 represents a significant evolution from previous Paradox titles. With the power of the updated Clausewitz Engine and the flexible Jomini scripting layer, modders have an unprecedented ability to create new content and transform the game. While the learning curve can be steep, the extensive documentation and active community provide a strong foundation for success.
+
+## 10. References
+
+[1] [Europa Universalis V - PC performance graphics benchmarks](https://en.gamegpu.com/test-gpu/rts-strategii/europa-universalis-v-test-gpu-cpu)
+[2] [Grand Jomini Modding Information Manuscript](https://forum.paradoxplaza.com/forum/threads/grand-jomini-modding-information-manuscript.1170261/)
+[3] Manus AI internal analysis of 16 EU5 mods from Steam Workshop, January 2026.
+[4] [Mod structure - Europa Universalis 5 Wiki](https://eu5.paradoxwikis.com/Mod_structure)
+[5] [Trigger - Europa Universalis 5 Wiki](https://eu5.paradoxwikis.com/Trigger)
+[6] [Effect - Europa Universalis 5 Wiki](https://eu5.paradoxwikis.com/Effect)
+[7] [Script value - Europa Universalis 5 Wiki](https://eu5.paradoxwikis.com/Script_value)
+[8] [Event modding - Europa Universalis 5 Wiki](https://eu5.paradoxwikis.com/Event_modding)
+[9] [Country modding - Europa Universalis 5 Wiki](https://eu5.paradoxwikis.com/Country_modding)
+[10] [Localization - Europa Universalis 5 Wiki](https://eu5.paradoxwikis.com/Localization)
+[11] [Interface modding guide - Europa Universalis 5 Wiki](https://eu5.paradoxwikis.com/Interface_modding_guide)
+[12] [Map modding - Europa Universalis 5 Wiki](https://eu5.paradoxwikis.com/Map_modding)
+[13] [Flag modding - Europa Universalis 5 Wiki](https://eu5.paradoxwikis.com/Flag_modding)

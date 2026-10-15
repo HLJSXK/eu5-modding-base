@@ -1,0 +1,1590 @@
+# Human-maintained filters for known vanilla EU5 error.log noise.
+#
+# Rules are matched against the whole log entry after the leading timestamp
+# has been removed. Blank lines and lines beginning with # are ignored.
+#
+# Supported forms:
+#   contains:<text>
+#   exact:<full entry body, with \n for line breaks if needed>
+#   regex:<python regular expression>
+#
+# Bare lines are treated as contains:<text>.
+#
+# Example:
+# contains:[pdx_data_localize.cpp:151]: Data error in loc string 'VANILLA_KEY_NAME'
+exact:[dlc_reloadable.cpp:363]: Mod Community Mod Framework & Menu (community_mod_framework) version 1.1.* does not match game version 1.2.2.
+exact:[localization_reader.cpp:535]: Missing quoted string value for key '0' at line 543 and column 4 in localization/simp_chinese/interfaces_l_simp_chinese.yml
+exact:[icondatabase.h:546]: Streamed texture has no mipmaps: Size [4.515 KB], Texture: gfx/interface/icons/location_icons/new/prosperity.dds
+exact:[game_concepts.cpp:222]: Game concept 'offered_omens': Missing localization key 'game_concept_offered_omens'
+exact:[game_concepts.cpp:227]: Game concept 'offered_omens': Missing localization key 'game_concept_offered_omens_desc'
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_add_religious_aspect_hellenism_cost_modifier: "Add religious aspect hellenism cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_add_religious_aspect_hellenism_cost_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_change_religious_aspect_hellenism_cost_modifier: "Change religious aspect hellenism cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_change_religious_aspect_hellenism_cost_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_remove_religious_aspect_hellenism_cost_modifier: "Remove religious aspect hellenism cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_remove_religious_aspect_hellenism_cost_modifier: "TODO : Write a desc"
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'MOD_BACKEND_NOT_AVAILABLE_STEAM' at gui/mod_tools.gui:105, either localize it or use the raw_text property instead of text
+exact:[localization_util.cpp:103]: AUTO_MODIFIER_NAME_rom_capital_rome: "Rom capital rome"
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_byz.2.desc_hellenic. Near events/DHE/flavor_BYZ.txt:90
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_byz.2.desc_other. Near events/DHE/flavor_BYZ.txt:90
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz.2.b. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz.2.c. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_byz.3.desc_hellenic. Near events/DHE/flavor_BYZ.txt:166
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_byz.3.desc_other. Near events/DHE/flavor_BYZ.txt:166
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz.3.b. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz.3.c. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_byz.4.desc_hellenic. Near events/DHE/flavor_BYZ.txt:220
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_byz.4.desc_other. Near events/DHE/flavor_BYZ.txt:220
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz.4.b. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz.4.c. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_byz.5.desc_hellenic. Near events/DHE/flavor_BYZ.txt:295
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_byz.5.desc_other. Near events/DHE/flavor_BYZ.txt:295
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz.5.b. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz.5.c. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_byz.6.desc_hellenic. Near events/DHE/flavor_BYZ.txt:371
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_byz.6.desc_other. Near events/DHE/flavor_BYZ.txt:371
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz.6.b. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz.6.c. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz_ser.5.ser_annex. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_byz_ven.6.desc_recovered. Near events/DHE/flavor_byz_ven.txt:239
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz_ven.9.title. events/DHE/flavor_byz_ven.txt:334
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz_ven.9.desc. events/DHE/flavor_byz_ven.txt:335
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz_ven.9.a. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz_ven.10.title. events/DHE/flavor_byz_ven.txt:367
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz_ven.10.desc. events/DHE/flavor_byz_ven.txt:368
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz_ven.10.a. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_tre.8.title. events/DHE/flavor_tre.txt:391
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_tre.8.desc. events/DHE/flavor_tre.txt:392
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_tre.8.historical_info. events/DHE/flavor_tre.txt:395
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_tre.8.a. CEventOptionDesc:172
+exact:[country_database.cpp:107]: The following two countries have the same name 'PWS' & 'POS' = '波伊斯'
+exact:[country_database.cpp:107]: The following two countries have the same name 'ASU' & 'ASO' = '阿苏'
+exact:[country_database.cpp:107]: The following two countries have the same name 'DRA' & 'DLA' = '达拉'
+exact:[country_database.cpp:107]: The following two countries have the same name 'CEV' & 'CEW' = '切瓦'
+exact:[country_database.cpp:107]: The following two countries have the same name 'BRM' & 'BRE' = '不来梅'
+exact:[country_database.cpp:107]: The following two countries have the same name 'SFC' & 'ALS' = '斯特拉斯堡'
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'MUSIC_PLAYER_OPEN_SETTINGS' at gui/music_player_lateralview.gui:45, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'MUSIC_PLAYER_CURRENT_TRACK' at gui/music_player_lateralview.gui:55, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'OPEN_MUSIC_PLAYER' at gui/panels/right_panel/right_panel.gui:489, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'OMEN_POWER_PILL_TITLE_adm' at gui/panels/religion/religious_doctrine.gui:2078, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'OMEN_POWER_PILL_TITLE_dip' at gui/panels/religion/religious_doctrine.gui:2116, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'OMEN_POWER_PILL_TITLE_mil' at gui/panels/religion/religious_doctrine.gui:2154, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'ACTIVE_OMENS' at gui/shared/religion_tooltips.gui:1274, either localize it or use the raw_text property instead of text
+exact:[pdx_data_factory.cpp:1401]: Function 'GetCombatModifierNoFormat' expected 3 arguments, got 2 (in 'CombatSide.GetCommander.GetCombatModifierNoFormat(CombatSide.GetCountry, 'discipline')')
+exact:[pdx_data_factory.cpp:1039]: Failed converting statement for 'CombatSide.GetCommander.GetCombatModifierNoFormat(CombatSide.GetCountry, 'discipline')'
+exact:[pdx_gui_localize.cpp:302]: gui/shared/unit_overview_tooltips.gui:456 - Failed parsing localized text: TT_AVERAGE_DISCIPLINE_COMBAT_TEXT
+exact:[pdx_gui_factory.cpp:289]: failed reading property, at gui/shared/unit_overview_tooltips.gui:456
+exact:[localization_util.cpp:103]: add_religious_aspect_hellenism: "Add religious aspect hellenism"
+exact:[localization_util.cpp:103]: change_religious_aspect_hellenism: "Change religious aspect hellenism"
+exact:[localization_util.cpp:103]: remove_religious_aspect_hellenism: "Remove religious aspect hellenism"
+exact:[localization_util.cpp:103]: BYZ_trebizond_f: "BYZ trebizond f"
+exact:[localization_util.cpp:103]: a_varangians_2: "A varangians 2"
+exact:[localization_util.cpp:103]: a_varangians_2_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: a_varangians_3: "A varangians 3"
+exact:[localization_util.cpp:103]: a_varangians_3_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: a_varangians_4: "A varangians 4"
+exact:[localization_util.cpp:103]: a_varangians_4_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: a_varangians_5: "A varangians 5"
+exact:[localization_util.cpp:103]: a_varangians_5_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: a_varangians_6: "A varangians 6"
+exact:[localization_util.cpp:103]: a_varangians_6_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: flavor_tre.8.entry: "Flavor tre.8.entry"
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: custom_tooltip effect [ Unknown loc key grant_a_triumph_triumphant_bonus_tt ]\n  Script location: common/generic_actions/D008_fate_of_the_phoenix_actions.txt:983
+exact:[jomini_effect.cpp:140]: PostValidate of effect 'custom_tooltip' returned false at common/generic_actions/D008_fate_of_the_phoenix_actions.txt:983
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: custom_tooltip effect [ Unknown loc key SER_strumica_was_released ]\n  Script location: events/DHE/flavor_byz_ser.txt:130
+exact:[jomini_effect.cpp:140]: PostValidate of effect 'custom_tooltip' returned false at events/DHE/flavor_byz_ser.txt:130
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: custom_tooltip effect [ Unknown loc key SER_strumica_was_released ]\n  Script location: events/DHE/flavor_byz_ser.txt:141
+exact:[jomini_effect.cpp:140]: PostValidate of effect 'custom_tooltip' returned false at events/DHE/flavor_byz_ser.txt:141
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: custom_tooltip effect [ Unknown loc key flavor_tre.8.a.tt ]\n  Script location: events/DHE/flavor_tre.txt:425
+exact:[jomini_eventmanager.cpp:376]: Event free_cities.7 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event hre.904 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event hre.905 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event hre.950 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event flavor_cas.2101 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event flavor_dlh.14 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event flavor_brapru.2 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event flavor_kni_pap.4 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event flavor_por.23 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event flavor_teu.302 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event fate_of_the_phoenix.5 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event fall_of_delhi.11 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event fall_of_delhi.12 is orphaned
+exact:[jomini_eventmanager.cpp:376]: Event rise_of_timur.3 is orphaned
+exact:[initialize_from_bookmark.cpp:213]: The country 'DGH 朵豁剌惕' has no pops of its official religion 'tengri' .
+exact:[initialize_from_bookmark.cpp:1159]: Country 'LIN 来安' starts with 56.60154 diplomatic relations over their limit, which is more than 'SETUP_NUM_RELATIONS_OVER_LIMIT_ERROR' limit of 0.5.
+exact:[initialize_from_bookmark.cpp:1159]: Country 'LNG 梁' starts with 2.62687 diplomatic relations over their limit, which is more than 'SETUP_NUM_RELATIONS_OVER_LIMIT_ERROR' limit of 0.5.
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'kor_mongol_aristocrats' due to not being set\n  Script location: common/character_interactions/banish_character.txt:11
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/character_interactions/banish_character.txt:11
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/character_interactions/banish_character.txt:11
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'regency_type' returned an invalid object\n  Script location: common/character_interactions/make_regent_ruler.txt:15
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'regency_type' returned an invalid object\n  Script location: common/character_interactions/make_regent_ruler.txt:16
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'regency_type' returned an invalid object\n  Script location: common/character_interactions/make_regent_ruler.txt:17
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'regency_type' returned an invalid object\n  Script location: common/character_interactions/make_regent_ruler.txt:18
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'regency_type' returned an invalid object\n  Script location: common/character_interactions/make_regent_ruler.txt:19
+exact:[jomini_trigger_description.cpp:205]: is_subject_of: Scope dependent values in localization inside an any trigger; consider using a custom_tooltip; at common/generic_actions/D008_fate_of_the_phoenix_actions.txt:77
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'overlord' returned an invalid object\n  Script location: common/scripted_triggers/exploration_triggers.txt:19\ncommon/generic_actions/explorers.txt:9
+exact:[jomini_trigger_description.cpp:205]: country_has_special_status: Scope dependent values in localization inside an any trigger; consider using a custom_tooltip; at common/generic_actions/hundred_years_war.txt:1489
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: is_enemy_of trigger [ Null object! Field: target ]\n  Script location: common/generic_actions/italian_wars.txt:1039
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: is_rival_of trigger [ Null object! Field: target ]\n  Script location: common/generic_actions/italian_wars.txt:1040
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: is_enemy_of trigger [ Null object! Field: target ]\n  Script location: common/generic_actions/italian_wars.txt:1046
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: is_rival_of trigger [ Null object! Field: target ]\n  Script location: common/generic_actions/italian_wars.txt:1047
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: is_enemy_of trigger [ Null object! Field: target ]\n  Script location: common/generic_actions/italian_wars.txt:1053
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: is_rival_of trigger [ Null object! Field: target ]\n  Script location: common/generic_actions/italian_wars.txt:1054
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: is_enemy_of trigger [ Null object! Field: target ]\n  Script location: common/generic_actions/italian_wars.txt:1060
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: is_rival_of trigger [ Null object! Field: target ]\n  Script location: common/generic_actions/italian_wars.txt:1061
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_treaty_phase' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:23
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:23
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:23
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_east_country' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:264
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:264
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_treaty_phase' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:281
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:281
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:281
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_treaty_phase' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:438
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:438
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:438
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_treaty_phase' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:652
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:652
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:652
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_treaty_phase' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:880
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:880
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:880
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_treaty_phase' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:963
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:963
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:963
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid right side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1112
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid right side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1113
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_treaty_phase' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1116
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1116
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1116
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid right side during comparison 'religion'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1277
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid right side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1283
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid right side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1284
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_treaty_phase' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1288
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1288
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1288
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_treaty_phase' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1366
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1366
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1366
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid right side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1465
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid right side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1466
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_treaty_phase' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1469
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1469
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1469
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid right side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1715
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid right side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1716
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to fetch variable for 'var_treaty_phase' due to not being set\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1719
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'var' returned an unset scope\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1719
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid left side during comparison 'var'\n  Script location: common/generic_actions/treaty_of_tordesillas.txt:1719
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Undefined event target 'target'\n  Script location: common/subject_types/dominion.txt:68
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'scope' returned an unset scope\n  Script location: common/subject_types/dominion.txt:68
+exact:[jomini_scriptvalue.cpp:1939]: Value of wrong type in 'common/subject_types/dominion.txt:68'. Got value of type 'none'
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'subject_type' returned an invalid object\n  Script location: common/scripted_triggers/country_triggers.txt:1328\ncommon/subject_types/tusi.txt:31
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Invalid right side during comparison 'culture'\n  Script location: common/scripted_triggers/country_triggers.txt:1333\ncommon/subject_types/tusi.txt:31
+exact:[pdxinput_context.cpp:2896]: Could not push the provided stack context. ID: 0
+exact:[pdx_assert.cpp:213]: Important assertion failed: <file>:0 (No tiebreaker)
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: reborn_from_the_ashes
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: nut_allergy
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: holy_flush
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: give_me_back_my_legions
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: mare_nostrum
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: belisars_legacy
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: for_the_glory
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: brothers_in_arms
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: city_of_cities
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: cold_war
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: until_death_do_us_apart
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: that_is_mine
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: victorious
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: its_just_business
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: all_in_favor
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: patron_of_the_arts
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: combined_arms
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: rule_of_law
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: here_i_stand
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: rule_britannia
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: plus_ultra
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: city_of_mans_desire
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: a_pile_of_gold
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: at_every_continent
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: grand_coalition
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: it_belongs_in_a_museum
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: a_cabinet_of_curiosities
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: hearts_and_minds
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: a_brave_new_world
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: crusader_kings
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: lingua_franca
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: break_the_yoke
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: felix_austria
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: hongwu_di
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: just_a_little_bit_more_patience
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: potato_potato
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: three_mountains
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: doge_coins
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: je_maintiendrai
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: lion_of_the_north
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: the_navigator
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: house_of_hus
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: the_spice_must_flow
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: scientific_victory
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: cities_skyline
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: moneytalks
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: the_empire_strikes_back
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: megalopolis
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: what_the_lord_giveth
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: be_in_all_the_clubs
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: welfare_state
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: five_hundred_miles
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: total_control
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: true_heir_of_timur
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: respected
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: letat_cest_moi
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: manchurian_candidate
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: saladin_legacy
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: african_trade
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: i_am_inevitable
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: greatness_from_small_beginnings
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: goose_step_by_step
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: ill_be_wittelsback
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: reformatio_imperii
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: stefans_dream
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: there_can_be_only_one
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: the_great_great_wall
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: a_tale_of_two_cities
+exact:[pdx_achievements_steam.cpp:298]: Invalid achievement: what_a_great_guy
+exact:[audio2_wwise.cpp:757]: [Wwise] Event 'situation_started' not found
+exact:[audio2_wwise.cpp:1970]: [Wwise] Failed to create event situation_started, didn't find any description.
+exact:[pdx_gui_layout.cpp:201]: gui/attribute_columns/character.gui:343 - Widget cannot have a position in a layout
+exact:[jomini_effect.cpp:140]: PostValidate of effect 'custom_tooltip' returned false at events/DHE/flavor_tre.txt:425
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'heir' returned an invalid object\n  Script location: common/international_organizations/japanese_shogunate.txt:16
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: add_to_list effect [ Scoped object is not valid. Type: 角色“角色”（4294967295） ]\n  Script location: common/international_organizations/japanese_shogunate.txt:17
+exact:[pdx_data_localize_helper.cpp:128]: Unterminated '[' when reading property 'seize_location_from_subject_act'
+exact:[pdx_data_localize.cpp:136]: Data error in loc string 'seize_location_from_subject_act'
+contains:Failed to read key reference: nd_mc_seek_mandate
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Failed to scope to country via tag 'CHI'\n  Script location: common/disasters/sinicization_disaster.txt:11
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: Event target link 'c' returned an unset scope\n  Script location: common/disasters/sinicization_disaster.txt:11
+exact:[jomini_scriptvalue.cpp:1939]: Value of wrong type in 'common/disasters/sinicization_disaster.txt:10'. Got value of type 'none'
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: is_enemy_of trigger [ Object incorrect type! Field: target, Expected: country, Type: none ]\n  Script location: common/situations/red_turban_rebellions.txt:39
+exact:[jomini_script_system.cpp:252]: Script system error!\n  Error: is_rival_of trigger [ Object incorrect type! Field: target, Expected: country, Type: none ]\n  Script location: common/situations/red_turban_rebellions.txt:40
+contains:events/DHE/flavor_BYZ.txt
+contains:common/institution/age_2_renaissance_institutions.txt
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_byz.27.d. CEventOptionDesc:172
+exact:[game_concepts.cpp:222]: Game concept 'pentarchy': Missing localization key 'game_concept_pentarchy'
+exact:[game_concepts.cpp:227]: Game concept 'pentarchy': Missing localization key 'game_concept_pentarchy_desc'
+contains:common/generic_actions/western_schism.txt
+contains:events/DHE/flavor_chi_pap.txt
+contains:common/laws/02_country_specific.txt
+contains:common/generic_actions/war_of_religions.txt
+contains:common/generic_actions/rise_of_timur.txt
+exact:[pdx_gui_widget.cpp:2345]: gui/panels/organization/union.gui:68 - Property 'spacing'(272) not handled
+exact:[pdx_gui_widget.cpp:2345]: gui/panels/organization/union.gui:69 - Property 'margin'(630) not handled
+exact:[pdx_gui_factory.cpp:2298]: gui/panels/organization/union.gui:65 - Error setting properties for '' (uberwidget)
+exact:[pdx_gui_widget.cpp:2345]: gui/panels/organization/union.gui:153 - Property 'autoresize'(863) not handled
+exact:[pdx_gui_factory.cpp:2298]: gui/panels/organization/union.gui:152 - Error setting properties for '' (ubervbox)
+contains:common/resolutions/fall_of_delhi.txt
+contains:common/character_interactions/d008_mutilations.txt
+contains:common/generic_actions/D008_fate_of_the_phoenix_actions.txt
+contains:common/generic_actions/D008_orthodox.txt
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_gen.51.desc_aegean. Near events/DHE/flavor_GEN.txt:3173
+exact:[localization_util.cpp:103]: INCOMING_OFFER_enforce_landfriede: "INCOMING OFFER enforce landfriede"
+exact:[localization_util.cpp:103]: INCOMING_OFFER_TITLE_enforce_landfriede: "INCOMING OFFER TITLE enforce landfriede"
+exact:[localization_util.cpp:103]: enforce_landfriede_reject_effect_text: "Enforce landfriede reject effect text"
+exact:[localization_util.cpp:103]: enforce_landfriede_reject_effect_text_past: "Enforce landfriede reject effect text past"
+exact:[localization_util.cpp:103]: flavor_wal.1.entry: "Flavor wal.1.entry"
+exact:[localization_util.cpp:103]: AUTO_MODIFIER_NAME_byz_varangian_guard_restored: "Byz varangian guard restored"
+contains:events/government/societal_values.txt
+contains:gui/map_editor/mapeditor_custom.gui
+contains:gui/report_issue.gui
+exact:[localization_util.cpp:103]: DISPOSITION_CHANGE_DIGEST_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: DISPOSITION_CHANGE_DIGEST_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: DISPOSITION_CHANGE_DIGEST_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: LOSTTRAIT_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: LOSTTRAIT_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: LOSTTRAIT_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: RULER_LOSTTRAIT_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: RULER_LOSTTRAIT_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: RULER_LOSTTRAIT_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_appeal_to_circle_diet_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_appeal_to_circle_diet_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_appeal_to_circle_diet_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_appeal_to_circle_diet_PERFORMED_ON_US_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_appeal_to_circle_diet_PERFORMED_ON_US_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_appeal_to_circle_diet_PERFORMED_ON_US_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_request_circle_infrastructure_expansion_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_request_circle_infrastructure_expansion_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_request_circle_infrastructure_expansion_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_request_circle_infrastructure_expansion_PERFORMED_ON_US_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_request_circle_infrastructure_expansion_PERFORMED_ON_US_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_request_circle_infrastructure_expansion_PERFORMED_ON_US_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_reduction_of_circle_titles_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_reduction_of_circle_titles_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_reduction_of_circle_titles_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_reduction_of_circle_titles_PERFORMED_ON_US_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_reduction_of_circle_titles_PERFORMED_ON_US_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_reduction_of_circle_titles_PERFORMED_ON_US_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_reform_coinage_in_circle_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_reform_coinage_in_circle_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_reform_coinage_in_circle_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_reform_coinage_in_circle_PERFORMED_ON_US_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_reform_coinage_in_circle_PERFORMED_ON_US_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_reform_coinage_in_circle_PERFORMED_ON_US_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_request_new_circle_titles_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_request_new_circle_titles_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_request_new_circle_titles_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_request_new_circle_titles_PERFORMED_ON_US_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_request_new_circle_titles_PERFORMED_ON_US_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_request_new_circle_titles_PERFORMED_ON_US_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_harmony_stability: "Harmony stability"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_harmony_stability: "TODO : Write a desc"
+exact:[game_concepts.cpp:224]: Game concept 'graphical_culture': Missing localization key 'game_concept_graphical_culture'
+exact:[game_concepts.cpp:229]: Game concept 'graphical_culture': Missing localization key 'game_concept_graphical_culture_desc'
+exact:[game_concepts.cpp:224]: Game concept 'ethnicity': Missing localization key 'game_concept_ethnicity'
+exact:[game_concepts.cpp:229]: Game concept 'ethnicity': Missing localization key 'game_concept_ethnicity_desc'
+exact:[game_concepts.cpp:224]: Game concept 'liturgical_dialect': Missing localization key 'game_concept_liturgical_dialect'
+exact:[game_concepts.cpp:229]: Game concept 'liturgical_dialect': Missing localization key 'game_concept_liturgical_dialect_desc'
+exact:[game_concepts.cpp:224]: Game concept 'court_dialect': Missing localization key 'game_concept_court_dialect'
+exact:[game_concepts.cpp:229]: Game concept 'court_dialect': Missing localization key 'game_concept_court_dialect_desc'
+exact:[game_concepts.cpp:224]: Game concept 'bureaucracy_type': Missing localization key 'game_concept_bureaucracy_type'
+exact:[game_concepts.cpp:229]: Game concept 'bureaucracy_type': Missing localization key 'game_concept_bureaucracy_type_desc'
+exact:[game_concepts.cpp:224]: Game concept 'secondary_culture': Missing localization key 'game_concept_secondary_culture'
+exact:[game_concepts.cpp:224]: Game concept 'conquest': Missing localization key 'game_concept_conquest'
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_request_divorce_price_cost_modifier: "Request divorce price cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_request_divorce_price_cost_modifier: "TODO : Write a desc"
+exact:[game_concepts.cpp:224]: Game concept 'unconditionally_surrenders': Missing localization key 'game_concept_unconditionally_surrenders'
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_french_subject_prevented_from_call_to_war: "French subject prevented from call to war"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_french_subject_prevented_from_call_to_war: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_ai_conquer_desire_religion_mult: "Ai conquer desire religion mult"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_ai_conquer_desire_religion_mult: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_ai_amount_of_parallel_charters: "Ai amount of parallel charters"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_ai_amount_of_parallel_charters: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: AUTO_MODIFIER_NAME_harmony_stabilized: "Harmony stabilized"
+exact:[localization_util.cpp:103]: mapmode_country_own_religion_name: "Mapmode country own religion name"
+exact:[localization_util.cpp:103]: MAPMODE_COUNTRY_OWN_RELIGION: "MAPMODE COUNTRY OWN RELIGION"
+exact:[localization_util.cpp:103]: mapmode_imperial_circles_name: "Mapmode imperial circles name"
+exact:[localization_util.cpp:103]: MAPMODE_IMPERIAL_CIRCLES: "MAPMODE IMPERIAL CIRCLES"
+exact:[localization_util.cpp:103]: mapmode_select_target_rivals_name: "Mapmode select target rivals name"
+exact:[localization_util.cpp:103]: MAPMODE_SELECT_TARGET_RIVALS: "MAPMODE SELECT TARGET RIVALS"
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key imperial_circles.2.title. events/imperial_circles_events.txt:23
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key imperial_circles.2.desc. events/imperial_circles_events.txt:24
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key imperial_circles.2.a. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key imperial_circles.2.b. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key imperial_circles.2.c. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key imperial_circles.20.title. events/imperial_circles_events.txt:179
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key imperial_circles.20.desc. events/imperial_circles_events.txt:180
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key imperial_circles.20.a. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key d008_flavor_byz.6.title. events/DHE/D008_flavor_BYZ.txt:219
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key d008_flavor_byz.6.desc. events/DHE/D008_flavor_BYZ.txt:220
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key d008_flavor_byz.6.a. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_fra.2035.t. events/DHE/flavor_FRA.txt:7391
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_fra.2035.desc. events/DHE/flavor_FRA.txt:7392
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_fra.2035.a. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key flavor_fra.2035.b. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:58]: Unrecognized loc key flavor_ver.1001.desc_pad. Near events/DHE/flavor_ver.txt:599
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key sinicization_disaster.100.e. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key market_decline.1.title. events/economy/market_decline.txt:14
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key market_decline.1.desc. events/economy/market_decline.txt:15
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key market_decline.1.a. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key market_decline.1.b. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key market_decline.1.c. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key hussite_wars.4.f. CEventOptionDesc:172
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'MERCENARY_MEN_IN_RANGE_TITLE' at gui/army_builder.gui:384, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'AUTOMATE_ALL_MARKETS' at gui/automation_lateralview.gui:538, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'AUTOMATE_ALL_MARKETS_DISABLED' at gui/automation_lateralview.gui:539, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'AUTOMATE_ALL_MARKETS_TT' at gui/automation_lateralview.gui:791, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'OFFER_LOAN_SUGGEST_BUTTON' at gui/confirm_offer_loan_popup.gui:290, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'OFFER_LOAN_SUGGEST_DESC' at gui/confirm_offer_loan_popup.gui:298, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'AI_DISPOSITION_MAP_STALENESS_NOTE' at gui/cooltip.gui:4446, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'NO_LOANS_TAKEN' at gui/credit.gui:275, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'NO_LOANS_GIVEN' at gui/credit.gui:386, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'ARTIST_SALARY_CHARACTER_HEADER' at gui/culture_lateral_view.gui:1309, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'SELECT_PRESET_BUTTON_TOOLTIP' at gui/game_rules.gui:1008, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'CANCEL_CONQUISTADOR_COMMISSION' at gui/expansion_lateralview.gui:1898, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'CANCEL_ALL_CONQUISTADOR_COMMISSIONS' at gui/expansion_lateralview.gui:1907, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'CANCEL_ALL_CONQUISTADOR_COMMISSIONS_DESC' at gui/expansion_lateralview.gui:1908, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'REVOKE_LOCATION_TOWN_RIGHT' at gui/location_window.gui:924, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'TOGGLE_CABINET_AUTOMATION' at gui/government_lateralview.gui:3504, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'MUSIC_PLAYER_OPEN_SETTINGS' at gui/music_player_lateralview.gui:46, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'MUSIC_PLAYER_CURRENT_TRACK' at gui/music_player_lateralview.gui:56, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'POLICIES_BENEFITING_EMPEROR_SINGLE_DESC' at gui/panels/organization/common.gui:949, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'OPEN_MUSIC_PLAYER' at gui/panels/right_panel/right_panel.gui:461, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'IMPERIAL_VOTE_REQUIREMENTS_DESC' at gui/panels/organization/hre.gui:1365, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'BRIBE_IMPERIAL_CIRCLE_CTRL_HINT' at gui/panels/organization/hre.gui:3506, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'HRE_CIRCLE_TOTAL_VOTE_POWER' at gui/panels/organization/hre.gui:3584, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'HRE_CIRCLE_TOGGLE_MEMBERS' at gui/panels/organization/hre.gui:3594, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'POLICIES_BENEFITING_EMPEROR_SINGLE' at gui/panels/organization/hre.gui:3633, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'BUILDING_GOODS_UPKEEP_TOTAL_HEADER' at gui/shared/economy_tooltips.gui:809, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'INTERNATIONAL_ORGANIZATION_AUTO_DISBAND_REQUIREMENTS' at gui/shared/io_tooltips.gui:457, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'HRE_CIRCLE_MEMBERS_TOOLTIP_TITLE' at gui/shared/io_tooltips.gui:816, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'HRE_CIRCLE_MEMBERS_TOOLTIP_COUNT' at gui/shared/io_tooltips.gui:821, either localize it or use the raw_text property instead of text
+exact:[pdx_gui_localize.cpp:182]: Unlocalized text 'IMPERIAL_CIRCLE_TT_MEMBER' at gui/shared/io_tooltips.gui:903, either localize it or use the raw_text property instead of text
+exact:[pdx_data_factory.cpp:1412]: Function 'GetCombatModifierNoFormat' expected 3 arguments, got 2 (in 'CombatSide.GetCommander.GetCombatModifierNoFormat(CombatSide.GetCountry, 'discipline')')
+exact:[pdx_data_factory.cpp:1042]: Failed converting statement for 'CombatSide.GetCommander.GetCombatModifierNoFormat(CombatSide.GetCountry, 'discipline')'
+exact:[pdx_gui_localize.cpp:302]: gui/shared/unit_overview_tooltips.gui:535 - Failed parsing localized text: TT_AVERAGE_DISCIPLINE_COMBAT_TEXT
+exact:[pdx_gui_factory.cpp:289]: failed reading property, at gui/shared/unit_overview_tooltips.gui:535
+exact:[localization_util.cpp:103]: opinion_mfa_betrayal: "Opinion mfa betrayal"
+exact:[localization_util.cpp:103]: opinion_reformed_circle_coinage: "Opinion reformed circle coinage"
+exact:[localization_util.cpp:103]: opinion_reduction_of_circle_titles: "Opinion reduction of circle titles"
+exact:[localization_util.cpp:103]: request_divorce_price: "Request divorce price"
+exact:[pdx_gui_factory.cpp:624]: gui/build_location_lateralview.gui:1475 - 'location_building_levels_piechart' is not a valid widget/type/property
+exact:[localization_util.cpp:103]: SAR_piedmont_f: "SAR piedmont f"
+exact:[localization_util.cpp:103]: war_goal_take_capital_sound_toll: "War goal take capital sound toll"
+exact:[localization_util.cpp:103]: war_goal_take_capital_sound_toll_desc: "War goal take capital sound toll desc"
+exact:[localization_util.cpp:103]: generic_conquer_home_region: "Generic conquer home region"
+exact:[localization_util.cpp:103]: aragon_conquer_mediterranean_islands: "Aragon conquer mediterranean islands"
+exact:[localization_util.cpp:103]: france_english_holdings: "France english holdings"
+exact:[localization_util.cpp:103]: foreign_league_italy_conquest: "Foreign league italy conquest"
+exact:[localization_util.cpp:103]: france_no_hre: "France no hre"
+exact:[localization_util.cpp:103]: france_little_bit_of_hre: "France little bit of hre"
+exact:[localization_util.cpp:103]: france_conquer_northern_italy: "France conquer northern italy"
+exact:[localization_util.cpp:103]: france_revolutionary_conquer_europe: "France revolutionary conquer europe"
+exact:[localization_util.cpp:103]: naples_conquer_siciliy: "Naples conquer siciliy"
+exact:[localization_util.cpp:103]: siciliy_conquer_naples: "Siciliy conquer naples"
+exact:[localization_util.cpp:103]: castile_conquer_spain: "Castile conquer spain"
+exact:[localization_util.cpp:103]: castile_conquer_new_world: "Castile conquer new world"
+exact:[localization_util.cpp:103]: ottoman_expansion_anatolia: "Ottoman expansion anatolia"
+exact:[localization_util.cpp:103]: ottoman_expansion_balkan: "Ottoman expansion balkan"
+exact:[localization_util.cpp:103]: ottoman_expansion_caucasus: "Ottoman expansion caucasus"
+exact:[localization_util.cpp:103]: ottoman_expansion_crescent_egypt: "Ottoman expansion crescent egypt"
+exact:[localization_util.cpp:103]: ottoman_expansion_maghreb: "Ottoman expansion maghreb"
+exact:[localization_util.cpp:103]: ottoman_expansion_carpathia: "Ottoman expansion carpathia"
+exact:[localization_util.cpp:103]: ottoman_expansion_pontic: "Ottoman expansion pontic"
+exact:[localization_util.cpp:103]: ottoman_expansion_persia: "Ottoman expansion persia"
+exact:[localization_util.cpp:103]: ottoman_expansion_arabia: "Ottoman expansion arabia"
+exact:[localization_util.cpp:103]: ottoman_expansion_hre: "Ottoman expansion hre"
+exact:[localization_util.cpp:103]: dutch_conquest: "Dutch conquest"
+exact:[localization_util.cpp:103]: austria_minor_conquest: "Austria minor conquest"
+exact:[localization_util.cpp:103]: austria_swiss_intention: "Austria swiss intention"
+exact:[localization_util.cpp:103]: austria_bohemia_conquest: "Austria bohemia conquest"
+exact:[localization_util.cpp:103]: austria_northern_italy_conquest: "Austria northern italy conquest"
+exact:[localization_util.cpp:103]: austria_hungary_conquest: "Austria hungary conquest"
+exact:[localization_util.cpp:103]: austria_empire_conquest: "Austria empire conquest"
+exact:[localization_util.cpp:103]: brandenburg_conquest: "Brandenburg conquest"
+exact:[localization_util.cpp:103]: prussia_conquest: "Prussia conquest"
+exact:[localization_util.cpp:103]: german_unification_conquest: "German unification conquest"
+exact:[localization_util.cpp:103]: bohemia_core_region: "Bohemia core region"
+exact:[localization_util.cpp:103]: saxony_conquest: "Saxony conquest"
+exact:[localization_util.cpp:103]: russia_conquer_region: "Russia conquer region"
+exact:[localization_util.cpp:103]: russia_conquer_scandinavia: "Russia conquer scandinavia"
+exact:[localization_util.cpp:103]: russia_conquer_ruthenia_baltic: "Russia conquer ruthenia baltic"
+exact:[localization_util.cpp:103]: russia_conquer_siberia: "Russia conquer siberia"
+exact:[localization_util.cpp:103]: lithuania_conquer_livonia: "Lithuania conquer livonia"
+exact:[localization_util.cpp:103]: lithuania_conquer_ruthenia: "Lithuania conquer ruthenia"
+exact:[localization_util.cpp:103]: poland_conquer_prussia: "Poland conquer prussia"
+exact:[localization_util.cpp:103]: poland_conquer_ruthenia: "Poland conquer ruthenia"
+exact:[localization_util.cpp:103]: england_conquer_britain: "England conquer britain"
+exact:[localization_util.cpp:103]: england_conquer_ireland: "England conquer ireland"
+exact:[localization_util.cpp:103]: england_conquer_france: "England conquer france"
+exact:[localization_util.cpp:103]: scotland_conquer_scotland: "Scotland conquer scotland"
+exact:[localization_util.cpp:103]: byzantium_conquer_anatolia: "Byzantium conquer anatolia"
+exact:[localization_util.cpp:103]: byzantium_conquer_balkans: "Byzantium conquer balkans"
+exact:[localization_util.cpp:103]: byzantium_conquer_italy: "Byzantium conquer italy"
+exact:[localization_util.cpp:103]: sweden_swedish_empire_conquests: "Sweden swedish empire conquests"
+exact:[localization_util.cpp:103]: timurids_timur_conquests: "Timurids timur conquests"
+exact:[localization_util.cpp:103]: timurids_anatolian_conquest: "Timurids anatolian conquest"
+exact:[localization_util.cpp:103]: timurids_indian_conquest: "Timurids indian conquest"
+exact:[localization_util.cpp:103]: timurids_chinese_conquest: "Timurids chinese conquest"
+exact:[localization_util.cpp:103]: timurids_disallow_steppes: "Timurids disallow steppes"
+exact:[localization_util.cpp:103]: china_chinese_unification: "China chinese unification"
+exact:[localization_util.cpp:103]: china_expanded_ambition: "China expanded ambition"
+exact:[localization_util.cpp:103]: venice_conquest: "Venice conquest"
+exact:[localization_util.cpp:103]: england_explore_usa: "England explore usa"
+exact:[localization_util.cpp:103]: england_explore_india: "England explore india"
+exact:[localization_util.cpp:103]: france_explore_usa: "France explore usa"
+exact:[localization_util.cpp:103]: france_explore_great_plains: "France explore great plains"
+exact:[localization_util.cpp:103]: france_random_colonies: "France random colonies"
+exact:[localization_util.cpp:103]: portugal_explore_asia: "Portugal explore asia"
+exact:[localization_util.cpp:103]: portugal_explore_middle_east: "Portugal explore middle east"
+exact:[localization_util.cpp:103]: portugal_explore_brazil: "Portugal explore brazil"
+exact:[localization_util.cpp:103]: castile_explore_america: "Castile explore america"
+exact:[localization_util.cpp:103]: castile_explore_staging: "Castile explore staging"
+exact:[localization_util.cpp:103]: castile_explore_brazil: "Castile explore brazil"
+exact:[localization_util.cpp:103]: sweden_colonize_finland: "Sweden colonize finland"
+exact:[localization_util.cpp:103]: sweden_colonize_norrland: "Sweden colonize norrland"
+exact:[localization_util.cpp:103]: norway_colonize_nord_norge: "Norway colonize nord norge"
+exact:[localization_util.cpp:103]: russia_colonize_siberia: "Russia colonize siberia"
+exact:[localization_util.cpp:103]: russia_colonize_alaska: "Russia colonize alaska"
+exact:[localization_util.cpp:103]: russia_colonize_karelia_kola: "Russia colonize karelia kola"
+exact:[localization_util.cpp:103]: dutch_explore_cape_route: "Dutch explore cape route"
+exact:[localization_util.cpp:103]: dutch_explore_atlantic_route: "Dutch explore atlantic route"
+exact:[localization_util.cpp:103]: dutch_explore_gold_coast: "Dutch explore gold coast"
+exact:[localization_util.cpp:103]: avoid_siberia_colonization: "Avoid siberia colonization"
+exact:[localization_util.cpp:103]: avoid_south_east_asica_colonization: "Avoid south east asica colonization"
+exact:[localization_util.cpp:103]: avoid_american_colonization: "Avoid american colonization"
+exact:[localization_util.cpp:103]: avoid_african_colonization: "Avoid african colonization"
+exact:[localization_util.cpp:103]: avoid_oceania_colonization: "Avoid oceania colonization"
+exact:[pdx_gui_factory.cpp:624]: gui/location_production_lateralview.gui:20 - 'location_building_levels_piechart' is not a valid widget/type/property
+exact:[localization_util.cpp:103]: carta_de_logu_policy_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: coastal_boatyard: "Coastal boatyard"
+exact:[localization_util.cpp:103]: fiber_crops_silk_guild_maintenance: "Fiber crops silk guild maintenance"
+exact:[localization_util.cpp:103]: appeal_to_circle_diet: "Appeal to circle diet"
+exact:[localization_util.cpp:103]: appeal_to_circle_diet_desc: "Appeal to circle diet desc"
+exact:[localization_util.cpp:103]: dip_appeal_to_circle_diet_CATEGORY: "Dip appeal to circle diet CATEGORY"
+exact:[localization_util.cpp:103]: PROPOSE_appeal_to_circle_diet: "PROPOSE appeal to circle diet"
+exact:[localization_util.cpp:103]: INCOMING_OFFER_appeal_to_circle_diet: "INCOMING OFFER appeal to circle diet"
+exact:[localization_util.cpp:103]: INCOMING_OFFER_TITLE_appeal_to_circle_diet: "INCOMING OFFER TITLE appeal to circle diet"
+exact:[localization_util.cpp:103]: appeal_to_circle_diet_reject_effect_text: "Appeal to circle diet reject effect text"
+exact:[localization_util.cpp:103]: appeal_to_circle_diet_reject_effect_text_past: "Appeal to circle diet reject effect text past"
+exact:[localization_util.cpp:103]: appeal_to_circle_diet_act: "Appeal to circle diet act"
+exact:[localization_util.cpp:103]: appeal_to_circle_diet_effect_text: "Appeal to circle diet effect text"
+exact:[localization_util.cpp:103]: appeal_to_circle_diet_effect_text_past: "Appeal to circle diet effect text past"
+exact:[localization_util.cpp:103]: request_circle_infrastructure_expansion: "Request circle infrastructure expansion"
+exact:[localization_util.cpp:103]: request_circle_infrastructure_expansion_desc: "Request circle infrastructure expansion desc"
+exact:[localization_util.cpp:103]: dip_request_circle_infrastructure_expansion_CATEGORY: "Dip request circle infrastructure expansion CATEGORY"
+exact:[localization_util.cpp:103]: PROPOSE_request_circle_infrastructure_expansion: "PROPOSE request circle infrastructure expansion"
+exact:[localization_util.cpp:103]: INCOMING_OFFER_request_circle_infrastructure_expansion: "INCOMING OFFER request circle infrastructure expansion"
+exact:[localization_util.cpp:103]: INCOMING_OFFER_TITLE_request_circle_infrastructure_expansion: "INCOMING OFFER TITLE request circle infrastructure expansion"
+exact:[localization_util.cpp:103]: request_circle_infrastructure_expansion_reject_effect_text: "Request circle infrastructure expansion reject effect text"
+exact:[localization_util.cpp:103]: request_circle_infrastructure_expansion_reject_effect_text_past: "Request circle infrastructure expansion reject effect text past"
+exact:[localization_util.cpp:103]: request_circle_infrastructure_expansion_act: "Request circle infrastructure expansion act"
+exact:[localization_util.cpp:103]: request_circle_infrastructure_expansion_effect_text: "Request circle infrastructure expansion effect text"
+exact:[localization_util.cpp:103]: request_circle_infrastructure_expansion_effect_text_past: "Request circle infrastructure expansion effect text past"
+exact:[localization_util.cpp:103]: request_new_circle_titles: "Request new circle titles"
+exact:[localization_util.cpp:103]: request_new_circle_titles_desc: "Request new circle titles desc"
+exact:[localization_util.cpp:103]: dip_request_new_circle_titles_CATEGORY: "Dip request new circle titles CATEGORY"
+exact:[localization_util.cpp:103]: PROPOSE_request_new_circle_titles: "PROPOSE request new circle titles"
+exact:[localization_util.cpp:103]: INCOMING_OFFER_request_new_circle_titles: "INCOMING OFFER request new circle titles"
+exact:[localization_util.cpp:103]: INCOMING_OFFER_TITLE_request_new_circle_titles: "INCOMING OFFER TITLE request new circle titles"
+exact:[localization_util.cpp:103]: request_new_circle_titles_reject_effect_text: "Request new circle titles reject effect text"
+exact:[localization_util.cpp:103]: request_new_circle_titles_reject_effect_text_past: "Request new circle titles reject effect text past"
+exact:[localization_util.cpp:103]: request_new_circle_titles_act: "Request new circle titles act"
+exact:[localization_util.cpp:103]: request_new_circle_titles_effect_text: "Request new circle titles effect text"
+exact:[localization_util.cpp:103]: request_new_circle_titles_effect_text_past: "Request new circle titles effect text past"
+exact:[localization_util.cpp:103]: reform_coinage_in_circle: "Reform coinage in circle"
+exact:[localization_util.cpp:103]: reform_coinage_in_circle_desc: "Reform coinage in circle desc"
+exact:[localization_util.cpp:103]: reduction_of_circle_titles: "Reduction of circle titles"
+exact:[localization_util.cpp:103]: reduction_of_circle_titles_desc: "Reduction of circle titles desc"
+exact:[localization_util.cpp:103]: d008_flavor_byz.6.entry: "D008 flavor byz.6.entry"
+exact:[localization_util.cpp:103]: lucca_silk_production_guild: "Lucca silk production guild"
+exact:[localization_util.cpp:103]: lucca_silk_production_guild_desc: "TODO : Write a desc"
+exact:[script_localization.cpp:1590]: Missing trigger loc: 'dialect_equal'
+exact:[script_localization.cpp:1595]: Missing trigger loc: 'NOT_dialect_equal'
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: WE_GAIN_CREDITWORTHINESS_EFFECT
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: THIRD_GAIN_CREDITWORTHINESS_EFFECT
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: GAIN_CREDITWORTHINESS_EFFECT
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: WE_GAIN_CREDITWORTHINESS_EFFECT_PAST
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: THIRD_GAIN_CREDITWORTHINESS_EFFECT_PAST
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: GAIN_CREDITWORTHINESS_EFFECT_PAST
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: FIRST_TRANSFER_ESTATE_GOLD_EFFECT
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: THIRD_TRANSFER_ESTATE_GOLD_EFFECT
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: TRANSFER_ESTATE_GOLD_EFFECT
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: PAST_FIRST_TRANSFER_ESTATE_GOLD_EFFECT
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: PAST_THIRD_TRANSFER_ESTATE_GOLD_EFFECT
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: PAST_TRANSFER_ESTATE_GOLD_EFFECT
+exact:[script_localization.cpp:1590]: Missing trigger loc: 'ai_best_proximity_candidate_equal'
+exact:[script_localization.cpp:1595]: Missing trigger loc: 'NOT_ai_best_proximity_candidate_equal'
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: LEND_UNIT_TO_COUNTRY_EFFECT
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: THIRD_LEND_UNIT_TO_COUNTRY_EFFECT
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: PAST_LEND_UNIT_TO_COUNTRY_EFFECT
+exact:[persistence_tests.cpp:1069]: Effect localization string missing: PAST_THIRD_LEND_UNIT_TO_COUNTRY_EFFECT
+exact:[localization_util.cpp:103]: percy_and_mortimer_uprising: "Percy and mortimer uprising"
+exact:[localization_util.cpp:103]: percy_and_mortimer_uprising_country: "Percy and mortimer uprising country"
+exact:[localization_util.cpp:103]: percy_and_mortimer_uprising_country_adjective: "Percy and mortimer uprising country adjective"
+contains:common/peace_treaties/scaligeri_peace_treaties.txt
+contains:common/country_interactions/imperial_circles.txt
+contains:common/generic_actions/hre_circle_actions.txt
+contains:events/DHE/D008_flavor_BYZ.txt
+contains:events/DHE/flavor_ARA.txt
+contains:events/DHE/flavor_ver.txt
+contains:events/economy/market_decline.txt
+contains:common/laws/20_hre.txt
+contains:common/subject_types/appanage.txt
+contains:common/subject_types/vassal.txt
+contains:common/country_interactions/negotiate_succession_law.txt
+contains:common/generic_actions/general_religion.txt
+contains:common/generic_actions/nahuatl.txt
+contains:common/international_organizations/hre.txt
+contains:common/building_types/capital_buildings.txt
+contains:common/building_types/event_only_buildings.txt
+contains:common/building_types/rural_buildings.txt
+contains:events/DHE/flavor_DLH.txt
+contains:events/DHE/flavor_ENG.txt
+contains:events/DHE/flavor_FRA.txt
+contains:events/DHE/flavor_FRA_DAU.txt
+contains:events/DHE/flavor_FRA_SCO.txt
+contains:events/DHE/flavor_GEN.txt
+contains:events/DHE/flavor_HAB.txt
+contains:events/DHE/flavor_IRO.txt
+contains:events/DHE/flavor_JAP.txt
+contains:events/DHE/flavor_KBO.txt
+contains:events/DHE/flavor_LIT.txt
+contains:events/DHE/flavor_MAM.txt
+contains:events/DHE/flavor_MCH.txt
+contains:events/DHE/flavor_MEI.txt
+contains:events/DHE/flavor_MOR.txt
+contains:events/DHE/flavor_MOS.txt
+contains:events/DHE/flavor_NOV.txt
+contains:events/DHE/flavor_OMA.txt
+contains:events/DHE/flavor_PUE_tribes.txt
+contains:events/DHE/flavor_RUS.txt
+contains:events/DHE/flavor_SCO.txt
+contains:events/DHE/flavor_TUR.txt
+contains:events/DHE/flavor_VEN.txt
+contains:events/DHE/flavor_WLS.txt
+contains:events/DHE/flavor_ZAN.txt
+contains:events/DHE/flavor_ach.txt
+contains:events/DHE/flavor_ath.txt
+contains:events/DHE/flavor_ben.txt
+contains:events/DHE/flavor_brapru.txt
+contains:events/DHE/flavor_brapru_teu.txt
+contains:events/DHE/flavor_cas_rio_salado.txt
+contains:events/DHE/flavor_chi.txt
+contains:events/DHE/flavor_chi_dai.txt
+contains:events/DHE/flavor_dan.txt
+contains:events/DHE/flavor_flo.txt
+contains:events/DHE/flavor_fra_nrm.txt
+contains:events/DHE/flavor_geo.txt
+contains:events/DHE/flavor_hol.txt
+contains:events/DHE/flavor_ira.txt
+contains:events/DHE/flavor_khm.txt
+contains:events/DHE/flavor_kni.txt
+contains:events/DHE/flavor_maj.txt
+contains:events/DHE/flavor_nap.txt
+contains:events/DHE/flavor_ned.txt
+contains:events/DHE/flavor_ori.txt
+contains:events/DHE/flavor_pap.txt
+contains:events/DHE/flavor_pol.txt
+contains:events/DHE/flavor_por.txt
+contains:events/DHE/flavor_ser.txt
+contains:events/DHE/flavor_swi.txt
+contains:events/DHE/flavor_tim.txt
+contains:events/DHE/flavor_vij.txt
+contains:events/DHE/flavor_vol.txt
+exact:[localization_util.cpp:103]: STATIC_MODIFIER_NAME_bul_unhappy_marriage: "STATIC MODIFIER NAME bul unhappy marriage"
+exact:[localization_util.cpp:103]: STATIC_MODIFIER_NAME_distributed_imperial_circle_grant: "STATIC MODIFIER NAME distributed imperial circle grant"
+exact:[localization_util.cpp:103]: STATIC_MODIFIER_NAME_imperial_intervention: "STATIC MODIFIER NAME imperial intervention"
+exact:[localization_util.cpp:103]: STATIC_MODIFIER_NAME_granted_circle_infrastructure_expansion: "STATIC MODIFIER NAME granted circle infrastructure expansion"
+exact:[localization_util.cpp:103]: STATIC_MODIFIER_NAME_granted_new_circle_titles: "STATIC MODIFIER NAME granted new circle titles"
+exact:[localization_util.cpp:103]: STATIC_MODIFIER_NAME_reformed_circle_coinage_leader: "STATIC MODIFIER NAME reformed circle coinage leader"
+exact:[localization_util.cpp:103]: STATIC_MODIFIER_NAME_reformed_circle_coinage_member: "STATIC MODIFIER NAME reformed circle coinage member"
+exact:[localization_util.cpp:103]: STATIC_MODIFIER_NAME_reduction_of_circle_titles: "STATIC MODIFIER NAME reduction of circle titles"
+exact:[localization_util.cpp:103]: STATIC_MODIFIER_NAME_sovereign_realm_modifier: "STATIC MODIFIER NAME sovereign realm modifier"
+exact:[localization_util.cpp:103]: STATIC_MODIFIER_NAME_gag_winner_timer: "STATIC MODIFIER NAME gag winner timer"
+exact:[localization_util.cpp:103]: STATIC_MODIFIER_NAME_scorched_earth: "STATIC MODIFIER NAME scorched earth"
+
+# EU5 1.4 beta vanilla persistence/localization gaps.
+contains:[persistence_tests.cpp:1068]
+exact:[game_concepts.cpp:225]: Game concept 'unit_family': Missing localization key 'game_concept_unit_family'
+exact:[game_concepts.cpp:230]: Game concept 'unit_family': Missing localization key 'game_concept_unit_family_desc'
+exact:[game_concepts.cpp:230]: Game concept 'private_regiment': Missing localization key 'game_concept_private_regiment_desc'
+exact:[game_concepts.cpp:230]: Game concept 'industry_promotion': Missing localization key 'game_concept_industry_promotion_desc'
+exact:[game_concepts.cpp:225]: Game concept 'unit_families': Missing localization key 'game_concept_unit_families'
+exact:[game_concepts.cpp:230]: Game concept 'unit_families': Missing localization key 'game_concept_unit_family_desc'
+exact:[game_concepts.cpp:225]: Game concept 'private_regiments': Missing localization key 'game_concept_private_regiments'
+exact:[game_concepts.cpp:230]: Game concept 'private_regiments': Missing localization key 'game_concept_private_regiment_desc'
+exact:[game_concepts.cpp:225]: Game concept 'industry_promotions': Missing localization key 'game_concept_industry_promotions'
+exact:[game_concepts.cpp:230]: Game concept 'industry_promotions': Missing localization key 'game_concept_industry_promotion_desc'
+exact:[game_concepts.cpp:225]: Game concept 'promote_industry': Missing localization key 'game_concept_promote_industry'
+exact:[game_concepts.cpp:230]: Game concept 'promote_industry': Missing localization key 'game_concept_industry_promotion_desc'
+
+# Vanilla situation links/effects that were removed or are not registered in 1.4 beta.
+contains:[jomini_effect.cpp:557]: Unknown effect gc_change_colonial_dominance
+contains:[jomini_effect.cpp:557]: Unknown effect gc_change_european_dominance
+contains:Failed to find 'battle_for_the_strait' from database for link 'situation'
+contains:Failed to find 'golden_century' from database for link 'situation'
+
+# Vanilla situation textures absent from the 1.4 beta package.
+contains:gfx/interface/icons/situations/flashpoint.dds
+contains:gfx/interface/icons/situations/gc_colonial_dominance.dds
+contains:gfx/interface/icons/situations/gc_european_dominance.dds
+
+# Vanilla expedition/religious tooltip localization gaps.
+contains:common/achievements/
+contains:common/expedition_types/
+contains:events/expeditions/
+contains:common/generic_actions/religious_orders.txt
+contains:events/religion/religious_order_events.txt
+exact:[building_manager.cpp:133]: market_village in 林迪 (lindi) is above max level! Current level is 3 (Max is 2)
+
+# EU5 1.4 beta vanilla startup gaps observed in the current log.
+exact:[game_concepts.cpp:225]: Game concept 'private_regiment': Missing localization key 'game_concept_private_regiment'
+contains:[marketing_container.cpp:431]: Failed to parse a CCF message from marketing backend
+contains:gfx/portraits/portrait_modifiers/zz_beard_pool_prototype.txt
+contains:common/customizable_localization/subunit_structure.txt
+contains:common/customizable_localization/subunit_types.txt
+contains:[advance_definition.cpp:857]: Unknown levy-setup 'levy_sometent'
+contains:[jomini_effect.cpp:557]: Unknown effect andalusi_maghrebi_bureaucracy_set_up
+
+# Vanilla GUI localization and data-system gaps in 1.4 beta.
+contains:gui/attribute_columns/area.gui
+contains:gui/attribute_columns/industry_type.gui
+contains:gui/cooltip.gui
+contains:gui/economy_lateralview.gui
+contains:gui/laws_lateralview.gui
+contains:gui/panels/organization/independence_movement.gui
+contains:gui/panels/religion/religious_orders_list.gui
+contains:gui/panels/situation/western_schism.gui
+contains:gui/select_child_education.gui
+contains:gui/select_interaction_cards/industry.gui
+contains:gui/selected_market_view.gui
+contains:gui/shared/building_tooltips.gui
+contains:gui/shared/combat_tooltips.gui
+contains:gui/shared/country_tooltips.gui
+contains:gui/shared/economy_tooltips.gui
+contains:gui/shared/io_tooltips.gui
+contains:gui/shared/population_tooltip.gui
+contains:gui/shared/situation_tooltips.gui
+contains:gui/shared/topbar_tooltips.gui
+contains:gui/sub_unit_banner.gui
+contains:gui/town_rights.gui
+contains:gui/trade_order_lateral_view.gui
+contains:gui/trade_overview.gui
+contains:Unlocalized text 'LOC_VIEW_OPEN_DEMOGRAPHY_SUBTAB'
+contains:Unlocalized text 'BUILDING_IN_LOCATION_ACTION_ALT'
+
+# Vanilla script/database references removed or renamed in 1.4 beta.
+contains:common/disasters/war_of_the_aragonese_union.txt
+contains:common/country_interactions/hre.txt
+contains:common/international_organizations/crusade.txt
+contains:common/international_organizations/jihad.txt
+contains:common/generic_actions/estate_emergency_actions.txt
+contains:common/generic_actions/government_conversions.txt
+contains:common/generic_actions/hundred_years_war.txt
+contains:common/generic_actions/markets.txt
+contains:common/situations/colonial_revolution.txt
+contains:common/situations/nanbokuchou.txt
+contains:common/building_types/manpower_buildings.txt
+contains:common/scripted_triggers/country_triggers.txt
+contains:common/scripted_triggers/situation_triggers.txt
+contains:common/on_action/_hardcoded.txt
+contains:common/decisions/flavor_decisions_jap.txt
+contains:common/resolutions/crusade_privileges_bull.txt
+contains:common/scripted_effects/international_organization_effects.txt
+contains:events/hre.txt
+contains:events/DHE/flavor_CAS.txt
+contains:common/cabinet_actions/frustrate_annexation.txt
+contains:common/cabinet_actions/iberia.txt
+contains:common/government_reforms/country_specific.txt
+contains:common/laws/40_personal_unions.txt
+contains:common/building_types/culture_buildings.txt
+contains:common/building_types/unique_buildings.txt
+contains:events/DHE/flavor_gra.txt
+contains:events/government/succession.txt
+contains:common/on_action/character_death_pulses.txt
+contains:common/scripted_triggers/unit_triggers.txt
+contains:[database_object_reflection.h:694]: Optimization warning
+
+# Vanilla unused flags/variables reported by the 1.4 beta static scan.
+contains:Flag 'tanto_monta'
+contains:Flag 'dynastic_primacy'
+contains:Variable 'uncovered_riches_variable'
+contains:Variable 'unlock_achievement_the_road_to_el_dorado'
+contains:Variable 'unlock_achievement_crossing_the_pillars'
+contains:Variable 'granadan_sovereignty'
+contains:Variable 'last_exotic_good'
+contains:Variable 'cas_adelantado_mayor_character'
+contains:Variable 'decision_taken_to_establish_the_council_of_castile'
+contains:Variable 'd009_morisco_conversion_occurred'
+contains:Variable 'has_bula_de_cruzada'
+contains:Variable 'iu_catholic_monarchs_choice'
+contains:Variable 'por_assumed_grandmastership_of_military_orders'
+contains:Variable 'por_estado_da_india'
+contains:Variable 'chance_avoid_calamity_variable'
+contains:Variable 'expedition_receives_artifacts_as_gifts_variable'
+contains:Variable 'battle_for_the_strait_winner_country'
+contains:Variable 'healer_location'
+contains:Variable 'last_artifact_location'
+contains:Variable 'expedition_receives_exotic_goods_variable'
+
+# Vanilla 1.4 beta generic-action/modifier localization placeholders confirmed in the captured vanilla log.
+# Keep these exact-key rules narrow so future mod keys remain visible.
+exact:[localization_util.cpp:103]: PERFORM_adu_build_qadi_office_ACTION_HEADER: "PERFORM adu build qadi office ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_adu_build_qadi_office_ACTION_LOG: "PERFORM adu build qadi office ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_adu_build_qadi_office_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_build_qadi_office_ACTION_MAP: "PERFORM adu build qadi office ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_adu_build_qadi_office_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_build_qadi_office_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_build_qadi_office_ACTION_TITLE: "PERFORM adu build qadi office ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_adu_charter_saharan_trade_house_ACTION_HEADER: "PERFORM adu charter saharan trade house ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_adu_charter_saharan_trade_house_ACTION_LOG: "PERFORM adu charter saharan trade house ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_adu_charter_saharan_trade_house_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_charter_saharan_trade_house_ACTION_MAP: "PERFORM adu charter saharan trade house ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_adu_charter_saharan_trade_house_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_charter_saharan_trade_house_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_charter_saharan_trade_house_ACTION_TITLE: "PERFORM adu charter saharan trade house ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_adu_dispatch_gold_caravan_ACTION_HEADER: "PERFORM adu dispatch gold caravan ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_adu_dispatch_gold_caravan_ACTION_LOG: "PERFORM adu dispatch gold caravan ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_adu_dispatch_gold_caravan_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_dispatch_gold_caravan_ACTION_MAP: "PERFORM adu dispatch gold caravan ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_adu_dispatch_gold_caravan_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_dispatch_gold_caravan_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_dispatch_gold_caravan_ACTION_TITLE: "PERFORM adu dispatch gold caravan ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_adu_integrate_natives_ACTION_HEADER: "PERFORM adu integrate natives ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_adu_integrate_natives_ACTION_LOG: "PERFORM adu integrate natives ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_adu_integrate_natives_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_integrate_natives_ACTION_MAP: "PERFORM adu integrate natives ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_adu_integrate_natives_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_integrate_natives_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_integrate_natives_ACTION_TITLE: "PERFORM adu integrate natives ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_adu_muster_the_ghuzat_ACTION_HEADER: "PERFORM adu muster the ghuzat ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_adu_muster_the_ghuzat_ACTION_LOG: "PERFORM adu muster the ghuzat ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_adu_muster_the_ghuzat_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_muster_the_ghuzat_ACTION_MAP: "PERFORM adu muster the ghuzat ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_adu_muster_the_ghuzat_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_muster_the_ghuzat_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_muster_the_ghuzat_ACTION_TITLE: "PERFORM adu muster the ghuzat ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_a_fatwa_ACTION_HEADER: "PERFORM adu proclaim a fatwa ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_a_fatwa_ACTION_LOG: "PERFORM adu proclaim a fatwa ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_a_fatwa_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_a_fatwa_ACTION_MAP: "PERFORM adu proclaim a fatwa ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_a_fatwa_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_a_fatwa_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_a_fatwa_ACTION_TITLE: "PERFORM adu proclaim a fatwa ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_crown_al_andalus_ACTION_HEADER: "PERFORM adu proclaim crown al andalus ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_crown_al_andalus_ACTION_LOG: "PERFORM adu proclaim crown al andalus ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_crown_al_andalus_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_crown_al_andalus_ACTION_MAP: "PERFORM adu proclaim crown al andalus ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_crown_al_andalus_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_crown_al_andalus_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_adu_proclaim_crown_al_andalus_ACTION_TITLE: "PERFORM adu proclaim crown al andalus ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_cas_demand_muslim_converts_ACTION_HEADER: "PERFORM cas demand muslim converts ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_cas_demand_muslim_converts_ACTION_LOG: "PERFORM cas demand muslim converts ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_cas_demand_muslim_converts_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_demand_muslim_converts_ACTION_MAP: "PERFORM cas demand muslim converts ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_cas_demand_muslim_converts_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_demand_muslim_converts_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_demand_muslim_converts_ACTION_TITLE: "PERFORM cas demand muslim converts ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_cas_dismantle_fortifications_ACTION_HEADER: "PERFORM cas dismantle fortifications ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_cas_dismantle_fortifications_ACTION_LOG: "PERFORM cas dismantle fortifications ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_cas_dismantle_fortifications_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_dismantle_fortifications_ACTION_MAP: "PERFORM cas dismantle fortifications ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_cas_dismantle_fortifications_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_dismantle_fortifications_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_dismantle_fortifications_ACTION_TITLE: "PERFORM cas dismantle fortifications ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_cas_force_tribute_ACTION_HEADER: "PERFORM cas force tribute ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_cas_force_tribute_ACTION_LOG: "PERFORM cas force tribute ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_cas_force_tribute_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_force_tribute_ACTION_MAP: "PERFORM cas force tribute ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_cas_force_tribute_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_force_tribute_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_force_tribute_ACTION_TITLE: "PERFORM cas force tribute ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_cas_reduce_granadan_sovereignty_ACTION_HEADER: "PERFORM cas reduce granadan sovereignty ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_cas_reduce_granadan_sovereignty_ACTION_LOG: "PERFORM cas reduce granadan sovereignty ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_cas_reduce_granadan_sovereignty_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_reduce_granadan_sovereignty_ACTION_MAP: "PERFORM cas reduce granadan sovereignty ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_cas_reduce_granadan_sovereignty_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_reduce_granadan_sovereignty_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cas_reduce_granadan_sovereignty_ACTION_TITLE: "PERFORM cas reduce granadan sovereignty ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_claim_andalusi_inheritance_ACTION_HEADER: "PERFORM claim andalusi inheritance ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_claim_andalusi_inheritance_ACTION_LOG: "PERFORM claim andalusi inheritance ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_claim_andalusi_inheritance_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_claim_andalusi_inheritance_ACTION_MAP: "PERFORM claim andalusi inheritance ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_claim_andalusi_inheritance_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_claim_andalusi_inheritance_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_claim_andalusi_inheritance_ACTION_TITLE: "PERFORM claim andalusi inheritance ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_cross_the_strait_ACTION_HEADER: "PERFORM cross the strait ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_cross_the_strait_ACTION_LOG: "PERFORM cross the strait ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_cross_the_strait_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cross_the_strait_ACTION_MAP: "PERFORM cross the strait ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_cross_the_strait_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cross_the_strait_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_cross_the_strait_ACTION_TITLE: "PERFORM cross the strait ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_demand_parias_ACTION_HEADER: "PERFORM demand parias ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_demand_parias_ACTION_LOG: "PERFORM demand parias ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_demand_parias_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_demand_parias_ACTION_MAP: "PERFORM demand parias ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_demand_parias_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_demand_parias_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_demand_parias_ACTION_TITLE: "PERFORM demand parias ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_gra_construct_alhambra_ACTION_HEADER: "PERFORM gra construct alhambra ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_gra_construct_alhambra_ACTION_LOG: "PERFORM gra construct alhambra ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_gra_construct_alhambra_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_construct_alhambra_ACTION_MAP: "PERFORM gra construct alhambra ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_gra_construct_alhambra_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_construct_alhambra_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_construct_alhambra_ACTION_TITLE: "PERFORM gra construct alhambra ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_gra_enforce_sovereignty_ACTION_HEADER: "PERFORM gra enforce sovereignty ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_gra_enforce_sovereignty_ACTION_LOG: "PERFORM gra enforce sovereignty ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_gra_enforce_sovereignty_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_enforce_sovereignty_ACTION_MAP: "PERFORM gra enforce sovereignty ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_gra_enforce_sovereignty_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_enforce_sovereignty_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_enforce_sovereignty_ACTION_TITLE: "PERFORM gra enforce sovereignty ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_castilian_influence_ACTION_HEADER: "PERFORM gra reduce castilian influence ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_castilian_influence_ACTION_LOG: "PERFORM gra reduce castilian influence ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_castilian_influence_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_castilian_influence_ACTION_MAP: "PERFORM gra reduce castilian influence ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_castilian_influence_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_castilian_influence_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_castilian_influence_ACTION_TITLE: "PERFORM gra reduce castilian influence ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_moroccan_influence_ACTION_HEADER: "PERFORM gra reduce moroccan influence ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_moroccan_influence_ACTION_LOG: "PERFORM gra reduce moroccan influence ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_moroccan_influence_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_moroccan_influence_ACTION_MAP: "PERFORM gra reduce moroccan influence ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_moroccan_influence_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_moroccan_influence_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_gra_reduce_moroccan_influence_ACTION_TITLE: "PERFORM gra reduce moroccan influence ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_hire_granadan_jinetes_ACTION_HEADER: "PERFORM hire granadan jinetes ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_hire_granadan_jinetes_ACTION_LOG: "PERFORM hire granadan jinetes ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_hire_granadan_jinetes_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_hire_granadan_jinetes_ACTION_MAP: "PERFORM hire granadan jinetes ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_hire_granadan_jinetes_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_hire_granadan_jinetes_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_hire_granadan_jinetes_ACTION_TITLE: "PERFORM hire granadan jinetes ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_invoke_ummayad_legacy_ACTION_HEADER: "PERFORM invoke ummayad legacy ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_invoke_ummayad_legacy_ACTION_LOG: "PERFORM invoke ummayad legacy ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_invoke_ummayad_legacy_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_invoke_ummayad_legacy_ACTION_MAP: "PERFORM invoke ummayad legacy ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_invoke_ummayad_legacy_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_invoke_ummayad_legacy_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_invoke_ummayad_legacy_ACTION_TITLE: "PERFORM invoke ummayad legacy ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_launch_a_cabalgada_ACTION_HEADER: "PERFORM launch a cabalgada ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_launch_a_cabalgada_ACTION_LOG: "PERFORM launch a cabalgada ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_launch_a_cabalgada_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_launch_a_cabalgada_ACTION_MAP: "PERFORM launch a cabalgada ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_launch_a_cabalgada_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_launch_a_cabalgada_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_launch_a_cabalgada_ACTION_TITLE: "PERFORM launch a cabalgada ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_mor_attract_andalusi_craftsmen_ACTION_HEADER: "PERFORM mor attract andalusi craftsmen ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_mor_attract_andalusi_craftsmen_ACTION_LOG: "PERFORM mor attract andalusi craftsmen ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_mor_attract_andalusi_craftsmen_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_attract_andalusi_craftsmen_ACTION_MAP: "PERFORM mor attract andalusi craftsmen ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_mor_attract_andalusi_craftsmen_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_attract_andalusi_craftsmen_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_attract_andalusi_craftsmen_ACTION_TITLE: "PERFORM mor attract andalusi craftsmen ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_mor_force_tribute_ACTION_HEADER: "PERFORM mor force tribute ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_mor_force_tribute_ACTION_LOG: "PERFORM mor force tribute ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_mor_force_tribute_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_force_tribute_ACTION_MAP: "PERFORM mor force tribute ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_mor_force_tribute_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_force_tribute_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_force_tribute_ACTION_TITLE: "PERFORM mor force tribute ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_mor_garrison_granadan_strongholds_ACTION_HEADER: "PERFORM mor garrison granadan strongholds ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_mor_garrison_granadan_strongholds_ACTION_LOG: "PERFORM mor garrison granadan strongholds ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_mor_garrison_granadan_strongholds_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_garrison_granadan_strongholds_ACTION_MAP: "PERFORM mor garrison granadan strongholds ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_mor_garrison_granadan_strongholds_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_garrison_granadan_strongholds_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_garrison_granadan_strongholds_ACTION_TITLE: "PERFORM mor garrison granadan strongholds ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_advisor_ACTION_HEADER: "PERFORM mor invite granadan advisor ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_advisor_ACTION_LOG: "PERFORM mor invite granadan advisor ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_advisor_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_advisor_ACTION_MAP: "PERFORM mor invite granadan advisor ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_advisor_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_advisor_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_advisor_ACTION_TITLE: "PERFORM mor invite granadan advisor ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_scholars_ACTION_HEADER: "PERFORM mor invite granadan scholars ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_scholars_ACTION_LOG: "PERFORM mor invite granadan scholars ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_scholars_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_scholars_ACTION_MAP: "PERFORM mor invite granadan scholars ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_scholars_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_scholars_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_mor_invite_granadan_scholars_ACTION_TITLE: "PERFORM mor invite granadan scholars ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_petition_for_the_bula_de_cruzada_ACTION_HEADER: "PERFORM petition for the bula de cruzada ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_petition_for_the_bula_de_cruzada_ACTION_LOG: "PERFORM petition for the bula de cruzada ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_petition_for_the_bula_de_cruzada_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_petition_for_the_bula_de_cruzada_ACTION_MAP: "PERFORM petition for the bula de cruzada ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_petition_for_the_bula_de_cruzada_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_petition_for_the_bula_de_cruzada_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_petition_for_the_bula_de_cruzada_ACTION_TITLE: "PERFORM petition for the bula de cruzada ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_plan_partition_campaign_ACTION_HEADER: "PERFORM plan partition campaign ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_plan_partition_campaign_ACTION_LOG: "PERFORM plan partition campaign ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_plan_partition_campaign_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_plan_partition_campaign_ACTION_MAP: "PERFORM plan partition campaign ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_plan_partition_campaign_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_plan_partition_campaign_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_plan_partition_campaign_ACTION_TITLE: "PERFORM plan partition campaign ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_proclaim_the_ghazw_ACTION_HEADER: "PERFORM proclaim the ghazw ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_proclaim_the_ghazw_ACTION_LOG: "PERFORM proclaim the ghazw ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_proclaim_the_ghazw_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_proclaim_the_ghazw_ACTION_MAP: "PERFORM proclaim the ghazw ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_proclaim_the_ghazw_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_proclaim_the_ghazw_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_proclaim_the_ghazw_ACTION_TITLE: "PERFORM proclaim the ghazw ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_raid_the_shores_ACTION_HEADER: "PERFORM raid the shores ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_raid_the_shores_ACTION_LOG: "PERFORM raid the shores ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_raid_the_shores_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_raid_the_shores_ACTION_MAP: "PERFORM raid the shores ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_raid_the_shores_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_raid_the_shores_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_raid_the_shores_ACTION_TITLE: "PERFORM raid the shores ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_spa_demand_tribute_fleets_ACTION_HEADER: "PERFORM spa demand tribute fleets ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_spa_demand_tribute_fleets_ACTION_LOG: "PERFORM spa demand tribute fleets ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_spa_demand_tribute_fleets_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_demand_tribute_fleets_ACTION_MAP: "PERFORM spa demand tribute fleets ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_spa_demand_tribute_fleets_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_demand_tribute_fleets_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_demand_tribute_fleets_ACTION_TITLE: "PERFORM spa demand tribute fleets ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_spa_edict_expulsion_ACTION_HEADER: "PERFORM spa edict expulsion ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_spa_edict_expulsion_ACTION_LOG: "PERFORM spa edict expulsion ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_spa_edict_expulsion_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_edict_expulsion_ACTION_MAP: "PERFORM spa edict expulsion ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_spa_edict_expulsion_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_edict_expulsion_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_edict_expulsion_ACTION_TITLE: "PERFORM spa edict expulsion ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_spa_enforce_conformity_ACTION_HEADER: "PERFORM spa enforce conformity ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_spa_enforce_conformity_ACTION_LOG: "PERFORM spa enforce conformity ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_spa_enforce_conformity_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_enforce_conformity_ACTION_MAP: "PERFORM spa enforce conformity ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_spa_enforce_conformity_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_enforce_conformity_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_enforce_conformity_ACTION_TITLE: "PERFORM spa enforce conformity ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_spa_increase_capital_market_demands_ACTION_HEADER: "PERFORM spa increase capital market demands ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_spa_increase_capital_market_demands_ACTION_LOG: "PERFORM spa increase capital market demands ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_spa_increase_capital_market_demands_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_increase_capital_market_demands_ACTION_MAP: "PERFORM spa increase capital market demands ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_spa_increase_capital_market_demands_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_increase_capital_market_demands_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_increase_capital_market_demands_ACTION_TITLE: "PERFORM spa increase capital market demands ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_spa_issue_royal_decree_ACTION_HEADER: "PERFORM spa issue royal decree ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_spa_issue_royal_decree_ACTION_LOG: "PERFORM spa issue royal decree ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_spa_issue_royal_decree_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_issue_royal_decree_ACTION_MAP: "PERFORM spa issue royal decree ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_spa_issue_royal_decree_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_issue_royal_decree_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_issue_royal_decree_ACTION_TITLE: "PERFORM spa issue royal decree ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_spa_patronize_golden_century_ACTION_HEADER: "PERFORM spa patronize golden century ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_spa_patronize_golden_century_ACTION_LOG: "PERFORM spa patronize golden century ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_spa_patronize_golden_century_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_patronize_golden_century_ACTION_MAP: "PERFORM spa patronize golden century ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_spa_patronize_golden_century_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_patronize_golden_century_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_patronize_golden_century_ACTION_TITLE: "PERFORM spa patronize golden century ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_spa_seize_colony_ACTION_HEADER: "PERFORM spa seize colony ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_spa_seize_colony_ACTION_LOG: "PERFORM spa seize colony ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_spa_seize_colony_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_seize_colony_ACTION_MAP: "PERFORM spa seize colony ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_spa_seize_colony_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_seize_colony_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_spa_seize_colony_ACTION_TITLE: "PERFORM spa seize colony ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_summon_iberian_military_orders_crusade_ACTION_HEADER: "PERFORM summon iberian military orders crusade ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_summon_iberian_military_orders_crusade_ACTION_LOG: "PERFORM summon iberian military orders crusade ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_summon_iberian_military_orders_crusade_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_summon_iberian_military_orders_crusade_ACTION_MAP: "PERFORM summon iberian military orders crusade ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_summon_iberian_military_orders_crusade_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_summon_iberian_military_orders_crusade_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_summon_iberian_military_orders_crusade_ACTION_TITLE: "PERFORM summon iberian military orders crusade ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_summon_volunteers_of_the_faith_ACTION_HEADER: "PERFORM summon volunteers of the faith ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_summon_volunteers_of_the_faith_ACTION_LOG: "PERFORM summon volunteers of the faith ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_summon_volunteers_of_the_faith_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_summon_volunteers_of_the_faith_ACTION_MAP: "PERFORM summon volunteers of the faith ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_summon_volunteers_of_the_faith_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_summon_volunteers_of_the_faith_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_summon_volunteers_of_the_faith_ACTION_TITLE: "PERFORM summon volunteers of the faith ACTION TITLE"
+exact:[localization_util.cpp:103]: PERFORM_vassalize_granada_ACTION_HEADER: "PERFORM vassalize granada ACTION HEADER"
+exact:[localization_util.cpp:103]: PERFORM_vassalize_granada_ACTION_LOG: "PERFORM vassalize granada ACTION LOG"
+exact:[localization_util.cpp:103]: PERFORM_vassalize_granada_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_vassalize_granada_ACTION_MAP: "PERFORM vassalize granada ACTION MAP"
+exact:[localization_util.cpp:103]: PERFORM_vassalize_granada_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_vassalize_granada_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: PERFORM_vassalize_granada_ACTION_TITLE: "PERFORM vassalize granada ACTION TITLE"
+
+# Vanilla 1.4 beta map-marker/import-export GUI references.
+contains:gui/map_markers.gui
+contains:ImportExportMarker
+contains:Unlocalized text 'POSSIBLE_TRADE_POTENTIAL_PROFIT'
+
+# Towards Victory diagnostic noise already covered by the project's CMF
+# suppression registry. The variable is read from a global variable map by
+# generated triggers and GUI, so the engine's unused-variable warning is a
+# false positive rather than a functional error.
+contains:Variable 'tv_wonder_suitability_weight' is set but is never used.
+
+# Exact vanilla action localization entries captured from the current 1.4 beta log.
+exact:[localization_util.cpp:103]: ACTION_invite_foreign_cleric_PERFORMED_ON_US_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_invite_foreign_cleric_PERFORMED_ON_US_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_invite_foreign_cleric_PERFORMED_ON_US_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_invite_foreign_cleric_PERFORMED_ON_US_HEADER: "ACTION invite foreign cleric PERFORMED ON US HEADER"
+exact:[localization_util.cpp:103]: ACTION_invite_foreign_cleric_PERFORMED_ON_US_TITLE: "ACTION invite foreign cleric PERFORMED ON US TITLE"
+exact:[localization_util.cpp:103]: ACTION_invite_foreign_cleric_PERFORMED_ON_US_LOG: "ACTION invite foreign cleric PERFORMED ON US LOG"
+exact:[localization_util.cpp:103]: ACTION_invite_foreign_cleric_PERFORMED_ON_US_MAP: "ACTION invite foreign cleric PERFORMED ON US MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_war_entry_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_war_entry_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_war_entry_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_war_entry_ACTION_HEADER: "WE PERFORM cas demand war entry ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_war_entry_ACTION_TITLE: "WE PERFORM cas demand war entry ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_war_entry_ACTION_LOG: "WE PERFORM cas demand war entry ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_war_entry_ACTION_MAP: "WE PERFORM cas demand war entry ACTION MAP"
+exact:[localization_util.cpp:103]: ACTION_cas_demand_war_entry_PERFORMED_ON_US_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_cas_demand_war_entry_PERFORMED_ON_US_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_cas_demand_war_entry_PERFORMED_ON_US_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_cas_demand_war_entry_PERFORMED_ON_US_HEADER: "ACTION cas demand war entry PERFORMED ON US HEADER"
+exact:[localization_util.cpp:103]: ACTION_cas_demand_war_entry_PERFORMED_ON_US_TITLE: "ACTION cas demand war entry PERFORMED ON US TITLE"
+exact:[localization_util.cpp:103]: ACTION_cas_demand_war_entry_PERFORMED_ON_US_LOG: "ACTION cas demand war entry PERFORMED ON US LOG"
+exact:[localization_util.cpp:103]: ACTION_cas_demand_war_entry_PERFORMED_ON_US_MAP: "ACTION cas demand war entry PERFORMED ON US MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_assert_patronato_real_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_assert_patronato_real_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_assert_patronato_real_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_assert_patronato_real_ACTION_HEADER: "WE PERFORM assert patronato real ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_assert_patronato_real_ACTION_TITLE: "WE PERFORM assert patronato real ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_assert_patronato_real_ACTION_LOG: "WE PERFORM assert patronato real ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_assert_patronato_real_ACTION_MAP: "WE PERFORM assert patronato real ACTION MAP"
+exact:[localization_util.cpp:103]: ACTION_assert_patronato_real_PERFORMED_ON_US_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_assert_patronato_real_PERFORMED_ON_US_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_assert_patronato_real_PERFORMED_ON_US_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_assert_patronato_real_PERFORMED_ON_US_HEADER: "ACTION assert patronato real PERFORMED ON US HEADER"
+exact:[localization_util.cpp:103]: ACTION_assert_patronato_real_PERFORMED_ON_US_TITLE: "ACTION assert patronato real PERFORMED ON US TITLE"
+exact:[localization_util.cpp:103]: ACTION_assert_patronato_real_PERFORMED_ON_US_LOG: "ACTION assert patronato real PERFORMED ON US LOG"
+exact:[localization_util.cpp:103]: ACTION_assert_patronato_real_PERFORMED_ON_US_MAP: "ACTION assert patronato real PERFORMED ON US MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_encomienda_visitation_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_encomienda_visitation_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_encomienda_visitation_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_encomienda_visitation_ACTION_HEADER: "WE PERFORM cas encomienda visitation ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_encomienda_visitation_ACTION_TITLE: "WE PERFORM cas encomienda visitation ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_encomienda_visitation_ACTION_LOG: "WE PERFORM cas encomienda visitation ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_encomienda_visitation_ACTION_MAP: "WE PERFORM cas encomienda visitation ACTION MAP"
+exact:[localization_util.cpp:103]: ACTION_cas_encomienda_visitation_PERFORMED_ON_US_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_cas_encomienda_visitation_PERFORMED_ON_US_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_cas_encomienda_visitation_PERFORMED_ON_US_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: ACTION_cas_encomienda_visitation_PERFORMED_ON_US_HEADER: "ACTION cas encomienda visitation PERFORMED ON US HEADER"
+exact:[localization_util.cpp:103]: ACTION_cas_encomienda_visitation_PERFORMED_ON_US_TITLE: "ACTION cas encomienda visitation PERFORMED ON US TITLE"
+exact:[localization_util.cpp:103]: ACTION_cas_encomienda_visitation_PERFORMED_ON_US_LOG: "ACTION cas encomienda visitation PERFORMED ON US LOG"
+exact:[localization_util.cpp:103]: ACTION_cas_encomienda_visitation_PERFORMED_ON_US_MAP: "ACTION cas encomienda visitation PERFORMED ON US MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_muslim_converts_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_muslim_converts_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_muslim_converts_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_muslim_converts_ACTION_HEADER: "WE PERFORM cas demand muslim converts ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_muslim_converts_ACTION_TITLE: "WE PERFORM cas demand muslim converts ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_muslim_converts_ACTION_LOG: "WE PERFORM cas demand muslim converts ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_demand_muslim_converts_ACTION_MAP: "WE PERFORM cas demand muslim converts ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_demand_muslim_converts_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_demand_muslim_converts_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_demand_muslim_converts_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_demand_muslim_converts_ACTION_HEADER: "OTHER PERFORMS cas demand muslim converts ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_demand_muslim_converts_ACTION_TITLE: "OTHER PERFORMS cas demand muslim converts ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_demand_muslim_converts_ACTION_LOG: "OTHER PERFORMS cas demand muslim converts ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_demand_muslim_converts_ACTION_MAP: "OTHER PERFORMS cas demand muslim converts ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_dismantle_fortifications_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_dismantle_fortifications_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_dismantle_fortifications_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_dismantle_fortifications_ACTION_HEADER: "WE PERFORM cas dismantle fortifications ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_dismantle_fortifications_ACTION_TITLE: "WE PERFORM cas dismantle fortifications ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_dismantle_fortifications_ACTION_LOG: "WE PERFORM cas dismantle fortifications ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_dismantle_fortifications_ACTION_MAP: "WE PERFORM cas dismantle fortifications ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_dismantle_fortifications_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_dismantle_fortifications_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_dismantle_fortifications_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_dismantle_fortifications_ACTION_HEADER: "OTHER PERFORMS cas dismantle fortifications ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_dismantle_fortifications_ACTION_TITLE: "OTHER PERFORMS cas dismantle fortifications ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_dismantle_fortifications_ACTION_LOG: "OTHER PERFORMS cas dismantle fortifications ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_dismantle_fortifications_ACTION_MAP: "OTHER PERFORMS cas dismantle fortifications ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_reduce_granadan_sovereignty_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_reduce_granadan_sovereignty_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_reduce_granadan_sovereignty_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_reduce_granadan_sovereignty_ACTION_HEADER: "WE PERFORM cas reduce granadan sovereignty ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_reduce_granadan_sovereignty_ACTION_TITLE: "WE PERFORM cas reduce granadan sovereignty ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_reduce_granadan_sovereignty_ACTION_LOG: "WE PERFORM cas reduce granadan sovereignty ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_reduce_granadan_sovereignty_ACTION_MAP: "WE PERFORM cas reduce granadan sovereignty ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_reduce_granadan_sovereignty_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_reduce_granadan_sovereignty_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_reduce_granadan_sovereignty_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_reduce_granadan_sovereignty_ACTION_HEADER: "OTHER PERFORMS cas reduce granadan sovereignty ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_reduce_granadan_sovereignty_ACTION_TITLE: "OTHER PERFORMS cas reduce granadan sovereignty ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_reduce_granadan_sovereignty_ACTION_LOG: "OTHER PERFORMS cas reduce granadan sovereignty ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_reduce_granadan_sovereignty_ACTION_MAP: "OTHER PERFORMS cas reduce granadan sovereignty ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_force_tribute_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_force_tribute_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_force_tribute_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_force_tribute_ACTION_HEADER: "WE PERFORM mor force tribute ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_force_tribute_ACTION_TITLE: "WE PERFORM mor force tribute ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_force_tribute_ACTION_LOG: "WE PERFORM mor force tribute ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_force_tribute_ACTION_MAP: "WE PERFORM mor force tribute ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_force_tribute_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_force_tribute_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_force_tribute_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_force_tribute_ACTION_HEADER: "OTHER PERFORMS mor force tribute ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_force_tribute_ACTION_TITLE: "OTHER PERFORMS mor force tribute ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_force_tribute_ACTION_LOG: "OTHER PERFORMS mor force tribute ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_force_tribute_ACTION_MAP: "OTHER PERFORMS mor force tribute ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_force_tribute_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_force_tribute_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_force_tribute_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_force_tribute_ACTION_HEADER: "WE PERFORM cas force tribute ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_force_tribute_ACTION_TITLE: "WE PERFORM cas force tribute ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_force_tribute_ACTION_LOG: "WE PERFORM cas force tribute ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_cas_force_tribute_ACTION_MAP: "WE PERFORM cas force tribute ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_force_tribute_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_force_tribute_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_force_tribute_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_force_tribute_ACTION_HEADER: "OTHER PERFORMS cas force tribute ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_force_tribute_ACTION_TITLE: "OTHER PERFORMS cas force tribute ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_force_tribute_ACTION_LOG: "OTHER PERFORMS cas force tribute ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_cas_force_tribute_ACTION_MAP: "OTHER PERFORMS cas force tribute ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_plan_partition_campaign_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_plan_partition_campaign_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_plan_partition_campaign_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_plan_partition_campaign_ACTION_HEADER: "WE PERFORM plan partition campaign ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_plan_partition_campaign_ACTION_TITLE: "WE PERFORM plan partition campaign ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_plan_partition_campaign_ACTION_LOG: "WE PERFORM plan partition campaign ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_plan_partition_campaign_ACTION_MAP: "WE PERFORM plan partition campaign ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_plan_partition_campaign_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_plan_partition_campaign_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_plan_partition_campaign_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_plan_partition_campaign_ACTION_HEADER: "OTHER PERFORMS plan partition campaign ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_plan_partition_campaign_ACTION_TITLE: "OTHER PERFORMS plan partition campaign ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_plan_partition_campaign_ACTION_LOG: "OTHER PERFORMS plan partition campaign ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_plan_partition_campaign_ACTION_MAP: "OTHER PERFORMS plan partition campaign ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_scholars_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_scholars_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_scholars_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_scholars_ACTION_HEADER: "WE PERFORM mor invite granadan scholars ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_scholars_ACTION_TITLE: "WE PERFORM mor invite granadan scholars ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_scholars_ACTION_LOG: "WE PERFORM mor invite granadan scholars ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_scholars_ACTION_MAP: "WE PERFORM mor invite granadan scholars ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_scholars_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_scholars_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_scholars_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_scholars_ACTION_HEADER: "OTHER PERFORMS mor invite granadan scholars ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_scholars_ACTION_TITLE: "OTHER PERFORMS mor invite granadan scholars ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_scholars_ACTION_LOG: "OTHER PERFORMS mor invite granadan scholars ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_scholars_ACTION_MAP: "OTHER PERFORMS mor invite granadan scholars ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_advisor_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_advisor_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_advisor_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_advisor_ACTION_HEADER: "WE PERFORM mor invite granadan advisor ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_advisor_ACTION_TITLE: "WE PERFORM mor invite granadan advisor ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_advisor_ACTION_LOG: "WE PERFORM mor invite granadan advisor ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_invite_granadan_advisor_ACTION_MAP: "WE PERFORM mor invite granadan advisor ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_advisor_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_advisor_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_advisor_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_advisor_ACTION_HEADER: "OTHER PERFORMS mor invite granadan advisor ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_advisor_ACTION_TITLE: "OTHER PERFORMS mor invite granadan advisor ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_advisor_ACTION_LOG: "OTHER PERFORMS mor invite granadan advisor ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_invite_granadan_advisor_ACTION_MAP: "OTHER PERFORMS mor invite granadan advisor ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_garrison_granadan_strongholds_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_garrison_granadan_strongholds_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_garrison_granadan_strongholds_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_garrison_granadan_strongholds_ACTION_HEADER: "WE PERFORM mor garrison granadan strongholds ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_garrison_granadan_strongholds_ACTION_TITLE: "WE PERFORM mor garrison granadan strongholds ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_garrison_granadan_strongholds_ACTION_LOG: "WE PERFORM mor garrison granadan strongholds ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_garrison_granadan_strongholds_ACTION_MAP: "WE PERFORM mor garrison granadan strongholds ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_garrison_granadan_strongholds_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_garrison_granadan_strongholds_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_garrison_granadan_strongholds_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_garrison_granadan_strongholds_ACTION_HEADER: "OTHER PERFORMS mor garrison granadan strongholds ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_garrison_granadan_strongholds_ACTION_TITLE: "OTHER PERFORMS mor garrison granadan strongholds ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_garrison_granadan_strongholds_ACTION_LOG: "OTHER PERFORMS mor garrison granadan strongholds ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_garrison_granadan_strongholds_ACTION_MAP: "OTHER PERFORMS mor garrison granadan strongholds ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_attract_andalusi_craftsmen_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_attract_andalusi_craftsmen_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_attract_andalusi_craftsmen_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_attract_andalusi_craftsmen_ACTION_HEADER: "WE PERFORM mor attract andalusi craftsmen ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_attract_andalusi_craftsmen_ACTION_TITLE: "WE PERFORM mor attract andalusi craftsmen ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_attract_andalusi_craftsmen_ACTION_LOG: "WE PERFORM mor attract andalusi craftsmen ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_mor_attract_andalusi_craftsmen_ACTION_MAP: "WE PERFORM mor attract andalusi craftsmen ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_attract_andalusi_craftsmen_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_attract_andalusi_craftsmen_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_attract_andalusi_craftsmen_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_attract_andalusi_craftsmen_ACTION_HEADER: "OTHER PERFORMS mor attract andalusi craftsmen ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_attract_andalusi_craftsmen_ACTION_TITLE: "OTHER PERFORMS mor attract andalusi craftsmen ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_attract_andalusi_craftsmen_ACTION_LOG: "OTHER PERFORMS mor attract andalusi craftsmen ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_mor_attract_andalusi_craftsmen_ACTION_MAP: "OTHER PERFORMS mor attract andalusi craftsmen ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_castilian_influence_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_castilian_influence_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_castilian_influence_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_castilian_influence_ACTION_HEADER: "WE PERFORM gra reduce castilian influence ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_castilian_influence_ACTION_TITLE: "WE PERFORM gra reduce castilian influence ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_castilian_influence_ACTION_LOG: "WE PERFORM gra reduce castilian influence ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_castilian_influence_ACTION_MAP: "WE PERFORM gra reduce castilian influence ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_castilian_influence_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_castilian_influence_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_castilian_influence_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_castilian_influence_ACTION_HEADER: "OTHER PERFORMS gra reduce castilian influence ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_castilian_influence_ACTION_TITLE: "OTHER PERFORMS gra reduce castilian influence ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_castilian_influence_ACTION_LOG: "OTHER PERFORMS gra reduce castilian influence ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_castilian_influence_ACTION_MAP: "OTHER PERFORMS gra reduce castilian influence ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_moroccan_influence_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_moroccan_influence_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_moroccan_influence_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_moroccan_influence_ACTION_HEADER: "WE PERFORM gra reduce moroccan influence ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_moroccan_influence_ACTION_TITLE: "WE PERFORM gra reduce moroccan influence ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_moroccan_influence_ACTION_LOG: "WE PERFORM gra reduce moroccan influence ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_reduce_moroccan_influence_ACTION_MAP: "WE PERFORM gra reduce moroccan influence ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_moroccan_influence_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_moroccan_influence_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_moroccan_influence_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_moroccan_influence_ACTION_HEADER: "OTHER PERFORMS gra reduce moroccan influence ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_moroccan_influence_ACTION_TITLE: "OTHER PERFORMS gra reduce moroccan influence ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_moroccan_influence_ACTION_LOG: "OTHER PERFORMS gra reduce moroccan influence ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_reduce_moroccan_influence_ACTION_MAP: "OTHER PERFORMS gra reduce moroccan influence ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_construct_alhambra_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_construct_alhambra_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_construct_alhambra_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_construct_alhambra_ACTION_HEADER: "WE PERFORM gra construct alhambra ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_construct_alhambra_ACTION_TITLE: "WE PERFORM gra construct alhambra ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_construct_alhambra_ACTION_LOG: "WE PERFORM gra construct alhambra ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_construct_alhambra_ACTION_MAP: "WE PERFORM gra construct alhambra ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_construct_alhambra_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_construct_alhambra_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_construct_alhambra_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_construct_alhambra_ACTION_HEADER: "OTHER PERFORMS gra construct alhambra ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_construct_alhambra_ACTION_TITLE: "OTHER PERFORMS gra construct alhambra ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_construct_alhambra_ACTION_LOG: "OTHER PERFORMS gra construct alhambra ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_construct_alhambra_ACTION_MAP: "OTHER PERFORMS gra construct alhambra ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_enforce_sovereignty_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_enforce_sovereignty_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_enforce_sovereignty_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_enforce_sovereignty_ACTION_HEADER: "WE PERFORM gra enforce sovereignty ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_enforce_sovereignty_ACTION_TITLE: "WE PERFORM gra enforce sovereignty ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_enforce_sovereignty_ACTION_LOG: "WE PERFORM gra enforce sovereignty ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_gra_enforce_sovereignty_ACTION_MAP: "WE PERFORM gra enforce sovereignty ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_enforce_sovereignty_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_enforce_sovereignty_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_enforce_sovereignty_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_enforce_sovereignty_ACTION_HEADER: "OTHER PERFORMS gra enforce sovereignty ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_enforce_sovereignty_ACTION_TITLE: "OTHER PERFORMS gra enforce sovereignty ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_enforce_sovereignty_ACTION_LOG: "OTHER PERFORMS gra enforce sovereignty ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_gra_enforce_sovereignty_ACTION_MAP: "OTHER PERFORMS gra enforce sovereignty ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_hire_granadan_jinetes_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_hire_granadan_jinetes_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_hire_granadan_jinetes_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_hire_granadan_jinetes_ACTION_HEADER: "WE PERFORM hire granadan jinetes ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_hire_granadan_jinetes_ACTION_TITLE: "WE PERFORM hire granadan jinetes ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_hire_granadan_jinetes_ACTION_LOG: "WE PERFORM hire granadan jinetes ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_hire_granadan_jinetes_ACTION_MAP: "WE PERFORM hire granadan jinetes ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_hire_granadan_jinetes_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_hire_granadan_jinetes_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_hire_granadan_jinetes_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_hire_granadan_jinetes_ACTION_HEADER: "OTHER PERFORMS hire granadan jinetes ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_hire_granadan_jinetes_ACTION_TITLE: "OTHER PERFORMS hire granadan jinetes ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_hire_granadan_jinetes_ACTION_LOG: "OTHER PERFORMS hire granadan jinetes ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_hire_granadan_jinetes_ACTION_MAP: "OTHER PERFORMS hire granadan jinetes ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_vassalize_granada_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_vassalize_granada_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_vassalize_granada_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_vassalize_granada_ACTION_HEADER: "WE PERFORM vassalize granada ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_vassalize_granada_ACTION_TITLE: "WE PERFORM vassalize granada ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_vassalize_granada_ACTION_LOG: "WE PERFORM vassalize granada ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_vassalize_granada_ACTION_MAP: "WE PERFORM vassalize granada ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_vassalize_granada_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_vassalize_granada_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_vassalize_granada_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_vassalize_granada_ACTION_HEADER: "OTHER PERFORMS vassalize granada ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_vassalize_granada_ACTION_TITLE: "OTHER PERFORMS vassalize granada ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_vassalize_granada_ACTION_LOG: "OTHER PERFORMS vassalize granada ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_vassalize_granada_ACTION_MAP: "OTHER PERFORMS vassalize granada ACTION MAP"
+exact:[localization_util.cpp:103]: WE_PERFORM_claim_andalusi_inheritance_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_claim_andalusi_inheritance_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_claim_andalusi_inheritance_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: WE_PERFORM_claim_andalusi_inheritance_ACTION_HEADER: "WE PERFORM claim andalusi inheritance ACTION HEADER"
+exact:[localization_util.cpp:103]: WE_PERFORM_claim_andalusi_inheritance_ACTION_TITLE: "WE PERFORM claim andalusi inheritance ACTION TITLE"
+exact:[localization_util.cpp:103]: WE_PERFORM_claim_andalusi_inheritance_ACTION_LOG: "WE PERFORM claim andalusi inheritance ACTION LOG"
+exact:[localization_util.cpp:103]: WE_PERFORM_claim_andalusi_inheritance_ACTION_MAP: "WE PERFORM claim andalusi inheritance ACTION MAP"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_claim_andalusi_inheritance_ACTION_LOG: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_claim_andalusi_inheritance_ACTION_MAP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_claim_andalusi_inheritance_ACTION_SETUP: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_claim_andalusi_inheritance_ACTION_HEADER: "OTHER PERFORMS claim andalusi inheritance ACTION HEADER"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_claim_andalusi_inheritance_ACTION_TITLE: "OTHER PERFORMS claim andalusi inheritance ACTION TITLE"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_claim_andalusi_inheritance_ACTION_LOG: "OTHER PERFORMS claim andalusi inheritance ACTION LOG"
+exact:[localization_util.cpp:103]: OTHER_PERFORMS_claim_andalusi_inheritance_ACTION_MAP: "OTHER PERFORMS claim andalusi inheritance ACTION MAP"
+
+# Vanilla 1.4 beta startup/UI diagnostics confirmed in the captured raw error.log.
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_ask_for_extra_levies_cost_modifier: "Ask for extra levies cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_ask_for_extra_levies_cost_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_extraordinary_taxes_cost_modifier: "Extraordinary taxes cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_extraordinary_taxes_cost_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_ask_clergy_for_legitimacy_cost_modifier: "Ask clergy for legitimacy cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_ask_clergy_for_legitimacy_cost_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_ask_nobility_for_diplomats_cost_modifier: "Ask nobility for diplomats cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_ask_nobility_for_diplomats_cost_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_ask_burghers_for_loan_cost_modifier: "Ask burghers for loan cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_ask_burghers_for_loan_cost_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_ask_commoners_for_stability_cost_modifier: "Ask commoners for stability cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_ask_commoners_for_stability_cost_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_ask_tribes_for_manpower_cost_modifier: "Ask tribes for manpower cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_ask_tribes_for_manpower_cost_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_reroll_parliament_agendas_cost_modifier: "Reroll parliament agendas cost modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_reroll_parliament_agendas_cost_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_global_free_building_levels_modifier: "Global free building levels modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_global_free_building_levels_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_global_monthly_development_modifier: "Global monthly development modifier"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_global_monthly_development_modifier: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_can_recruit_crusader_regiments: "Can recruit crusader regiments"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_can_recruit_crusader_regiments: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_NAME_can_raise_crusader_levies: "Can raise crusader levies"
+exact:[localization_util.cpp:103]: MODIFIER_TYPE_DESC_can_raise_crusader_levies: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: mapmode_dlc_name: "Mapmode dlc name"
+exact:[localization_util.cpp:103]: MAPMODE_DLC: "MAPMODE DLC"
+exact:[map.cpp:819]: Country tag 'DAN' shares its display name with Area 'denmark_area' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'AYD' shares its display name with Province 'aydin_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'HMD' shares its display name with Province 'hamid_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'KRD' shares its display name with Province 'karasi_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'SRU' shares its display name with Province 'saruhan_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'QTO' shares its display name with Province 'quitu_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'HKR' shares its display name with Province 'hatun_kanar_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'SUR' shares its display name with Province 'zula_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MRH' shares its display name with Province 'mugla_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'BYZ' shares its display name with Province 'constantinople_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'BOS' shares its display name with Province 'bosnia_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'TWI' shares its display name with Province 'tripura_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'NDV' shares its display name with Province 'nandeva_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'AIM' shares its display name with Province 'aimore_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'CNN' shares its display name with Area 'connaught_area' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'TMG' shares its display name with Province 'timiskaming_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'NPS' shares its display name with Province 'nipissing_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'IAS' shares its display name with Province 'iasi_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'KCN' shares its display name with Province 'kachen_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'HGY' shares its display name with Province 'higuey_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'AAL' shares its display name with Area 'ngari_area' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'CBD' shares its display name with Province 'kabinda_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MIR' shares its display name with Province 'merina_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'UEN' shares its display name with Province 'kouzuke_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'AKT' shares its display name with Province 'andong_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'HZH' shares its display name with Province 'hongju_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'CDL' shares its display name with Province 'dali_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'LTN' shares its display name with Province 'lithang_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'LJG' shares its display name with Province 'lijiang_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'HLN' shares its display name with Province 'halland_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'ITU' shares its display name with Province 'itu_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MUU' shares its display name with Province 'muling_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'BKH' shares its display name with Province 'badakhshan_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'TUC' shares its display name with Province 'tuckabutche_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'CHS' shares its display name with Province 'chickasaw_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'KKA' shares its display name with Province 'kanienkehaka_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'ONN' shares its display name with Province 'onondowaga_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MSC' shares its display name with Province 'massachusetts_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'AUX' shares its display name with Province 'auxerrois_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'EVR' shares its display name with Province 'ebroicien_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'NEV' shares its display name with Province 'nevernais_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'NRB' shares its display name with Province 'narbonnais_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'ORL' shares its display name with Province 'orleanais_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'TOU' shares its display name with Province 'toulousain_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'BAR' shares its display name with Province 'barrois_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'VDU' shares its display name with Province 'verdunois_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'RET' shares its display name with Province 'rethelois_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'NAV' shares its display name with Area 'navarre_area' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'DLH' shares its display name with Province 'derry_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'KTN' shares its display name with Province 'kutta_nadu' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'BGK' shares its display name with Province 'baghelkhand' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'BTN' shares its display name with Province 'butung_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MYI' shares its display name with Province 'mait_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'IBL' shares its display name with Province 'ibalong_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MFA' shares its display name with Province 'monferrato_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'LIM' shares its display name with Province 'limburg_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MZB' shares its display name with Province 'mzab_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'SOS' shares its display name with Province 'sus_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'SLV' shares its display name with Province 'slesvig_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'BRU' shares its display name with Province 'brunswick_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'KRM' shares its display name with Province 'kerman_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MZN' shares its display name with Province 'tabaristan_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'KHZ' shares its display name with Province 'qusdar_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'ABL' shares its display name with Province 'ardabil_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'ZAZ' shares its display name with Area 'zaporizhzhia_area' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'HAW' shares its display name with Area 'hawaii_area' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MOS' shares its display name with Province 'moscow_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'STS' shares its display name with Province 'starodub_siverskyi_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'NVS' shares its display name with Province 'novhorod_siverskyi_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'ALT' shares its display name with Province 'altay_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'TNG' shares its display name with Province 'taungoo_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'BPR' shares its display name with Province 'pyay_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'CBK' shares its display name with Province 'nguu_hoong_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MKA' shares its display name with Province 'mongkawng_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MNI' shares its display name with Province 'mongnai_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'MLM' shares its display name with Province 'menglian_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'BVK' shares its display name with Province 'buru_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'BSH' shares its display name with Area 'bashkiria_area' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'OUA' shares its display name with Province 'ouagadougou_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[map.cpp:819]: Country tag 'BGI' shares its display name with Province 'bagirmi_province' - dynamic country naming may pick a colliding name. Set not_eligible_for_dynamic_country_name on it if intentional.
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key pilgrimage_expedition_events.18.d. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key pilgrimage_expedition_events.19.c. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key pilgrimage_expedition_events.20.c. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key pilgrimage_expedition_events.26.c. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key pilgrimage_expedition_events.29.c. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key religious_orders.202.a. CEventOptionDesc:172
+exact:[jomini_dynamicdescription.cpp:67]: Unrecognized loc key religious_orders.202.b. CEventOptionDesc:172
+exact:[localization_util.cpp:103]: ship_repair: "Ship repair"
+exact:[game_dlc.cpp:443]: GameDLC italic Across the Pillars! has a Descriptor d009_across_the_pillars doesn't have a matching DLC Descriptor
+exact:[country_database.cpp:104]: The following two countries have the same name 'PWS' & 'POS' = '波伊斯'
+exact:[country_database.cpp:104]: The following two countries have the same name 'ASU' & 'ASO' = '阿苏'
+exact:[country_database.cpp:104]: The following two countries have the same name 'DRA' & 'DLA' = '达拉'
+exact:[country_database.cpp:104]: The following two countries have the same name 'CEV' & 'CEW' = '切瓦'
+exact:[country_database.cpp:104]: The following two countries have the same name 'BRM' & 'BRE' = '不来梅'
+exact:[pdx_data_factory.cpp:1426]: Could not find data system function 'GetManualLockedTradeCapacity' in 'Market.GetManualLockedTradeCapacity(Player.Self)'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'Market.GetManualLockedTradeCapacity(Player.Self)'
+exact:[pdx_data_factory.cpp:1426]: Could not find data system function 'GetUnusedManualTradeCapacity' in 'Market.GetUnusedManualTradeCapacity(Player.Self)'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'Market.GetUnusedManualTradeCapacity(Player.Self)'
+exact:[pdx_data_factory.cpp:1367]: Could not find promote for 'GetGoods' in 'TradeOrderItem.GetGoods.GetName'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'TradeOrderItem.GetGoods.GetName'
+exact:[pdx_data_factory.cpp:1426]: Could not find data system function 'GetUsedCapacity' in 'TradeOrderItem.GetUsedCapacity'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'TradeOrderItem.GetUsedCapacity'
+exact:[pdx_data_factory.cpp:1426]: Could not find data system function 'GetAllocatedCapacity' in 'TradeOrderItem.GetAllocatedCapacity'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'TradeOrderItem.GetAllocatedCapacity'
+exact:[country_database.cpp:104]: The following two countries have the same name 'SFC' & 'ALS' = '斯特拉斯堡'
+exact:[pdx_data_factory.cpp:1426]: Could not find data system function 'GetMonthlyZealChange' in 'ReligiousOrder.GetMonthlyZealChange'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'ReligiousOrder.GetMonthlyZealChange'
+exact:[pdx_data_factory.cpp:1426]: Could not find data system function 'GetZealDepletionText' in 'ReligiousOrder.GetZealDepletionText'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'ReligiousOrder.GetZealDepletionText'
+exact:[pdx_data_factory.cpp:1367]: Could not find promote for 'GetCardinal' in 'GetSituationByKey('western_schism').MakeScope.GetVariable('schism_pope_cardinal').GetCardinal.GetName'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'GetSituationByKey('western_schism').MakeScope.GetVariable('schism_pope_cardinal').GetCardinal.GetName'
+exact:[pdx_data_factory.cpp:1367]: Could not find promote for 'GetCardinal' in 'VoteTargetGlue.GetVoteTarget.GetCountry.MakeScope.GetVariable('schism_cardinal').GetCardinal.GetLocation.GetName'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'VoteTargetGlue.GetVoteTarget.GetCountry.MakeScope.GetVariable('schism_cardinal').GetCardinal.GetLocation.GetName'
+exact:[pdx_data_factory.cpp:1367]: Could not find promote for 'GetCardinal' in 'GetSituationByKey('western_schism').MakeScope.GetVariable('schism_opponent_cardinal').GetCardinal.GetName'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'GetSituationByKey('western_schism').MakeScope.GetVariable('schism_opponent_cardinal').GetCardinal.GetName'
+exact:[pdx_data_factory.cpp:1357]: Failed to find type 'InternationalOrganizationTypeVariable' in 'InternationalOrganizationTypeVariable.GetMonthlyChangeValue(InternationalOrganizationsView.GetInternationalOrganization)'.
+exact:[pdx_data_factory.cpp:1367]: Could not find promote for 'InternationalOrganizationTypeVariable' in 'InternationalOrganizationTypeVariable.GetMonthlyChangeValue(InternationalOrganizationsView.GetInternationalOrganization)'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'InternationalOrganizationTypeVariable.GetMonthlyChangeValue(InternationalOrganizationsView.GetInternationalOrganization)'
+exact:[pdx_data_factory.cpp:1357]: Failed to find type 'Cardinal' in 'Cardinal.GetName'.
+exact:[pdx_data_factory.cpp:1367]: Could not find promote for 'Cardinal' in 'Cardinal.GetName'.
+exact:[pdx_data_factory.cpp:1044]: Failed converting statement for 'Cardinal.GetName'
+exact:[localization_util.cpp:103]: opinion_leading_war_against_rival_leader: "Opinion leading war against rival leader"
+exact:[localization_util.cpp:103]: opinion_leading_war_against_rival: "Opinion leading war against rival"
+exact:[localization_util.cpp:103]: opinion_in_war_against_rival_leader: "Opinion in war against rival leader"
+exact:[localization_util.cpp:103]: opinion_in_war_against_rival: "Opinion in war against rival"
+exact:[localization_util.cpp:103]: opinion_invited_foreign_cleric: "Opinion invited foreign cleric"
+exact:[localization_util.cpp:103]: reroll_parliament_agendas: "Reroll parliament agendas"
+exact:[localization_util.cpp:103]: search_filter_subunit_has_private_regiments_name: "Search filter subunit has private regiments name"
+exact:[localization_util.cpp:103]: search_filter_subunit_has_private_regiments_desc: "Search filter subunit has private regiments desc"
+exact:[localization_util.cpp:103]: castile_conquer_maghreb: "Castile conquer maghreb"
+exact:[localization_util.cpp:103]: morocco_conquer_iberia: "Morocco conquer iberia"
+exact:[localization_util.cpp:103]: new_world_institution_areas_explore: "New world institution areas explore"
+exact:[localization_util.cpp:103]: explore_african_coast: "Explore african coast"
+exact:[localization_util.cpp:103]: caliphate_of_cordoba_geography: "Caliphate of cordoba geography"
+exact:[localization_util.cpp:103]: aragonese_titular_holdings_geography: "Aragonese titular holdings geography"
+exact:[localization_util.cpp:103]: suez_canal_footprint: "Suez canal footprint"
+exact:[localization_util.cpp:103]: panama_canal_footprint: "Panama canal footprint"
+exact:[localization_util.cpp:103]: canoe_repair: "Canoe repair"
+exact:[localization_util.cpp:103]: galley_0_repair: "Galley 0 repair"
+exact:[localization_util.cpp:103]: galley_1_repair: "Galley 1 repair"
+exact:[localization_util.cpp:103]: galley_2_repair: "Galley 2 repair"
+exact:[localization_util.cpp:103]: galley_3_repair: "Galley 3 repair"
+exact:[localization_util.cpp:103]: galley_4_repair: "Galley 4 repair"
+exact:[localization_util.cpp:103]: cakradonya_repair: "Cakradonya repair"
+exact:[localization_util.cpp:103]: galley_5_repair: "Galley 5 repair"
+exact:[localization_util.cpp:103]: galley_6_repair: "Galley 6 repair"
+exact:[localization_util.cpp:103]: light_ship_1_repair: "Light ship 1 repair"
+exact:[localization_util.cpp:103]: light_ship_2_repair: "Light ship 2 repair"
+exact:[localization_util.cpp:103]: light_ship_3_repair: "Light ship 3 repair"
+exact:[localization_util.cpp:103]: light_ship_4_repair: "Light ship 4 repair"
+exact:[localization_util.cpp:103]: light_ship_5_repair: "Light ship 5 repair"
+exact:[localization_util.cpp:103]: light_ship_6_repair: "Light ship 6 repair"
+exact:[localization_util.cpp:103]: fishing_boat_repair: "Fishing boat repair"
+exact:[localization_util.cpp:103]: transport_1_repair: "Transport 1 repair"
+exact:[localization_util.cpp:103]: transport_2_repair: "Transport 2 repair"
+exact:[localization_util.cpp:103]: transport_3_repair: "Transport 3 repair"
+exact:[localization_util.cpp:103]: transport_4_repair: "Transport 4 repair"
+exact:[localization_util.cpp:103]: transport_5_repair: "Transport 5 repair"
+exact:[localization_util.cpp:103]: transport_6_repair: "Transport 6 repair"
+exact:[localization_util.cpp:103]: heavy_ship_1_repair: "Heavy ship 1 repair"
+exact:[localization_util.cpp:103]: heavy_ship_2_repair: "Heavy ship 2 repair"
+exact:[localization_util.cpp:103]: heavy_ship_3_repair: "Heavy ship 3 repair"
+exact:[localization_util.cpp:103]: heavy_ship_4_repair: "Heavy ship 4 repair"
+exact:[localization_util.cpp:103]: heavy_ship_5_repair: "Heavy ship 5 repair"
+exact:[localization_util.cpp:103]: heavy_ship_6_repair: "Heavy ship 6 repair"
+exact:[localization_util.cpp:103]: ship_of_the_line_repair: "Ship of the line repair"
+exact:[localization_util.cpp:103]: a_order_knights_base: "A order knights base"
+exact:[localization_util.cpp:103]: a_order_knights_base_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: a_order_knights_levy: "A order knights levy"
+exact:[localization_util.cpp:103]: a_order_knights_levy_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: a_order_knights_2_base: "A order knights 2 base"
+exact:[localization_util.cpp:103]: a_order_knights_2_base_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: a_order_knights_2_levy: "A order knights 2 levy"
+exact:[localization_util.cpp:103]: a_order_knights_2_levy_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: reroll_parliament_agendas_desc: "Reroll parliament agendas desc"
+exact:[message_handler.cpp:434]: Failed to find message type: PERFORM_reroll_parliament_agendas_ACTION.
+exact:[localization_util.cpp:103]: silk_production_guild_advance: "Silk production guild advance"
+exact:[localization_util.cpp:103]: silk_production_guild_advance_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: unlock_barbary_fusta: "Unlock barbary fusta"
+exact:[localization_util.cpp:103]: unlock_barbary_fusta_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: santiago_de_compostela_holy_site: "Santiago de compostela holy site"
+exact:[localization_util.cpp:103]: montserrat_holy_site: "Montserrat holy site"
+exact:[localization_util.cpp:103]: zaragoza_basilica_del_pilar_holy_site: "Zaragoza basilica del pilar holy site"
+exact:[localization_util.cpp:103]: parthenon_of_athens_holy_site: "Parthenon of athens holy site"
+exact:[localization_util.cpp:103]: qarawiyyin_fez_holy_site: "Qarawiyyin fez holy site"
+exact:[localization_util.cpp:103]: koutoubia_marrakesh_holy_site: "Koutoubia marrakesh holy site"
+exact:[localization_util.cpp:103]: teotihuacan_temple_holy_site: "Teotihuacan temple holy site"
+exact:[localization_util.cpp:103]: kyiv_pechersk_lavra_holy_site: "Kyiv pechersk lavra holy site"
+exact:[localization_util.cpp:103]: rila_monastery_holy_site: "Rila monastery holy site"
+exact:[localization_util.cpp:103]: trinity_lavra_st_sergius_work_of_art: "Trinity lavra st sergius work of art"
+exact:[localization_util.cpp:103]: trinity_lavra_st_sergius_work_of_art_desc: "TODO : Write a desc"
+exact:[localization_util.cpp:103]: batalha_monastery_work_of_art: "Batalha monastery work of art"
+exact:[localization_util.cpp:103]: batalha_monastery_work_of_art_desc: "TODO : Write a desc"

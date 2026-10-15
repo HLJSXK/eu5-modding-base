@@ -1,0 +1,56 @@
+[2026-07-10T11:32:27] mode=dry-run source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=3976 total_size_mb=88.1
+  skipped_ext=30 skipped_locale_dir=11 skipped_locale_file=0
+  skipped_oversized_file=0 skipped_oversized_dir=0
+[2026-07-10T11:33:49] mode=dry-run source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=3980 total_size_mb=88.1
+  skipped_ext=30 skipped_locale_dir=9 skipped_locale_file=18
+  skipped_oversized_file=0 skipped_oversized_dir=0
+[2026-07-10T11:34:21] mode=sync source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=3980 total_size_mb=88.1
+  skipped_ext=30 skipped_locale_dir=9 skipped_locale_file=18
+  skipped_oversized_file=0 skipped_oversized_dir=0
+[2026-07-10T11:48:39] mode=dry-run source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4095 total_size_mb=92.0
+  skipped_ext=30 skipped_locale_dir=9 skipped_locale_file=18
+  skipped_oversized_file=0 skipped_oversized_dir=0
+[2026-07-10T11:49:12] mode=sync source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4095 total_size_mb=92.0
+  skipped_ext=30 skipped_locale_dir=9 skipped_locale_file=18
+  skipped_oversized_file=0 skipped_oversized_dir=0
+[2026-07-10T15:40:17] mode=dry-run source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4103 total_size_mb=92.4
+  skipped_binary_ext=22 skipped_binary_content=0 skipped_locale_dir=9 skipped_locale_file=18
+  skipped_oversized_file=0 skipped_oversized_dir=0
+[2026-07-10T15:40:33] mode=sync source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4103 total_size_mb=92.4
+  skipped_binary_ext=22 skipped_binary_content=0 skipped_locale_dir=9 skipped_locale_file=18
+  skipped_oversized_file=0 skipped_oversized_dir=0
+[2026-07-19T13:35:47] mode=dry-run source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=9835 total_size_mb=253.9
+  skipped_binary_ext=396 skipped_binary_content=1480 skipped_locale_dir=125 skipped_locale_file=36
+  skipped_oversized_file=2 skipped_oversized_dir=3
+[2026-07-19T13:49:46] mode=dry-run source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4200 total_size_mb=93.0
+  skipped_binary_ext=303 skipped_binary_content=1248 skipped_locale_dir=18 skipped_locale_file=36
+  skipped_oversized_file=0 skipped_oversized_dir=1
+[2026-07-19T13:49:52] mode=dry-run source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4200 total_size_mb=93.0
+  skipped_binary_ext=303 skipped_binary_content=1248 skipped_locale_dir=18 skipped_locale_file=36
+  skipped_oversized_file=0 skipped_oversized_dir=1
+[2026-07-19T13:49:53] mode=dry-run source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4200 total_size_mb=93.0
+  skipped_binary_ext=303 skipped_binary_content=1248 skipped_locale_dir=18 skipped_locale_file=36
+  skipped_oversized_file=0 skipped_oversized_dir=1
+[2026-07-19T13:50:08] mode=dry-run source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4200 total_size_mb=93.0
+  skipped_binary_ext=303 skipped_binary_content=1248 skipped_locale_dir=18 skipped_locale_file=36
+  skipped_oversized_file=0 skipped_oversized_dir=1
+[2026-07-19T13:50:25] mode=sync source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4200 total_size_mb=93.0
+  skipped_binary_ext=303 skipped_binary_content=1248 skipped_locale_dir=18 skipped_locale_file=36
+  skipped_oversized_file=0 skipped_oversized_dir=1
+[2026-10-13T08:44:49] mode=sync source=C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V
+  files=4571 total_size_mb=101.0
+  skipped_binary_ext=303 skipped_binary_content=1677 skipped_locale_dir=18 skipped_locale_file=27
+  skipped_oversized_file=0 skipped_oversized_dir=1

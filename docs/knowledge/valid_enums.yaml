@@ -1,0 +1,18 @@
+# Reusable EU5 enum whitelist.
+location_rank:
+  values:
+  - rural_settlement
+  - town
+  - city
+  - megalopolis
+  source: reference_game_files/game/in_game/common/location_ranks/00_default.txt
+  notes: Current EU5 1.x values.
+government_type:
+  values:
+  - monarchy
+  - republic
+  - theocracy
+  - tribe
+  - steppe_horde
+  source: reference_game_files/game/in_game/common/government_types/00_default.txt
+  notes: Exact government type IDs.

@@ -1,0 +1,10 @@
+﻿religious_school_list = {
+	potential = {
+		religion = {
+			has_country_religious_schools = yes
+		}
+	}
+	actions = {
+		change_main_school
+	}
+}

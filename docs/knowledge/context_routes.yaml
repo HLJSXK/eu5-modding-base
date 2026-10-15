@@ -1,0 +1,71 @@
+﻿# Shared EU5 context routes. Workspace route tables add product-specific cards.
+core_reads:
+  - path: .eu5-base/CLAUDE.md
+    reason: shared EU5 workflow
+  - path: .eu5-base/docs/knowledge/BRIEF.md
+    reason: shared engine and gameplay knowledge index
+domain_routes:
+  - id: generic_actions
+    expand_mod_roots: true
+    path_prefixes: [in_game/common/generic_actions/]
+    card: generic_actions.md
+    summary: selector, scope, and hover pre-evaluation
+    reason: generic actions can evaluate before confirmation
+  - id: gui
+    expand_mod_roots: true
+    path_prefixes: [in_game/gui/]
+    card: gui.md
+    summary: GUI type, data context, layout, and tooltip checks
+    reason: GUI expression failures can be silent
+  - id: events
+    expand_mod_roots: true
+    path_prefixes: [in_game/events/]
+    card: events.md
+    summary: event IDs, options, and effect preview
+    reason: event option tooltips evaluate effect chains
+  - id: on_action
+    expand_mod_roots: true
+    path_prefixes: [in_game/common/on_action/]
+    card: on_action.md
+    summary: hook, root scope, and pulse timing
+    reason: on-action hooks have engine-defined caller context
+  - id: localization
+    expand_mod_roots: true
+    path_prefixes: [main_menu/localization/]
+    card: localization.md
+    summary: encoding, keys, and format tags
+    reason: localization failures cascade to UI
+filename_routes:
+  - id: europedia
+    substrings: [encyclopedia_lateralview]
+    card: europedia.md
+    summary: full-panel override and compatibility implications
+    reason: Europedia has no verified data registration API
+content_routes:
+  - id: variable_map
+    markers: ["variable_map(", "global_variable_map(", "local_variable_map(", add_to_variable_map, add_to_global_variable_map, add_to_local_variable_map]
+    excluded_prefixes: [docs/, tests/, reference_game_files/, reference_mods/]
+    excluded_paths: [CLAUDE.md, scripts/ai_context.py]
+    reads:
+      - path: .eu5-base/docs/technical/EU5_Modding_Knowledge_Base.md
+        reason: variable-map scope and right-hand-side rules
+    reason: file content uses variable-map APIs
+object_alerts:
+  - id: object_on_built
+    severity: high
+    markers: [on_built]
+    expand_mod_roots: true
+    path_prefixes: [in_game/common/building_types/]
+    file_suffixes: [.txt, .py, .yaml]
+    excluded_prefixes: [docs/, tests/, reference_game_files/, reference_mods/]
+    card: object_on_built.md
+    summary: on_built may not signal upgrade completion
+    reason: building lifecycle hook touched
+    message: Check upgrade and reuse lifecycle; on_built alone is not a reliable completion signal.
+maintenance_routes:
+  - id: ai_workflow
+    path_prefixes: [docs/knowledge/, docs/guides/, scripts/ai_context.py, scripts/gen_brief.py, CLAUDE.md, AGENTS.md]
+    reads:
+      - path: .eu5-base/docs/guides/AI_Tool_Workflow_Prompt.md
+        reason: shared AI-tool workflow contract
+    reason: AI workflow or knowledge file touched

@@ -1,0 +1,3 @@
+﻿colors = {
+	map_MTP = hsv360 { 20 50 30 }
+}

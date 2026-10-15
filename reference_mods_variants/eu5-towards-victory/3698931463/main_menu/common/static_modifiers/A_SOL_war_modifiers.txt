@@ -1,0 +1,47 @@
+﻿### ============================================================
+### SECTION: Harsher War Consequences (HWC) — Location Scope
+### ============================================================
+# Always-on TRY_INJECT deltas for war-state location modifiers.
+# Location auto_modifiers do not work in EU5; these deltas are baked directly
+# into the static modifier values and are NOT CMM-toggleable.
+
+TRY_INJECT:is_blockaded_by_enemies = {
+	local_monthly_prosperity = -0.025              # -0.025 vanilla -> -0.05 SOL
+	local_maritime_presence = -3.0                 # -2.0 vanilla -> -5.0 SOL
+	local_max_control = -0.20                      # -0.10 vanilla -> -0.30 SOL
+	local_construction_speed = -0.20               # -0.10 vanilla -> -0.30 SOL
+	local_migration_attraction = -0.5              # SOL addition
+}
+
+TRY_INJECT:under_siege = {
+	local_prosperity_decay = -0.05                 # 0.05 vanilla -> 0 SOL
+	local_monthly_prosperity = -0.05               # SOL flat monthly penalty
+}
+
+TRY_INJECT:is_occupied = {
+	local_monthly_control = -0.003                 # -0.002 vanilla -> -0.005 SOL
+	local_garrison_growth = -0.5                   # -1.0 vanilla -> -1.5 SOL
+	local_construction_speed = -0.5                # -0.25 vanilla -> -0.75 SOL
+	local_monthly_development_modifier = -0.1      # SOL addition
+}
+
+TRY_INJECT:hostile_troops = {
+	local_monthly_prosperity = -0.005              # -0.025 vanilla -> -0.03 SOL
+	local_food_decay = -0.0025                     # 0.0025 vanilla -> 0 SOL
+	local_monthly_food_modifier = 0.05             # -0.05 vanilla -> 0 SOL
+}
+
+TRY_INJECT:recently_raided_by_horde = {
+	local_raw_material_output = -0.25              # SOL addition
+	local_monthly_food_modifier = -0.3             # SOL addition
+}
+
+TRY_INJECT:recently_razed = {
+	local_raw_material_output = -0.25              # SOL addition
+	local_monthly_food_modifier = -0.3             # SOL addition
+}
+
+TRY_INJECT:looted = {
+	local_prosperity_decay = -0.1                  # 0.1 vanilla -> 0 SOL
+	local_monthly_prosperity = -0.025              # SOL flat monthly penalty
+}

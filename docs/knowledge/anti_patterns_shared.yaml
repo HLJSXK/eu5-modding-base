@@ -1,0 +1,763 @@
+# Curated compatibility view of reusable rules. The authoritative registry is anti_patterns.yaml.
+- id: action_button_diamond_datacontext_breaks_tooltip
+  pattern: ''
+  bad: datacontext = "[InternationalOrganizationsView.GetPlayer]" inside action_button_diamond in an organization panel
+  correction: Remove datacontext entirely. Use Player.MakeScope.GetVariable(...).IsSet in visible expressions instead of Country.MakeScope.GetVariable(...).IsSet
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/panels/organization/defensive_league.gui:128-149
+  notes: Adding datacontext to action_button_diamond overrides the widget's internal binding, causing tooltip generation to
+    fail silently (empty tooltip, button stays grayed regardless of action potential). Vanilla IO panels never use datacontext
+    on action_button_diamond. Use Player (global GUI binding) instead of Country (datacontext-dependent) to access player-country
+    variables.
+- id: add_treasury_nonexistent
+  pattern: \badd_treasury\b
+  bad: add_treasury = X to add or subtract gold from a country
+  correction: 'Use add_gold = X (simple literal: add_gold = -200) or add_gold = { value = script_value multiply = N } (computed
+    form). Trigger side: gold >= 200 (literal integer) is valid.'
+  category: script
+  scope: country
+  source: reference_game_files/game/in_game/common/scripted_effects/country_effects.txt:2161 (add_gold = 5000), reference_game_files/game/in_game/common/generic_actions/fall_of_delhi.txt:44
+    (add_gold = { value = ... })
+  notes: 'add_treasury does not exist in EU5. The effect is add_gold; it accepts a bare literal integer (positive or negative)
+    or a block with value/multiply. Error: ''Unknown effect add_treasury''.'
+- id: advance_inject_duplicates_allow_block
+  pattern: ''
+  bad: INJECT:advance_name = { allow = { ... } } when the vanilla advance already has an allow block
+  correction: Use REPLACE:advance_name = { <full vanilla block> allow = { OR = { <mod condition> <original condition> } }
+    } to merge conditions. Use INJECT only for advances with no existing allow block.
+  category: modifier
+  scope: any
+  source: reference_game_files/game/in_game/common/advances/0_age_of_discovery.txt:336 (printing_press_advance has allow);
+    reference_mods/3649381461/in_game/common/advances/mod_improved_trade_and_buildings_advances.txt:1 (REPLACE syntax)
+  notes: EU5 advance definitions allow only ONE allow block. INJECT appends properties; a second allow block via INJECT is
+    invalid. Must copy the full vanilla advance definition into a REPLACE block and merge the OR condition manually.
+- id: artist_skill_modifier_invalid
+  pattern: artist_skill_modifier
+  bad: static_modifier or character_modifier using artist_skill_modifier = X
+  correction: Use artist_skill_level_gain = X instead (already_percent = yes, category = character)
+  category: modifier
+  scope: character
+  source: reference_game_files/game/main_menu/common/modifier_type_definitions/00_modifier_types.txt, reference_game_files/game/in_game/common/traits/03_artist.txt
+  notes: artist_skill_modifier does not exist. The correct modifier type for boosting artist skill development is artist_skill_level_gain
+    (declared as already_percent in modifier_type_definitions).
+- id: blockoverride_widget_child_invalid
+  pattern: blockoverride\s+"common_header_text"\s*\{[^}]*text_single
+  bad: text_single widget inside blockoverride "common_header_text"
+  correction: blockoverride overrides a 'text' property value, not a widget container; do not add child widgets
+  category: gui
+  scope: any
+  source: reference_game_files/game/main_menu/common/cards.gui:1084
+  notes: Guessing block structure causes silent failures; always read cards.gui before using blockoverride
+- id: boolean_modifier_can_recruit_regiment_numeric
+  pattern: can_recruit_regiment_in_this_location\s*=\s*(?:0|1)\b
+  detectability: lint
+  only_in_paths:
+  - building_types
+  - static_modifiers
+  bad: Boolean location modifier can_recruit_regiment_in_this_location assigned numeric 0/1
+  correction: Use can_recruit_regiment_in_this_location = yes or no. The modifier type is declared boolean=yes, and vanilla
+    building modifiers use yes.
+  category: modifier
+  scope: location
+  source: reference_game_files/game/main_menu/common/modifier_type_definitions/00_modifier_types.txt:9910; reference_game_files/game/in_game/common/building_types/manpower_buildings.txt:29
+  notes: EU5 logs Malformed token near the numeric literal when a boolean modifier value is emitted as 1. Generated YAML data
+    must preserve bools and render them as yes/no, not Python True/False or 1/0.
+- id: change_variable_add_prev_var
+  pattern: 'add\s*=\s*\{?\s*value\s*=\s*prev\.var:|add\s*=\s*prev\.var:'
+  bad: change_variable = { name = X add = prev.var:some_var } — reading a named variable from prev scope in a numeric value
+    position
+  correction: 'Use set_local_variable / change_local_variable to capture the numeric value before the scope switch, then use
+    add = local_var:name inside the new scope. Example: set_local_variable = { name = tmp value = var:some_var }  then in
+    the other scope: change_variable = { name = X add = local_var:tmp }.'
+  category: script
+  scope: any
+  source: reference_game_files/game/in_game/common/situations/guelphs_and_ghibellines.txt:229 (add = local_var:guelphs_total_tax)
+  notes: 'prev.var:X is valid only as a scope reference (country, religion, etc.), not as a numeric value source. Using it
+    in an add = position causes ''Variable not of the value scope type. Type: empty''. Built-in scripted values like prev.num_locations
+    are valid inline; only prev.var:X is broken.'
+- id: change_variable_divide_is_integer
+  pattern: ''
+  bad: change_variable { divide = N } expecting float result when input < N (e.g. score ÷ large_threshold to get [0,1])
+  correction: Multiply by 100 (or desired precision) BEFORE dividing, then compare/cap at 100 instead of 1. For thresholds
+    divisible by 100, use divide = (threshold÷100) in one step.
+  category: script
+  scope: any
+  source: reference_game_files/game/in_game/common/scripted_effects/global_effects.txt:137
+  notes: EU5 change_variable { divide } performs FLOOR integer division. E.g. 160÷2000=0, not 0.1. Use integer scale [0,100]
+    with max=100 on GUI progressbar. Pattern left empty (no auto-detect) — all divide uses cannot be classified as bad without
+    context.
+- id: character_modifier_country_cabinet_efficiency
+  pattern: ''
+  detectability: advisory
+  bad: Putting country_cabinet_efficiency inside a character-scoped modifier to lower one cabinet member's efficiency
+  correction: Use character_cabinet_efficiency for character modifiers. Reserve country_cabinet_efficiency for country modifiers.
+  category: modifier
+  scope: character
+  source: reference_game_files/game/main_menu/common/modifier_type_definitions/00_modifier_types.txt:5924-5943
+  notes: country_cabinet_efficiency is a country modifier type and has no effect on a character modifier; the character-scoped
+    equivalent is character_cabinet_efficiency.
+- id: compatibility_authority_stale_after_vanilla_patch
+  pattern: null
+  bad: Copying a downstream compatibility mod's complete goods or static-modifier object without comparing its fields against
+    the current vanilla object
+  correction: 'Compare current vanilla objects, modifier_type_definitions, and scripted-trigger definitions separately. Preserve
+    valid downstream balance fields: removal from one vanilla object does not mean removal from the engine schema. Replace
+    references to removed triggers with verified current conditions and use vanilla fallback objects for new SOL goods absent
+    from the downstream reference.'
+  category: modifier
+  scope: any
+  source: reference_game_files/game/main_menu/common/static_modifiers/location.txt:519; reference_game_files/game/main_menu/common/modifier_type_definitions/00_modifier_types.txt:4360,4367,6853;
+    reference_game_files/game/in_game/common/goods/00_raw_materials.txt:409,597,632
+  notes: 'In 1.4 inverse_control loses three military penalties but all three modifier types remain valid, so M&T''s explicit
+    balance stays intact. Lumber''s old scripted trigger disappears and needs replacement. New camels demand needs accounting
+    coverage; wine''s new wealth threshold requires explicit negation and a generator guard. Also audit removal of whole action
+    objects: create_colonial_charter disappears from generic_actions while the GUI calls ColonialCharterItem.CreateColonialCharter,
+    so old TRY_REPLACE hooks cannot be assumed to run. The official script diff confirms ai_country_should_colonize is a valid
+    added engine trigger despite its missing scripted-trigger file.'
+- id: conditional_estate_enablement_misattributed_to_country_setup
+  bad: Looking for an add_estate effect, government reform, or starting privilege to explain how a population-backed conditional
+    estate such as dhimmi_estate is enabled
+  correction: Trace the pop type's ordered estate mappings and then the referenced pop-scoped trigger. Vanilla regular pop
+    types map qualifying pops to dhimmi_estate with 'dhimmi_estate = { is_dhimmi = yes }'; is_dhimmi requires a protected
+    non-Muslim religion group, a Muslim owner, and no link to a foreign building. Starting Muslim templates merely grant initial
+    Dhimmi privileges.
+  category: scope
+  scope: pop
+  source: reference_game_files/game/in_game/common/pop_types/00_default.txt:14,48,76,123,153,187,232; reference_game_files/game/in_game/common/scripted_triggers/pop_triggers.txt:1-15;
+    reference_game_files/game/main_menu/setup/templates/muslim_monarchy.txt:27-52
+  notes: Documentation-only (no regex lint). Estate type definition, conditional pop membership, country_has_estate, and granted
+    privileges are separate layers. The Dhimmi mapping covers nobles, clergy, burghers, laborers, soldiers, peasants, and
+    slaves, but not tribesmen.
+- id: country_interaction_potential_io_iterator_without_actor
+  pattern: potential\s*=\s*\{\s*(?:hidden_trigger\s*=\s*\{\s*)?(?:NOT\s*=\s*\{\s*)?any_international_organizations_member_of\s*=
+  detectability: lint
+  only_in_paths:
+  - country_interactions
+  bad: any_international_organizations_member_of directly under country_interaction potential
+  correction: Wrap country-scoped checks in scope:actor = { ... } inside country_interaction potential.
+  category: scope
+  scope: country
+  source: reference_official_defines/types/country_interactions.txt:11; reference_game_files/game/in_game/common/country_interactions/bribe_vote.txt:26-33
+  notes: country_interaction potential does not provide a country root for this iterator; direct usage logs inconsistent trigger
+    scopes (invalid vs. country). Official defines document scope:actor as the acting country.
+- id: create_io_inner_effects_must_be_hidden
+  pattern: ''
+  bad: add_country_to_international_organization = prev or set_leader_country = prev placed as direct (visible) children of
+    create_international_organization = { ... }
+  correction: 'Wrap add_country_to_international_organization and set_leader_country inside hidden_effect = { } within the
+    create_international_organization block: create_international_organization = { type = ... hidden_effect = { add_country_to_international_organization
+    = prev  set_leader_country = prev } }'
+  category: script
+  scope: any
+  source: reference_game_files/game/in_game/events/situations/red_turban_rebellions.txt:379-386
+  notes: The vanilla tooltip strings THIRD_ADD_TO_INTERNATIONAL_ORGANIZATION_EFFECT and SET_LEADER_EFFECT use INTERNATIONAL_ORGANIZATION.GetName
+    / .GetLeaderTitle. When these effects are visible children of create_international_organization, the engine evaluates
+    the tooltip before the IO is fully instantiated, causing 'Promote INTERNATIONAL_ORGANIZATION returned nullptr' errors.
+    Wrapping in hidden_effect suppresses tooltip generation and eliminates the errors. The outer create_international_organization
+    tooltip (CREATE_INTERNATIONAL_ORGANIZATION_EFFECT) still shows correctly.
+- id: custom_description_collapses_multi_condition_tooltip
+  pattern: ''
+  bad: custom_description { text = KEY  has_variable = X  var:X >= N  has_variable = Y  var:Y >= M } — multiple independent
+    conditions collapsed into one block
+  correction: Use one custom_tooltip block per condition group at the top level of the scripted_trigger body (implicit AND).
+    The extra_trigger_block YAML field must be a complete custom_tooltip { } block, not raw condition lines.
+  category: gui
+  scope: scripted_triggers
+  source: reference_game_files/game/in_game/common/scripted_triggers/building_triggers.txt:1-13
+  notes: When multiple sub-conditions are collapsed into one custom_description or custom_tooltip, the player sees a single
+    pass/fail indicator for all conditions combined. Separate custom_tooltip blocks each show their own pass/fail state, allowing
+    the player to see which specific sub-condition is not yet met.
+- id: custom_tooltip_do_not_remove
+  pattern: ''
+  bad: Removing custom_tooltip from event options (wrong fix for dotted key confusion)
+  correction: Keep custom_tooltip; verify key format via Step 2/3 — dotted suffix IS valid in event options
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/common/character_interactions/ali_qushji_settles.txt
+  notes: AI wrongly removed custom_tooltip thinking dotted key format was invalid. Never remove; only verify format.
+- id: demands_goods_by_pops_is_shortage_not_consumption
+  pattern: null
+  bad: Using demands_goods_by_pops = goods:<good> as a generic consumed-good or market pop-demand test
+  correction: For a known market, scope to the good and use is_demanded_in_market_by_pops = scope:<market>. Reserve demands_goods_by_pops
+    for checks where pop demand exceeds supply.
+  category: trigger
+  scope: market
+  source: reference_game_files/game/main_menu/localization/english/triggers_l_english.yml:5842; reference_game_files/game/in_game/common/trigger_localization/goods_triggers.txt:61;
+    reference_mods/3629022149/in_game/common/on_action/country_monthly_stockpile.txt:3967
+  notes: The trigger localization for demands_goods_by_pops describes a shortage condition, not mere consumption. The goods-scope
+    trigger is_demanded_in_market_by_pops accepts a market scope target.
+- id: estate_building_count_hardcoded_lists
+  pattern: null
+  bad: Counting estate buildings with hard-coded building type lists or plain num_buildings instead of checking the building's
+    estate owner/type
+  correction: Iterate a location with every_buildings_in_location and filter the building scope with estate_type ?= estate_type:<estate>,
+    e.g. estate_type ?= estate_type:nobles_estate.
+  category: scope
+  scope: location
+  source: reference_game_files/game/in_game/events/DHE/flavor_SWE.txt:1076-1078
+  notes: Building scope exposes estate_type; this avoids brittle building-name lists and excludes non-estate buildings while
+    counting per-location estate buildings.
+- id: eu4_has_province_modifier
+  pattern: has_province_modifier
+  bad: has_province_modifier (EU4 trigger)
+  correction: has_location_modifier
+  category: scope
+  scope: location
+  source: reference_game_files/game/in_game/common/
+  notes: EU4 province scope triggers do not exist in EU5
+- id: eu4_province_modifier_scope
+  pattern: add_province_modifier
+  bad: add_province_modifier (EU4 effect)
+  correction: add_location_modifier or add_static_modifier with location scope
+  category: scope
+  scope: location
+  source: reference_game_files/game/in_game/common/
+  notes: EU4 province scope effects do not exist in EU5; use location-scoped equivalents
+- id: eu5_1_2_cost_modifier_compatibility
+  pattern: ''
+  detectability: advisory
+  bad: Using EU5 1.3 *_efficiency cost-style modifier keys while the project/reference data target EU5 1.2
+  correction: 'Use the EU5 1.2 *_cost modifier key. When rolling back from 1.3, invert the value sign: +x% efficiency becomes
+    -x% cost, while -x% efficiency becomes +x% cost.'
+  category: modifier
+  scope: any
+  source: reference_game_files/game/main_menu/common/modifier_type_definitions/00_modifier_types.txt:3115,4025,4057,4065,4073,6600,6616,6864,6872,15389
+  notes: The current reference files define 1.2 cost-style keys and do not define the migrated 1.3 efficiency keys. EU5 1.3
+    replaced several of these with good-colored percent efficiency variants; changing direction without sign inversion reverses
+    the intended gameplay effect.
+- id: event_flavor_invalid_key
+  pattern: ^\s+flavor\s*=\s*flavor_
+  bad: flavor = flavor_neutral / flavor_good / flavor_bad inside an event block
+  correction: 'Use outcome = neutral / good / bad / positive / negative instead. Valid values confirmed from vanilla: neutral,
+    good, bad, positive, negative.'
+  category: event
+  scope: any
+  source: reference_game_files/game/in_game/events/culture/culture_greek.txt:2847 (outcome = neutral)
+  notes: 'EU5 uses outcome = (neutral|good|bad|positive|negative); there is no ''flavor'' key on events. Using flavor causes
+    ''Unexpected token: flavor'' parse errors and the event will be missing an outcome.'
+- id: event_multiple_desc_blocks_invalid
+  pattern: ''
+  bad: Two or more top-level desc = { ... } blocks on the same event — e.g. desc = { desc = key_a trigger = {...} } followed
+    by desc = { desc = key_b trigger = {...} }
+  correction: 'Use a single desc block with first_valid + triggered_desc children: desc = { first_valid = { triggered_desc
+    = { trigger = { ... } desc = key_a } triggered_desc = { trigger = { ... } desc = key_b } } }'
+  category: event
+  scope: any
+  source: reference_game_files/game/in_game/events/culture/culture_greek.txt:2831-2846
+  notes: EU5 allows only one top-level desc block per event. A second desc block at the same level causes 'Scoped pointer
+    has already been read' and 'There should be only one special desc' engine errors. All conditional descriptions must be
+    nested inside a single desc = { first_valid = { ... } } block.
+- id: flat_gold_cost_when_dynamic_event_cost_intended
+  pattern: ''
+  bad: Hardcoding add_gold = -N for an event option that should scale with the country's economy
+  correction: Use vanilla scripted effect change_gold_effect = { scale = -N } for dynamic country-event costs. The effect
+    scales with capital_wealth and country_economical_base and clamps the result.
+  category: script
+  scope: country
+  source: reference_game_files/game/in_game/common/scripted_effects/country_gold_effects.txt:1, reference_game_files/game/in_game/events/government/laws.txt:238
+  notes: Vanilla event laws.0005 uses change_gold_effect = { scale = -3.5 } for the paid +10 research-progress option. Use
+    fixed add_gold only when a flat cost is the design intent.
+- id: game_is_initialized_delays_situation_spawn
+  pattern: game_is_initialized\s*=\s*yes
+  only_in_paths:
+  - situations
+  bad: can_start = { game_is_initialized = yes } on a situation intended to spawn at game start
+  correction: Use can_start = { always = yes } for situations with monthly_spawn_chance_unique that should exist from turn
+    1. game_is_initialized evaluates to current_date > 1337.5.1 (strictly greater); EU5 starts on exactly 1337.5.x, so the
+    first spawn attempt fails and the situation spawns one month late.
+  category: script
+  scope: any
+  source: reference_game_files/game/in_game/common/scripted_triggers/game_triggers.txt:58-60
+  notes: game_is_initialized = { current_date > 1337.5.1 }. The strict > operator means month-1 (1337.5.x) evaluates to FALSE.
+    Situation spawns in month 2 and becomes visible to the player in month 3 due to UI propagation delay. For non-popup situations
+    with on_start initialization, always = yes is safe because monthly_spawn_chance_unique prevents duplicate instances.
+- id: generic_action_ai_list_io_leader_country_this
+  pattern: any_international_organizations_member_of\s*=\s*\{[^{}]*\bleader_country\s*=\s*this\b
+  detectability: lint
+  only_in_paths:
+  - generic_action_ai_lists
+  bad: Comparing leader_country to this inside any_international_organizations_member_of in a generic_action_ai_list
+  correction: 'The AI-list potential root is the evaluating country, while this becomes the IO inside the iterator. Compare
+    with root instead: exists = leader_country; leader_country = root.'
+  category: scope
+  scope: country
+  source: reference_game_files/game/in_game/common/generic_action_ai_lists/readme.txt:10; reference_game_files/game/in_game/common/generic_action_ai_lists/high_kingship_of_ireland_list.txt:13-15
+  notes: Inside the IO membership iterator, this is the international organization. leader_country = this compares a country
+    to an international_organization and logs a type-mismatch error.
+- id: generic_action_single_right_click_uses_right_action
+  detectability: advisory
+  pattern: ''
+  bad: Binding an ordinary right-click generic action with right_click_and_hold_action, or omitting a separate right_action
+    when the interaction requires an immediate right click
+  correction: On the action_button, bind the separate action with right_action = { action_name = <id> }. Reserve right_click_and_hold_action
+    for interactions that deliberately require the mouse button to be held. Give the right-click action its own potential,
+    allow, effect, AI-list entry, message type, and localization.
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/common/generic_actions/readme.txt:90-91
+  notes: The generic-action GUI contract distinguishes a single right click from a right-click-and-hold; choosing the hold
+    field for an ordinary right click changes the player interaction instead of merely selecting another button.
+- id: government_trigger_eu4_style
+  pattern: \bgovernment\s*=\s*(monarchy|republic|theocracy|tribal|tribe|horde|steppe_horde)\b
+  bad: government = monarchy (EU4 trigger style)
+  correction: government_type = government_type:monarchy  (and similarly for republic, theocracy, tribe, steppe_horde)
+  category: enum
+  scope: country
+  source: reference_game_files/game/in_game/common/government_types/00_default.txt
+  notes: EU5 government type trigger is government_type = government_type:X; the EU4 'government = X' form does not exist
+- id: gui_datamodel_getlist_scope_wrapper
+  pattern: ''
+  bad: item = { widget = { datacontext = "[Scope.GetCharacter]" ... action_button_diamond = { parameter = { parameter_value
+    = "[Character]" } } } } — rebinding datacontext to Character, then using [Character] in action_button_diamond parameter_value
+  correction: 'MakeScope.GetList returns Scope wrappers. Do NOT rebind datacontext inside item''s widget. Instead, use the
+    full Scope.GetCharacter chain everywhere: raw_text = "[Scope.GetCharacter.GetNameToFit(...)]", parameter_value = "[Scope.GetCharacter]".
+    action_button_diamond evaluates parameter_value in UIAction context, which does NOT inherit parent widget datacontext
+    — so [Character] after datacontext rebind silently resolves to the outer context or null.'
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/panels/organization/middle_kingdom.gui:332-336 (GetList + Scope.GetCountry),
+    reference_game_files/game/in_game/gui/government_lateralview.gui:4225 (parameter_value uses full explicit chain)
+  notes: GetList always returns Scope wrappers regardless of stored type. action_button_diamond creates a UIAction object
+    that evaluates parameter_value outside the widget's local datacontext chain. [Character] after datacontext = "[Scope.GetCharacter]"
+    on the parent widget is NOT visible to the UIAction evaluator. Always use the explicit Scope.GetCharacter.xxx chain in
+    every expression within the item, including parameter_value — never rely on datacontext inheritance through action_button_diamond.
+- id: gui_goodsview_inaccessible_in_tooltip
+  pattern: GoodsView\.GetGoods
+  bad: datamodel = "[GoodsView.GetGoods]" inside a ContextualTooltipType or tooltipwidget template to iterate all goods and
+    filter by key
+  correction: GoodsView is a view-model object only available in goods_overview.gui panel scope; it is not accessible from
+    tooltip/ContextualTooltipType contexts. No equivalent all-goods datamodel exists for tooltip scope.
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/goods_overview.gui:77
+  notes: Exhaustive search of reference_game_files found GoodsView only in the goods_overview panel; tooltip templates have
+    no equivalent all-goods iteration datamodel
+- id: gui_legacy_header_action_copied_into_1_4
+  pattern: header_action_button_left(?!_uber)
+  bad: Copying a 1.3 location-window action button into EU5 1.4 with header_action_button_left and actor/parameter/left_*_action
+    fields
+  correction: Use the verified 1.4 header_action_button_left_uber type, PdxGuiWidget.IsUberButtonVisible/Enabled, and a scripted_action_tooltip
+    block. Keep the conversion in the generator and assert the expected number of migrated buttons.
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/shared/buttons.gui; reference_game_files/game/in_game/gui/location_window.gui:1038-1060,3762-3790,4774-4915
+  notes: 'The 1.4 type is not a rename-only compatibility alias: the old action properties were removed with the type. Stable
+    SOL and M&T location-window generators now apply the migration to their third-party snapshots.'
+- id: gui_market_getlocation_invalid
+  pattern: \.GetMarket\.GetLocation\b
+  bad: Calling .GetMarket.GetLocation in GUI expressions to access a market's hub location
+  correction: Use .GetMarket.GetCenterLocation only when the UI truly needs the trade-center Location object. For market-keyed
+    caches, prefer global_variable_map keyed by Market.MakeScope instead of center-location variables.
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/context_menu.gui:940 — 'ondoubleclick = "[PanToLocation(Location.GetMarket.GetCenterLocation)]"'
+  notes: Exhaustive search of reference_game_files for .GetMarket.GetLocation returned zero matches; .GetMarket.GetCenterLocation
+    is the canonical accessor for navigation to the center location. It is not a recommended cache storage path for SOL market
+    data.
+- id: gui_no_getgoods_from_string
+  pattern: GetGoods\('|GetGoodsFromKey|MakeGoods\(
+  bad: GetGoods('key'), GetGoodsFromKey, or MakeGoods('key') in GUI expressions to construct a Goods object from a string
+    literal
+  correction: Goods datacontext must come from a data model accessor chain (e.g. GoodsMarketEntry.GetGoods, Trade.GetGoods,
+    GoodsItem.GetGoods in a foreach); there is no string-to-Goods lookup function in EU5 GUI
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/shared/market_tooltips.gui:435
+  notes: Exhaustive search of all reference_game_files *.gui files found zero occurrences of any string-to-Goods constructor;
+    all goods access is typed accessor chains only
+- id: gui_old_road_builder_function_in_1_4
+  pattern: (?-i:ShowRoadbuilder)\(
+  bad: Copying a pre-1.4 location-window road button with ShowRoadbuilder into a 1.4 GUI
+  correction: Call ShowRoadBuilder with a capital B, and make the source generator migrate the third-party snapshot with an
+    exact replacement-count check.
+  category: gui
+  scope: any
+  source: reference_official_defines/changes_data_types.md:338,592; reference_official_defines/docs/data_types_uncategorized.txt:10321;
+    reference_game_files/game/in_game/gui/location_window.gui:5955
+  notes: The official 1.4 data-type diff explicitly removes ShowRoadbuilder and adds ShowRoadBuilder. The old call survived
+    the earlier header-button migration in both stable Glorp and M&T location windows; standalone already used the current
+    spelling.
+- id: gui_situation_get_player_country_nonexistent
+  pattern: GetPlayerCountry
+  bad: GetPlayerCountry.MakeScope.GetVariable(...) or GetPlayerCountry in situation panel GUI expressions
+  correction: Use Country.MakeScope.GetVariable('name').GetValue — Country is the implicit player country datacontext in situation
+    panels. For situation-scope variables use SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('name')
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/panels/situation/western_schism.gui:43
+  notes: Exhaustive search of all situation panel .gui files found zero occurrences of GetPlayerCountry; western_schism.gui:43
+    confirms Country.MakeScope as the correct chain for per-country variables
+- id: gui_tooltip_listbase_already_emits_a_table_header
+  pattern: null
+  bad: Building a section caption on `TooltipListBase` and adding a body child for the title
+  correction: '`TooltipListBase` already contains a `TooltipTableHeader`, so a caption needs only to override `tableheader_text`/`table_header_background`.
+    Adding a body stacks a second header and makes the band roughly twice as tall as intended (measured ~60px instead of ~33px).'
+  category: gui
+  scope: any
+  source: reference_game_files/game/main_menu/gui/shared/main_menu_cooltip_types.gui:1560-1578
+  notes: 'Found by measuring band height when replacing a TooltipTextBlock (43px) with a caption type: the naive version came
+    out 60px, i.e. taller than what it replaced (2026-10-13).'
+- id: gui_variable_comparison_no_operators
+  pattern: ''
+  bad: Using > >= < <= == operators directly in GUI visible expressions to compare variable values (e.g. visible = "[Country.MakeScope.GetVariable('x').GetValue
+    >= 3]")
+  correction: 'Use typed comparison functions: GreaterThanOrEqualTo_CFixedPoint(Country.MakeScope.GetVariable(''name'').GetValue,
+    ''(CFixedPoint)N.0'') for integer milestone variables; EqualTo_float(FixedPointToFloat(...GetValue), ''(float)N.0'') for
+    float comparisons'
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/panels/situation/treaty_of_tordesillas.gui:138
+  notes: EU5 GUI expression language has no inline comparison operators; all comparisons require named typed functions (GreaterThanOrEqualTo_CFixedPoint,
+    LessThan_float, EqualTo_int32, etc.) with explicit type-cast literals
+- id: gui_variable_isset_check
+  pattern: ''
+  bad: Using HasVariable or is_set (script trigger syntax) inside a GUI visible expression to check whether a situation-scope
+    variable exists
+  correction: 'Use GetVariable(''name'').IsSet as the final accessor in a GUI visible expression: visible = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable(''name'').IsSet]"'
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/panels/situation/council_of_trent.gui:232, golden_age_of_piracy.gui:139
+  notes: HasVariable is a script-side trigger and does not exist in the GUI expression language. GetVariable('name').IsSet
+    is the GUI-native null guard for optional variables stored on situation/country scopes.
+- id: icon_widget_before_texticon_check
+  pattern: ''
+  bad: Using an icon widget or designing custom icon syntax without first checking if @icon_name! inline texticon syntax already
+    covers the case
+  correction: Check font_icons.gui for existing texticon definitions first; use @icon_name! in raw_text/text/localization
+    if available; fall back to icon widget; only design from scratch as last resort
+  category: gui
+  scope: any
+  source: reference_game_files/game/main_menu/gui/shared/font_icons.gui
+  notes: EU5 has 180+ pre-defined inline icons via the @xxx! texticon system; skipping this check causes unnecessary widget
+    complexity and misses the preferred engine-native approach
+- id: kill_character_yes_in_character_scope
+  pattern: kill_character\s*=\s*yes
+  bad: kill_character = yes
+  correction: Use kill_character = this when in character scope (e.g. inside var:name ?= { }), or kill_character = scope:char_ref
+    from any scope. kill_character = yes is invalid — EU5 expects a character scope reference, not a boolean.
+  category: event
+  scope: character
+  source: reference_game_files/game/in_game/events/DHE/flavor_ENG.txt:11243
+  notes: 'kill_character takes a character scope value, not a boolean. kill_character = yes causes PostValidate error: target
+    scope type boolean, expected character.'
+- id: location_rank_invalid_hamlet
+  pattern: location_rank\s*\??=\s*location_rank:hamlet
+  bad: location_rank:hamlet
+  correction: location_rank:rural_settlement
+  category: enum
+  scope: location
+  source: reference_game_files/game/in_game/common/location_ranks/00_default.txt
+  notes: EU4 rank name; EU5 valid values are rural_settlement, town, city, megalopolis
+- id: location_rank_invalid_metropolis
+  pattern: location_rank\s*\??=\s*location_rank:metropolis
+  bad: location_rank:metropolis
+  correction: location_rank:megalopolis
+  category: enum
+  scope: location
+  source: reference_game_files/game/in_game/common/location_ranks/00_default.txt
+  notes: EU4 rank name; EU5 valid values are rural_settlement, town, city, megalopolis
+- id: location_rank_invalid_village
+  pattern: location_rank\s*\??=\s*location_rank:village
+  bad: location_rank:village
+  correction: location_rank:rural_settlement
+  category: enum
+  scope: location
+  source: reference_game_files/game/in_game/common/location_ranks/00_default.txt
+  notes: EU4 rank name; EU5 valid values are rural_settlement, town, city, megalopolis
+- id: mapmode_dds_incomplete_mips
+  pattern: null
+  bad: Custom mapmode DDS with an incomplete mip chain or non-vanilla-compatible DDS header
+  correction: Write mapmode DDS files with a full mip chain down to 1x1 and a Clausewitz-style 2D header (`dwDepth = 1`);
+    keep the file under `main_menu/gfx/interface/icons/map_modes/<map_mode_id>.dds`.
+  category: gui
+  scope: any
+  source: reference_mods/3613232232/in_game/gfx/map/map_modes/MAP_MODE_ICONS.md:75-83; reference_mods/3613232232/main_menu/gfx/interface/icons/map_modes/pp_local_fruit_output_modifier.dds
+    header
+  notes: MapMode.GetIcon uses ID-based DDS lookup and is stricter than direct GUI texture references; reference mapmode DXT5
+    assets use complete mip chains (for 128x128, 8 levels and 22,000 bytes).
+- id: modifier_icon_duplicate_vanilla_key
+  pattern: null
+  bad: Defining a vanilla modifier_icons key such as local_pop_demand in a mod add-on file to override its texture
+  correction: Do not duplicate existing modifier_icons keys in additive files. Map the custom static modifier id instead,
+    or use an explicit replacement strategy for the whole vanilla definition if a vanilla-key override is truly required.
+  category: gui
+  scope: any
+  source: reference_game_files/game/main_menu/common/modifier_icons/00_modifier_icons.txt:5853-5855
+  notes: modifier_icons is a keyed database; duplicate keys are rejected with a 'Duplicated key ... will not be created' log,
+    leaving the original definition active.
+- id: modifier_icon_not_effect_field
+  pattern: null
+  bad: Trying to assign an icon to add_location_modifier, add_static_modifier, or the static modifier block itself
+  correction: Define the icon in main_menu/common/modifier_icons/<file>.txt using modifier keys with positive/negative texture
+    paths. For a custom static modifier, map the static modifier id; only map the contained modifier type if that key is not
+    already defined by vanilla or another loaded mod.
+  category: gui
+  scope: any
+  source: reference_game_files/game/main_menu/common/modifier_icons/00_modifier_icons.txt:1-4; reference_mods/3613232232/main_menu/common/modifier_icons/pp_victuals_modifier_icons.txt:4-7
+  notes: Modifier tooltips and location modifier rows call GetIcon on StaticModifier/ModifierWrap objects; the texture mapping
+    is data-driven from modifier_icons, not an effect parameter.
+- id: multiply_global_variable_nonexistent
+  pattern: multiply_global_variable
+  bad: multiply_global_variable = { name = X  value = 0.95 } to scale a global variable in-place
+  correction: 'Use set_global_variable with hardcoded per-case values: set_global_variable = { name = X  value = computed_literal
+    }. For era-decay patterns, hardcode the result per age (idempotent, no dedup guard needed). If truly dynamic, compute
+    in a local_variable then use set_global_variable = { name = X  value = local_var:tmp }.'
+  category: scope
+  scope: any
+  source: reference_game_files/game/in_game/common/scripted_effects/global_effects.txt
+  notes: Exhaustive search of reference_game_files/ and reference_mods/ found no multiply_global_variable effect. Only set_global_variable
+    and change_global_variable exist for global-scope numeric variables.
+- id: music_player_tracks_as_scripted_playback_rules
+  pattern: ''
+  only_in_paths:
+  - music_player_tracks
+  bad: Using common/music_player_tracks as if it can load raw audio files or define country/event/war trigger conditions for
+    automatic music playback
+  correction: Register only Wwise event keys there, with optional composer/performer/soloist metadata and matching music_player
+    localization. Use verified GUI/audio hooks such as Audio_PlayEvent(..., 'music_manager') or hardcoded on_actions for conditional
+    music behavior; do not invent trigger fields inside music_player_tracks.
+  category: script
+  scope: any
+  source: reference_official_defines/types/music_player_tracks.txt:1-14; reference_game_files/game/in_game/common/music_player_tracks/00_music_player_tracks.txt:1-19;
+    reference_game_files/game/in_game/gui/music_player_lateralview.gui:133-185; reference_game_files/game/in_game/gui/shared/animation.gui:199-203;
+    reference_game_files/game/in_game/common/on_action/_hardcoded.txt:1789-1792
+  notes: The official type note says new songs are added in Wwise and registered by event key. Vanilla entries contain no
+    trigger/chance/category fields beyond metadata, and the in-game music player plays registered track objects via GUI bindings.
+    EU5 does expose Audio_PlayEvent to send a Wwise event to music_manager from GUI, and on_war_declared exists as a script
+    hook, but current references do not expose EU4-style songs.txt conditional rules or a normal effect that directly plays
+    a named music-player track.
+- id: production_method_invalid_goods_aliases
+  pattern: \b(candles|luxury_cloth)\s*=
+  only_in_paths:
+  - production_methods
+  bad: Using display/alias-like goods names such as candles or luxury_cloth in production method upkeep
+  correction: 'Use real goods database IDs: beeswax for candle upkeep, fine_cloth for luxury cloth upkeep.'
+  category: script
+  scope: any
+  source: reference_game_files/game/in_game/common/goods/03_food.txt:319; reference_game_files/game/in_game/common/goods/02_produced_goods.txt:130
+  notes: Production method input keys must be exact goods IDs. Invalid goods tokens inside common/production_methods can load
+    as 'Unexpected token' errors, as seen with candles and luxury_cloth.
+- id: progressbar_default_max_is_one
+  pattern: ''
+  bad: progressbar with dynamic GetVariable value binding and no explicit max
+  correction: Always set max = 100 on the progressbar widget. Store values as integer [0,100] in scripted variables using
+    integer-scale arithmetic.
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/panels/situation/the_revolution.gui:112
+  notes: Default progressbar max appears to be 1; GetVariable returning an integer 0-100 without matching max produces 0%
+    for all values except 1 (which shows 100%). Pattern left empty — regex cannot reliably detect the missing-max + variable-value
+    combination.
+- id: prosperity_value_is_fractional
+  pattern: ''
+  detectability: advisory
+  bad: Treating location prosperity reads as 0..100 percent points, such as dividing an average prosperity value by 100 before
+    using it as a weight
+  correction: Use the raw signed fractional prosperity value. For recovery priorities, negate the average directly and clamp
+    below 0.
+  category: script
+  scope: location
+  source: reference_game_files/game/in_game/events/government/societal_values.txt:12373; reference_game_files/game/in_game/events/exploration/exploration_monthly_events.txt:235
+  notes: Vanilla checks use fractional thresholds such as prosperity < 1 and prosperity < -0.1; an extra divide by 100 makes
+    prosperity-derived weights too small to compete.
+- id: random_list_inside_random
+  pattern: random\s*=\s*\{[^}]*random_list
+  bad: random = { chance = X random_list = { ... } } — nesting random_list as a child of random
+  correction: random_list = { (100-X) = {} X = { random_list = { ... } } }. Use the outer random_list to implement the probability
+    gate and the inner random_list to pick the specific outcome. Both levels of random_list are confirmed valid EU5 syntax.
+  category: script
+  scope: any
+  source: reference_game_files/game/in_game/common/situations/the_revolution.txt:59-72 (random_list { 98={} 1={event} 1={event}
+    } pattern confirmed)
+  notes: 'random_list as a direct child of random = { chance = X } is silently dropped by the EU5 engine — the 8% roll fires
+    but the random_list produces no outcome. All intended events are skipped with no error in the log. Fix: restructure to
+    nested random_list where the high-weight option is the no-event case.'
+- id: religion_conversion_need_scope_mismatch
+  pattern: ''
+  detectability: advisory
+  bad: Applying vanilla promote_religion's full target condition to a regional priority heuristic without checking the mechanic's
+    design intent
+  correction: Use the full vanilla OR when mirroring cabinet-action province eligibility. For Governor's House autonomous
+    conversion priority, use only the share of owned locations whose dominant_religion differs from the governing country's
+    religion.
+  category: script
+  scope: location
+  source: reference_game_files/game/in_game/common/cabinet_actions/promote_religion.txt:73-76
+  notes: Vanilla promote_religion can still work on minority non-state-religion pops when local_religious_unity is below 100%.
+    The Governor's House design intentionally ignores that cleanup case so regional governors only prioritize locations where
+    the non-state religion is still dominant.
+- id: remove_trait_missing_trait_prefix
+  pattern: remove_trait\s*=\s*(?!trait:)\w+
+  bad: remove_trait = blind
+  correction: 'remove_trait = trait:blind — always prefix the trait name with trait: for remove_trait and add_trait effects.
+    Note: has_trait = blind (no prefix) is correct for trigger checks.'
+  category: event
+  scope: character
+  source: reference_game_files/game/in_game/events/character/artist_events.txt:260
+  notes: 'remove_trait effect requires trait: prefix (remove_trait = trait:blind). has_trait trigger does NOT use the prefix
+    (has_trait = blind). Mixing them causes: remove_trait effect [ target: field not set ].'
+- id: resolution_ai_will_select_instead_of_vote_fields
+  pattern: null
+  bad: Using ai_will_select in a resolution to disable AI proposals and votes
+  correction: Use the documented resolution script values ai_will_propose and ai_will_do; set both to value = 0 when AI must
+    not initiate or vote for the resolution.
+  category: scope
+  scope: any
+  source: reference_game_files/game/in_game/common/resolutions/readme.txt:70-71; reference_game_files/game/in_game/common/resolutions/repeal_law.txt:68-69
+  notes: The 1.4 resolution schema does not document ai_will_select, and no vanilla resolution uses it. The two fields control
+    proposal and vote scoring separately.
+- id: root_scope_in_situation_on_monthly
+  pattern: ''
+  bad: every_X = { root = { change_variable = { name = Y ... } } } where Y was set_variable'd on `this` before the loop, called
+    from a situation's on_monthly
+  correction: 'Use set_local_variable / change_local_variable for the accumulator. local_variable persists across all scope
+    switches. Inside every_X, access the current-scope value directly (no prev. needed): change_local_variable = { name =
+    acc add = some_value }. Then use local_var:acc after the loop.'
+  category: scope
+  scope: any
+  source: reference_game_files/game/in_game/common/situations/guelphs_and_ghibellines.txt:229 (add = local_var:guelphs_total_tax);
+    reference_game_files/game/in_game/events/wokou_events.txt:140 (change_local_variable block form)
+  notes: 'In a situation''s on_monthly, root = the situation scope, not the iterating country. set_variable stores onto `this`
+    (country); root = { change_variable } then targets the situation — the accumulation goes to the wrong scope and the variable
+    on the country stays 0. fix: local_variable is scope-independent and thread-local to the effect call.'
+- id: script_value_inline_subexpr_variable_refs
+  pattern: multiply\s*=\s*\{[^}]*(?:multiply|divide)\s*=\s*local_
+  bad: multiply = { value = X  multiply = local_var  divide = local_var  add = local_var } inside a script_value
+  correction: 'Flatten to top-level sequence: multiply = local_var  (no braces); each op on its own line'
+  category: encoding
+  scope: any
+  source: reference_game_files/game/in_game/common/script_values/_script_values.info:77-82
+  notes: Inline sub-expression example in .info only shows scalar literals; variable refs (local_*, named sv) inside multiply={}
+    blocks are unconfirmed and likely silently broken
+- id: scripted_effect_io_variable_change_needs_effect_localization
+  pattern: ''
+  bad: Changing an IO type variable inside a scripted_effect with a bare change_variable, expecting callers to show the variable
+    gain or loss
+  correction: Wrap the IO-scope change_variable in custom_description = { text = <effect_loc_key> value = $value$ ... } and
+    register <effect_loc_key> in common/effect_localization with global/first/third/past/negative perspectives. Add matching
+    main_menu localization strings for those perspective keys.
+  category: script
+  scope: international_organization
+  source: reference_game_files/game/in_game/common/scripted_effects/international_organization_effects.txt:1508-1528; reference_game_files/game/in_game/common/effect_localization/scripted_effects.txt:597-610
+  notes: Scripted effect calls can otherwise produce empty option/action tooltips even though the IO variable changes. Vanilla
+    uses custom_description plus effect_localization for imperial, celestial, and papal authority so the tooltip shows the
+    signed value while executing the real effect.
+- id: situation_outcome_card_visible_without_outcomes
+  pattern: null
+  bad: Assuming a situation with no scripted outcomes will hide the 1.4 Outcome card automatically
+  correction: The outer Outcome card is unconditional in panels/situation/common.gui. For an information-only situation, hide
+    that card by situation key while preserving the rest of the 1.4 template and other situations' outcomes.
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/panels/situation/common.gui:263-289; reference_official_defines/docs/data_types_uncategorized.txt:128241
+  notes: The GetOutcomes datamodel is nested inside the card; an empty list removes the rows but leaves the header. The card
+    has no dedicated blockoverride, so this requires a scoped common.gui template override.
+- id: situation_panel_empty_subheader_row
+  pattern: ''
+  bad: Custom situation_panel leaves the shared default situation_subheader_content in place when no subheader content is
+    needed
+  correction: Add blockoverride "situation_subheader_content" {} near the top of the situation_panel block to suppress the
+    default 45px empty row.
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/panels/situation/common.gui:197; reference_game_files/game/in_game/gui/panels/situation/colonial_revolution.gui:14
+  notes: The shared situation_panel template includes a default subheader widget. Vanilla situation panels that do not use
+    it override the block to empty; otherwise custom panels show unwanted blank space above their main content.
+- id: static_modifier_full_replace_for_numeric_delta
+  pattern: null
+  bad: Copying an entire vanilla static modifier into TRY_REPLACE when the intended change is only an additive numeric adjustment
+  correction: Use TRY_INJECT with only the difference between the desired final modifier value and the verified vanilla value;
+    omit game_data and unchanged fields
+  category: compatibility
+  scope: any
+  source: reference_mods/3613232232/main_menu/common/static_modifiers/pp_location_modifier_adjustments.txt:439-455; reference_mods/3613232232/in_game/common/static_modifiers/pp_population_growth_and_food_adjustments.txt:174-177
+  notes: Static modifier values accumulate across injected entries. Delta-only injection preserves unrelated vanilla fields
+    and allows other mods to contribute their own modifier deltas. Fields that cannot be neutralized additively still require
+    replacement.
+- id: subject_loyalty_modifier_is_points
+  pattern: (?m)^\s*subject_loyalty\s*[:=]\s*0\.\d+
+  detectability: lint
+  only_in_paths:
+  - victory_paths.yaml
+  - static_modifiers
+  - advances
+  bad: Writing subject_loyalty as a fractional percent-like value such as 0.10
+  correction: Write subject_loyalty as loyalty points, e.g. 10 for +10 loyalty. Vanilla advances use values such as subject_loyalty
+    = 5 even though the modifier type displays decimals.
+  category: modifier
+  scope: country
+  source: reference_game_files/game/in_game/common/advances/0_age_of_renaissance.txt:356; reference_game_files/game/in_game/common/advances/0_age_of_traditions.txt:583;
+    reference_game_files/game/main_menu/common/modifier_type_definitions/00_modifier_types.txt:5944-5948
+  notes: The modifier definition has decimals=2 but no percent=yes, and vanilla advances grant whole loyalty points. A 0.x
+    value is effectively a tiny fraction of a loyalty point, not a 10% or +10 loyalty bonus.
+- id: temporary_local_variables_must_be_removed
+  pattern: null
+  bad: Leaving set_local_variable/change_local_variable scratch values alive after the scripted effect has finished using
+    them
+  correction: At the matching evaluation scope, add remove_local_variable = <name> after the last read of every temporary
+    local variable. In generated loops, generate the cleanup list together with the declarations so added goods or pop types
+    cannot bypass it.
+  category: scope
+  scope: any
+  source: reference_game_files/game/in_game/common/scripted_effects/international_organization_effects.txt:719-756; reference_mods/3735059838/in_game/common/scripted_effects/SYS-scripted_effect.txt:44,138-140,214-220
+  notes: Local variables used as calculation scratch space are not durable caches. Explicit cleanup prevents repeated market,
+    country, or UI calculations from retaining temporary state and growing memory use.
+- id: trade_efficiency_nonexistent
+  pattern: \btrade_efficiency\s*=
+  bad: trade_efficiency = <value>
+  correction: Use trade_land_efficiency and trade_sea_efficiency separately (both category=country, percent)
+  category: modifier
+  scope: country
+  source: reference_game_files/game/main_menu/common/modifier_type_definitions/00_modifier_types.txt:10044
+  notes: trade_efficiency does not exist in EU5; split into trade_land_efficiency + trade_sea_efficiency
+- id: trigger_event_invalid_in_scripted_effects
+  pattern: \btrigger_event\s*=
+  only_in_paths:
+  - scripted_effects
+  - on_action
+  bad: trigger_event = { id = X } or trigger_event = X inside scripted_effects or on_action
+  correction: Use trigger_event_non_silently = { id = X } for popup events shown to the player, or trigger_event_silently
+    = X for background events. Both accept simple form (= event_id) and object form (= { id = X days = Y }).
+  category: script
+  scope: any
+  source: reference_game_files/game/in_game/common/scripted_effects/on_action_effects.txt:39, reference_game_files/game/in_game/common/on_action/character_death_pulses.txt:57
+  notes: EU5 does not have a bare trigger_event effect. In scripted_effects and on_action files, the engine reports 'Unknown
+    effect trigger_event'. The two valid variants are trigger_event_non_silently (shows popup) and trigger_event_silently
+    (hidden/background). This distinction does not apply inside event option = { } blocks, which may use a different syntax.
+- id: variable_list_wrong_iteration_syntax
+  pattern: every_in_variable_list|remove_from_variable_list
+  bad: every_in_variable_list = { name = X ... } or remove_from_variable_list = { name = X target = Y } for persistent variable
+    lists
+  correction: 'every_in_list = { variable = X ... } to iterate; remove_list_variable = { name = X target = Y } to remove a
+    specific entry. add_to_variable_list = { name = X target = Y } is still correct for adding. Temporary lists (add_to_list)
+    use a different API: every_in_list = { list = X } and remove_from_list = X.'
+  category: script
+  scope: any
+  source: reference_game_files/game/in_game/events/culture/culture_greek.txt:452 (every_in_list variable =), reference_game_files/game/in_game/common/on_action/character_death_pulses.txt:37
+    (remove_list_variable)
+  notes: 'EU5 has two distinct list types: (1) Temporary lists created with add_to_list — iterated with every_in_list { list
+    = X }, removed with remove_from_list = X. (2) Persistent variable lists created with add_to_variable_list — iterated with
+    every_in_list { variable = X }, removed with remove_list_variable { name = X target = Y }. every_in_variable_list and
+    remove_from_variable_list do not exist in EU5; the engine reports ''Unknown effect'' for both.'
+- id: variable_prefix_must_be_var
+  pattern: \bvariable:[a-zA-Z_]
+  bad: variable:NAME as an event-target / value reference (e.g. value = variable:foo, multiply = variable:foo, add = variable:foo)
+  correction: 'Use the short form: var:NAME (e.g. value = var:foo). EU5/Jomini''s event-target link prefix for scope variables
+    is ''var'', not ''variable''. The long form does not resolve.'
+  category: scripted_values
+  scope: any
+  source: reference_game_files/game/in_game/common/attribute_columns/06_country.txt:149
+  notes: 'Engine error: ''Failed to find a valid event target link variable:NAME'' / ''Cannot read [variable:NAME] as a script
+    value''. The set_variable / change_variable / has_variable effects all use the keyword ''variable'' inside their own block
+    (name = NAME, value = X), but READING a variable elsewhere in script_values, triggers, or modifier values requires the
+    var: prefix. Comments in source files often informally write ''variable:foo'' for documentation — never copy that into
+    actual code.'
+- id: yaml_localization_non_ascii_quotes
+  pattern: '[“”‘’]'
+  bad: Smart/curly quotes (“”‘’) in localization YAML
+  correction: Use straight ASCII double-quotes (") only; escape with \" inside values
+  category: localization
+  scope: any
+  source: reference_official_defines/docs/data_types_gui.txt
+  notes: PDX parser rejects non-ASCII quote characters; the failure is silent

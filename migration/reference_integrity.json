@@ -1,0 +1,38 @@
+[
+  {
+    "source": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-project\\reference_game_files\\game",
+    "target": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-base\\reference_game_files\\game",
+    "files": 4571,
+    "byte_identical": true
+  },
+  {
+    "source": "C:\\Users\\Hades\\Documents\\code\\eu5-towards-victory\\reference_game_files\\game",
+    "target": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-base\\reference_game_files\\game",
+    "files": 4571,
+    "byte_identical": true
+  },
+  {
+    "source": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-project\\reference_official_defines",
+    "target": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-base\\reference_official_defines",
+    "files": 43,
+    "byte_identical": true
+  },
+  {
+    "source": "C:\\Users\\Hades\\Documents\\code\\eu5-towards-victory\\reference_official_defines",
+    "target": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-base\\reference_official_defines",
+    "files": 43,
+    "byte_identical": true
+  },
+  {
+    "source": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-project\\reference_mods",
+    "target": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-base\\reference_mods",
+    "files": 9108,
+    "byte_identical": true
+  },
+  {
+    "source": "C:\\Users\\Hades\\Documents\\code\\eu5-towards-victory\\reference_mods",
+    "target": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-base\\reference_mods_variants\\eu5-towards-victory",
+    "files": 7411,
+    "byte_identical": true
+  }
+]
