@@ -5827,3 +5827,13 @@
   scope: any
   source: reference_official_defines/docs/data_types_gui.txt
   notes: PDX parser rejects non-ASCII quote characters; the failure is silent
+
+- id: gui_parser_uppercase_types_group_ignored
+  pattern: ''
+  detectability: advisory
+  category: gui
+  scope: any
+  bad: Recognizing only lowercase types declarations silently omits vanilla HUD bars.
+  correction: Parse both types and Types group keywords; preserve type-name case and register their children normally.
+  source: reference_game_files/game/in_game/gui/hud_topbar.gui:46; reference_game_files/game/in_game/gui/panels/left_panel/left_panel.gui:93
+  notes: Shared parser regression covers both spellings and type expansion; full HUD preview retains unresolved-binding diagnostics.

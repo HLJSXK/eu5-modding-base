@@ -2,7 +2,7 @@
 
 `renderer/` contains the reusable parser, type/template expander, data-binding
 evaluator, layout engine, text renderer, and texture compositor. It reads the
-installed game and a selected mod root; it does not contain any project's
+installed game and a selected mod root; it includes a generic vanilla HUD scenario, but no project-specific
 scenarios, screenshots, or generated output. Install `Pillow` and `NumPy` from
 `ai_gui_assessment/renderer/requirements.txt` in the selected Python environment.
 
@@ -14,3 +14,6 @@ mock-backed root/type/template render.
 The [shared GUI guide](../docs/guides/EU5_GUI_Modding_Guide.md) records verified
 EU5 GUI rules. Project-specific research notebooks, screenshot comparisons,
 and scenario fixtures stay in the calling mod repository.
+
+Use run.py --scenario hud for the full in-game HUD with sample data.
+Run parser regressions: python -m unittest discover -s ai_gui_assessment/renderer/tests

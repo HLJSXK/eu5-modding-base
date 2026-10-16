@@ -27,7 +27,7 @@
 
 ## Shared anti-patterns
 
-The shared registry contains **360** reusable rules. Load the workspace registry cumulatively; do not shadow a shared ID.
+The shared registry contains **361** reusable rules. Load the workspace registry cumulatively; do not shadow a shared ID.
 
 | ID | Category | Scope |
 | --- | --- | --- |
@@ -391,3 +391,4 @@ The shared registry contains **360** reusable rules. Load the workspace registry
 | `variable_prefix_must_be_var` | scripted_values | any |
 | `while_waiting_for_instant_building_level` | script | building |
 | `yaml_localization_non_ascii_quotes` | localization | any |
+| `gui_parser_uppercase_types_group_ignored` | gui | any |

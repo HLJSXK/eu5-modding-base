@@ -122,9 +122,9 @@ def parse(text: str, src: str = "", consts: dict | None = None) -> list[Node]:
                 out.append(Node(f"{raw_key}:{name}", "=", body, src, line))
                 continue
             # types Name { ... }
-            if raw_key == "types" and i < len(toks) and toks[i][0] == "word":
+            if raw_key in ("types", "Types") and i < len(toks) and toks[i][0] == "word":
                 i += 1
-                if toks[i][0] == "lb":
+                if i < len(toks) and toks[i][0] == "lb":
                     i += 1
                     out.append(Node("types", "=", parse_block(), src, line))
                 continue

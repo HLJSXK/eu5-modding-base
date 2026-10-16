@@ -124,3 +124,24 @@ The renderer cannot reproduce 3D scenes, illustrations without accessible textur
 | the workspace's GUI anti-patterns and validation notes | Known GUI mistakes, summarised in `BRIEF.md` |
 
 
+
+### Full in-game HUD preview
+
+Use the shared run.py with --scenario hud instead of --name. Default size is
+1920x1080. --workspace, --mod-root, --game-root, --output-root, --output,
+--width, --height, --scale and --mocks remain supported.
+
+The scenario composes ingame_topbar, outliner and message_log from the selected
+game/mod files. Native outliner rows use original army category/unit templates
+with invented sample data. Custom JSON mocks take precedence. Output includes
+the full PNG, top-detail crop, element tree and JSON diagnostics.
+The example is Chinese Hungary in 1337, paused with closed detail panels and a
+collapsed map menu. It is not save data. The 3D map, dynamic flags and portraits
+remain unsupported; unresolved bindings are reported. No screen-wide
+pixel-accuracy claim applies.
+
+**[Source + parser regression]** Both types and Types group declarations must
+register their children, preserving type-name case. Vanilla hud_topbar.gui:46
+uses Types HUD_TopbarTypes; panels/left_panel/left_panel.gui:93 uses Types
+LeftPanelTypes. Ignoring these groups silently drops both HUD bars. This is
+handled by the shared parser, not a scenario-specific AST repair.
