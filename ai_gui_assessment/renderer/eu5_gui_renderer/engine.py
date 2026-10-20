@@ -50,7 +50,9 @@ class Engine:
         self.ex, self.ev, self.loc, self.formats, self.icons = ex, ev, loc, formats, icons
         self.scale = scale
         self.missing_text = []
+        self.missing_localizations: set[str] = set()
         self.unresolved_contexts = set()
+        self.unsupported_textcontexts = set()
 
     # ------------------------------------------------------------ data helpers
     def push(self, el):
@@ -68,6 +70,17 @@ class Engine:
             elif isinstance(context, Unknown):
                 self.unresolved_contexts.add(context.path)
                 del self.ev.log[log_start:]
+        # The native engine converts textcontext strings into typed table data
+        # through ontextcontextchanged. Offline scenarios supply that typed
+        # result explicitly; never guess a table from arbitrary effect text.
+        if "textcontext" in el.props and "ontextcontextchanged" in el.props:
+            expression = el.props["textcontext"]
+            context = self.ev.eval_str(expression)
+            if isinstance(context, dict):
+                self.ev.item_stack.append(context)
+                count += 1
+            else:
+                self.unsupported_textcontexts.add(expression)
         return count
 
     def pop(self, pushed):
@@ -128,9 +141,18 @@ class Engine:
             lv = self.loc.get(s)
             if lv is not None:
                 s = lv
+            else:
+                self.missing_localizations.add(s)
         if depth > 4:
             return s
-        s = re.sub(r"\$([A-Za-z0-9_.\-]+)(\|[^$]*)?\$", lambda m: self.process(self.loc.get(m.group(1)) or m.group(1), True, depth + 1), s)
+        def substitute_key(match):
+            key = match.group(1)
+            value = self.loc.get(key)
+            if value is None:
+                self.missing_localizations.add(key)
+                value = key
+            return self.process(value, True, depth + 1)
+        s = re.sub(r"\$([A-Za-z0-9_.\-]+)(\|[^$]*)?\$", substitute_key, s)
         out, i = "", 0
         while i < len(s):
             if s[i] == "[":
@@ -244,12 +266,12 @@ class Engine:
         m = el.props.get("margin")
         l = r = t = b = 0.0
         if isinstance(m, list):
-            l = r = num(m[0])
-            t = b = num(m[1] if len(m) > 1 else m[0])
-        l = num(el.props.get("margin_left"), l)
-        r = num(el.props.get("margin_right"), r)
-        t = num(el.props.get("margin_top"), t)
-        b = num(el.props.get("margin_bottom"), b)
+            l = r = self._resolved_num(m[0], 0)
+            t = b = self._resolved_num(m[1] if len(m) > 1 else m[0], 0)
+        l = self._resolved_num(el.props.get("margin_left"), l)
+        r = self._resolved_num(el.props.get("margin_right"), r)
+        t = self._resolved_num(el.props.get("margin_top"), t)
+        b = self._resolved_num(el.props.get("margin_bottom"), b)
         return l, t, r, b
 
     def policy(self, el, axis):
@@ -814,7 +836,10 @@ class Engine:
             spec["modifies"] = el.modifies
             if el.kind == "button":
                 down = el.props.get("down")
-                spec["frame"] = spec.get("downframe", 1) if (down and self.ev.truthy(down, False)) else spec.get("upframe", 1)
+                if not self.ev.truthy(el.props.get("enabled"), default=True):
+                    spec["frame"] = spec.get("disableframe", spec.get("upframe", 1))
+                else:
+                    spec["frame"] = spec.get("downframe", 1) if (down and self.ev.truthy(down, False)) else spec.get("upframe", 1)
             spec["alpha"] = 1
             layer = compose(spec, self.px(el.w), self.px(el.h), self.scale, self._res_tex)
             layer = self._grayscale(layer, spec)

@@ -82,7 +82,17 @@ class Formats:
 class TextIcons:
     def __init__(self):
         self.d: dict[str, dict] = {}
-        txt = (GAME / "main_menu/gui/shared/font_icons.gui").read_text(encoding="utf-8-sig")
+        files = {}
+        for content in (GAME, MOD):
+            for stage in ("loading_screen", "main_menu", "in_game"):
+                root = content / stage / "gui"
+                for path in sorted(root.rglob("*font_icons*.gui")):
+                    files[f"{stage}/{path.relative_to(root).as_posix()}"] = path
+        for path in files.values():
+            self._load(path)
+
+    def _load(self, path):
+        txt = path.read_text(encoding="utf-8-sig")
         consts: dict = {}
         nodes = parse(txt, "font_icons", consts)
         for n in nodes:
@@ -222,6 +232,7 @@ class Evaluator:
         self.log = log
         self.item_stack: list[dict] = []
         self.vars: dict = {}
+        self.missing_localizations: set[str] = set()
 
     # canonical form for lookup
     def canon(self, node) -> str:
@@ -374,6 +385,12 @@ class Evaluator:
     def fn_IntToFixedPoint(self, a):
         return _num(a)
 
+    def fn_ToString_int32(self, a):
+        return str(int(_num(a)))
+
+    def fn_ToVector2f(self, x, y):
+        return ("vec", _num(x), _num(y))
+
     def fn_Select_float(self, condition, a, b):
         return a if condition else b
 
@@ -398,11 +415,23 @@ class Evaluator:
     def fn_Select_CString(self, c, a, b):
         return a if c else b
 
+    def _localize(self, key, fallback=None):
+        key = str(key)
+        value = self.loc.get(key)
+        if value is None:
+            self.missing_localizations.add(key)
+            return key if fallback is None else fallback
+        return value
+
     def fn_SelectLocalization(self, c, a, b):
-        return self.loc.get(a if c else b) or (a if c else b)
+        return self._localize(a if c else b)
+
+    def fn_SelectGameConcept(self, condition, a, b):
+        key = str(a if condition else b)
+        return self._localize("game_concept_" + key, key)
 
     def fn_Localize(self, k):
-        return self.loc.get(str(k)) or str(k)
+        return self._localize(k)
 
     def fn_Concatenate(self, *a):
         return "".join(str(x) for x in a)
@@ -478,7 +507,13 @@ class Evaluator:
 # ------------------------------------------------------------------ concept textures
 def load_concept_textures():
     out = {}
-    for p in (GAME / "main_menu" / "common" / "game_concepts").glob("*.txt"):
+    files = {}
+    for root in (GAME, MOD):
+        for stage in ("loading_screen", "main_menu", "in_game"):
+            folder = root / stage / "common" / "game_concepts"
+            for p in sorted(folder.glob("*.txt")):
+                files[f"{stage}/{p.name}"] = p
+    for p in files.values():
         nodes = parse(p.read_text(encoding="utf-8-sig", errors="replace"), str(p), {})
         for n in nodes:
             if n.is_block():

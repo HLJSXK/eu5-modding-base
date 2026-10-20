@@ -160,6 +160,10 @@ class Expander:
         for n in body:
             if n.key == "using" and isinstance(n.value, str):
                 tpl = self.db.templates.get(n.value)
+                if tpl is None and n.value in self.db.types:
+                    # `using` can also inline a type's inherited properties.
+                    tpl = [entry for name in reversed(self.db.type_chain(n.value))
+                           for entry in self.db.types[name]]
                 if tpl is None:
                     self.log.append(f"missing template {n.value}")
                     continue
@@ -374,6 +378,34 @@ class Expander:
         for n in entries:
             d[n.key] = scalars(n) if n.is_block() and all(not c.is_block() for c in n.value) else n.value
         return d
+
+
+def build_target(db, expander, name: str, gui_file: Path | None):
+    # A selected file's instance owns its block overrides even when its key
+    # is also a registered type (organization_panel is a common example).
+    if gui_file is not None:
+        for node in db.roots.get(str(gui_file), []):
+            if node.is_block() and (node.key == name or any(
+                child.key == "name" and child.value == name for child in node.value
+            )):
+                return expander.build(node.key, node.value, {}, node.src, node.line)
+    if name in db.templates:
+        for node in db.templates[name]:
+            if node.is_block() and expander.is_element_key(node.key):
+                return expander.build(node.key, node.value, {}, node.src, node.line)
+        raise ValueError(f"template has no root element: {name}")
+    if name in db.types or expander.is_element_key(name):
+        return expander.build(name, [], {}, "<type>", 0)
+    roots = list(db.roots.items())
+    if gui_file is not None:
+        roots.sort(key=lambda item: item[0] != str(gui_file))
+    for path, nodes in roots:
+        for node in nodes:
+            if not node.is_block():
+                continue
+            if node.key == name or any(child.key == "name" and child.value == name for child in node.value):
+                return expander.build(node.key, node.value, {}, path, node.line)
+    raise ValueError(f"GUI root, type, or template not found: {name}")
 
 
 def dump(el: Element, depth=0, out=None, maxdepth=99):

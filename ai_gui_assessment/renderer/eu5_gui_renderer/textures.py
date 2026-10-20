@@ -208,6 +208,10 @@ def compose(spec: dict, w_px: int, h_px: int, scale: float, resolve) -> Image.Im
     out = to_np(sprite(img, spec, w_px, h_px, scale))
     for ms in spec.get("modifies", []):
         ms = lower_spec(ms)
+        if "visible" in ms:
+            shown = resolve(ms["visible"])
+            if not shown or shown == "no":
+                continue
         col = ms.get("color")
         if isinstance(col, str):
             col = resolve(col)
