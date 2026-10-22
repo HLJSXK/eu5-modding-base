@@ -1,7 +1,7 @@
 # EU5 Shared Knowledge Brief
 
 > Generated from this base checkout. Do not edit directly.
-> Last updated: 2026-10-16
+> Last updated: 2026-10-22
 
 ## Startup
 
@@ -104,7 +104,7 @@ The shared registry contains **361** reusable rules. Load the workspace registry
 | `engineering_building_loc_used_as_game_concept` | localization | gui |
 | `estate_building_count_hardcoded_lists` | scope | location |
 | `eu4_has_province_modifier` | scope | location |
-| `eu4_province_modifier_scope` | scope | location |
+| `eu4_province_modifier_scope` | scope | location/country |
 | `eu5_14_country_modifier_name_field` | modifier | country |
 | `eu5_1_2_cost_modifier_compatibility` | modifier | any |
 | `eu5_has_no_ck2_style_global_flag_use_global_variable` | effect | any |

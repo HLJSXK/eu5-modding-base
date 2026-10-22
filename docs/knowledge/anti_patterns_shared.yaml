@@ -207,13 +207,22 @@
   source: reference_game_files/game/in_game/common/
   notes: EU4 province scope triggers do not exist in EU5
 - id: eu4_province_modifier_scope
-  pattern: add_province_modifier
-  bad: add_province_modifier (EU4 effect)
-  correction: add_location_modifier or add_static_modifier with location scope
+  pattern: ''
+  detectability: needs_parser
+  bad: Calling add_province_modifier from location or country scope
+  correction: >-
+    add_province_modifier is a native EU5 effect supported in province scope.
+    In location scope use add_location_modifier; in country scope use add_country_modifier.
+    Resolve the actual scope type before accepting or rejecting a call.
   category: scope
-  scope: location
-  source: reference_game_files/game/in_game/common/
-  notes: EU4 province scope effects do not exist in EU5; use location-scoped equivalents
+  scope: location/country
+  source: reference_official_defines/docs/effects.log:367-373; reference_game_files/game/in_game/events/DHE/flavor_chi.txt (flavor_chi.30)
+  notes: >-
+    Corrected 2026-10-22 from the obsolete claim that this is an unavailable EU4 effect.
+    Vanilla flavor_chi.30 calls it from scope:target_province. A regex cannot prove
+    the runtime type of saved scopes or scope-link chains. Keep this as needs_parser
+    guidance until typed scope analysis exists; do not infer scope types from names
+    or add per-rule exceptions to a workspace validator.
 - id: eu5_1_2_cost_modifier_compatibility
   pattern: ''
   detectability: advisory
@@ -755,9 +764,16 @@
     actual code.'
 - id: yaml_localization_non_ascii_quotes
   pattern: '[“”‘’]'
+  only_in_paths:
+  - /localization/
   bad: Smart/curly quotes (“”‘’) in localization YAML
   correction: Use straight ASCII double-quotes (") only; escape with \" inside values
   category: localization
   scope: any
-  source: reference_official_defines/docs/data_types_gui.txt
-  notes: PDX parser rejects non-ASCII quote characters; the failure is silent
+  source: reference_official_defines/docs/data_types_gui.txt; reference_game_files/game/in_game/events/DHE/flavor_FRA.txt (flavor_fra.428 comment)
+  notes: >-
+    This rule applies only to localization files, as declared by only_in_paths.
+    Script comments and other source text are outside its scope; the vanilla
+    flavor_fra.428 header contains d’Opera and must survive verbatim copying.
+    Scope metadata and provenance corrected 2026-10-22; validators must honor
+    the generic path metadata rather than special-case this rule ID.
