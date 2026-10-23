@@ -885,4 +885,4 @@
  add_random_dip_regent_trait_tt: "我们的[regent|e]将获得一个与[diplomacy|e]相关的随机[trait|e]"
  gain_random_positive_trait_for_cabinet_tt: "获得一个适合在[cabinet|e]服务的随机正面[trait|e]"
  new_child_for_ruler: "[ROOT.GetCountry.GetGovernment.GetRulerTitle]获得一个新的孩子"
- holy_war_scaled_gold_transfer_fallback_tt: "向提出要求的政权支付黄金"
+ holy_war_scaled_gold_transfer_fallback_tt: "支付金钱给要求的国家"

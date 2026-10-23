@@ -84,8 +84,6 @@
  flavor_teu.17.a: "成为[target_character.GetArtistType.GetNameWithNoTooltip]的赞助人。"
  flavor_teu.17.a.entry: "成为这位艺术家的赞助人。"
  flavor_teu.17.b: "我们负担不起这笔开销。"
- teu_impact_on_kulm_law: "[ShowEstatePrivilegeName('kulm_law')]的效果将：\n#g +10.0%#![ShowModifierTypeName('rural_migration_attraction')]\n#r -10.0%#![ShowModifierTypeName('burghers_estate_max_tax')]"
- teu_impact_on_kulm_law_not_revised: "[ShowEstatePrivilegeName('kulm_law')]的效果将：\n#r -50.0%#![ShowModifierTypeName('german_migration_attraction_modifier')]"
  flavor_teu.100.title: "普鲁士十字军"
  flavor_teu.100.desc: "多年前，光荣的波罗的海十字军战士以为了基督的荣耀之名发动了普鲁士十字军。许多人听从召唤，其中就有[ROOT.GetCountry.GetAdjective]王室的骄傲：[target.GetName]。"
  flavor_teu.100.desc.crusader_returns: "$flavor_teu.100.desc$\n\n他抛洒热血，扬名立万，邪恶的异教徒在他的神圣之怒前恐惧地畏缩。如今，他返回了宏伟的[ROOT.GetCountry.GetFlavorRank]的怀抱！"

@@ -15,5 +15,6 @@
  close_canal_to_enemies_desc: "战争期间，只允许盟友和附属国通过我们的运河。敌人会被自动封锁；这也同时将中立国和宿敌排除在外。"
  open_canal_to_all: "对所有国家开放运河"
  open_canal_to_all_desc: "解除限制，向我们未处于战争状态的任何国家重新开放运河通行。"
- CANAL_LOCATION_DESC: "一条可通航的运河贯穿此地，为其所连接的两片海域之间开辟了一条通道。"
- CANAL_LOCATION_RESTRICTED: "目前该通道仅限运河所有者的盟友与附庸通行。"
+ CANAL_LOCATION: "运河"
+ CANAL_LOCATION_DESC: "一条可通航的运河将被开凿穿过该地点，在其所连接的海洋之间开辟一条新通道。"
+ CANAL_LOCATION_RESTRICTED: "目前，通行仅限于运河所有者的盟友和附属国。"

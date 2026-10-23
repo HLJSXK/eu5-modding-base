@@ -263,6 +263,7 @@
  flavor_swe.42.entry: "米卡埃尔·阿格里科拉，芬兰语之父"
  flavor_swe.42.desc: "随着我们拥抱宗教改革，将《圣经》翻译成[ShowDialectName('finnish_dialect')]的时机已然成熟。此举将对在我国建立统一的[ShowCultureName('finnish')]文化产生极大助力。\n\n“凡心存虔诚者，无论长幼，今当学习上帝的诫命与旨意，以此通晓[ShowDialectNameWithNoTooltip('finnish_dialect')]语言”"
  flavor_swe.42.historical_info: "米凯尔·阿格里科拉出生于尼兰，在维堡求学后成为奥布主教。他被誉为书面芬兰语之父，撰写了首部芬兰语书籍——一本识字读本与教义问答、一本祈祷书，并将《新约圣经》翻译成芬兰语。"
+ flavor_swe.42.agricola_alive.tt: "米卡埃尔·阿格里科拉存活"
  flavor_swe.42.a: "开始印刷#italic 《ABC书》#!。"
  flavor_swe.42.tt: "[ShowCultureName('tavastian')]、[ShowCultureName('savonian')]和[ShowCultureName('kvens')]人现在认同自己为[ShowCultureName('finnish')]人。"
  flavor_swe.42.b: "我们对这事一点兴趣也没有。"
@@ -387,4 +388,3 @@
  #flavor_swe.XXX.historical_info: ""
  #flavor_swe.XXX.a: ""
  #flavor_swe.XXX.b: ""
- flavor_swe.42.agricola_alive.tt: "米凯尔·阿格里科拉尚在人世"

@@ -577,6 +577,8 @@
  STATIC_MODIFIER_NAME_in_siege: "In Siege"
  STATIC_MODIFIER_NAME_is_blockading: "Is Blockading"
  STATIC_MODIFIER_NAME_block_marriage: "Can not Marry"
+ STATIC_MODIFIER_NAME_royal_mistress: "Royal Mistress"
+ STATIC_MODIFIER_DESC_royal_mistress: "This character is the acknowledged mistress of a monarch, and cannot marry while holding that position."
  STATIC_MODIFIER_NAME_settling_no_mans_land: "Settling the Frontier"
  STATIC_MODIFIER_DESC_settling_no_mans_land: "This character is occupied with the enterprise of acquiring more unclaimed territory for their homeland.\n\n#Y This modifier gets removed once the designated [province|e] has been settled.#!"
  STATIC_MODIFIER_NAME_granted_cabinet_right: "Granted Cabinet Right"
@@ -1540,6 +1542,9 @@
  STATIC_MODIFIER_NAME_tun_hafsid_caliphate_spending: "Caliphal Spending"
  STATIC_MODIFIER_NAME_tun_tax_raid_modifier: "Extorted via Tax Raid"
  STATIC_MODIFIER_NAME_tun_ifriqiya_reunited_modifier: "$flavor_tun.11.title$"
+ STATIC_MODIFIER_NAME_tun_arab_tribe_rights_quelled: "'Arab Tribe Rights Quelled"
+ STATIC_MODIFIER_NAME_tun_control_over_countryside_restored: "Control over Countryside Restored"
+ STATIC_MODIFIER_NAME_tun_trust_in_dynasty_restored: "Trust in Dynasty Restored"
 
 # Montferrat
  STATIC_MODIFIER_NAME_mfa_honored_claim: "Cooperation with $MFA$"
@@ -1660,7 +1665,7 @@
  STATIC_MODIFIER_NAME_mll_court_rebuilding_trade_influence: "Court Focused on Rebuilding Trade" 
  STATIC_MODIFIER_NAME_mll_rejected_rebuilding_trade_influence: "Avoided Focus on Trade" 
  STATIC_MODIFIER_NAME_mll_curry_favor_with_montpellier_nobles: "Levied Montpellier Nobles Support" 
- STATIC_MODIFIER_NAME_mll_expansion_of_coastal_fortifications: "Expansion of Coastral Fortifications" 
+ STATIC_MODIFIER_NAME_mll_expansion_of_coastal_fortifications: "Expansion of Coastal Fortifications" 
  STATIC_MODIFIER_NAME_mll_walls_of_alcudia: "Walls of Alcúdia" 
 
 #Navarre
@@ -2815,6 +2820,7 @@
  STATIC_MODIFIER_NAME_byz_born_in_the_purple_modifier: "Born in the Purple"
  STATIC_MODIFIER_NAME_sold_core_territory: "Sold Core Territory"
  STATIC_MODIFIER_NAME_ai_stability_target_peasant_wars_disaster: "Peasants War"
+ STATIC_MODIFIER_NAME_ai_stability_target_decline_of_empire: "Decline of Empire"
  STATIC_MODIFIER_NAME_ai_succession_disaster_targets: "Succesion Disaster"
  STATIC_MODIFIER_NAME_ai_oligarchic_capture_targets: "Oligarchic Capture"
  STATIC_MODIFIER_NAME_ai_crisis_of_faith_targets: "Crisis of Faith"
@@ -2927,6 +2933,8 @@
  # Survey expeditions
  STATIC_MODIFIER_NAME_accurate_charts: "Accurate Charts"
  STATIC_MODIFIER_DESC_accurate_charts: "Our coasts have been surveyed in detail, with soundings taken, harbours noted, and hazards plotted. The new charts hold for a generation and make every future expedition cheaper to outfit and faster to launch."
+ STATIC_MODIFIER_NAME_western_ocean_pioneer: "Discoverers of the New World"
+ STATIC_MODIFIER_DESC_western_ocean_pioneer: "Our fleet was the first to cross the western ocean and return to tell of it. Our pilots now know its winds and currents better than any others, and every voyage we launch westward sets out sooner and sails faster."
  STATIC_MODIFIER_NAME_thorough_survey: "Highland Survey Returned"
  STATIC_MODIFIER_DESC_thorough_survey: "The prospecting team is back with their notebooks and sample chests. The maps they produced will be studied by every mine-master in the realm, and the techniques they tested at the working face are already being passed on to overseers everywhere. Every quarry, pit, and shaft in the country benefits from the accumulated craft, and the kingdom's raw materials flow a little more freely as a result."
 
@@ -3039,4 +3047,5 @@
  STATIC_MODIFIER_NAME_benefits_from_mining_discoveries_modifier: "Benefits from Mining Discoveries"
  STATIC_MODIFIER_NAME_andalusia_resurgent_modifier: "Andalusia Resurgent"
  STATIC_MODIFIER_NAME_invited_foreign_cleric_modifier: "Invited Foreign Cleric"
+ STATIC_MODIFIER_NAME_seat_of_governance_modifier: "Seat of Wālī"
 

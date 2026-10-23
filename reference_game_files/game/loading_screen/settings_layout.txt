@@ -3,7 +3,8 @@ page = {
 	category = {
 		category = "Graphics" # Must match category name in code
 		name = "SETTINGS_CATEGORY_SCREEN"
-		order = { 
+		order = {
+			"device"
 			"renderer"
 			"display_mode"
 			"resolution"

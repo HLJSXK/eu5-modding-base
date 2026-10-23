@@ -104,7 +104,7 @@
 
  dismantle_fortifications: "Dismantle Forts"
  dismantle_fortifications_entry: "[target.GetOwner.GetFlagIcon] Dismantle Forts in [target.GetName]"
- dismantle_fortifications_entry_short: "@[target.GetOwner.GetFlag]! Dismantle Forts in [target.GetNameWithNoTooltip]"
+ dismantle_fortifications_entry_short: "[target.GetOwner.GetFlagIconWithNoTooltip] Dismantle Forts in [target.GetNameWithNoTooltip]"
  
  block_foreign_building_treaty: "Block Foreign Buildings"
  block_foreign_building_treaty_entry: "Block [TARGET_COUNTRY.GetNameWithFlag] from Building in our Territory"
@@ -212,8 +212,12 @@
  peace_force_jurchen_unification_desc: "They defied our bid for unification. Now they will kneel and join us as a vassal."
  
  peace_take_over_market_center: "Take over [target_market.GetName]"
- peace_take_over_market_center_entry: "Take Over [target_market.GetName] from [TARGET_COUNTRY.GetNameWithFlag]"
- peace_take_over_market_center_entry_short: "Take Over [target_market.GetName] from [TARGET_COUNTRY.GetNameWithFlagWithNoTooltip]"
+ peace_take_over_market_center_group: "Take Over [target_market.GetName] from [TARGET_COUNTRY.GetNameWithFlag]"
+ peace_take_over_market_center_group_short: "Take Over [target_market.GetName] from [TARGET_COUNTRY.GetNameWithFlagWithNoTooltip]"
+ peace_take_over_market_center_entry: "Take Over [target_market.GetName] from [TARGET_COUNTRY.GetNameWithFlag] and Move It to [target_location.GetName]"
+ peace_take_over_market_center_entry_short: "Move [target_market.GetName] to [target_location.GetNameWithNoTooltip]"
+ peace_take_over_market_center_select_location: "Select [location|e] to move the [market|e] to:"
+ peace_take_over_market_center_no_locations: "$no_valid_locations$"
  
  execute_ruler: "Execute Ruler"
  execute_ruler_entry: "$execute_ruler$"
@@ -347,8 +351,8 @@
  rtr_demand_all_chinese_territories: "Demand All Chinese Territories"
  rtr_demand_all_chinese_territories_entry: "$rtr_demand_all_chinese_territories$"
  rtr_demand_all_chinese_territories_entry_short: "$rtr_demand_all_chinese_territories$"
- rtr_demand_all_chinese_territories_desc: "Demand every [location|e] owned by the target [country|e] and their [subjects|e], including unoccupied territories."
- rtr_demand_all_chinese_territories_tt: "Every [loser.GetAdjective] [location|e], and every [location|e] owned by [loser.GetName]'s [subjects|e], is seized by [winner.GetNameWithNoTooltip]"
+ rtr_demand_all_chinese_territories_desc: "Demand every [location|e] that is part of the [GetInternationalOrganizationType('middle_kingdom').GetName], whether owned by the target [country|e], their [subjects|e], or Warring States loyal to them."
+ rtr_demand_all_chinese_territories_tt: "Every [location|e] that is part of the [GetInternationalOrganizationType('middle_kingdom').GetName], whether owned by [loser.GetName], their [subjects|e], or Warring States loyal to [loser.GetName], is seized by [winner.GetNameWithNoTooltip]"
  rtr_demand_complete_annexation: "Demand Complete Annexation"
  rtr_demand_complete_annexation_entry: "$rtr_demand_complete_annexation$"
  rtr_demand_complete_annexation_entry_short: "$rtr_demand_complete_annexation$"

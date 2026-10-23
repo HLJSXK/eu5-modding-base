@@ -342,7 +342,7 @@ unlock_sekibune = {
 }
 
 unlock_atakebune = {
-	age = age_3_discovery
+	age = age_4_reformation
 
 	potential = {
 		culture = {
@@ -352,7 +352,7 @@ unlock_atakebune = {
 
 	unlock_unit = n_atakebune
 
-	in_tree_of = new_world_advance
+	in_tree_of = global_trade_advance
 
 }
 
@@ -390,6 +390,21 @@ unlock_long_fada_2 = {
 	allow_children = no
 
 	unlock_unit = n_long_fada_2
+}
+
+unlock_barbary_fusta = {
+	age = age_1_traditions
+
+	potential = {
+		culture = {
+			has_culture_group = culture_group:maghrebi_group
+		}
+	}
+	requires = ship_building_advance
+	allow_children = no
+
+	unlock_levy = levy_barbary_fusta
+
 }
 
 

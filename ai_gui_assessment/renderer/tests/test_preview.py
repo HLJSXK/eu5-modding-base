@@ -8,11 +8,13 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
+from PIL import Image
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from eu5_gui_renderer.config import configure_paths
 from eu5_gui_renderer.data import Evaluator, Unknown
 from eu5_gui_renderer.engine import Engine
-from eu5_gui_renderer.fixtures import load_mocks, object_mocks, requirements_list, set_action_availability, string_pair_list, variable_mocks
+from eu5_gui_renderer.fixtures import load_mocks, modifier_sample_lines, object_mocks, requirements_list, set_action_availability, string_pair_list, variable_mocks
 from eu5_gui_renderer.gui import Element, Expander, GuiDB
 from eu5_gui_renderer.preview import DIAGNOSTIC_KEYS, RenderResources, has_diagnostics, render_tree
 
@@ -97,6 +99,51 @@ class PreviewTests(unittest.TestCase):
                 path.write_text(json.dumps(payload), encoding="utf-8")
                 with self.subTest(payload=payload), self.assertRaises((ValueError, re.error)):
                     load_mocks(path)
+
+    def test_details_follow_scaled_layout_and_clip_to_the_rendered_image(self):
+        resources = RenderResources(GuiDB([]), self.loc, None, None)
+        focus = Element("widget", "sample_card", props={"position": [2, 3], "size": [4, 2]})
+        partial = Element("widget", "sample_card", props={"position": [-2, -1], "size": [5, 4]})
+        hidden = Element("widget", "sample_card", props={"visible": "no", "size": [4, 2]})
+        outside = Element("widget", "sample_card", props={"position": [25, 0], "size": [2, 2]})
+        root = Element("widget", "sample_panel", children=[focus, partial, hidden, outside])
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder) / "panel.png"
+            report = render_tree(root, Expander(resources.db), resources, [], width=20, height=10,
+                scale=1.5, output=output, top_detail_height=4,
+                detail_elements={"focus": focus, "partial": partial, "hidden": hidden, "outside": outside})
+            self.assertEqual(set(report["details"]), {"focus", "partial", "top_detail"})
+            with Image.open(report["details"]["focus"]) as detail, Image.open(output) as full:
+                self.assertEqual(detail.size, (6, 4))
+                self.assertEqual(detail.tobytes(), full.crop((3, 4, 9, 8)).tobytes())
+            with Image.open(report["details"]["partial"]) as detail:
+                self.assertEqual(detail.size, (4, 4))
+            with Image.open(report["details"]["top_detail"]) as detail:
+                self.assertEqual(detail.size, (30, 6))
+            self.assertFalse((Path(folder) / "panel_hidden.png").exists())
+            self.assertFalse((Path(folder) / "panel_outside.png").exists())
+            self.assertEqual(json.loads(output.with_name("panel_report.json").read_text(encoding="utf-8")), report)
+            self.assertFalse(has_diagnostics(report))
+
+    def test_detail_names_cannot_escape_the_output_directory_or_collide(self):
+        resources = RenderResources(GuiDB([]), self.loc, None, None)
+        root = Element("widget", "widget")
+        with tempfile.TemporaryDirectory() as folder:
+            for name in ("../escape", "nested/name", "", "top_detail"):
+                with self.subTest(name=name), self.assertRaises(ValueError):
+                    render_tree(root, Expander(resources.db), resources, [], width=8, height=8,
+                        output=Path(folder) / "panel.png", top_detail_height=4, detail_elements={name: root})
+
+    def test_modifier_samples_use_supplied_metadata_and_selected_localization(self):
+        metadata = {key: {"value_kind": kind} for key, kind in
+                    (("test_rate", "percent"), ("test_monthly", "number"), ("test_zero", "number"))}
+        values = {"test_rate": 0.2, "test_monthly": -0.1, "test_zero": 0}
+        for label in ("Sample rate", "示例比率"):
+            loc = type("Loc", (), {"get": lambda _, key: label if key == "MODIFIER_TYPE_NAME_test_rate" else None})()
+            self.assertEqual(modifier_sample_lines(values, metadata, loc),
+                [f"{label}: +20%", "test_monthly: -0.1", "test_zero: +0"])
+        metadata["test_rate"]["value_kind"] = "number"
+        self.assertEqual(modifier_sample_lines({"test_rate": 0.2}, metadata, self.loc), ["test_rate: +0.2"])
 
     def test_path_configuration_resolves_against_workspace(self):
         with tempfile.TemporaryDirectory() as folder, patch.dict(os.environ, {}, clear=True):

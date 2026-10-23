@@ -1,7 +1,7 @@
 ﻿l_simp_chinese:
- thalassocracy_events.1.title: "The Fruits of our Labor"
- thalassocracy_events.1.desc_success: "The rapid expansion of our navy was an astounding success! The many newly constructed and modernized ships, manned by skilled sailors, will surely strike fear into our rivals and foes. No longer shall wicked pirates or fleets under hostile banners hinder our domination of the waves. With our shipping lines secured, it will become much easier for us to govern distant shores and project our power across the seas."
- thalassocracy_events.1.desc_failure: "After years of difficult debates securing funding for our navy, we will now have to abandon our dreams of ruling through the seas. Without a strong navy to back our claims of Thalassocracy, we can not defend our waters against our rivals and privateers alike."
- thalassocracy_events.1.a: "Our maritime empire shall prosper!"
+ thalassocracy_events.1.title: "努力的成果"
+ thalassocracy_events.1.desc_success: "我们海军的迅速扩张取得了惊人的成功！众多新建和现代化的舰船，由技艺娴熟的水手操控，必将令我们的对手和敌人心生畏惧。邪恶的海盗或悬挂敌旗的舰队，再也无法阻碍我们称霸海洋。随着我们的航线得到保障，我们将更容易治理远方的海岸，并向海外投射力量。"
+ thalassocracy_events.1.desc_failure: "在多年艰难辩论、为海军争取经费之后，我们如今不得不放弃通过海洋统治的梦想。没有一支强大的海军来支撑我们的海权主张，我们就无法保卫自己的水域，抵御对手和私掠者。"
+ thalassocracy_events.1.a: "我们的海洋帝国必将繁荣！"
  unlock_thalassocracy_reform_tt: "解锁[ShowGovernmentReformName('thalassocracy_reform')][government_reform|e]"
- thalassocracy_events.1.b: "We will have to live with our own failure."
+ thalassocracy_events.1.b: "我们将不得不接受自己的失败。"

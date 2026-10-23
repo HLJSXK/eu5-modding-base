@@ -111,6 +111,14 @@ port_authority_advance = {
 ##############################
 #Tier 1:
 
+silk_production_guild_advance = {
+	age = age_1_traditions
+	
+	unlock_building = silk_production_guild
+	
+	requires = talented_traders
+}
+
 porcelain_kiln_advance = {
 	age = age_1_traditions
 	
@@ -182,7 +190,7 @@ cannon_maker_advance = {
 	unlock_building = cannon_maker
 	
 	requires = gun_smith_advance
-	ai_weight = { add = 1.5 }
+	ai_weight = { add = 15 }
 }
 
 slave_center_advance = {
@@ -728,7 +736,7 @@ training_fields_advance = {
 	age = age_3_discovery
 	requires = matchlock_gun
 	
-	ai_weight = { add = 500 }
+	ai_weight = { add = 1000 }
 	
 	unlock_building = training_fields
 }
@@ -962,6 +970,8 @@ castle_advance = {
 	requires = feudalism_advance
 	
 	unlock_building = castle
+	unlock_estate_privilege = clergy_military_orders
+	unlock_estate_privilege = noble_fortification_licenses
 	starting_technology_level = 3
 
 	ai_weight = { add = 2 }
@@ -1319,7 +1329,7 @@ early_council_hall_advance = {
 	age = age_2_renaissance
 	
 	requires = renaissance_court 
-	ai_weight = { add = 20 }
+	ai_weight = { add = 30 }
 	unlock_building = early_council_hall
 	
 }
@@ -1328,7 +1338,7 @@ council_hall_advance = {
 	age = age_3_discovery
 	
 	requires = town_rights_enable
-	ai_weight = { add = 20 }
+	ai_weight = { add = 30 }
 	unlock_building = council_hall
 }
 
@@ -1336,6 +1346,6 @@ modern_council_hall_advance = {
 	age = age_5_absolutism
 	
 	requires = town_rights_abs_advance
-	ai_weight = { add = 20 }
+	ai_weight = { add = 30 }
 	unlock_building = modern_council_hall
 }

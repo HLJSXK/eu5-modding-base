@@ -222,6 +222,7 @@
  cb_iw_challenge_league_leadership_desc: "我国已证明自己是[GetSituationByKey('italian_wars').GetName]中的主导力量。我们将迫使联盟的领袖交出指挥权——否则就在战场上粉碎他们。\n\n#Y 需要[ShowPeaceTreatyTypeName('challenge_league_leadership_peace_treaty')][peace_treaty|e]#!"
  cb_expansion_into_the_steppes: "向草原扩张"
  cb_expansion_into_the_steppes_desc: "$tatar_yoke$已不复存在。是时候为我们自己宣称草原了！"
+ not_bound_by_tatar_yoke_tt: "我们未被$tatar_yoke$束缚"
  great_northern_conflict: "大北方战争"
  great_northern_conflict_PROV: "争夺[PROVINCE.GetName]的$great_northern_conflict$"
  great_northern_conflict_desc: "为了挑战我们[ShowCultureGroupName('scandinavian_group')]宿敌的势力范围，我们决定武装夺取[ShowAreaName('baltic_area')]地区这片沃土及重要贸易通道的控制权。"
@@ -241,4 +242,3 @@
  cb_secure_italy_PROV: "$cb_secure_italy$：[PROVINCE.GetName]"
  cb_claim_throne_of_naples: "夺取$naples$王位"
  cb_claim_throne_of_naples_desc: "我们绝不允许$naples$的领土继续分裂。"
- not_bound_by_tatar_yoke_tt: "我们不受 $tatar_yoke$ 的约束"

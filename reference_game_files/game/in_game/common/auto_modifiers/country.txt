@@ -34,7 +34,7 @@ country_base_values = {
 
 	monthly_rebel_growth = 0.001
 	
-	country_child_education = 0.375
+	country_child_education = 0.75
 
 	global_monthly_art_start_chance = 0.1
 	
@@ -447,6 +447,7 @@ war_exhaustion_impact = {
 current_political_influence_impact = {
 	scales_with = {
 		value = political_influence
+		max = define:NCountry|MAXIMUM_EFFECTIVE_POLITICAL_INFLUENCE
 	}
 
 	global_estate_satisfaction_recovery = 0.00003

@@ -37,6 +37,28 @@
 4. **When the renderer and the game disagree, the game wins.** Record the corrected rule here and in the
    workspace's GUI verification notes.
 
+### Offline scenario samples and detail images
+
+Keep gameplay presets, variable names, selected-style dispatch and authoritative
+data loading in the owning workspace. Derive effect stand-ins from current data
+and the selected scenario, label them as samples, and do not register broad mocks
+that conceal unknown bindings. These samples do not execute effects or establish
+in-game behavior. `fixtures.modifier_sample_lines(values, metadata, loc)` formats
+explicit modifier samples with caller-supplied index metadata and the selected
+game/Mod localization; the shared renderer owns no project's modifier index.
+
+Use `preview.render_tree(..., detail_elements={"section": element})` to export a
+detail image. Select an element from the same fresh expanded tree before the
+call; the shared renderer lays out the whole panel, crops its final bitmap using
+the element's scaled bounds, clips to the image and records the file under
+`report["details"]["section"]`. Hidden/unplaced or out-of-image elements produce
+no detail file. The workspace owns the semantic section selector and output name;
+the base owns crop/output/report handling. Do not hardcode card coordinates or
+render an isolated subtree that loses its parent context. Synthetic layout and
+formatting regressions live in `ai_gui_assessment/renderer/tests/test_preview.py`;
+gameplay-specific branches stay in workspace tests. Verified by offline tests,
+2026-10-23; this is a tooling contract, not an in-game pixel-fidelity claim.
+
 ## 1. Files, composition and overrides
 
 | Rule | Level |

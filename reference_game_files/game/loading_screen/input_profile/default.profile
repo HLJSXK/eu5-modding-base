@@ -1078,6 +1078,22 @@ input_action={
 	name="mapmode_religious_orders"
 	text="mapmode_religious_orders_name"
 }
+input_action={
+	name="mapmode_victory_cards"
+	text="mapmode_victory_cards_name"
+}
+input_action={
+	name="mapmode_ai_conquer_desire"
+	text="mapmode_ai_conquer_desire_name"
+}
+input_action={
+	name="mapmode_ai_personality_mapmode"
+	text="mapmode_ai_personality_mapmode_name"
+}
+input_action={
+	name="mapmode_ai_disposition_mapmode"
+	text="mapmode_ai_disposition_mapmode_name"
+}
 
 input_context={
 	name="map"

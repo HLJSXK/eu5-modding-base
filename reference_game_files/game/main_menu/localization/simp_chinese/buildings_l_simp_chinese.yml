@@ -1,6 +1,8 @@
 ﻿l_simp_chinese:
  local_governor_tt: "[SCOPE.sCountry('actor').GetNameWithNoTooltip]的[ShowBuildingTypeName('local_governor')]和[ShowBuildingTypeName('lieutenancy')]总数少于[SCOPE.sCountry('actor').GetModifierValue('num_local_governors')]（地方总督治所：[SCOPE.sCountry('actor').GetTotalBuildingLevelsIncudingUnderConstruction('local_governor')|V]，副王治所：[SCOPE.sCountry('actor').GetTotalBuildingLevelsIncudingUnderConstruction('lieutenancy')|V]）"
  lieutenancy_tt: "如果[SCOPE.sCountry('actor').GetNameWithNoTooltip]的[ShowBuildingTypeName('local_governor')]和[ShowBuildingTypeName('lieutenancy')]的总数量小于[SCOPE.sCountry('actor').GetModifierValue('num_local_governors')]（地方总督治所：[SCOPE.sCountry('actor').GetTotalBuildingLevelsIncudingUnderConstruction('local_governor')|V]，副王治所：[SCOPE.sCountry('actor').GetTotalBuildingLevelsIncudingUnderConstruction('lieutenancy')|V]）。"
+ local_governor_dlc_tt: "[SCOPE.sCountry('actor').GetNameWithNoTooltip]的[ShowBuildingTypeName('local_governor')]数量少于[SCOPE.sCountry('actor').GetModifierValue('num_local_governors')]（当前：[SCOPE.sCountry('actor').GetTotalBuildingLevelsIncudingUnderConstruction('local_governor')|V]）"
+ lieutenancy_dlc_tt: "[SCOPE.sCountry('actor').GetNameWithNoTooltip]的[ShowBuildingTypeName('lieutenancy')]数量少于[SCOPE.sCountry('actor').GetModifierValue('num_lieutenancy')]（当前：[SCOPE.sCountry('actor').GetTotalBuildingLevelsIncudingUnderConstruction('lieutenancy')|V]）"
  no_naval_governor_tt: "可以建造至少一座[ShowBuildingTypeName('naval_governor')]"
  naval_governor_tt: "当[SCOPE.sCountry('actor').GetNameWithNoTooltip]拥有的[ShowBuildingTypeName('naval_governor')]数量少于[SCOPE.sCountry('actor').GetModifierValue('num_naval_governors')]座（当前[SCOPE.sCountry('actor').GetTotalBuildingLevelsIncudingUnderConstruction('naval_governor')|V]座）"
  no_local_bailiff_tt: "可以建造至少一座[ShowBuildingTypeName('bailiff')]"
@@ -1161,5 +1163,3 @@
  palazzo_ajutamicristo_desc: "为了装饰[ShowRegionName('italy_region')]的第二庭院，$palazzo_ajutamicristo$是由国家和商人家族共同委托建造的，作为声望和财富的展示。"
  italian_court_building: "[ShowCultureGroupNameWithNoTooltip('italian_group')]宫廷"
  italian_court_building_desc: "通过在我们的主要领地和[ShowRegionName('italy_region')]都维持宫廷，我们可以更有效地管理这两方的贵族。"
- lieutenancy_dlc_tt: "当 [SCOPE.sCountry('actor').GetNameWithNoTooltip] 拥有的 [ShowBuildingTypeName('lieutenancy')] 数量少于 [SCOPE.sCountry('actor').GetModifierValue('num_lieutenancy')] 座（当前 [SCOPE.sCountry('actor').GetTotalBuildingLevelsIncudingUnderConstruction('lieutenancy')|V] 座）"
- local_governor_dlc_tt: "当[SCOPE.sCountry('actor').GetNameWithNoTooltip]拥有的[ShowBuildingTypeName('local_governor')]数量少于[SCOPE.sCountry('actor').GetModifierValue('num_local_governors')]座（当前[SCOPE.sCountry('actor').GetTotalBuildingLevelsIncudingUnderConstruction('local_governor')|V]座）"

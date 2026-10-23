@@ -5852,3 +5852,21 @@
   correction: Parse both types and Types group keywords; preserve type-name case and register their children normally.
   source: reference_game_files/game/in_game/gui/hud_topbar.gui:46; reference_game_files/game/in_game/gui/panels/left_panel/left_panel.gui:93
   notes: Shared parser regression covers both spellings and type expansion; full HUD preview retains unresolved-binding diagnostics.
+- id: offline_preview_samples_detached_from_current_data
+  pattern: ''
+  detectability: advisory
+  category: workflow
+  scope: any
+  bad: Hand-authored offline effect examples drift from current data, selected options or completion state, or are presented as engine output.
+  correction: Derive labeled sample effect text from the authoritative current project data and scenario. Keep lifecycle and selected-option dispatch in the workspace; use shared fixtures.modifier_sample_lines for numeric modifier formatting with caller-supplied metadata and selected localization. Leave unknown bindings diagnostic and do not treat samples as script execution or in-game validation.
+  source: ai_gui_assessment/renderer/eu5_gui_renderer/fixtures.py modifier_sample_lines; ai_gui_assessment/renderer/tests/test_preview.py; eu5-towards-victory/ai_gui_assessment/tests/test_engineering.py test_ritual_effect_samples_follow_selected_style_and_completion
+  notes: Extracted from the unified ritual offline preview update, 2026-10-23. Shared formatting is tested with synthetic modifiers; project ritual schemas and reward rules remain local.
+- id: offline_preview_detail_crops_use_fixed_coordinates
+  pattern: ''
+  detectability: advisory
+  category: workflow
+  scope: any
+  bad: Offline detail previews hardcode card rectangles, reopen full images in project adapters, or render detached subtrees with missing parent context.
+  correction: Pass elements from the fresh expanded panel through preview.render_tree detail_elements. The shared pipeline crops the final bitmap after layout using scaled bounds clipped to the image, omits unplaced or out-of-image elements and writes detail paths with the main diagnostics report. Workspaces own semantic selectors and suffix names only.
+  source: ai_gui_assessment/renderer/eu5_gui_renderer/preview.py render_tree; ai_gui_assessment/renderer/tests/test_preview.py test_details_follow_scaled_layout_and_clip_to_the_rendered_image; docs/guides/EU5_GUI_Modding_Guide.md
+  notes: Offline synthetic regressions cover fractional scale, partial clipping, hidden/outside elements and report persistence, 2026-10-23. Crops preserve the original panel bitmap and its rendering limits.

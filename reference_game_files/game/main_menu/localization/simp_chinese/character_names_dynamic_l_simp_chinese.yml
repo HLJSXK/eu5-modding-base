@@ -1601,7 +1601,7 @@
  name_anastasius.sardinian_dialect: "阿纳斯塔休"
  name_anastasius.serbo_croatian_language: "阿纳斯塔齐耶" #Croatian & Serbian
  name_anastasius.sicilian_dialect: "阿纳斯塔休"
- name_anastasius.slovene_dialect: "阿纳斯塔西伊"
+ name_anastasius.slovene_dialect: "阿纳斯塔西"
  name_anastasius.south_italian_language: "安纳斯塔西奥" #Median & Tuscan
  name_anastasius.spanish_language: "安纳斯塔西奥"
  name_anastasius.venetian_dialect: "阿纳斯塔肖"
@@ -2200,6 +2200,9 @@
  name_argentina.emilian_dialect: "阿尔真廷"
  name_argentina.neapolitan_dialect: "阿尔真蒂内"
  name_argentina.piedmontese_dialect: "阿尔真蒂纳"
+ name_ariadne: "阿里阿德涅"
+ name_ariadne.greek_language: "阿里阿德妮"
+ name_ariadne.koine_dialect: "阿里阿德涅"
  name_arif: "阿里夫"
  name_arif.arabic_language: "阿里夫"
  name_arif.persian_language: "阿里夫"
@@ -9475,7 +9478,8 @@
  name_isaac.greek_language: "伊萨基奥斯" #Ἰσαάκιος
  name_isaac.hungarian_language: "伊若克"
  name_isaac.ladino_dialect: "伊茨雅克"
- name_isaac.serbo_croatian_language: "伊扎克" #Croatian, Serbian & Slovene name_isaac.turkish_language: "Ishak"
+ name_isaac.serbo_croatian_language: "伊扎克" #Croatian, Serbian & Slovene
+ name_isaac.turkish_language: "Ishak"
  name_isbrand: "伊斯布兰德"
  name_isbrand.dutch_dialect: "艾斯布兰德"
  name_isbrand.dutch_dialect.alternative: "艾斯布雷赫特"
@@ -22204,6 +22208,7 @@
  name_indrajayavarman: "因陀罗阇耶跋摩"
  name_ang.name_chey: "昂杰"
  #Korean
+ name_bang_gwa: "芳果" #芳果, 방과
  name_chungnyeol: "忠烈"
  name_chungseon: "忠宣"
  name_don: "暾"
@@ -22586,7 +22591,3 @@
  name_ordinal_male.1: "菲尔斯托"
  name_ordinal_male.2: "塞孔多"
  name_ordinal_male.3: "提尔托"
- name_ariadne: "阿里阿德涅"
- name_ariadne.greek_language: "阿里阿德涅"
- name_ariadne.koine_dialect: "阿里阿德涅"
- name_bang_gwa: "邦瓜"

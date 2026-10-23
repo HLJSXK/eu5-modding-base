@@ -568,6 +568,10 @@ conquistador_country = {
 		auto_conquer_different_religion_at_war = yes
 		blocked_from_peace = yes
 		parliament_abolished = yes
+
+		damage_done_versus_heathens_modifier = 0.25
+		discipline = 0.10
+		land_morale_modifier = 0.15
 	}
 	years = 2
 }
@@ -593,6 +597,7 @@ banking_country = {
 		monthly_loan_capacity_investment = 10.0
 		monthly_diplomats = 0.4
 		max_diplomats = 4
+		burghers_estate_can_participate_in_parliament = yes
 	}
 	years = 2
 }
@@ -949,7 +954,6 @@ french_feudal_nobility = { # French Feudalism
 		cultures_capacity = 2
 		monthly_towards_serfdom = societal_value_large_monthly_move
 		monthly_towards_aristocracy = societal_value_monthly_move
-		subject_loyalty = -10
 		global_levy_size_modifier = -0.10
 	}
 	years = 2
@@ -1056,7 +1060,7 @@ french_ducal_vassal_reform = { # Unique Gov Reform for French vassals subjects
 		nobles_estate_target_satisfaction = small_permanent_target_satisfaction
 		monthly_towards_aristocracy = societal_value_monthly_move
 		diplomatic_capacity = 1
-		loyalty_to_overlord = -25
+		loyalty_to_overlord = -20
 	}
 	years = 2
 }
@@ -1285,7 +1289,7 @@ legacy_of_osman = {
 		antagonism_received_modifier = -0.33
 		auto_slave_raid_different_religion = yes
 		government_reform_slots = 1
-		global_max_control = 0.05
+		global_monthly_control = 0.005
 	}
 	years = 2
 }
@@ -2118,6 +2122,13 @@ daimyo = {
 			mechanic = government_reform
 			type = daimyo
 		}
+		NAND = {
+			situation:sengoku = { situation_has_ended = yes }
+			OR = {
+				country_rank = country_rank:rank_kingdom
+				country_rank = country_rank:rank_empire
+			}
+		}
 	}
 	country_modifier = {
 		nobles_estate_target_satisfaction = medium_permanent_target_satisfaction
@@ -2893,12 +2904,12 @@ tle_support_of_banu_al_wad = {
 		pure_tooltip_entry = scales_with_tribes_estate_satisfaction
 	}
 	country_modifier = {
-		global_max_control = 0.1
+		global_monthly_control = 0.01
 		scale = {
 			value = estate_satisfaction:tribes_estate
 			subtract = 0.5
 		}
-		pure_tooltip_entry = max_control_with_tribes_satisfaction
+		pure_tooltip_entry = monthly_control_with_tribes_satisfaction
 	}
 
 	country_modifier = {
@@ -2926,6 +2937,14 @@ tun_strong_familial_governors = {
 		pure_tooltip_entry = enables_familial_governors_subject_type_tt
 	}
 	years = 2
+
+	on_deactivate = {
+		add_country_modifier = {
+			mode = add
+			modifier = tun_trust_in_dynasty_restored
+			years = modifier_duration_years_extended
+		}
+	}
 }
 
 taluqdar_nobility = {
@@ -3163,6 +3182,7 @@ dutch_republic_reform = {
 		government_type = government_type:republic
 	}
 	country_modifier = {
+		trade_income = 0.20
 		export_efficiency = small_trade_efficiency_bonus
 		navy_heavy_ship_power = 0.05
 		subject_loyalty = 10
@@ -3244,8 +3264,10 @@ warring_state = {
 			is_situation_active = situation:red_turban_rebellions
 			has_variable = unlocked_warring_state
 		}
-		exists = international_organization:middle_kingdom
-		NOT = { is_leader_of_international_organization = international_organization:middle_kingdom }
+		trigger_if = {
+			limit = { exists = international_organization:middle_kingdom }
+			NOT = { is_leader_of_international_organization = international_organization:middle_kingdom }
+		}
 		OR = {
 			culture.language.language_family ?= language_family:chinese_language_family
 			culture.language = language:yi_language
@@ -3382,6 +3404,7 @@ school_of_first_letters_reform = {
 	age = age_4_reformation
 	potential = {
 		culture = { has_culture_group = culture_group:iberian_group }
+		religion.group = religion_group:christian
 	}
 	allow = {
 		has_embraced_institution = institution:confessionalism
@@ -3737,10 +3760,7 @@ mamluk_government = {
 		has_or_had_tag = MAM
 	}
 	locked = {
-		is_locked_mechanic = {
-			mechanic = government_reform
-			type = mamluk_government
-		}
+		religion.group = religion_group:muslim
 	}
 	country_modifier = {
 		can_promote_mamluks = yes
@@ -4533,11 +4553,6 @@ royal_council_of_castile = {
 			}
 		}
 		has_unlocked_government_reform_trigger = { type = royal_council_of_castile }
-		NOT = {
-			any_current_bureaucracy = {
-				bureaucracy_type = bureaucracy_type:spa_council_of_castile_bureaucracy
-			}
-		}
 	}
 	country_modifier = {
 		monthly_towards_centralization = societal_value_monthly_move
@@ -5027,7 +5042,7 @@ maghreb_ibadi_majlis_ammi_said = {
 		government_reform_slots = 1
 		parliament_base_support = 0.15
 		monthly_legitimacy = 0.1
-		global_max_control = 0.05
+		global_monthly_control = 0.005
 		allow_ibadi_majlis_ammi_said_council_parliament = yes
 	}
 

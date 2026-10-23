@@ -74,10 +74,14 @@
 		visible = {
 			any_location_in_province = {
 				OR = {
-					NOT = { dominant_religion = owner.religion }
+					AND = {
+						exists = dominant_religion
+						NOT = { dominant_religion = owner.religion }
+					}
 					local_religious_unity < 0.95
 				}
 			}
+			"religion_percentage(scope:target_religion)" < 0.95
 			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = promote_religion interaction_target = target_province } }
 		}
 		map_color = {
@@ -91,7 +95,13 @@
 
 	is_finished = {
 		scope:target_province = {
-			"religion_percentage(scope:target_religion)" >= 0.95
+			OR = {
+				"religion_percentage(scope:target_religion)" >= 1.0
+				AND = {
+					"religion_percentage(scope:target_religion)" >= 0.95
+					"province_pop_type_population(pop_type:tribesmen)" > 0
+				}
+			}
 		}
 	}
 
@@ -225,10 +235,14 @@ establish_religious_court = {
 		visible = {
 			any_location_in_province = {
 				OR = {
-					NOT = { dominant_religion = owner.religion }
+					AND = {
+						exists = dominant_religion
+						NOT = { dominant_religion = owner.religion }
+					}
 					local_religious_unity < 0.95
 				}
 			}
+			"religion_percentage(scope:target_religion)" < 0.95
 			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = establish_religious_court interaction_target = target_province } }
 		}
 		map_color = {
@@ -242,7 +256,13 @@ establish_religious_court = {
 
 	is_finished = {
 		scope:target_province = {
-			"religion_percentage(scope:target_religion)" >= 0.95
+			OR = {
+				"religion_percentage(scope:target_religion)" >= 1.0
+				AND = {
+					"religion_percentage(scope:target_religion)" >= 0.95
+					"province_pop_type_population(pop_type:tribesmen)" > 0
+				}
+			}
 		}
 	}
 

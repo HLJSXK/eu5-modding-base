@@ -22,6 +22,7 @@
  flavor_nav.3.c: "Focus our rule from [evr_country.GetNameWithNoTooltip]."
  flavor_nav.3.c.entry: "Focus our rule from Evreux."
  nav_will_be_able_to_rally_other_appanages_tt: "Reaching #G 150#! relations with a Appanage subject of [GetCountry('FRA').GetName] will make them more inclined to support us in a war against [GetCountry('FRA').GetNameWithNoTooltip] through the [ShowDecisionName('navarre_charles_ii_claim_to_france_appanage_route')] [decision|e]"
+ variable_tt_nav_enable_ambitions_of_charles_ii_ambition_events: "The $flavor_nav.2.entry$ [dynamic_historical_event|e] has occured"
 
  flavor_nav.4.title: "The [ShowDynastyNameWithNoTooltip('capet_dynasty')] Claim"
  flavor_nav.4.entry: "The Capetian Claim"
@@ -63,7 +64,7 @@
  flavor_nav.8.desc: "While the [ShowDisasterNameWithNoTooltip('castilian_civil_war')] has ended, the aftermath throughout [ShowRegionName('iberia_region')] is still being felt. With much of the borderlands now less garrisoned, much of the bad blood between families of the region has evolved into open warfare.\n\nDue to the low strength of [cas_country.GetName], the intensity of the conflict in the region would prove a daunting task for the [ROOT.GetCountry.GetGovernment.GetCourtTitle] of [ROOT.GetCountry.GetName] to resolve alone."
  flavor_nav.8.a: "Dangerous Times are ahead for [ROOT.GetCountry.GetNameWithNoTooltip]."
  nav_end_blood_feud_decision_enabled_tt: "Unlocks the $nav_end_the_blood_feuds.title$ [decision|e]"
- nav_sow_division_in_the_borderlands_enabled_tt: "Unlocks the $nav_sow_division_in_the_borderlands.title$ [decision|e]"
+ nav_sow_division_in_the_borderlands_enabled_tt: "Unlocks the $nav_sow_division_in_the_borderlands.title$ [decision|e], which can be used to weaken [cas_country.GetAdjectiveWithNoTooltip] influence in [ShowScriptedGeographyName('nav_contested_basque_borderlands')] should they maintain considerable control over the region"
 
  flavor_nav.9.title: "Dissolution of [ShowProvinceDefinitionNameWithNoTooltip('biscay_province')]"
  flavor_nav.9.entry: "Dissolution of Biscay"
@@ -71,6 +72,7 @@
  flavor_nav.9.a: "We cannot acquiesce to the Haro family's requests without incurring [cas_country.GetAdjectiveWithNoTooltip] wrath."
  flavor_nav.9.a.entry: "We cannot acquiesce to the Haro family's requests without incurring Castilian wrath."
  flavor_nav.9.b: "Support the Haro family as they sow local anarchy."
+ variable_tt_nav_enable_blood_feud_faction_events: "The $flavor_nav.8.entry$ [dynamic_historical_event|e] has occured"
 
  flavor_nav.10.title: "Clash of the Leguizamon and Zamudiano in [target_location.GetNameWithNoTooltip]"
  flavor_nav.10.entry: "Clash of the Leguizamon and Zamudiano"
@@ -104,6 +106,8 @@
  flavor_nav.14.a: "The Agramonteses have served us well."
  flavor_nav.14.b: "[target_character.GetHerHis|U] influence with [scope_our_consort.GetNameWithNoTooltip] is concerning: move to seperate them."
  flavor_nav.14.b.entry: "His influence with the Consort is concerning: move to seperate them."
+ variable_tt_beaumont_backed_heir: "The Beaumonteses have a presence within the court and are supportive of the heir"
+ variable_tt_agramonteses_backed_consort: "The Agramonteses have a presence within the court and are close allies to the consort"
 
  flavor_nav.15.title: "The Looming Usurpation of [the_legal_heir.GetNameWithNoTooltip]"
  flavor_nav.15.entry: "The Looming Usurpation of the Heir"
@@ -165,7 +169,7 @@
  flavor_nav.50.historical_info: "In 1343, King Philippe of Navarre prepared to join the crusade against Granada, emphasizing his duty as ruler of an Iberian kingdom. His presence at the siege of Algeciras, supported by provisions from the Bay of Biscay, was crucial despite a small military force. Unfortunately, Philippe fell ill, leading to his death in September 1343. His body was returned to Pamplona for burial, while his heart found its resting place in Paris. Jeanne, his widow, received condolences from Pope Clement VI. Algeciras eventually fell, and Jeanne continued to reign until she died in 1349, leaving the crown to their son, Charles II."
  flavor_nav.60.title: "The Will of a Queen"
  flavor_nav.60.entry: "$flavor_nav.60.title$"
- flavor_nav.60.desc: "The [target_character.GetName] is dead and her will has been read. In it, [target_character.GetSheHeFormal] asks her successor to add a chapel to the church of Santa Maria la Real in [ShowLocationName('olite')].\n\nSome courtiers have proposed devoting the chapel to the Conception of Holy Mary, and our ruler, [ROOT.GetCountry.GetGovernment.GetRuler.GetName], is quite convinced of the idea as [ROOT.GetCountry.GetGovernment.GetRuler.GetSheHe] knows how pious [target_character.GetShortNameWithNoTooltip] was."
+ flavor_nav.60.desc: "The [target_character.GetName] is dead and her will has been read. In it, [target_character.GetHeSheFormal] asks her successor to add a chapel to the church of Santa Maria la Real in [ShowLocationName('olite')].\n\nSome courtiers have proposed devoting the chapel to the Conception of Holy Mary, and our ruler, [ROOT.GetCountry.GetGovernment.GetRuler.GetName], is quite convinced of the idea as [ROOT.GetCountry.GetGovernment.GetRuler.GetSheHe] knows how pious [target_character.GetShortNameWithNoTooltip] was."
  flavor_nav.60.a: "The will of a mother must be obeyed."
  flavor_nav.60.b: "We have better uses for that money in mind."
  flavor_nav.60.historical_info: "When Queen Jeanne II died of Black Death in 1349, her last will was read and among her requests, she asked her son Charles II to finance a chapel in the gothic church of Santa Maria La Real de Olite.\n\nThis church was used by the House of Evreux in their religious acts and it is influenced in its style by the Parisian Cathedral of Notre Dame."

@@ -621,23 +621,70 @@ types DiplomaticActions {
 									using = non_great_power_info_tooltip
 								}
 							}
-
+								
 							icon = {
-								size = { 20 20 }
-								texture = "[GetAiPersonalityIcon(Country.GetAiPersonality)]"
-								datacontext = "[Country.GetAiPersonality]"
-								tooltipwidget = { using = AiPersonality_tooltip }
+								visible = "[And3(IsPlayerValid, Not(Country.HasHumanController), Not(Country.IsLocalPlayer))]"
+								size = { 24 24 }
+								texture = "[GetAiDispositionIcon(Country.Self)]"
+								tooltipwidget = { using = AiDisposition_tooltip }
+							}
+
+							widget = {
+								tooltipwidget = { using = HumanPlayerDisposition_tooltip }
+								size = { 24 24 }
+								visible = "[Country.HasHumanController]"
+								icon = {
+									visible = "[Country.IsLocalPlayer]"
+									size = { 24 24 }
+									texture = "gfx/interface/icons/outliner/human_player_self.dds"
+								}
+								icon = {
+									visible = "[And(Not(Country.IsLocalPlayer), Country.IsAllied)]"
+									size = { 24 24 }
+									texture = "gfx/interface/icons/outliner/human_player_war_ally.dds"
+								}
+								icon = {
+									visible = "[And(Not(Country.IsLocalPlayer), GetPlayer.IsEnemy(Country.Self))]"
+									size = { 24 24 }
+									texture = "gfx/interface/icons/outliner/human_player_war_enemy.dds"
+								}
+								icon = {
+									visible = "[And3(Not(Country.IsLocalPlayer), Not(Country.IsAllied), Not(GetPlayer.IsEnemy(Country.Self)))]"
+									size = { 24 24 }
+									texture = "gfx/interface/icons/outliner/human_player.dds"
+								}
 							}
 
 							block "country_card_title_extra" {}
 
 							text_single = {
+								visible = "[Not(Country.HasHumanController)]"
 								using = layoutpolicy_expanding
 								autoresize = no
 								align = nobaseline
 								text = "[Country.GetLongNameWithNoTooltip]"
 
 								block "name_sort_highlight" {}
+							}
+
+							hbox = {
+								visible = "[Country.HasHumanController]"
+								using = layoutpolicy_expanding
+								text_single = {
+									maximumsize = { 140 -1 }
+									autoresize = yes
+									align = nobaseline
+									text = "[Country.GetNameWithNoTooltip]"
+
+									block "name_sort_highlight" {}
+								}
+								expand = {}
+								text_single = {
+									maximumsize = { 140 -1 }
+									autoresize = yes
+									align = nobaseline
+									text = "[Country.GetCountryPlayerName]"
+								}
 							}
 
 							button_pin = {

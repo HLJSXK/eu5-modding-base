@@ -97,6 +97,7 @@
  BLOCKADED_LOC_TT_ENTRY: "[LOCATION.GetRank.GetIcon][LOCATION.GetName]：[LOCATION.GetTotalPopulationWithBreakDown]"
  WAR_BATTLE_TOOLTIP_H: "$NAME$，$DATE$"
  WAR_BATTLE_TOOLTIP_SIZE: "$WIN$@army_strength! vs $LOSS$@army_strength!"
+ WAR_BATTLE_TOOLTIP_SIZE_NAVAL: "$WIN$@navy_strength! vs $LOSS$@navy_strength!"
  WAR_BATTLE_TOOLTIP_SC: "战斗分数：$SCORE|+=2$"
  WAR_BATTLE_TOOLTIP_W: "胜者：$WIN$\n损失：$WINUNITS$"
  WAR_BATTLE_TOOLTIP_L: "败者：$LOSS$\n损失：$LOSSUNITS$"

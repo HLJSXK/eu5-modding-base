@@ -308,6 +308,13 @@
 					}
 				}
 			}
+			custom_tooltip = {
+				text = JOIN_WARS_NOT_AGAINST_OVERLORD
+				trigger_if = {
+					limit = { exists = scope:target }
+					scope:recipient = { NOT = { is_subject_of = scope:target } }
+				}
+			}
 		}
 		wants_propose_policy = {
 			value = 0
@@ -584,11 +591,22 @@ mutual_offense_law = {
 					value = -1000
 				}
 			}
-			add = {
-				desc = "game_concept_opinion"
-				scope:actor = {
-					value = prev_opinion_of_this
-					multiply = 0.03
+			if = {
+				limit = {
+					scope:recipient = {
+						NOR = {
+							international_organization_type = international_organization_type:jurchen_confederation
+							international_organization_type = international_organization_type:tribal_confederation
+							international_organization_type = international_organization_type:colonial_federation
+						}
+					}
+				}
+				add = {
+					desc = "game_concept_opinion"
+					scope:actor = {
+						value = prev_opinion_of_this
+						multiply = 0.03
+					}
 				}
 			}
             add = {
@@ -719,11 +737,22 @@ mutual_offense_law = {
 					value = -1000
 				}
 			}
-			add = {
-				desc = "game_concept_opinion"
-				scope:actor = {
-					value = prev_opinion_of_this
-					multiply = 0.05
+			if = {
+				limit = {
+					scope:recipient = {
+						NOR = {
+							international_organization_type = international_organization_type:jurchen_confederation
+							international_organization_type = international_organization_type:tribal_confederation
+							international_organization_type = international_organization_type:colonial_federation
+						}
+					}
+				}
+				add = {
+					desc = "game_concept_opinion"
+					scope:actor = {
+						value = prev_opinion_of_this
+						multiply = 0.05
+					}
 				}
 			}
             add = {
@@ -838,11 +867,22 @@ mutual_offense_law = {
 					value = -1000
 				}
 			}
-			add = {
-				desc = "game_concept_opinion"
-				scope:actor = {
-					value = prev_opinion_of_this
-					multiply = 0.1
+			if = {
+				limit = {
+					scope:recipient = {
+						NOR = {
+							international_organization_type = international_organization_type:jurchen_confederation
+							international_organization_type = international_organization_type:tribal_confederation
+							international_organization_type = international_organization_type:colonial_federation
+						}
+					}
+				}
+				add = {
+					desc = "game_concept_opinion"
+					scope:actor = {
+						value = prev_opinion_of_this
+						multiply = 0.1
+					}
 				}
 			}
             add = {

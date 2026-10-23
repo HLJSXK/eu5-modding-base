@@ -353,6 +353,8 @@
  NOT_none_controler_equal: "Location is NOT controlled by [TARGET_COUNTRY.GetName]"
  location_controller_equal: "[LOCATION.GetName] is controlled by [TARGET_COUNTRY.GetName]"
  NOT_location_controller_equal: "[LOCATION.GetName] is NOT controlled by [TARGET_COUNTRY.GetName]"
+ location_controller_not_equal: "$NOT_location_controller_equal$"
+ NOT_location_controller_not_equal: "$location_controller_equal$"
  location_owned_equal: "[LOCATION.GetName] is owned by [TARGET_COUNTRY.GetName]"
  NOT_location_owned_equal: "[LOCATION.GetName] is NOT owned by [TARGET_COUNTRY.GetName]"
  dynasty_equal: "Is of the [TARGET_DYNASTY.GetName] [dynasty|e]"
@@ -490,6 +492,7 @@
  dominant_culture_is_owners_culture: "[dominant_culture|e] is same as the [owner|e]'s [culture|e]"
  dominant_culture_is_of_owners_culture_group: "[dominant_culture|e] is one belonging to the [owner|e]'s [culture_group_short|e]"
  dominant_culture_is_of_steppe_group: "[dominant_culture|e] belongs to the [ShowCultureGroupName('steppe_group')] [culture_group_short|e]"
+ dominant_culture_is_of_jurchen_group: "[dominant_culture|e] belongs to the [ShowCultureGroupName('jurchen_group')] [culture_group_short|e]"
  non_leader_countries_cannot_initiate_resolutions: "Non leaders cannot initiate law debates"
  non_member_countries_cannot_initiate_resolutions: "Non-members cannot initiate law debates"
 
@@ -1491,8 +1494,8 @@
  NOT_any_other_core_country_count: "Not $PARAMETERS$ other country with a [core|e] on us"
  any_buildings_in_location: "Any [buildings|e] in [LOCATION.GetName]"
  NOT_any_buildings_in_location: "No [building|e] in [LOCATION.GetName]"
- any_friendly_coast_border_location: "Any friendly nearby [coastal|e] [location|e]"
- any_coast_border_location: "Any nearby [coastal|e] [location|e]"
+ any_friendly_coast_border_location: "Any friendly [location|e] bordering this one, or across a sea zone"
+ any_coast_border_location: "Any [location|e] bordering this one, or across a sea zone"
  any_export: "Any export in [MARKET.GetName]"
  NOT_any_export: "No export in [MARKET.GetName]"
  any_export_all: "All exports in [MARKET.GetName]"
@@ -2513,6 +2516,11 @@
  THIRD_IS_VALID_SUBJECT_FOR_GOAL_TRIGGER: "[COUNTRY.GetName] is a valid subject for [COLONIAL_CHARTER_GOAL.GetNameWithNoTooltip]"
  NOT_THIRD_IS_VALID_SUBJECT_FOR_GOAL_TRIGGER: "[COUNTRY.GetName] is NOT a valid subject for [COLONIAL_CHARTER_GOAL.GetNameWithNoTooltip]"
 
+ IS_VALID_GOAL_FOR_CHARTER_TRIGGER: "Is a possible goal for this [colonial_charter|e]"
+ NOT_IS_VALID_GOAL_FOR_CHARTER_TRIGGER: "Is NOT a possible goal for this [colonial_charter|e]"
+ THIRD_IS_VALID_GOAL_FOR_CHARTER_TRIGGER: "[ROOT.GetNameWithNoTooltip] is a possible goal for this [colonial_charter|e]"
+ NOT_THIRD_IS_VALID_GOAL_FOR_CHARTER_TRIGGER: "[ROOT.GetNameWithNoTooltip] is NOT a possible goal for this [colonial_charter|e]"
+
 
  TAX_BASE_TRIGGER: "Has $COMPARATOR$ $NUM|Y$ [tax_base|e]"
  NOT_TAX_BASE_TRIGGER: "Does NOT have $COMPARATOR$ $NUM|Y$ [tax_base|e]"
@@ -2733,6 +2741,10 @@
  THIRD_HAS_ANY_TOWN_RIGHTS_TRIGGER: "[LOCATION.GetName] has Urban Rights"
  NOT_HAS_ANY_TOWN_RIGHTS_TRIGGER: "Does NOT have any Urban Right"
  NOT_THIRD_HAS_ANY_TOWN_RIGHTS_TRIGGER: "[LOCATION.GetName] does NOT have any Urban Right"
+ IS_IN_PROMOTED_INDUSTRY_AREA_TRIGGER: "Is in an area with an active Industry Promotion"
+ THIRD_IS_IN_PROMOTED_INDUSTRY_AREA_TRIGGER: "[LOCATION.GetName] is in an area with an active Industry Promotion"
+ NOT_IS_IN_PROMOTED_INDUSTRY_AREA_TRIGGER: "Is NOT in an area with an active Industry Promotion"
+ NOT_THIRD_IS_IN_PROMOTED_INDUSTRY_AREA_TRIGGER: "[LOCATION.GetName] is NOT in an area with an active Industry Promotion"
 
  HAS_MAX_TOWN_RIGHTS_TRIGGER: "Has the maximum number of Urban Rights"
  THIRD_HAS_MAX_TOWN_RIGHTS_TRIGGER: "[LOCATION.GetName] has the maximum number of Urban Rights"
@@ -5371,6 +5383,12 @@
  THIRD_HAS_PARLIAMENT_TRIGGER: "$WHO$ has a [parliament|e]"
  NOT_THIRD_HAS_PARLIAMENT_TRIGGER: "$WHO$ does NOT have a [parliament|e]"
 
+ HAS_PARLIAMENT_AGENDAS_TRIGGER: "Has at least one [estate|e] pushing a [parliament_agenda|e]"
+ NOT_HAS_PARLIAMENT_AGENDAS_TRIGGER: "Does NOT have any [estate|e] pushing a [parliament_agenda|e]"
+ FIRST_HAS_PARLIAMENT_AGENDAS_TRIGGER: "We have at least one [estate|e] pushing a [parliament_agenda|e]"
+ NOT_FIRST_HAS_PARLIAMENT_AGENDAS_TRIGGER: "We do NOT have any [estate|e] pushing a [parliament_agenda|e]"
+ THIRD_HAS_PARLIAMENT_AGENDAS_TRIGGER: "$WHO$ has at least one [estate|e] pushing a [parliament_agenda|e]"
+ NOT_THIRD_HAS_PARLIAMENT_AGENDAS_TRIGGER: "$WHO$ does NOT have any [estate|e] pushing a [parliament_agenda|e]"
  IS_ACTIVE_PARLIAMENT_TRIGGER: "Has $PARLIAMENT$ in session"
  NOT_IS_ACTIVE_PARLIAMENT_TRIGGER: "Does NOT have $PARLIAMENT$ in session"
  FIRST_IS_ACTIVE_PARLIAMENT_TRIGGER: "We have $PARLIAMENT$ in session"
@@ -5836,6 +5854,13 @@
  NOT_CULTURE_TOLERATED_TRIGGER: "IS NOT a [tolerated_culture|e] in [TARGET_COUNTRY.GetName]"
  THIRD_CULTURE_TOLERATED_TRIGGER: "[CULTURE.GetName] is a [tolerated_culture|e] in [TARGET_COUNTRY.GetName]"
  NOT_THIRD_CULTURE_TOLERATED_TRIGGER: "[CULTURE.GetName] is NOT a [tolerated_culture|e] in [TARGET_COUNTRY.GetName]"
+
+ NONE_CULTURE_DISCRIMINATED_TRIGGER: "[culture|e] is a [discriminated_culture|e] in [TARGET_COUNTRY.GetName]"
+ NOT_NONE_CULTURE_DISCRIMINATED_TRIGGER: "[culture|e] is NOT a [discriminated_culture|e] in [TARGET_COUNTRY.GetName]"
+ CULTURE_DISCRIMINATED_TRIGGER: "IS a [discriminated_culture|e] in [TARGET_COUNTRY.GetName]"
+ NOT_CULTURE_DISCRIMINATED_TRIGGER: "IS NOT a [discriminated_culture|e] in [TARGET_COUNTRY.GetName]"
+ THIRD_CULTURE_DISCRIMINATED_TRIGGER: "[CULTURE.GetName] is a [discriminated_culture|e] in [TARGET_COUNTRY.GetName]"
+ NOT_THIRD_CULTURE_DISCRIMINATED_TRIGGER: "[CULTURE.GetName] is NOT a [discriminated_culture|e] in [TARGET_COUNTRY.GetName]"
 
  NONE_HAS_GRAPHICAL_CULTURE_TRIGGER: "[culture|e] has $GFX_CULTURE$ graphical culture"
  NOT_NONE_HAS_GRAPHICAL_CULTURE_TRIGGER: "[culture|e] does NOT have $GFX_CULTURE$ graphical culture"

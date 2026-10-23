@@ -186,6 +186,7 @@
  artist_events.44.desc: "我们的法律公正地统治着[ROOT.GetCountry.GetFlavorRank]。即使对那些试图破坏我们进步的人，法律也提供了无偏见的仁慈之手。\n\n[target_rebel.GetName]及其支持者便是如此。[target_character.GetName]对法律保护的深思熟虑帮助许多人远离了叛乱倾向，使我们有机会按照自己的意愿影响他们。"
  artist_events.44.a: "好牧人会欢迎迷途的羔羊。"
  artist_events.44.b: "抓住机会，强行推行我们的文化！"
+ pacify_rebel_pops_surrender_tt: "[rebellion|e]已被平定，其支持者放下了武器"
  every_supporter_pop_gains_20_satisfaction_tt: "支持[target_rebel.GetName][rebellion|e]的所有[pop|e]会获得[ShowNamedValue('pop_satisfaction_extreme_bonus')|+=2%][pop_satisfaction|e]并重新忠于我们"
  artist_events.45.title: "愉快的法律巧合"
  artist_events.45.desc: "在最近的一次法庭审判中，我们的法律专家[target_character.GetName]为[target_estate.GetName]的重要成员辩护，并取得有利结果。作为回报，他们向国库捐赠了丰厚资金。虽然这笔资金将增加我们的财富，但顾问们已迫不及待地提出无数投资建议。"
@@ -227,4 +228,3 @@
  artist_events.53.desc: "自古以来，师徒相授便是艺术传承的不二法门，而青出于蓝更是每位学徒追求的至高境界。自觉艺业未精的[target_apprentice.GetName]专程来到[ROOT.GetCountry.GetGovernment.GetCourtTitle]，执弟子礼，恳请拜入声名显赫的[target_artist.GetArtistType.GetName][target_artist.GetName]门下修习。此举虽可使[target_apprentice.GetSheHe|U]技艺更上层楼，却也不免令[target_artist.GetNameWithNoTooltip]分身乏术，难以兼顾其他要务。"
  artist_events.53.a: "准许[target_apprentice.GetHerHim]拜师学艺。"
  artist_events.53.b: "[target_artist.GetNameWithNoTooltip]的才能不应浪费在教学上。"
- pacify_rebel_pops_surrender_tt: "[rebellion|e]被平息，其支持者放下了武器"

@@ -37,6 +37,7 @@
  flavor_lit.5.b: "[ROOT.GetCountry.GetLongNameWithNoTooltip]不欢迎外国的贵族。"
  flavor_lit.5.b.entry: "我们不需要外国王室。"
  lit_should_poland_accept_tt: "如果[GetCountry('POL').GetName]接受提议，我们或将获得[institutions|e]传播与繁荣度增长的奖励"
+ lit_offer_hand_to_poland_tt: "[GetCountry('POL').GetNameWithNoTooltip]将决定如何回应：他们可能接受，从而开启和平联统之路；也可能拒绝，并获得一个[casus_belli|e]来推进对我们王位的宣称。"
  flavor_lit.5.historical_info: "立陶宛大公雅盖沃和波兰女王雅德维加之间的联姻通常被称为“#italic 克雷沃联合#!”，代表了大公国数十年天主教化和外交努力的巅峰。这一事件标志着立陶宛作为异教国家的国际身份彻底终结。"
  flavor_lit.6.title: "左支右绌"
  flavor_lit.6.entry: "$flavor_lit.6.title$"
@@ -309,4 +310,3 @@
  flavor_lit.46.historical_info: "14世纪中叶，随着立陶宛崛起为欧洲主要强国，其统治者开始效仿周边基督教王国，推行更为规范的继承制度。这一转变有助于稳定王朝统治，也为日后与波兰的王朝联合奠定了先决条件。"
  flavor_lit.46.a: "自此王位由长子继承。"
  flavor_lit.46.b: "我们的传统一直行之有效——我们会继续坚守。"
- lit_offer_hand_to_poland_tt: "[GetCountry('POL').GetNameWithNoTooltip] 将决定如何回应：他们可能接受，从而开启和平联合之路；也可能拒绝，并借此获得对我国王位提出主张的 [casus_belli|e]"

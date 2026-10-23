@@ -308,7 +308,7 @@
  ROLE_AUDIO_PRODUCER: "#credits_role 音频制作人#!"
  ROLE_AUDIO_ASSOCIATE_PRODUCER: "#credits_role 音频副制作人#!"
  STUDIO_KEYWORDS: "#credits_studio KEYWORDS#!"
- ROLE_kEYWORDS_PROJECT_MANAGER: "#credits_role Keywords 项目经理#!"
+ ROLE_KEYWORDS_PROJECT_MANAGER: "#credits_role Keywords 项目经理#!"
  ROLE_LOC_PROJECT_MANAGER: "#credits_role 本地化项目经理#!"
  DISCIPLINE_FRENCH_TEAM: "#credits_discipline 法语团队#!"
  ROLE_FR_REVIEWER: "#credits_role 法语审校#!"

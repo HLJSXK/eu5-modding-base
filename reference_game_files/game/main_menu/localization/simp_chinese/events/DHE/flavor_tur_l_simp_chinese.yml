@@ -1494,6 +1494,7 @@
  flavor_tur.1003.b.entry: "我们不信任他。"
  tur_grant_all_of_albania_to_skanderbeg_as_uc_bey: "在[ShowProvinceDefinitionName('albania_province')]设立[ShowSubjectTypeName('uc_bey')]，由[target_character.GetName]领导"
  tur_no_lands_for_skanderbeg_tt: "不给[target_character.GetName]任何土地"
+ tur_skanderbeg_exists: "#Y $name_george$·$nick_skanderbeg$#!位于我们的[ROOT.GetCountry.GetGovernment.GetCourtTitle]"
  flavor_tur.1004.title: "[target_character2.GetNameWithNoTooltip]的叛乱"
  flavor_tur.1004.entry: "斯坎德培崛起"
  flavor_tur.1004.desc: "在为[ROOT.GetCountry.GetName]效力多年，并被授予[target_country.GetName]头衔后，[target_character2.GetName]逐渐失宠于[ROOT.GetCountry.GetAdjective][ROOT.GetCountry.GetGovernment.GetCourtTitle]，如今竟妄图建立独立的[ShowCultureName('albanian')]国家。为实现[target_character.GetHerHis]的主权梦想，[target_character.GetSheHe]已公然起兵反叛我们。"
@@ -1547,4 +1548,3 @@
  flavor_tur.1301.desc: "[target_country2.GetName]主动接触[target_character.GetName]，希望与我们建立更密切的关系。他们的主要诉求是提供保护；作为交换，我们将成为他们的附属国，效忠于[target_character2.GetName]。"
  flavor_tur.1301.a: "我们不会接受外族的庇护。"
  flavor_tur.1301.b: "如果这能保住我们安全……"
- tur_skanderbeg_exists: "#Y$name_george$·$nick_skanderbeg$#!正在我们的[ROOT.GetCountry.GetGovernment.GetCourtTitle]麾下"

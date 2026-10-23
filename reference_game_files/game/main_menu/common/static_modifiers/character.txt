@@ -286,6 +286,13 @@ block_marriage = {
 	blocked_from_marriage = yes
 }
 
+royal_mistress = {
+	game_data = {
+		category = character
+	}
+	blocked_from_marriage = yes
+}
+
 block_leading_armies_or_navies = {
 	game_data = {
 		category = character
@@ -883,13 +890,6 @@ guesclin_eagle_of_brittany = {
 		category = character
 	}
     force_allow_as_leader = yes
-}
-
-guesclin_fabian_strats = {
-	game_data = {
-		category = character
-	}
-	land_morale_modifier = 0.15
 }
 
 guesclin_constable_of_france = {

@@ -768,6 +768,7 @@
  flavor_chi_por.1.desc: "$china$的富庶在整个[ShowContinentName('europe')]享有盛誉。即便只能获取其财富的一小部分，对我国而言也将是重大收获。虽然实现这一目标有多种途径，但最稳妥的方式或许是取得一块可以进行贸易的飞地。为此，我们应当向[target_country.GetAdjective]提出租借[target_location.GetName]部分领土的请求。"
  flavor_chi_por.1.a: "提出租借请求。"
  flavor_chi_por.1.b: "我们不需要这个。"
+ flavor_chi_por.1.requirement_tt: "[ShowFormableCountryName('CHI_f')]拥有[ShowLocationName('xiangshan_xinhui')]"
  flavor_chi_por.2.title: "租借[target_location.GetNameWithNoTooltip]的请求"
  flavor_chi_por.2.desc: "[offering_country.GetName]遣使来朝，他们呈请租借[target_location.GetName]一隅之领土，以营建[offering_country.GetNameWithNoTooltip][target_building_type.GetName]，从而与[target_country.GetName]互通有无。与万里之外的[ShowContinentName('europe')]通商贸易，必使我朝愈趋[ShowSocietyDirectionName('outward')]，更可进口$china$前所未见之奇货。"
  flavor_chi_por.2.a: "接受提议。"
@@ -791,4 +792,3 @@
  chi_neighboring_nations_might_get_cb_on_us: "被$expedition_name_treasure_voyage$拜访过的邻近[nations|e]将获得机会，在他们的支持下对[ROOT.GetCountry.GetName]发动[war|e]。"
  not_is_treasure_voyage_active: "目前没有活跃的$expedition_name_treasure_voyage$。"
  chinese_treasure_expeditions_when_expedition_returns: "当宝船舰队返回[expedition_initiator.GetName]时："
- flavor_chi_por.1.requirement_tt: "[ShowFormableCountryName('CHI_f')] 拥有 [ShowLocationName('xiangshan_xinhui')]"

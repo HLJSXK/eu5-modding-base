@@ -475,7 +475,6 @@ types BuildingBlocksTooltipsTypes
 		}
 
 		TooltipListScrollArea = {
-			autoresize_axis = vertical
 			visible = "[And(HasStringPairListContext(PdxGuiWidget.Self), DataModelHasItems(StringPairList.GetRows))]"
 
 			blockoverride "scrollarea_content" {
@@ -490,11 +489,25 @@ types BuildingBlocksTooltipsTypes
 		}
 	}
 
-	type TooltipDebugStringPairList = TooltipStringPairList {
+	type TooltipDebugStringPairList = TooltipListBase {
 		using = tooltip_debug_delayed_block
 
-		blockoverride "set_textcontext" {
-			ontextcontextchanged = "[SetStringPairListFromTextContext(PdxGuiWidget.AccessSelf)]"
+		ontextcontextchanged = "[SetStringPairListFromTextContext(PdxGuiWidget.AccessSelf)]"
+
+		TooltipListScrollArea = {
+			autoresize_axis = vertical
+			visible = "[DataModelHasItems(StringPairList.GetRows)]"
+			blockoverride "block_scrollarea" { maximumsize = { -1 500 } }
+
+			blockoverride "scrollarea_content" {
+				TooltipStringPairListContent = {
+					set_parent_dimension_to_minimum = height
+				}
+			}
+		}
+
+		TooltipListEmptyContent = {
+			visible = "[IsDataModelEmpty(StringPairList.GetRows)]"
 		}
 
 		blockoverride "bg_listbase" {
@@ -901,13 +914,16 @@ types BuildingBlocksTooltipsTypes
 				}
 				hbox = {
 					margin = { 10 0 }
-					spacing = 20
+					spacing = 10
 					text_single = {
 						autoresize = yes
 						minimumsize = "[AutoTableWidth.GetMinimumSize('(int32)0', PdxGuiWidget.Self)]"
-						layoutpolicy_horizontal = expanding
+						layoutpolicy_horizontal = fixed
 						text = "[StringViewPair.GetLeft.GetStringView][AddTextIf(Not(StringViewPair.GetLeft.IsStringViewNotEmptyOrNull), ' ')]"
 					}
+
+					expand = {}
+					
 					text_single = {
 						autoresize = yes
 						minimumsize = "[AutoTableWidth.GetMinimumSize('(int32)1', PdxGuiWidget.Self)]"

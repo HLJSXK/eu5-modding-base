@@ -5,6 +5,7 @@
  has_not_had_this_situation_before_tt: "尚未触发该[situation|e]"
  DEFENDERS_CATHOLICISM: "对抗$BOH$的防御[alliance|e]"
  DEFENDERS_HUSSITISM: "对抗$PAP$的防御[alliance|e]"
+ HUSSITE_WARS_NO_SUPPORTERS: "没有[country|e]站在这一边"
  bohemia_and_emperor_at_war_with_both_being_leaders_tt: "[GetCountry('BOH').GetName]和[GetUniqueInternationalOrganization('hre').GetLeaderCountry.GetName]正处于战争，且每个[country|e]为所在方的[war_leader|e]"
  HERETICS_KILLED: "裁判法庭死亡数"
  HERETICS_CONVERTED: "裁判法庭皈依数"
@@ -114,4 +115,3 @@
  hussite_wars.11.desc: "从[target_boh_capital_scope.GetName]的讲道坛到最偏远的乡村礼拜堂，消息已经传开——[GetUniqueInternationalOrganization('hre').GetLeaderTitle]已宣布我们为危险的异端，要求我们必须选择：要么归顺旧教，要么面临镇压。我们点燃了[ShowReligionName('hussite')]火焰，如今既是信仰灯塔，也成为众矢之的。当十字军在我们的边界之外集结时，我们的人民仰望着我们，期盼力量与指引。我们已在信仰与[ShowReligionName('catholic')]权威之间做出了选择——既已坚定了信仰，如今便必须做好准备，捍卫真理。"
  hussite_wars.11.a: "我们为信仰和人民而战！"
  hussite_wars_11_tt: "[ShowSituationName('hussite_wars')][situation|e]已开始"
- HUSSITE_WARS_NO_SUPPORTERS: "尚无 [country|e] 支持这一方"

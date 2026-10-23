@@ -1766,8 +1766,8 @@
  CT_IMPACT_ON_RELATIVE_STRENGTH: "$VAL|+=%$ from [SUBUNIT.GetCurrentStrengthPercentage|2%] of [max_strength|e]: $DAMAGE$"
  CT_IMPACT_ON_REGIMENT_SIZE: "$VAL|+=%$ from our [max_strength|e] against that of [TARGET_SUBUNIT.GetName]: $DAMAGE$"
 
- TARGET_SUB_UNIT_LEVY: "#L Levy@[TARGET_SUBUNIT.GetController.GetFlag]!#!"
- SUB_UNIT_LEVY: "#L Levy@[SUBUNIT.GetController.GetFlag]!#!"
+ TARGET_SUB_UNIT_LEVY: "#L Levy[TARGET_SUBUNIT.GetController.GetFlagIconWithNoTooltip]#!"
+ SUB_UNIT_LEVY: "#L Levy[SUBUNIT.GetController.GetFlagIconWithNoTooltip]#!"
  REGULAR_VS_LEVY_BREAKDOWN_HEADER: "#T Regular vs Levy#!\n$VAL|+=%$ is calculated as one divided by a factor of $FACTOR|V$.\nFactor of $FACTOR|V$ is the levy combat effectiveness of [TARGET_SUBUNIT.GetController.GetName] from [levy_combat_efficiency|e].\n$LEV_EFF$"
  LAND_LEVY_COMBAT_IMPACT: "Land Levy Base Combat Efficiency $FACTOR|G%$"
 
@@ -2131,6 +2131,14 @@
  TOGGLE_ALLOW_FRIENDLY_UNITS_TO_BOARD_OFF_INFO: "This [navy|e] allows friendly units to board."
  TOGGLE_ALLOW_FRIENDLY_UNITS_TO_BOARD_ON_CTA: "Set the [navy|e] allow friendly units to board"
  TOGGLE_ALLOW_FRIENDLY_UNITS_TO_BOARD_OFF_CTA: "Stop the [navy|e] from allowing friendly units to board"
+ TOGGLE_ALLOW_FRIENDLY_UNITS_TO_BOARD_OFF_AND_AUTO_ACCEPT_CTA: "Stop the [navy|e] from allowing friendly units to board and from automatically accepting allied requests to transport troops"
+ TOGGLE_AUTO_ACCEPT_TRANSPORT_REQUESTS: "Auto-accept Allied Transport Requests"
+ TOGGLE_AUTO_ACCEPT_TRANSPORT_REQUESTS_OFF: "Stop Auto-accepting Allied Transport Requests"
+ TOGGLE_AUTO_ACCEPT_TRANSPORT_REQUESTS_ON_INFO: "This [navy|e] does NOT automatically accept requests from allies to transport their troops."
+ TOGGLE_AUTO_ACCEPT_TRANSPORT_REQUESTS_OFF_INFO: "This [navy|e] automatically accepts requests from allies to transport their troops, without asking you first."
+ TOGGLE_AUTO_ACCEPT_TRANSPORT_REQUESTS_ON_CTA: "Set the [navy|e] to automatically accept allied requests to transport troops, without asking you first"
+ TOGGLE_AUTO_ACCEPT_TRANSPORT_REQUESTS_OFF_CTA: "Stop the [navy|e] from automatically accepting allied requests to transport troops"
+ TOGGLE_AUTO_ACCEPT_TRANSPORT_REQUESTS_AND_BOARD_CTA: "Allow friendly units to board the [navy|e] and automatically accept allied requests to transport troops, without asking you first"
  #
  # Attach to Units
  TOGGLE_ATTACH_OFF: "Attachment Allowed"

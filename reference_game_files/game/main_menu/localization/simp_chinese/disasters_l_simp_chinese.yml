@@ -8,11 +8,15 @@
  oligarchic_capture: "寡头攫取"
  oligarchic_capture_desc: "王室对我们共和国的掌控已经松动，一个强大的派系正着手夺取国家的权力杠杆。法律改革停滞，反对的声音被压制，除非我们采取行动，否则寡头们将把自己凌驾于人民的意志之上……"
  oligarchic_faction_name: "寡头派系"
+ oligarchic_capture_faction_won_civil_war_tt: "#Y 寡头派系#!赢得内战，夺取了国家的控制权"
+ oligarchic_faction_not_active_tt: "没有活跃的#Y 寡头派系#![rebels|e]"
  #Crisis of Faith
  #Disaster
  crisis_of_faith: "信仰危机"
  crisis_of_faith_desc: "对国家教会的虔诚已经崩溃，对立的传教士用分裂和改革填补了空缺。教士阶层在想要清除异端的人和想要与异端和解的人之间出现了裂痕。我们作为一个受到神权认可的领地的地位正处于摇摆之中……"
  schismatic_clergy_name: "裂教教士"
+ crisis_of_faith_schismatic_clergy_won_civil_war_tt: "#Y 裂教教士#!赢得了内战"
+ schismatic_clergy_not_active_tt: "没有活跃的#Y 裂教教士#![rebels|e]"
  #Succession Crisis
  #Disaster
  succession_crisis: "继承危机"
@@ -200,6 +204,9 @@
  #Disaster
  rise_of_the_szlachta: "$nobles_estate_szlachta$的崛起"
  rise_of_the_szlachta_desc: "我们对$nobles_estate_szlachta$渴望权力的本性并不陌生。随着$nobles_estate_szlachta$的影响力增长，对特权的要求充斥着宫廷。他们的政治动作就如同伺机而动的丛林猛兽。毫无疑问，他们将抓住机会挑战我们的权威！"
+ rise_of_the_szlachta_crown_triumphant: "王权凯旋"
+ rise_of_the_szlachta_nobles_ascendant: "贵族崛起"
+ rise_of_the_szlachta_burghers_empowered: "市民掌权"
  #Actions
  pw_push_for_aristocracy: "推动[ShowSocietyDirectionNameWithNoTooltip('aristocracy')]"
  pw_push_for_aristocracy_desc: "我们的政策愈发倾向[SCOPE.sCountry('actor').GetGovernment.GetEstateName('nobles_estate')]的特权与传统等级制度。在这个体制中，剑与血统决定社会地位，旧贵族家族必须收紧权力的缰绳。但这种权力固化很可能会激怒其他强势的阶层，例如[SCOPE.sCountry('actor').GetGovernment.GetEstateName('burghers_estate')]……"
@@ -289,10 +296,3 @@
  #Twilight of the Tsardom
  twilight_of_the_tsardom: "[ShowGovernmentReformNameWithNoTooltip('tsardom')]的黄昏"
  twilight_of_the_tsardom_desc: "自伊凡·阿森二世去世之后，[GetCountry('BUL').GetName]长期陷入君权衰微、贵族内讧与外敌蚕食交相困扰的困局。在内部割裂与外部威胁的双重夹击之下，[GetCountry('BUL').GetFlavorRank]步入了危机四伏的衰落时期——它要么迎来重整与复兴，要么彻底走向覆灭。"
- crisis_of_faith_schismatic_clergy_won_civil_war_tt: "#Y分裂教士#!已在内战中获胜"
- oligarchic_capture_faction_won_civil_war_tt: "#Y寡头派系#!已在内战中获胜，夺取了国家的控制权"
- oligarchic_faction_not_active_tt: "目前没有活跃的 #Y 寡头派系 #! [rebels|e]"
- rise_of_the_szlachta_burghers_empowered: "市民赋权"
- rise_of_the_szlachta_crown_triumphant: "王权凯旋"
- rise_of_the_szlachta_nobles_ascendant: "贵族崛起"
- schismatic_clergy_not_active_tt: "目前没有活跃的#Y分裂教士#![rebels|e]"

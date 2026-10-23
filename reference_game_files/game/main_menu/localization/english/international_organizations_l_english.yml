@@ -4,6 +4,7 @@
  TARGET_NOT_RELEVANT_TO_US: "Not a neighbor or rival"
  RECENTLY_PREACHED_TO: "Recently preached to"
  UNAWARE_OF_TARGET: "Unaware of the target realm"
+ HOLY_WAR_ALREADY_OVERWHELMING: "Holy warriors already far outmatch the target"
  INTERNATIONAL_ORGANIZATIONS: "International Organizations"
  LEADER_DEFAULT: "Leader"
  LEADERSHIP_CRITERIA: "In order to qualify as a candidate, the country must fulfill these criteria:\n[INTERNATIONAL_ORGANIZATION.GetLeadershipCriteria]"
@@ -566,8 +567,8 @@
  CATHOLIC_CHURCH_CURIA_AND_CARDINAL: "[MemberTypeItem.GetMembersAmount] #L [Localize('game_concept_curia')]#! and [GetDataModelSize(InternationalOrganizationsView.GetInternationalOrganization.GetReligion.GetCardinals)] #L [Localize('game_concept_cardinals')]#!"
  CATHOLIC_CHURCH_CURIA_MEMBER: "[Country.GetName] is in the [curia|e] and has [GetDataModelSize(Country.GetCardinals)] [cardinal_s|e]"
  CURIA_BREAKDOWN_TOOLTIP: "#T [Localize('game_concept_curia')] in the [InternationalOrganization.GetNameWithNoTooltip]#!\n[InternationalOrganization.GetName] has the following [curia|e] members:\n[member|e]: [cardinals|e]"
- CURIA_BREAKDOWN_TOOLTIP_ENTRY: "@[COUNTRY.GetFlag]! [COUNTRY.GetLongName|Y]: #TOOLTIP:$BREAKDOWN_TAG$ $NUMBER|L$#!"
- CURIA_HEADER: "@[COUNTRY.GetFlag]! [COUNTRY.GetLongName|Y] seats of the [cardinals|e]:"
+ CURIA_BREAKDOWN_TOOLTIP_ENTRY: "[COUNTRY.GetFlagIconWithNoTooltip] [COUNTRY.GetLongName|Y]: #TOOLTIP:$BREAKDOWN_TAG$ $NUMBER|L$#!"
+ CURIA_HEADER: "[COUNTRY.GetFlagIconWithNoTooltip] [COUNTRY.GetLongName|Y] seats of the [cardinals|e]:"
 
  #IO Parliaments
  IO_PARLIAMENT_SUPPORT_TITLE: "[InternationalOrganizationsView.GetInternationalOrganization.GetParliament.GetParliamentIssueSupport|2%] Support in [InternationalOrganizationsView.GetInternationalOrganization.GetParliament.GetName]"
@@ -772,6 +773,7 @@
  HIGH_KINGSHIP_NAME: "High Kingship of [ROOT.GetVariable('high_kingship_region').GetRegion.GetNameWithNoTooltip]"
 
  JOIN_WARS_DEFAULT_REASON: "Is at [war|e] with any non-member of [ROOT.GetInternationalOrganization.GetName]"
+ JOIN_WARS_NOT_AGAINST_OVERLORD: "Is not at [war|e] with its own [overlord|e]"
  JOIN_OFFENSIVE_WARS_ALWAYS_IF: "Members will join offensive wars if the following is fulfilled"
  JOIN_OFFENSIVE_WARS_AUTOCALL_IF: "Members will be automatically called to join offensive wars if the following is fulfilled"
  JOIN_OFFENSIVE_WARS_CANCALL_IF: "Members can be called to join offensive wars if the following is fulfilled"

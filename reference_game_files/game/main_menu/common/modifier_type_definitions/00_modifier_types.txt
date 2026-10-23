@@ -3164,6 +3164,14 @@ change_organization_parliament_type_cost_modifier={
 	}
 }
 
+reroll_parliament_agendas_cost_modifier={
+	color=bad
+	percent=yes
+	game_data={
+		category=country
+	}
+}
+
 add_accepted_culture_cost_modifier={
 	color=bad
 	percent=yes
@@ -5480,6 +5488,13 @@ local_port_cost_distance_impact={
 }
 
 local_proximity_source={
+	game_data={
+		category=location
+	}
+}
+
+local_proximity_source_modifier={
+	percent=yes
 	game_data={
 		category=location
 	}

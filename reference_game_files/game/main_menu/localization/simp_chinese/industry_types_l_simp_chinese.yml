@@ -36,7 +36,7 @@
  INDUSTRY_PROMOTION_NOT_OWNED: "@trigger_no!我们在[AREA.GetName]没有任何[location|e]。"
  NO_POSSIBLE_INDUSTRY_TYPE: "没有可促进的产业。"
  # Per-good line in the area picker: how many building levels of this good the player has in the area.
- INDUSTRY_AREA_GOODS_LEVELS: "$ICON$$GOODS$：$TOTAL$级（#G $CONSTRUCTION$#!建造中，#Y $ESTABLISHING$#!投产）"
+ INDUSTRY_AREA_GOODS_LEVELS: "$ICON$$GOODS$：$TOTAL$级（#G $CONSTRUCTION$#!建造中，#Y $ESTABLISHING$#!投产）" ### to add when establishment is back: ### #Y $ESTABLISHING$#! establishing
  INDUSTRY_AREA_BUILDINGS_HEADER: "#T 现有建筑#!\n"
  INDUSTRY_AREA_BUILDING_ENTRY: "[BUILDING.GetName]（[LOCATION.GetName]）：$LEVELS|+=0$级"
  INDUSTRY_AREA_NO_BUILDINGS: "$INDUSTRY_AREA_BUILDINGS_HEADER$@trigger_no!该[area|e]没有生产这些商品的建筑。"

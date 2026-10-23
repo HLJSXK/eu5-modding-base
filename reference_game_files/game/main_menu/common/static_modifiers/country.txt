@@ -1367,49 +1367,49 @@ estate_emergency_taxes_nobles = {
 	game_data = {
 		category = country
 	}
-	nobles_estate_max_tax = 0.05
+	nobles_estate_max_tax = 0.10
 }
 
 estate_emergency_taxes_burghers = {
 	game_data = {
 		category = country
 	}
-	burghers_estate_max_tax = 0.05
+	burghers_estate_max_tax = 0.10
 }
 
 estate_emergency_taxes_clergy = {
 	game_data = {
 		category = country
 	}
-	clergy_estate_max_tax = 0.05
+	clergy_estate_max_tax = 0.10
 }
 
 estate_emergency_taxes_peasants = {
 	game_data = {
 		category = country
 	}
-	peasants_estate_max_tax = 0.05
+	peasants_estate_max_tax = 0.10
 }
 
 estate_emergency_taxes_tribes = {
 	game_data = {
 		category = country
 	}
-	tribes_estate_max_tax = 0.05
+	tribes_estate_max_tax = 0.10
 }
 
 estate_emergency_taxes_dhimmi = {
 	game_data = {
 		category = country
 	}
-	dhimmi_estate_max_tax = 0.05
+	dhimmi_estate_max_tax = 0.10
 }
 
 estate_emergency_taxes_cossacks = {
 	game_data = {
 		category = country
 	}
-	cossacks_estate_max_tax = 0.05
+	cossacks_estate_max_tax = 0.10
 }
 
 # Estate emergency interactions — extra levies
@@ -2941,6 +2941,14 @@ ai_stability_target_peasant_wars_disaster = {
 	ai_stability_target_modifier = 31
 }
 
+ai_stability_target_decline_of_empire = {
+	game_data = {
+		category = country
+	}
+
+	ai_stability_target_modifier = 2
+}
+
 ai_succession_disaster_targets = {
 	game_data = {
 		category = country
@@ -3451,6 +3459,32 @@ tun_ifriqiya_reunited_modifier = {
 	monthly_political_influence = 0.25
 	monthly_prestige = 0.1
 	global_crown_estate_power = 0.1
+}
+
+tun_arab_tribe_rights_quelled = {
+	game_data = {
+		category = country
+	}
+
+	monthly_political_influence = 0.2
+}
+
+tun_control_over_countryside_restored = {
+	game_data = {
+		category = country
+	}
+
+	global_monthly_food_modifier = monthly_food_productivity_mild_bonus
+}
+
+tun_trust_in_dynasty_restored = {
+	game_data = {
+		category = country
+	}
+
+	monthly_legitimacy = 0.05
+	global_crown_estate_power = 0.2
+	diplomatic_reputation = diplomatic_reputation_mild_bonus
 }
 
 finest_infantry = {
@@ -4887,6 +4921,13 @@ fra_raids_against_english_ports_supply_debuff = {
 		decaying = yes	
 	}
 	global_supply_limit_modifier = -0.33
+}
+
+guesclin_fabian_strats = {
+	game_data = {
+		category = country
+	}
+	land_morale_modifier = 0.10
 }
 
 fra_nrm_seeking_support_abroad = {
@@ -6632,20 +6673,6 @@ hundred_years_war_impact = {
 		category = country
 	}
 	blocks_country_formation = yes
-}
-
-cas_adelantado_crown_estate_modifier = {
-	game_data = {
-		category = country
-	}
-	global_crown_estate_power = 0.25
-}
-
-cas_adelantado_nobles_estate_modifier = {
-	game_data = {
-		category = country
-	}
-	global_nobles_estate_power = 0.25
 }
 
 rise_of_timur_impact = {
@@ -10379,6 +10406,17 @@ accurate_charts = {
 	exploration_preparation_time_modifier = -0.15
 }
 
+western_ocean_pioneer = {
+	game_data = {
+		category = country
+		decaying = yes
+	}
+
+	exploration_mission_speed = 0.5
+	exploration_preparation_time_modifier = -0.5
+	exploration_maintenance_efficiency = 0.25
+}
+
 thorough_survey = {
 	game_data = {
 		category = country
@@ -11060,7 +11098,7 @@ iro_forbade_foreign_contact = {
 	}
 	stability_investment = large_stability_investment
 	monthly_tribal_cohesion = 0.25
-	global_max_control = 0.1
+	global_monthly_control = 0.01
 }
 
 iro_sharing_of_three_sisters_harvest = {
@@ -11157,6 +11195,7 @@ chk_preservation_of_cahokia = {
 	stability_cost_efficiency = -0.1
 	government_size = 2
 	prestige_decay = -0.0025
+	global_tribesmen_migration_allowed = yes
 }
 
 chk_funding_woodhenge_restoration = {
@@ -11241,6 +11280,7 @@ chk_new_golden_age = {
 	stability_investment = large_stability_investment	
 	government_size = 1
 	monthly_gold_income = 6
+	global_tribesmen_migration_allowed = yes
 }
 
 chk_restricted_construction = {
@@ -12255,8 +12295,7 @@ lat_a_distinct_latin_bureaucracy = {
 	change_policy_cost_modifier = -0.20
 	legislative_efficiency = 0.20
 	global_integration_speed_modifier = 0.20
-	global_max_control = 0.05
-	global_monthly_control = 0.003
+	global_monthly_control = 0.005
 }
 
 
@@ -12618,8 +12657,7 @@ nav_expansion_of_the_royal_hermandades = {
 	}
 	global_crown_estate_power = 0.25
 	stability_investment = large_stability_investment
-	global_max_control = 0.05
-	global_monthly_control = 0.003
+	global_monthly_control = 0.005
 }
 
 nav_end_of_the_blood_feuds = {

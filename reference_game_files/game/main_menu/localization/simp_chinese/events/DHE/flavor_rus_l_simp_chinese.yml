@@ -293,6 +293,7 @@
  flavor_rus.43.entry: "格里戈里·奥尔洛夫"
  flavor_rus.43.desc_empress: "一位潇洒的军官和富有的地主吸引了[ROOT.GetCountry.GetGovernment.GetRulerTitle]的目光，[ROOT.GetCountry.GetGovernment.GetRuler.GetHimHer]邀请他前来服侍。$flavor_rus.43.desc_common$"
  flavor_rus.43.desc_artillery_yard: "一位被派驻到[ShowBuildingTypeName('moscow_artillery_yard')]的有能军官和富有地主激起了高层的好奇心，并邀请他承担更多职责。$flavor_rus.43.desc_common$"
+ flavor_rus.43.desc_default: "一位风度翩翩的军官兼富有地主引起了朝廷高层的注意，他们已经邀请他承担更多职责。$flavor_rus.43.desc_common$"
  flavor_rus.43.desc_common: "凭借之前表现出的海战和国务天赋，[grigory_orlov.GetName]将成为优秀的内阁或海军人选。"
  flavor_rus.43.a: "骨子里是个官僚。"
  flavor_rus.43.tt2: "被委任到[cabinet|e]后，他可以支持多项倡议"
@@ -528,4 +529,3 @@
  flavor_rus.74.tt4: "加强审查以延缓革命思想的进一步传播"
  flavor_rus.74.historical_info: "尼古拉·诺维科夫是叶卡捷琳娜大帝统治时期的作家、慈善家和出版商。他创办了一部文学和哲学期刊，大大推动了俄罗斯启蒙思想的发展传播，并致力于共济会活动和慈善事业。这导致他与政府发生了冲突，身陷囹圄数年。尽管如此，他的作品仍在流传并激发了反政府情绪，鼓舞了未来的革命。"
  variable_moscow_gazette_tt: "莫斯科公报已付印"
- flavor_rus.43.desc_default: "一位风度翩翩的军官兼富有的地主引起了宫廷显贵们的注意，他们邀请他承担更多的责任。$flavor_rus.43.desc_common$"

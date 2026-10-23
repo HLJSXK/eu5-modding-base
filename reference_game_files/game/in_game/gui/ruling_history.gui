@@ -30,7 +30,7 @@ template ruling_history_scroll_list_content {
 				io_character_card = {
 					size = { 100% 100% }
 					using = layoutpolicy_expanding
-					datacontext = "[RulerTermEntry.GetRulerTerm.GetCharacterRulerData.GetRuler('(int32)0')]"
+					datacontext = "[RulerTermEntry.GetCharacter]"
 					blockoverride "io_character_card_header_color" {
 						using = bg_card_header_01_government
 					}
@@ -65,7 +65,7 @@ template ruling_history_scroll_list_content {
 						visible = no
 					}
 					blockoverride "character_name_text" {
-						text = "[RulerTermEntry.GetRulerTerm.GetNameInfo]"
+						text = "[RulerTermEntry.GetNameInfo]"
 						margin_left= 0
 						default_format = "#yellow_titles"
 					}
@@ -82,7 +82,7 @@ template ruling_history_scroll_list_content {
 						}
 					}
 					blockoverride "character_datacontext" {
-						datacontext = "[RulerTermEntry.GetRulerTerm.GetCharacterRulerData.GetRuler('(int32)0')]"
+						datacontext = "[RulerTermEntry.GetCharacter]"
 					}
 					#blockoverride "character_gettraits_datamodel" {
 					#	visible = no
@@ -101,7 +101,7 @@ template ruling_history_scroll_list_content {
 								text_single = {
 									using = layoutpolicy_expanding
 									align = left|nobaseline
-									text = "[RulerTermEntry.GetRulerTerm.GetStart]"
+									text = "[RulerTermEntry.GetStart]"
 									autoresize = no
 									default_format = "#subtle_name"
 								}
@@ -109,8 +109,8 @@ template ruling_history_scroll_list_content {
 								text_single = {
 									using = layoutpolicy_expanding
 									align = right|nobaseline
-									visible = "[Not(RulerTermEntry.GetRulerTerm.IsActive)]"
-									text = "[RulerTermEntry.GetRulerTerm.GetEnd]"
+									visible = "[Not(RulerTermEntry.IsActive)]"
+									text = "[RulerTermEntry.GetEnd]"
 									autoresize = no
 									default_format = "#subtle_name"
 								}
@@ -118,7 +118,7 @@ template ruling_history_scroll_list_content {
 								text_single = {
 									using = layoutpolicy_expanding
 									align = right|nobaseline
-									visible = "[RulerTermEntry.GetRulerTerm.IsActive]"
+									visible = "[RulerTermEntry.IsActive]"
 									text = "RULER_IS_ALIVE"
 									autoresize = no
 									default_format = "#subtle_name"
@@ -151,6 +151,46 @@ template ruling_history_scroll_list_content {
 								using = religion_tooltip
 							}
 							datacontext = "[Country.GetReligion]"
+						}
+					}
+					blockoverride "character_header_culture_icon" {
+						widget = {
+							size = { 25 25 }
+							datacontext = "[Country.GetCulture]"
+							tooltipwidget = {
+								using = culture_tooltip
+							}
+
+							icon = {
+								parentanchor = center
+								size = { 100% 100% }
+								texture = "gfx/interface/icons/culture/primary_culture.dds"
+								visible = "[Culture.IsPrimary(Country.Self)]"
+							}
+							icon = {
+								parentanchor = center
+								size = { 100% 100% }
+								texture = "gfx/interface/icons/culture/accepted_culture.dds"
+								visible = "[Culture.IsAccepted(Country.Self)]"
+							}
+							icon = {
+								parentanchor = center
+								size = { 100% 100% }
+								texture = "gfx/interface/icons/culture/tolerated_culture.dds"
+								visible = "[Culture.IsTolerated(Country.Self)]"
+							}
+							icon = {
+								parentanchor = center
+								size = { 100% 100% }
+								texture = "gfx/interface/icons/culture/discriminated_culture.dds"
+								visible = "[Culture.IsDiscriminated(Country.Self)]"
+							}
+							icon = {
+								parentanchor = center
+								size = { 100% 100% }
+								texture = "gfx/interface/icons/culture/ignored_culture.dds"
+								visible = "[And(And(Not(Culture.IsPrimary(Country.Self)), Not(Culture.IsAccepted(Country.Self))), And(Not(Culture.IsTolerated(Country.Self)), Not(Culture.IsDiscriminated(Country.Self))))]"
+							}
 						}
 					}
 					blockoverride "character_frame_small"{

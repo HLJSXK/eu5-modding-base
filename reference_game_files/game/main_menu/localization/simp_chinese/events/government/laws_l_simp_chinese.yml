@@ -113,5 +113,6 @@
  laws.0030.desc: "在[random_town.GetName]，当地的宗教少数群体因为担心我们的审查法可能导致骚乱，在他们的宗教区加筑了防御工事。\n\n允许他们待在街垒中不利于稳定，但这些临时防御工事在该地被围攻时能派上大用场。"
  laws.0030.a: "拆除这些街垒。"
  laws.0030.b: "允许他们保留。"
- laws.0031.desc: "由于 [target_location.GetName] 已不再受我们控制，[ShowBuildingTypeName('itinerant_court_seat')] 已在 [ROOT.GetCapital.GetName] 重新设立。"
  laws.0031.t: "流动的宫廷"
+ laws.0031.desc: "随着[target_location.GetName]脱离了我们的统治，[ShowBuildingTypeName('itinerant_court_seat')]已在[ROOT.GetCapital.GetName]重新设立。"
+ laws.0031.a: "那就这样吧。"

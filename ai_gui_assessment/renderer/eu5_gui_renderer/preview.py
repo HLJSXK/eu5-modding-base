@@ -5,12 +5,13 @@ from dataclasses import dataclass
 import json
 import math
 from pathlib import Path
+import re
 
 from PIL import Image
 
 from .data import Evaluator, Formats, Loc, TextIcons
 from .engine import Engine
-from .gui import GuiDB, collect_files, dump
+from .gui import Element, GuiDB, collect_files, dump
 from .paths import GAME, OUTPUT
 from .textures import TEXTURES
 
@@ -50,13 +51,19 @@ def write_report(path: Path, payload) -> None:
 
 def render_tree(element, expander, resources: RenderResources, mocks: list, *,
                 width: int, height: int, scale: float = 1, output: Path,
-                metadata: dict | None = None, top_detail_height: int | None = None) -> dict:
-    """Render a fresh expanded tree; metadata belongs to the calling scenario."""
+                metadata: dict | None = None, top_detail_height: int | None = None,
+                detail_elements: dict[str, Element] | None = None) -> dict:
+    """Render a fresh tree and named crops of caller-selected, laid-out elements."""
     if width <= 0 or height <= 0 or not math.isfinite(scale) or scale <= 0:
         raise ValueError("width, height and scale must be positive and finite")
     size = round(width * scale), round(height * scale)
     if min(size) < 1:
         raise ValueError("scaled width and height must be at least one pixel")
+    for name in detail_elements or {}:
+        if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_-]*", name):
+            raise ValueError("detail names must be filename suffixes using letters, digits, _ or -")
+        if name == "top_detail" and top_detail_height is not None:
+            raise ValueError("top_detail is reserved when top_detail_height is supplied")
     evaluator = Evaluator(mocks, resources.loc, expander.log)
     engine = Engine(expander, evaluator, resources.loc, resources.formats, resources.icons, scale)
     # Cached failures must still appear in every scene's own report.
@@ -70,6 +77,19 @@ def render_tree(element, expander, resources: RenderResources, mocks: list, *,
     image.save(output)
     tree = output.with_name(output.stem + "_tree.txt")
     tree.write_text("\n".join(dump(element)) + "\n", encoding="utf-8")
+    regions = {name: (node.x, node.y, node.x + node.w, node.y + node.h)
+               for name, node in (detail_elements or {}).items() if node.w > 0 and node.h > 0}
+    if top_detail_height is not None:
+        regions["top_detail"] = (0, 0, width, top_detail_height)
+    details = {}
+    for name, region in regions.items():
+        left, top, right, bottom = (round(value * scale) for value in region)
+        bounds = (max(0, left), max(0, top), min(image.width, right), min(image.height, bottom))
+        if bounds[2] <= bounds[0] or bounds[3] <= bounds[1]:
+            continue
+        detail = output.with_name(output.stem + f"_{name}.png")
+        image.crop(bounds).save(detail)
+        details[name] = str(detail)
     report = {
         **(metadata or {}), "game_root": str(GAME), "size": [width, height], "scale": scale,
         "unknown_expressions": sorted(set(expander.log)),
@@ -78,10 +98,7 @@ def render_tree(element, expander, resources: RenderResources, mocks: list, *,
         "missing_textures": sorted(TEXTURES.missing),
         "missing_text": sorted(set(engine.missing_text)),
         "missing_localizations": sorted(engine.missing_localizations | evaluator.missing_localizations),
-        "output": str(output), "tree": str(tree),
+        "output": str(output), "tree": str(tree), "details": details,
     }
     write_report(output.with_name(output.stem + "_report.json"), report)
-    if top_detail_height is not None:
-        image.crop((0, 0, image.width, min(image.height, round(top_detail_height * scale)))).save(
-            output.with_name(output.stem + "_top_detail.png"))
     return report

@@ -38,6 +38,7 @@
  CHARTER_GOAL_EXPAND_TO: "结果：移交$SUBJECT$"
  CHARTER_GOAL_EXPAND_AUTO: "结果：移交最好的附属国"
  CHARTER_GOAL_KEEP_TERRITORY_LABEL: "结果：保留为领地"
+ CHARTER_GOAL_AUTO_NAME: "自动操作"
  CHARTER_GOAL_FORM_NATION_NAME: "成立殖民领"
  CHARTER_GOAL_EXPAND_SUBJECT_NAME: "移交殖民属邦"
  CHARTER_GOAL_KEEP_TERRITORY_NAME: "保留为领地"
@@ -46,4 +47,3 @@
  colonial_charter.200.title: "[target.GetNameWithNoTooltip]的失败殖民地"
  colonial_charter.200.desc: "我们为殖民[target.GetNameWithNoTooltip]而建立的特许殖民地已经完全失败了；[attacker.GetLongName]更加成功，且挫败了我们所有企图！"
  colonial_charter.200.a: "这真是场灾难！"
- CHARTER_GOAL_AUTO_NAME: "自动"

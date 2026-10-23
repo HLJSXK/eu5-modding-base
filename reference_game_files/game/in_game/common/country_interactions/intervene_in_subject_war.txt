@@ -15,7 +15,6 @@
 	allow = {
 		scope:actor = {
 			is_during_bankruptcy = no
-			has_regent = no
 		}
 	}
 
@@ -153,6 +152,34 @@
 				value = war_length_in_years
 				add = -4
 				multiply = 10
+			}
+		}
+
+		if = {
+			# check that we can probably reach this war, we dont want to intervene into unreachable wars
+			limit = {
+				scope:actor = {
+					not = { is_neighbor_of = scope:recipient }
+					not = { is_neighbor_of = scope:target }
+
+					not = {
+						scope:recipient = {
+							any_neighbor_country = {
+								is_subject_or_below_of = scope:actor
+							}
+						}
+					}
+
+					or = {
+						scope:recipient = { has_ports = no }
+						scope:actor = { has_ports = no }
+					}
+				}
+			}
+
+			add = {
+				value = -1000
+				desc = "probably unreachable"
 			}
 		}
 	}

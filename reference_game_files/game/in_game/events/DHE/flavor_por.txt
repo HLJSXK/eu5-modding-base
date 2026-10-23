@@ -48,6 +48,7 @@ flavor_por.1 = { #Christopher Columbus in Portugal
 					has_advance = quest_for_the_new_world
 					dominant_religion = religion:catholic
 					capital.sub_continent = sub_continent:western_europe
+					has_ports = yes
 					not = { has_variable = turned_down_columbus }
 				}
 				order_by = country_economical_base
@@ -61,7 +62,7 @@ flavor_por.1 = { #Christopher Columbus in Portugal
 			last_name = Columbus
 			culture = culture:ligurian
 			religion = religion:catholic
-			birth_date = 1451.8.28
+			age = 34
 			birth_location = location:genoa
 			trait_category = explorer
 			estate = estate_type:burghers_estate
@@ -717,7 +718,24 @@ flavor_por.17 = {
 	type = country_event
 
 	title = flavor_por.17.title
-	desc = flavor_por.17.desc
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					ruler = {
+						any_child = {
+							is_female = yes
+							is_alive = yes
+						}
+					}
+				}
+				desc = flavor_por.17.desc
+			}
+			triggered_desc = {
+				desc = flavor_por.17.desc_no_heir
+			}
+		}
+	}
 	outcome = neutral
 
 	fire_only_once = yes
@@ -790,6 +808,17 @@ flavor_por.17 = {
 			save_scope_as = john_avis
 		}
 
+		if = {
+			limit = {
+				has_dlc = "d009_across_the_pillars"
+				exists = character:por_goncalo_vasques
+			}
+			character:por_goncalo_vasques = {
+				religious_order ?= { save_scope_as = avis_order }
+			}
+			scope:avis_order ?= { set_head_character = scope:john_avis }
+		}
+
 		create_rebel = {
 			category = pretender
 			name = avis_supporters
@@ -807,6 +836,7 @@ flavor_por.17 = {
 
 		scope:john_avis = { change_character_allegiance = scope:avis_supporters }
 
+		scope:avis_supporters = { add_rebel_progress = rebel_progress_severe_penalty }
 
 		custom_tooltip = {
 			text = flavor_por.17.a.custom
@@ -1200,7 +1230,7 @@ flavor_por.22 = { #Vasco da Gama
 	immediate = {
 		create_character = {
 			first_name = name_vasco
-			last_name = da_gama
+			dynasty = dynasty:da_gama_dynasty
 			adm = 85
 			dip = 90
 			mil = 90
@@ -1388,6 +1418,9 @@ flavor_por.25 = { #The New Seat of the Order of Christ
 		historical_option = yes
 		location:tomar = {
 			attach_to_religious_order = scope:order_of_christ
+		}
+		location:tavira = {
+			remove_religious_order = scope:order_of_christ
 		}
 		scope:order_of_christ = {
 			change_religious_order_zeal = 10
@@ -3105,7 +3138,7 @@ flavor_por.39 = { # Cronica Geral de Espanha
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = POR
-		from = 1344.1.1
+		from = 1341.1.1
 		to = 1350.1.1
 		monthly_chance = 10
 	}
@@ -3346,7 +3379,7 @@ flavor_por.43 = { # The Last Troubadour - Livro das Cantigas
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = POR
-		from = 1350.1.1
+		from = 1344.1.1
 		to = 1360.1.1
 		monthly_chance = 25
 	}
@@ -4766,6 +4799,8 @@ flavor_por.62 = { #Magellan
 		scope:target_character = {
 			move_country = scope:target_country
 		}
+
+		add_prestige = prestige_weak_bonus
 
 		scope:target_country = { trigger_event_silently = flavor_cas.28 }
 	}
@@ -6393,6 +6428,7 @@ flavor_por.2004 = { # Pedro stages a Rebellion
 
 		historical_option = yes
 
+		set_variable = por_pedro_rebellion
 		change_societal_value = {
 			type = centralization_vs_decentralization
 			value = societal_value_minor_move_to_left

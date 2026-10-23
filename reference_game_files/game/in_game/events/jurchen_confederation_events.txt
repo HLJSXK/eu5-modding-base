@@ -1032,8 +1032,8 @@ jurchen_confederation_events.16 = {
 
 		save_scope_as = jc_defier
 		if = {
-			limit = { is_subject = yes }
-			overlord = { cancel_subject = root }
+			limit = { is_subject_of = scope:target_jc_leader }
+			scope:target_jc_leader = { cancel_subject = scope:jc_defier }
 		}
 		scope:target_jc_leader = {
 			add_casus_belli = {
@@ -1103,7 +1103,15 @@ jurchen_confederation_events.17 = {
 
 	option = {
 		name = jurchen_confederation_events.17.a
-		
+
+		random_international_organization = {
+			limit = {
+				international_organization_type = international_organization_type:jurchen_confederation
+				leader_country = root
+			}
+			save_scope_as = target_io
+		}
+
 		custom_tooltip = {
 			text = jurchen_confederation_unification_effort_tt
 			random_international_organization = {

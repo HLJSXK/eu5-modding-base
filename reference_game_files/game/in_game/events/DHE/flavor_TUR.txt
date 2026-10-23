@@ -2039,7 +2039,6 @@ flavor_tur.35 = {
 		name = flavor_tur.35.a
 		historical_option = yes
 		add_political_influence = political_influence_mild_penalty
-		add_political_influence = political_influence_mild_penalty
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_extreme_bonus }
 	}
 
@@ -15817,6 +15816,7 @@ flavor_tur.199 = {
 
 	trigger = {
 		owns = location:sredets
+		location:sredets = { "culture_percentage(culture:bulgarian)" > 0 }
 	}
 
 	immediate = {
@@ -15834,6 +15834,8 @@ flavor_tur.199 = {
 
 		scope:target_location = {
 			change_location_rank_effect = { location_rank = location_rank:city }
+
+			destroy_all_buildings_of_type = building_type:local_governor
 
 			construct_building = {
 				building_type = building_type:bulgarian_administration_center

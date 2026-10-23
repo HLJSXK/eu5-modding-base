@@ -1,7 +1,7 @@
 # EU5 Shared Knowledge Brief
 
 > Generated from this base checkout. Do not edit directly.
-> Last updated: 2026-10-22
+> Last updated: 2026-10-23
 
 ## Startup
 
@@ -27,7 +27,7 @@
 
 ## Shared anti-patterns
 
-The shared registry contains **361** reusable rules. Load the workspace registry cumulatively; do not shadow a shared ID.
+The shared registry contains **363** reusable rules. Load the workspace registry cumulatively; do not shadow a shared ID.
 
 | ID | Category | Scope |
 | --- | --- | --- |
@@ -392,3 +392,5 @@ The shared registry contains **361** reusable rules. Load the workspace registry
 | `while_waiting_for_instant_building_level` | script | building |
 | `yaml_localization_non_ascii_quotes` | localization | any |
 | `gui_parser_uppercase_types_group_ignored` | gui | any |
+| `offline_preview_samples_detached_from_current_data` | workflow | any |
+| `offline_preview_detail_crops_use_fixed_coordinates` | workflow | any |

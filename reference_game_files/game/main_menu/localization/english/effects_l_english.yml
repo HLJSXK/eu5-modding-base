@@ -300,6 +300,13 @@
  PAST_FIRST_GRANT_PARLIAMENT_AGENDA_FOR_ESTATE_EFFECT: "We have granted the [COUNTRY.GetGovernment.GetParliament.GetParliamentAgenda(TARGET_ESTATE_TYPE)] [parliament_agenda|e] of the [TARGET_ESTATE_TYPE.GetName]"
  PAST_THIRD_GRANT_PARLIAMENT_AGENDA_FOR_ESTATE_EFFECT: "[COUNTRY.GetName|U] has granted the [COUNTRY.GetGovernment.GetParliament.GetParliamentAgenda(TARGET_ESTATE_TYPE)] [parliament_agenda|e] of the [TARGET_ESTATE_TYPE.GetName]"
 
+ REROLL_PARLIAMENT_AGENDAS_EFFECT: "Every [estate|e] in the [parliament|e] draws a new [parliament_agenda|e]"
+ FIRST_REROLL_PARLIAMENT_AGENDAS_EFFECT: "Every [estate|e] in our [parliament|e] draws a new [parliament_agenda|e]"
+ THIRD_REROLL_PARLIAMENT_AGENDAS_EFFECT: "Every [estate|e] in the [parliament|e] of [COUNTRY.GetName] draws a new [parliament_agenda|e]"
+ PAST_REROLL_PARLIAMENT_AGENDAS_EFFECT: "Every [estate|e] in the [parliament|e] has drawn a new [parliament_agenda|e]"
+ PAST_FIRST_REROLL_PARLIAMENT_AGENDAS_EFFECT: "Every [estate|e] in our [parliament|e] has drawn a new [parliament_agenda|e]"
+ PAST_THIRD_REROLL_PARLIAMENT_AGENDAS_EFFECT: "Every [estate|e] in the [parliament|e] of [COUNTRY.GetName] has drawn a new [parliament_agenda|e]"
+
  UPDATE_LEADERSHIP_EFFECT: "The leadership of [TARGET_INTERNATIONAL_ORGANIZATION.GetName] gets updated"
  THIRD_UPDATE_LEADERSHIP_EFFECT: "The leadership of [TARGET_INTERNATIONAL_ORGANIZATION.GetName] gets updated"
  PAST_UPDATE_LEADERSHIP_EFFECT: "The leadership of [TARGET_INTERNATIONAL_ORGANIZATION.GetName] has been updated"
@@ -868,10 +875,8 @@
 
  SET_COLONIAL_CHARTER_GOAL_EFFECT: "Sets the outcome of [TARGET_COLONIAL_CHARTER.GetName] to $COLONIAL_CHARTER_GOAL$"
  WE_SET_COLONIAL_CHARTER_GOAL_EFFECT: "We set the outcome of [TARGET_COLONIAL_CHARTER.GetName] to $COLONIAL_CHARTER_GOAL$"
- THIRD_SET_COLONIAL_CHARTER_GOAL_EFFECT: "[COUNTRY.GetName|U] sets the outcome of [TARGET_COLONIAL_CHARTER.GetName] to $COLONIAL_CHARTER_GOAL$"
  SET_COLONIAL_CHARTER_GOAL_EFFECT_PAST: "Set the outcome of [TARGET_COLONIAL_CHARTER.GetName] to $COLONIAL_CHARTER_GOAL$"
  WE_SET_COLONIAL_CHARTER_GOAL_EFFECT_PAST: "We set the outcome of [TARGET_COLONIAL_CHARTER.GetName] to $COLONIAL_CHARTER_GOAL$"
- THIRD_SET_COLONIAL_CHARTER_GOAL_EFFECT_PAST: "[COUNTRY.GetName|U] set the outcome of [TARGET_COLONIAL_CHARTER.GetName] to $COLONIAL_CHARTER_GOAL$"
 
  MAKE_SUBJECT_OF_EFFECT: "Becomes a $SUBJECT_TYPE$ of [TARGET_COUNTRY.GetName]$ADDITIONAL$"
  WE_MAKE_SUBJECT_OF_EFFECT: "We become a $SUBJECT_TYPE$ of [TARGET_COUNTRY.GetName]$ADDITIONAL$"
@@ -1033,8 +1038,8 @@
  PAST_WE_REMOVE_REFORM_EFFECT: "We removed the [TARGET_GOVERNMENT_REFORM.GetName] [government_reform|e]"
  PAST_THIRD_REMOVE_REFORM_EFFECT: "[COUNTRY.GetName|U] removed the [TARGET_GOVERNMENT_REFORM.GetName] [government_reform|e]"
 
- SET_CAPITAL_EFFECT: "[TARGET_LOCATION.GetName] becomes the new [capital|e] and [ROOT.GetCountry.GetCapital.GetName] becomes a [historical_capital|e]"
- WE_SET_CAPITAL_EFFECT: "[TARGET_LOCATION.GetName] becomes our new [capital|e] and [ROOT.GetCountry.GetCapital.GetName] becomes a [historical_capital|e]"
+ SET_CAPITAL_EFFECT: "[TARGET_LOCATION.GetName] becomes the new [capital|e] and [COUNTRY.GetCapital.GetName] becomes a [historical_capital|e]"
+ WE_SET_CAPITAL_EFFECT: "[TARGET_LOCATION.GetName] becomes our new [capital|e] and [COUNTRY.GetCapital.GetName] becomes a [historical_capital|e]"
  THIRD_SET_CAPITAL_EFFECT: "[TARGET_LOCATION.GetName] becomes the new [capital|e] of [COUNTRY.GetName] and [COUNTRY.GetCapital.GetName] becomes a [historical_capital|e]"
  PAST_SET_CAPITAL_EFFECT: "[TARGET_LOCATION.GetName] became the [capital|e] and the previous one became a [historical_capital|e]"
  PAST_WE_SET_CAPITAL_EFFECT: "We made [TARGET_LOCATION.GetName] our [capital|e] and the previous one became a [historical_capital|e]"

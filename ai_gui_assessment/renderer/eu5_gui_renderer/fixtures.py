@@ -43,6 +43,20 @@ def object_mocks(expression: str, context: dict) -> list:
     ]
 
 
+def modifier_sample_lines(values: dict, metadata: dict, loc) -> list[str]:
+    """Format explicit sample modifiers using caller-owned index metadata.
+
+    This does not evaluate effects or load any project's modifier index.
+    Localization is taken from the selected renderer resources.
+    """
+    lines = []
+    for key, value in values.items():
+        label = loc.get(f"MODIFIER_TYPE_NAME_{key}") or key
+        number = f"{value * 100:+g}%" if metadata[key]["value_kind"] == "percent" else f"{value:+g}"
+        lines.append(f"{label}: {number}")
+    return lines
+
+
 def set_action_availability(element, availability: dict[str, bool]) -> None:
     """Attach supplied availability to concrete scripted-action buttons."""
     action = element.props.get("scripted_action_tooltip", {}).get("action_name")

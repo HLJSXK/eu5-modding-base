@@ -1,0 +1,10 @@
+﻿l_simp_chinese:
+ byz_army_reform_decision.title: "改革[ROOT.GetCountry.GetAdjectiveWithNoTooltip]军队"
+ byz_army_reform_decision.title.entry: "改革拜占庭军队"
+ byz_army_reform_decision.desc: "在过去，我军凭借军区制及其提供的大规模征召部队占据优势。然而，随着国家财富积累和中央集权加强，军队逐渐向职业化方向转型。对此，[target_character.GetName]和[target_character.GetHerHis]的顾问团队一直致力于起草一个新的军事改革方案，旨在降低对[ROOT.GetCountry.GetGovernment.GetEstateName('nobles_estate')]征召兵源的依赖。"
+ byz_army_reform_decision.desc.entry: "在过去，我军凭借军区制及其提供的大规模征召部队占据优势。然而，随着国家财富积累和中央集权加强，军队逐渐向职业化方向转型。我们的内阁可以起草一份军队改革方案，使我们降低对贵族支持的依赖。"
+ byz_army_reform_decision.a: "军队应当服务[target_character.GetNameWithNoTooltip]。"
+ byz_army_reform_decision.a.entry: "军队应当服务国王。"
+ byz_army_reform_decision.b: "还是不要压制[ROOT.GetCountry.GetGovernment.GetEstateNameWithNoTooltip('nobles_estate')]的作用。"
+ byz_army_reform_decision.b.entry: "还是不要压制$nobles_estate$的作用。"
+ BYZ_ALL_THEMATA_PROVINCES_GAIN_NOBLE_LOYALTY: "拥有[ShowBuildingTypeName('thema_headquarters')]的[locations|e]的所有[ShowPopTypeName('nobles')][pops|e]获得[ShowNamedValue('pop_satisfaction_ultimate_bonus')|+=2%][pop_satisfaction|e]。"

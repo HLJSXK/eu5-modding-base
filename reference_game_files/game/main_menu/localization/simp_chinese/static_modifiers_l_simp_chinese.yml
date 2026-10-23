@@ -63,6 +63,7 @@
  STATIC_MODIFIER_NAME_investigating_regent: "摄政者调查中"
  STATIC_MODIFIER_NAME_country_art: "我们的[works_of_art|e]"
  STATIC_MODIFIER_NAME_num_of_market_centers_in_country: "[market_centers|E]数量"
+ STATIC_MODIFIER_NAME_num_of_foreign_markets_with_merchants: "拥有[market_centers|e]的外国[merchant|e]"
  STATIC_MODIFIER_NAME_country_coastal_population: "海岸人口"
  STATIC_MODIFIER_NAME_current_army_size: "陆军规模"
  STATIC_MODIFIER_NAME_current_navy_size: "海军规模"
@@ -125,7 +126,7 @@
  STATIC_MODIFIER_NAME_saints_from_country: "来自[country|e]的[saints|e]"
  STATIC_MODIFIER_NAME_relation_improvements: "改善关系"
  STATIC_MODIFIER_NAME_receiving_guarantee: "被保障独立"
- STATIC_MODIFIER_NAME_giving_parias_payments: "撒哈拉以南贸易"
+ STATIC_MODIFIER_NAME_receiving_parias_payments: "撒哈拉以南贸易"
  STATIC_MODIFIER_NAME_receiving_corrupt_officials: "接受官员腐化"
  STATIC_MODIFIER_NAME_receiving_sow_discontent: "接受不满情绪"
  STATIC_MODIFIER_NAME_receiving_agitate_for_liberty: "接受自由鼓动"
@@ -387,6 +388,7 @@
  STATIC_MODIFIER_NAME_development: "[development|e]"
  STATIC_MODIFIER_NAME_capital: "[capital|e]"
  STATIC_MODIFIER_NAME_province_capital: "[province_capital|e]"
+ STATIC_MODIFIER_NAME_historical_capital: "[historical_capital|e]"
  STATIC_MODIFIER_NAME_control: "[control|e]"
  STATIC_MODIFIER_NAME_control_50: "[control|e]"
  STATIC_MODIFIER_NAME_relative_subject_power: "[subjects|e]的[economical_base|e]"
@@ -488,8 +490,6 @@
  STATIC_MODIFIER_NAME_monumental_architecture: "纪念建筑"
  STATIC_MODIFIER_NAME_industrious_boost: "制造业发展"
  STATIC_MODIFIER_NAME_cruel_overlord: "残忍的宗主"
- STATIC_MODIFIER_NAME_province_food_surplus_growth: "[province|e]的[food|e]盈余"
- STATIC_MODIFIER_NAME_province_food_storage_growth: "[province|e]的[food|e]储备"
  STATIC_MODIFIER_NAME_province_starving: "[province|e][starving|e]"
  STATIC_MODIFIER_NAME_raised_offensive_levies_repeatedly: "多次征召进攻部队"
  STATIC_MODIFIER_NAME_raised_defensive_levies_repeatedly: "多次征召防御部队"
@@ -731,6 +731,9 @@
  STATIC_MODIFIER_NAME_ruler_tolerated_culture: "[tolerated_culture|e]统治者"
  STATIC_MODIFIER_NAME_ruler_ignored_culture: "[non_accepted_culture|e]统治者"
  STATIC_MODIFIER_NAME_ruler_discriminated_culture: "[discriminated_culture|e]统治者"
+ STATIC_MODIFIER_NAME_heir_of_different_dynasty: "不同宗族的继承人"
+ STATIC_MODIFIER_NAME_underage_heir: "低龄继承人"
+ STATIC_MODIFIER_NAME_no_heir: "没有继承人"
  STATIC_MODIFIER_NAME_parliament_location: "议会所在地"
  STATIC_MODIFIER_DESC_parliament_location: "富人和权贵汇聚于该[location|e]，参与[parliament|e]事务。"
  STATIC_MODIFIER_NAME_parliament_in_capital: "在首都的议会"
@@ -1160,7 +1163,7 @@
  STATIC_MODIFIER_NAME_capital_in_hills: "[capital|e]位于[ShowTopographyName('hills')]"
  STATIC_MODIFIER_NAME_capital_in_plateau: "[capital|e]位于[ShowTopographyName('plateau')]"
  STATIC_MODIFIER_NAME_capital_in_wetlands: "[capital|e]位于[ShowTopographyName('wetlands')]"
- #Ireland
+ # Ireland
  STATIC_MODIFIER_NAME_blocked_from_high_kingship: "[GetInternationalOrganizationType('high_kingship').GetNameWithNoTooltip]被罢黜"
  STATIC_MODIFIER_NAME_overthrew_high_king: "推翻了[GetInternationalOrganizationType('high_kingship').GetNameWithNoTooltip]"
  #Jurchen Tribes
@@ -1464,16 +1467,16 @@
  STATIC_MODIFIER_NAME_sco_no_east_india: "聚焦本土事务"
  STATIC_MODIFIER_NAME_sco_global_road_construction: "扩建国家道路网"
  STATIC_MODIFIER_NAME_sco_darien_scheme: "达连计划"
- #Teutonic Order
+ # Teutonic Order
  STATIC_MODIFIER_NAME_teu_anchoress_visions: "隐修女的神视"
  STATIC_MODIFIER_NAME_teu_extra_taxes_on_bailwicks: "对执达吏收税"
  STATIC_MODIFIER_NAME_teu_baltic_opposition_brewing: "波罗的海地区酝酿反抗"
  STATIC_MODIFIER_NAME_teu_seat_of_strong_burghers: "强势财阀之地"
- #Tunis
+ # Tunis
  STATIC_MODIFIER_NAME_tun_hafsid_caliphate_spending: "哈里发开支"
  STATIC_MODIFIER_NAME_tun_tax_raid_modifier: "通过税收掠夺勒索"
  STATIC_MODIFIER_NAME_tun_ifriqiya_reunited_modifier: "$flavor_tun.11.title$"
- #Montferrat
+ # Montferrat
  STATIC_MODIFIER_NAME_mfa_honored_claim: "与$MFA$合作"
  STATIC_MODIFIER_NAME_mfa_elevation_modifier: "升格为$rank_duchy$"
  #Delhi
@@ -1819,6 +1822,10 @@
  STATIC_MODIFIER_NAME_spa_efficient_market_system: "高效市场体系"
  STATIC_MODIFIER_NAME_cas_colonial_reputation_slandered: "殖民声誉受损"
  STATIC_MODIFIER_DESC_cas_colonial_reputation_slandered: "我们选择无视殖民对手的指控，导致许多人信了他们的宣传，相信了他们关于我们残忍的谎言。"
+ STATIC_MODIFIER_NAME_cas_naples_crackdown: "西班牙驻军得到加强"
+ STATIC_MODIFIER_DESC_cas_naples_crackdown: "西班牙增派驻军可暂时降低动荡。"
+ STATIC_MODIFIER_NAME_cas_catalan_crackdown: "强制推行军备联合"
+ STATIC_MODIFIER_DESC_cas_catalan_crackdown: "推行军备联合政策，让西班牙军队得以暂时平息加泰罗尼亚人的动乱。"
  #HRE
  STATIC_MODIFIER_NAME_rome_reborn: "重生的罗马"
  STATIC_MODIFIER_NAME_cas_spanish_dollar: "采纳西班牙银圆"
@@ -2034,7 +2041,7 @@
  STATIC_MODIFIER_NAME_religious_concessions_modifier: "对宗教让步"
  STATIC_MODIFIER_NAME_chi_disaster_reform_taxation_modifier: "税制改革尝试"
  STATIC_MODIFIER_NAME_chi_renewed_taxation_system_modifier: "税制改革重启"
- #Free cities events
+ # Free cities events
  STATIC_MODIFIER_NAME_fc_hre_privileges: "皇帝授予的关税与贸易特权"
  STATIC_MODIFIER_DESC_fc_hre_privileges: "神圣罗马帝国皇帝授予我们特殊的关税与贸易特权。"
  STATIC_MODIFIER_NAME_concessions_to_the_nobility: "对贵族让步"
@@ -2316,7 +2323,7 @@
  STATIC_MODIFIER_NAME_lessors_from_the_port_of_martaban_modifier: "$martaban$港的启示"
  STATIC_MODIFIER_NAME_angkor_architecture_modifier: "$angkor$建筑"
  STATIC_MODIFIER_NAME_application_of_chinese_legal_practices_modifier: "$chinese_group$法系实践的运用"
- #BYZ & TUR
+ # BYZ & TUR
  STATIC_MODIFIER_NAME_repopulation_of_anatolia_modifier: "充实$anatolia_region$人口"
  STATIC_MODIFIER_NAME_cultural_intermixing_modifier: "文化交融"
  STATIC_MODIFIER_NAME_kie_crown_controlled_metropolitan: "国家控制的都会"
@@ -2356,12 +2363,12 @@
  #Denmark
  STATIC_MODIFIER_NAME_dan_integrating_scania: "整合斯科讷"
  STATIC_MODIFIER_NAME_royal_dowry_modifier: "王室嫁妆"
- #Haudenosaunee/Iroquois
+ # Haudenosaunee/Iroquois
  STATIC_MODIFIER_NAME_iro_shikellamy_pennsylvania: "宾夕法尼亚的行政管理"
  STATIC_MODIFIER_NAME_iro_three_sisters_harvest: "“三姐妹”丰收"
  STATIC_MODIFIER_NAME_sainte_marie_de_gannentaha: "甘纳塔哈圣母堂"
  STATIC_MODIFIER_NAME_iro_simon_treatments: "传教士西蒙的治疗"
- #Cahokia
+ # Cahokia
  STATIC_MODIFIER_NAME_chk_exodus_of_cahokia: "卡霍基亚大流散"
  STATIC_MODIFIER_NAME_chk_preservation_of_cahokia: "保护卡霍基亚遗址"
  STATIC_MODIFIER_NAME_chk_funding_woodhenge_restoration: "资助木环阵修复"
@@ -2385,7 +2392,7 @@
  STATIC_MODIFIER_NAME_chk_fortifying_center: "加固核心"
  STATIC_MODIFIER_NAME_chk_shadow_of_cahokia_city: "笼罩卡霍基亚的阴影"
  STATIC_MODIFIER_NAME_chk_venerated_ruler: "受尊敬的统治者"
- #Pueblo
+ # Pueblo
  STATIC_MODIFIER_NAME_pue_return_to_mesa_verde: "重返梅萨维德悬崖村"
  STATIC_MODIFIER_NAME_pue_unifying_campaign: "统一分裂的普韦布洛人"
  STATIC_MODIFIER_NAME_pue_maintain_inner_tribal_peace: "和平的时刻"
@@ -2394,7 +2401,7 @@
  STATIC_MODIFIER_NAME_pue_the_sky_city: "天空之城"
  STATIC_MODIFIER_NAME_pue_mesa_verde_reclaimed: "收复梅萨维德悬崖村"
  STATIC_MODIFIER_NAME_pue_mesa_verde_capital: "祖先王座的光复"
- #Novgorod
+ # Novgorod
  STATIC_MODIFIER_NAME_nov_benefits_of_peterhof: "彼得霍夫的裨益"
  STATIC_MODIFIER_NAME_nov_financing_ushkuyniks_pirates: "资助乌什奎尼克海盗"
  STATIC_MODIFIER_NAME_nov_further_posadnik_reforms: "推进波萨德尼克改革"
@@ -2493,7 +2500,7 @@
  STATIC_MODIFIER_NAME_italian_culture_move_countryside_to_capital: "乡下来的迁徙者"
  STATIC_MODIFIER_NAME_italian_culture_center_of_humanism: "文艺复兴人文主义中心"
  STATIC_MODIFIER_NAME_italian_culture_major_center_of_art_and_culture: "复兴文艺的重要中心"
- #Italian Wars
+ # Italian Wars
  STATIC_MODIFIER_NAME_conflict_yields_military_advances_modifier: "冲突催生的军事进步"
  STATIC_MODIFIER_NAME_iw_army_tradition_momentum_modifier: "军事势头"
  STATIC_MODIFIER_NAME_iw_quality_push_modifier: "迈向精兵主义"
@@ -2648,7 +2655,7 @@
  STATIC_MODIFIER_NAME_civil_war_pretender_victor: "觊觎者胜利"
  STATIC_MODIFIER_DESC_civil_war_pretender_victor: "这位统治者并非通过合法继承，而是经由内战夺取了权力，这一权力更替严重破坏了国家的稳定。"
  STATIC_MODIFIER_NAME_is_lbv_heinrich_xiv_wittelsbach: "海因里希公爵的麻风病"
- #Imperial Circles
+ # Imperial Circles
  STATIC_MODIFIER_NAME_distributed_circle_levy: "行政圈征召兵配额"
  STATIC_MODIFIER_NAME_circle_landfriede_enforcer: "行政圈内境内和平令执行者"
  STATIC_MODIFIER_NAME_received_imperial_circle_grant: "收到帝国拨款"
@@ -2688,7 +2695,7 @@
  STATIC_MODIFIER_NAME_gra_a_wordly_general: "世俗统治者"
  STATIC_MODIFIER_NAME_gra_a_general_too_powerful: "权倾朝野的将领"
  STATIC_MODIFIER_NAME_gra_protector_of_islam_in_iberia: "信仰守护者"
- #Cape Route to India modifiers
+ # Cape Route to India modifiers
  STATIC_MODIFIER_NAME_cape_route_pioneer: "好望角航线的先驱"
  STATIC_MODIFIER_DESC_cape_route_pioneer: "我们的舰队率先绕过好望角，从海路抵达印度，开辟了一条直达东方香料市场的航线，绕过了从这里到马拉巴尔海岸之间的每一个中间商。"
  STATIC_MODIFIER_NAME_cape_route_established: "好望角航线已开通"
@@ -2706,27 +2713,15 @@
  STATIC_MODIFIER_NAME_mozambique_trading_rights: "莫桑比克贸易权"
  STATIC_MODIFIER_DESC_mozambique_trading_rights: "与莫桑比克岛苏丹谈判达成的协议让我们的商人能够进入印度洋最具战略位置的港口之一。"
  STATIC_MODIFIER_NAME_malindi_alliance: "与马林迪结盟"
- STATIC_MODIFIER_DESC_malindi_alliance: "马林迪苏丹是葡萄牙的坚定朋友，为我们的印度洋舰队提供领航员、情报和安全港口。"
+ STATIC_MODIFIER_DESC_malindi_alliance: "马林迪统治者是葡萄牙的坚定朋友，为我们的印度洋舰队提供领航员、情报和安全港口。"
  STATIC_MODIFIER_NAME_gold_coast_feitoria: "黄金海岸贸易站"
  STATIC_MODIFIER_DESC_gold_coast_feitoria: "黄金海岸的一处设防贸易据点让我们的商人能够直接进入阿坎黄金贸易，取代了长期控制这些市场的阿拉伯和旺加拉中间人。"
- #Relic expedition: per-relic rewards
- STATIC_MODIFIER_NAME_relic_true_cross: "真十字架圣物"
- STATIC_MODIFIER_DESC_relic_true_cross: "真十字架的圣木，自从一个半世纪前哈丁的灾难以来就失落于基督教世界，如今被带回了家。它将出现在行军队伍的前端，或是大教堂圣坛上方，令每一位信仰的士兵都更加坚定，也告诉整个王国敌人即将要失去什么。"
- STATIC_MODIFIER_NAME_relic_crown_of_thorns: "荆棘王冠圣物"
- STATIC_MODIFIER_DESC_relic_crown_of_thorns: "罗马士兵按在基督额上的那顶荆棘冠，在拜占庭皇帝的小教堂里珍藏了几个世纪，如今由我们保管。拥有这样一件遗物的王朝，是教宗和编年史家们不会轻易轻视的。"
- STATIC_MODIFIER_NAME_relic_holy_lance: "圣枪圣物"
- STATIC_MODIFIER_DESC_relic_holy_lance: "据说在十字架上刺穿基督肋旁的百夫长朗基努斯的长矛，据称是在第一次十字军东征期间围攻安条克时被找到的，如今再次属于我们。军中的士兵们看着它，想起他们祖先的祖先在同一座城墙下用它做过什么。"
- #Arctic Passage modifiers
- STATIC_MODIFIER_NAME_northwest_passage_found: "西北航道已绘制"
- STATIC_MODIFIER_DESC_northwest_passage_found: "我们的远征航行了美洲上方的北方海路，证明了西北航道的存在。获得的知识降低了未来北方探险的装备成本，并为极北地区的贸易开启了新的可能。"
- STATIC_MODIFIER_NAME_arctic_expedition_returned: "北极经验"
- STATIC_MODIFIER_DESC_arctic_expedition_returned: "尽管航道未能全程贯通，远征队仍带回了北方海域的详细海图，以及关于冰况的来之不易的知识，这些将为未来的任何尝试提供参考。"
- #Pacific Crossing modifiers
+ # Pacific Crossing modifiers
  STATIC_MODIFIER_NAME_manila_galleon_route: "马尼拉大帆船航线"
  STATIC_MODIFIER_DESC_manila_galleon_route: "我们的舰队完成了对太平洋的首次横渡，建立了通往香料群岛和菲律宾的西向海路。获得的知识让太平洋向常规贸易开放，并降低了维持我们探索舰队的成本。"
  STATIC_MODIFIER_NAME_southern_return_route: "南方返程航线"
  STATIC_MODIFIER_DESC_southern_return_route: "$STATIC_MODIFIER_DESC_manila_galleon_route$"
- #Grand Tour modifiers
+ # Grand Tour modifiers
  STATIC_MODIFIER_NAME_returned_from_grand_tour: "从大游学归来"
  STATIC_MODIFIER_DESC_returned_from_grand_tour: "该角色游历了意大利的各大城市，在它们的图书馆里学习，出席它们的宫廷，并从源头观察文艺复兴时期的艺术与学术。这段经历开阔了其视野，磨砺了其判断力。"
  STATIC_MODIFIER_NAME_hajji_pilgrim: "朝觐者"
@@ -2735,45 +2730,14 @@
  STATIC_MODIFIER_DESC_leading_hajj_caravan: "该角色正率领一支朝觐队伍前往麦加。"
  STATIC_MODIFIER_NAME_hajj_pious_return: "朝觐的祝福"
  STATIC_MODIFIER_DESC_hajj_pious_return: "统治者从麦加归来，重新激起了信众的虔诚和教士在宫廷中的地位。"
- #Steppe Embassy modifiers
- STATIC_MODIFIER_NAME_steppe_recognised_military: "为大草原宫廷所承认"
- STATIC_MODIFIER_DESC_steppe_recognised_military: "消息已经传到各大汗国，这是一股值得关注的势力。在草原宫廷面前展示的力量赢得了一定的尊重，这种尊重转化为了边境上的实际优势。"
- STATIC_MODIFIER_NAME_steppe_contact_established: "与大草原宫廷的接触"
- STATIC_MODIFIER_DESC_steppe_contact_established: "使团受到了完整的仪式接待，双方进行了正式的礼节交换。如今与蒙古帝国一个主要继承国之间的沟通渠道已经打开，我们在东方的声望得到了实质的提升。"
- STATIC_MODIFIER_NAME_steppe_trade_agreement: "大草原贸易协定"
- STATIC_MODIFIER_DESC_steppe_trade_agreement: "与一个草原宫廷达成的贸易安排打开了更深入亚洲的陆路通道，让我们的商人在以前没有立足之处的市场中有了地位。"
- STATIC_MODIFIER_NAME_steppe_embassy_cooldown: "近期的大草原使团"
- STATIC_MODIFIER_DESC_steppe_embassy_cooldown: "使团最近刚从草原宫廷返回。这么快就派第二个使团会被视为冒昧，而不是外交。"
- STATIC_MODIFIER_NAME_led_steppe_embassy: "率领使团前往大草原"
- STATIC_MODIFIER_DESC_led_steppe_embassy: "该统治者在某个亚洲大宫廷中度过了数月时光，用异国语言进行谈判，并周旋于与家乡迥异的礼仪习俗之中。无论结果如何，这段经历都加深了他们对熟悉地平线之外世界的理解。"
- STATIC_MODIFIER_NAME_eastern_alliance_persia: "波斯反奥斯曼同盟"
- STATIC_MODIFIER_DESC_eastern_alliance_persia: "我们与沙阿的宫廷达成了共识，认识到我们之间的逊尼派势力是双方共同的天然敌人。虽然这个联盟是非正式的，而且是在遥远的距离上进行的，但两线作战的前景对奥斯曼的野心构成了牵制，而我们无需花费任何代价来维持它。"
- STATIC_MODIFIER_NAME_eastern_alliance_ethiopia: "与基督教国王结盟"
- STATIC_MODIFIER_DESC_eastern_alliance_ethiopia: "与古老的哈贝沙基督教王国的联系已经重新建立，实现了世代以来西方关于祭司王约翰的传说。国王与我们同属一信，虽相隔遥远，但这种纽带的属灵意义以编年史将会认可的方式，强化了我们自身的教会。"
- STATIC_MODIFIER_NAME_eastern_route_open: "打通东方贸易路线"
- STATIC_MODIFIER_DESC_eastern_route_open: "在一个东方宫廷达成的贸易特许权让我们的商人在久已关闭的市场中站稳脚跟，并在绕过通常中间人的路线上开启了奢侈品的稳定流通。"
- STATIC_MODIFIER_NAME_led_eastern_alliance_embassy: "率领使团出使东方宫廷"
- STATIC_MODIFIER_DESC_led_eastern_alliance_embassy: "该统治者跨越沙漠与海洋，以平等之姿与沙阿或内古斯会晤。与欧洲熟悉秩序之外的君主谈判的经历，赋予了其比同龄人更广阔的治国视野。"
- #Survey expeditions
+ STATIC_MODIFIER_NAME_pilgrim_ruler: "朝圣统治者"
+ STATIC_MODIFIER_DESC_pilgrim_ruler: "该统治者已完成对天主教基督教世界诸圣地的大朝圣，终点是耶路撒冷圣墓；余生之中，其都将为信众所尊崇。此行的威望与合法性，远在旅途结束之后仍绵延不绝。"
+ # Survey expeditions
  STATIC_MODIFIER_NAME_accurate_charts: "精确海图"
  STATIC_MODIFIER_DESC_accurate_charts: "我们的海岸已经被详细勘察，测量了水深，标注了港口，绘制了危险区域。新的海图可以使用一代人，让每一次未来的远征在装备上更便宜，出发也更快。"
  STATIC_MODIFIER_NAME_thorough_survey: "高地探查归来"
  STATIC_MODIFIER_DESC_thorough_survey: "勘探队带着他们的笔记本和样本箱回来了。他们制作的地图将被王国里每一位矿主研究，而在工作面试验过的技术也已传授给各地的监工。全国每一处采石场、矿坑和竖井都从积累的技艺中获益，王国的原材料也因此流动得稍微顺畅了一些。"
- #Seven Cities of Gold: in-search country modifiers
- STATIC_MODIFIER_NAME_searching_for_el_dorado: "寻找黄金国"
- STATIC_MODIFIER_DESC_searching_for_el_dorado: "一支探险队正在奥里诺科盆地的某处野外，寻找穆伊斯卡人记忆中那位涂抹金粉的国王。"
- STATIC_MODIFIER_NAME_searching_for_fountain_of_youth: "寻找青春之泉"
- STATIC_MODIFIER_DESC_searching_for_fountain_of_youth: "一支探险队正在佛罗里达的蒂穆夸地区某处，寻找泰诺人称为比米尼泉的泉水。"
- STATIC_MODIFIER_NAME_searching_for_city_of_caesars: "寻找凯撒之城"
- STATIC_MODIFIER_DESC_searching_for_city_of_caesars: "一支探险队正在巴塔哥尼亚的某处野外，寻找那座建于两山之间的失落之城。"
- #Seven Cities of Gold: per-city location modifiers (applied to the city's tile on discovery)
- STATIC_MODIFIER_NAME_el_dorado_discovered: "发现黄金国"
- STATIC_MODIFIER_DESC_el_dorado_discovered: "穆伊斯卡人的黄金之国已向西班牙贸易开放。高原作坊里制作的金器，其风格和规模是任何欧洲银匠都无法匹敌的，正通过神圣湖泊脚下的新贸易站向外流出。"
- STATIC_MODIFIER_NAME_fountain_of_youth_discovered: "发现青春之泉"
- STATIC_MODIFIER_DESC_fountain_of_youth_discovered: "蒂穆夸地区中心的那处泉水已经被找到，它的疗愈功效也得到了验证。那些水确实如传说中那般拥有奇效。泉水所在地建起了一座小教堂，朝圣者已开始络绎不绝地前来。"
- STATIC_MODIFIER_NAME_city_of_caesars_discovered: "发现凯撒之城"
- STATIC_MODIFIER_DESC_city_of_caesars_discovered: "失落的凯撒之城已在巴塔哥尼亚安第斯山脉的一处隐秘山谷中被找到，那里的居民是十六世纪一场海难幸存者的后裔。王权重新延伸到了这些久已失落的臣民，以及他们在与世隔绝的几代人时间里悄然开发的那片银矿之上。"
- #Mining survey: per-raw-material discoveries
+ # Mining survey: per-raw-material discoveries
  STATIC_MODIFIER_NAME_rich_iron_seam: "富铁矿脉"
  STATIC_MODIFIER_DESC_rich_iron_seam: "勘探者发现了一条深入山体的高品位矿脉。下游的锻造厂和铸造厂将在一代人的时间里受益。"
  STATIC_MODIFIER_NAME_rich_copper_lode: "富铜矿脉"
@@ -2802,7 +2766,7 @@
  STATIC_MODIFIER_DESC_productive_alum_workings: "勘探者们在丘陵地带发现了含明矾的页岩，岩石经自然风化后形成盐类，染色匠人愿意出高价求购。布匹贸易等候已久的就近货源终于出现了。"
  STATIC_MODIFIER_NAME_productive_saltpeter_workings: "高效硝石矿场"
  STATIC_MODIFIER_DESC_productive_saltpeter_workings: "硝石已从一处隐蔽山谷的土壤中开采出来，春天融雪后白色晶体在岩面上绽放。这一代的火药厂不会缺少硝石了。"
- #Cartographic survey: per-raw-material coastal discoveries
+ # Cartographic survey: per-raw-material coastal discoveries
  STATIC_MODIFIER_NAME_surveyed_fishing_grounds: "勘明的渔场"
  STATIC_MODIFIER_DESC_surveyed_fishing_grounds: "勘测船已经绘制了当地渔场的地图，记录了季节性的鱼群游动、鱼群聚集的深度范围，以及载着渔船回家的主要洋流。当地的渔民，以前凭传统和猜测干活，现在手里拿着海图出海。"
  STATIC_MODIFIER_NAME_surveyed_lumber_coast: "勘明的木材海岸"
@@ -2817,7 +2781,7 @@
  STATIC_MODIFIER_DESC_surveyed_dye_coast: "勘测已经定位了骨螺床、胭脂栎丛、靛蓝种植园，或是任何出产当地染料的东西，并将每一项都记入了相应的海图和地名词典。布料贸易会为这份知识付不少钱。"
  STATIC_MODIFIER_NAME_surveyed_amber_coast: "勘明的琥珀海岸"
  STATIC_MODIFIER_DESC_surveyed_amber_coast: "勘测已经绘制了暴风雨后琥珀被冲上岸的海滩，并确认了值得采集树脂的海岸线。城市里的琥珀切割师在一代人的时间里都会有材料可用。"
- #Cartographic survey: generic harbor improvements
+ # Cartographic survey: generic harbor improvements
  STATIC_MODIFIER_NAME_surveyed_safe_harbour: "勘明的安全港"
  STATIC_MODIFIER_DESC_surveyed_safe_harbour: "勘测确定了一处隐蔽的锚地，当地渔民早已知晓但从未被记入任何海图。有了准确的水深测量、航道线和记录在案的适宜泊底，这个港口对大型船只的适用性得到了实质的改善。"
  STATIC_MODIFIER_NAME_surveyed_reef_passage: "勘明的暗礁水道"
@@ -2857,7 +2821,6 @@
  STATIC_MODIFIER_DESC_POR_discourage_brazilian_slavery: "尽管我们的巴西矿山依赖强制劳动，我们仍必须阻止对原住民的剥削。"
  STATIC_MODIFIER_NAME_POR_emerald_hunter: "翡翠猎人"
  STATIC_MODIFIER_DESC_POR_emerald_hunter: "探险的成功为迪亚士赢得了“翡翠猎人”的绰号。"
- STATIC_MODIFIER_NAME_enforcing_sovereignty_modifier: "强制主权"
  STATIC_MODIFIER_NAME_flo_societas_alum_mine: "铝业协会"
  STATIC_MODIFIER_DESC_flo_societas_alum_mine: "一家由佛罗伦萨支持的公司监管着从这些矿床中提取明矾的作业，从而提高了产量。"
  #Generic Decisions
@@ -2870,12 +2833,4 @@
  #Misc
  STATIC_MODIFIER_NAME_efficient_mining_expansion_plans_modifier: "高效的矿业扩张计划"
  STATIC_MODIFIER_NAME_benefits_from_mining_discoveries_modifier: "采矿发现的收益"
- STATIC_MODIFIER_DESC_cas_catalan_crackdown: "军事同盟的推行，使西班牙军队得以暂时平息加泰罗尼亚人的动乱。"
- STATIC_MODIFIER_DESC_cas_naples_crackdown: "西班牙军队增派驻军，暂时得以平息动乱。"
- STATIC_MODIFIER_DESC_pilgrim_ruler: "此统治者已完成前往天主教基督世界圣地的伟大朝圣之旅，并最终抵达耶路撒冷的圣墓，终生受到信众的敬仰。这一功业所带来的威望与正统性，将在旅程结束后长久延续。"
- STATIC_MODIFIER_NAME_cas_catalan_crackdown: "军事同盟已实施"
- STATIC_MODIFIER_NAME_cas_naples_crackdown: "西班牙驻军增援"
- STATIC_MODIFIER_NAME_heir_of_different_dynasty: "不同王朝的继承人"
- STATIC_MODIFIER_NAME_no_heir: "无继承人"
- STATIC_MODIFIER_NAME_num_of_foreign_markets_with_merchants: "拥有[merchant|e]的境外[market_centers|e]"
- STATIC_MODIFIER_NAME_pilgrim_ruler: "朝圣者统治者"
+ STATIC_MODIFIER_NAME_seat_of_governance_modifier: "吾里之座"

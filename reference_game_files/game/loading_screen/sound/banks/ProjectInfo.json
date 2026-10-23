@@ -5,7 +5,7 @@
    "GUID": "{8D98EA00-0000-47D2-968A-873C5AAD2995}",
    "Generator": "2025.1.7.9143"
   },
-  "CacheRoot": "../../../../../../Wwise/wwise_caesar/.cache",
+  "CacheRoot": "../../../../../../wwise/wwise_caesar/.cache",
   "Platforms": [
    {
     "Name": "Windows",
@@ -24,6 +24,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{885DC45C-3E0B-8080-1C45-23D0D689C926}"
+  "FileHash": "{9545E57A-5D8A-F3D4-804A-2CCEFE5D72A6}"
  }
 }

@@ -390,7 +390,7 @@
  sanlorenzo.greek_language: "圣劳伦提乌"
  pistoia.greek_language: "皮斯托里亚"
  #Province 'grosseto_province' (Grosseto) #
- grosseto_province.greek_language: "南伊特鲁里亚" #regional — Etruria south
+ grosseto_province.greek_language: "南伊特鲁里亚" #regional — coastal Etruria (Maremma)
  grosseto.greek_language: "鲁塞莱" #latin/roman
  massamar.greek_language: "贝特内西亚马萨" #latin/roman
  pitigliano.greek_language: "皮蒂利亚诺" #hellenized
@@ -760,7 +760,7 @@
  rentina.greek_language: "伦蒂纳"
  thasos.greek_language: "萨索斯"
  #Province 'pirin_province' (Pirin) #
- pirin_province.greek_language: "罗多佩" #region — Rhodope
+ pirin_province.greek_language: "罗多佩" #region — Pirin (ancient Orbelos)
  melnik.greek_language: "梅莱尼科"
  bansko.greek_language: "多巴尔斯孔" #medieval Dobarsko
  krupnik.greek_language: "斯卡普托帕拉"

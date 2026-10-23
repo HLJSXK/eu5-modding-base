@@ -496,6 +496,7 @@
  decentralized_bureaucracy_policy_desc: "分权官僚制将更多决策权下放给对君主负责的地方官员或政府。"
  namestnik_policy: "总督区"
  namestnik_policy_desc: "#italic 总督#!是代行中央权力的官僚职位，负责我们省份和地区的地方行政管理。"
+ disabled_namestnik_policy: "没有通过$mos_limit_namestnik_decision.title$[decision|e]限制$namestnik_policy$"
  autonomous_offices: "自治团体的服务"
  autonomous_offices_desc: "在我们联盟下的商人享有我们庇护下的特权。尽管商人们组成了基于共同利益的松散联盟，但他们并未受到官僚主义和繁文缛节的约束。"
  port_logs: "私港记账员"
@@ -512,6 +513,7 @@
  dynastic_administration_policy_desc: "各个阶层并非[ShowEstateTypeName('crown_estate')]值得信任的同盟，它们总是将谋求更多的影响力置于首位而非服务国家。我国的行政事务应当委托给统治者的亲属。"
  yorkist_tradition_policy: "约克党传统"
  yorkist_tradition_policy_desc: "受过教育的底层百姓与[ShowEstateTypeName('clergy_estate')]一样，都能够做出贡献，他们的实践经验使他们成为政府任何部门的优秀后备人员。约克党传统规定，任何有显著背景的识字男子都可以加入行政治理的行列，与那些献身于神的人共事。"
+ yorkist_tradition_tt: "已通过[decision|e]解锁"
  #Tribal ones
  tribal_legal_basis_law: "法律基石"
  tribal_legal_basis_law_desc: "这是国家第一部正式法典的基础。它的目标简单而崇高：建立一个公平的社会，让每个人都能生活在和平与繁荣中。"
@@ -776,6 +778,8 @@
  piracy_law_desc: "海盗法确定了我国在应对海盗挑战时所采取的官方立场。这些法律包括旨在有效打击或管理海盗行为的法规、条例和法律理论。它们体现了我们国家为维护海上安全和保护我们的水域免受海盗威胁而实施的集体战略和措施。或者只是我们在实施海盗行为时所遵守的规则。"
  state_piracy_policy: "国家海盗"
  state_piracy_policy_desc: "我国完全支持针对敌人的海盗行为。尽管使用这些策略可能会损害我们的声誉，但其带来的经济利益可能是巨大的。"
+ state_piracy_policy_at: "所有已知的拥有[ShowPolicyName('anti_piracy_policy')][policy|e]的[country|e]对我们的好感改变[ShowBiasValue('allows_state_piracy_modifier')|+=0]。"
+ state_piracy_policy_dt: "所有已知的拥有[ShowPolicyName('anti_piracy_policy')][policy|e]的[country|e]对我们的好感改变[ShowBiasValue('allows_state_piracy_modifier')|-=0]。"
  has_state_piracy_policy_access: "拥有[ShowAdvanceName('privateers')]或[ShowAdvanceName('letters_of_marque')][advance|e]，或者是符合条件的国家之一。"
  issue_letter_of_marque_policy: "私掠许可"
  issue_letter_of_marque_policy_desc: "虽然我们不一定支持海盗行为，但这确实给了我们利用这些职业罪犯来对付敌人的绝佳机会。我们将向私掠船船长签发保护令，这样他们就可以自由攻击敌人的船只，而不必担心被起诉。"
@@ -1112,6 +1116,7 @@
  princely_bishopric_electorate_policy_desc: "[GetUniqueInternationalOrganization('hre').GetName]选帝侯仍分为[ShowSpecialStatusNamePlural('elector')]和[ShowSpecialStatusNamePlural('archbishop_elector')]。"
  secularized_electors_policy: "世俗化选帝侯"
  secularized_electors_policy_desc: "曾经的[ShowSpecialStatusNamePlural('archbishop_elector')]已完全世俗化。"
+ secularized_electors_policy_removes_archbishop_electors_tt: "如果所有[ShowSpecialStatusNamePlural('archbishop_elector')]不进行世俗化，他们将失去在[GetUniqueInternationalOrganization('hre').GetName]中的[special_status|e]"
  #Electorate Organization - elector-count preview shown when hovering each policy.
  #The sentence lives once in ELECTORATE_ORG_COUNT_PREVIEW; C++ (GetElectorateOrgCountPreviewForPolicy) fills the counts, resolves the Traditional/Secularized branch, and applies the engine clamp. Each policy just passes its own key.
  ELECTORATE_ORG_COUNT_PREVIEW: "通过该改革后，$PRINCE_NAME$上限将达到#Y $PRINCE_MAX$#!名（当前为#Y $PRINCE_NOW$#!名），$ARCH_NAME$上限将达到#Y $ARCH_MAX$#!名（当前为#Y $ARCH_NOW$#!名）。"
@@ -2067,6 +2072,7 @@
  union_diplomatic_law_desc: "随着[GetInternationalOrganizationType('union').GetName]由单一王权领导，$union$的外交事务应当如何处理就成为必须面对的问题。\n\n#Y 不过，战争事务仍然由我们的邦联成员国的阶层掌控。#!"
  union_unified_external_diplomacy_policy: "对外政策一致"
  union_unified_external_diplomacy_policy_desc: "[GetInternationalOrganizationType('union').GetName]的外交事务集中由[ShowSpecialStatusName('senior_partner')]统一处理，其他成员国的外交权限受到限制。不过，战争事务仍然由阶层掌控，虽然现在他们会显著倾向于降低风险。"
+ union_unified_external_diplomacy_policy_limited_diplomacy_tt: "他们邦联中有一个活跃的非自身的[ShowSpecialStatusName('senior_partner')]"
  union_organized_diplomats_policy: "邦联外交使团"
  union_organized_diplomats_policy_desc: "[GetInternationalOrganizationType('union').GetName]的外交官不为单一旗帜服务，而是为整个$union$效力。每个成员都能运用其能力处理自身外交事务。"
  union_legislature_law: "邦联立法"
@@ -2276,7 +2282,3 @@
  ara_italian_dual_court: "[ShowRegionNameWithNoTooltip('italy_region')]双重宫廷"
  ara_italian_dual_court_desc: "通过在国内设立两处宫廷，我们可以同时管理两边，不必依赖当地贵族。"
  unlock_italian_court_tt: "解锁[ShowBuildingTypeName('italian_court_building')][building|e]"
- disabled_namestnik_policy: "尚未通过$mos_limit_namestnik_decision.title$[decision|e]限制$namestnik_policy$"
- secularized_electors_policy_removes_archbishop_electors_tt: "若不世俗化，所有[ShowSpecialStatusNamePlural('archbishop_elector')]都将失去他们在[GetUniqueInternationalOrganization('hre').GetName]中的[special_status|e]"
- union_unified_external_diplomacy_policy_limited_diplomacy_tt: "其共主邦联存在生效中的 [ShowSpecialStatusName('senior_partner')] ，而他们并非该方"
- yorkist_tradition_tt: "已通过 [decision|e] 解锁此项"

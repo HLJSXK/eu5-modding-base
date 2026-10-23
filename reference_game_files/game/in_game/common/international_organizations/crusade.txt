@@ -52,6 +52,7 @@
 	}
 
 	can_target_trigger = {
+		NOT = { has_variable = recently_declared_war_on }
 	}
 
 	has_military_access = {
@@ -214,6 +215,21 @@
 			limit = { has_variable = has_bula_de_cruzada }
 			remove_variable = has_bula_de_cruzada
 		}
+		if = {
+			limit = {
+				var:phase = 2
+				exists = var:active_war
+			}
+			var:active_war = { save_scope_as = crusade_active_war }
+			if = {
+				limit = {
+					any_international_organization_member = {
+						any_current_war = { this = scope:crusade_active_war }
+					}
+				}
+				white_peace = scope:crusade_active_war
+			}
+		}
 	}
 
 	monthly_effect = {
@@ -295,6 +311,9 @@
 				if = {
 					limit = { exists = scope:hw_declared_war }
 					set_variable = { name = active_war value = scope:hw_declared_war }
+					scope:crusade_target = {
+						set_variable = { name = recently_declared_war_on value = yes years = 5 }
+					}
 					every_international_organization_member = {
 						limit = {
 							has_special_status_in_international_organization = {
@@ -449,6 +468,17 @@
 			desc = "CONQUER_DESIRE"
 			value = "conquer_desire(scope:target)"
 		}
+		add = {
+			desc = "HOLY_WAR_ALREADY_OVERWHELMING"
+			if = {
+				limit = {
+					exists = scope:recipient
+					scope:recipient = { holy_war_overwhelms_target = yes }
+				}
+				value = -200
+			}
+		}
+
 		add = {
 			#get a value in range of -80..0..20
 			desc = "RELATIVE_STRENGTH"

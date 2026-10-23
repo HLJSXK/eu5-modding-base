@@ -20,6 +20,7 @@ import re
 import sys
 import time
 from dataclasses import dataclass
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -49,6 +50,8 @@ class Settings:
     output_log: Path
     vanilla_filters: Path
     interval_seconds: float
+    include_rotated_logs: bool = True
+    protected_markers: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -66,6 +69,7 @@ class FilterStats:
     vanilla_entries_removed: int
     output_entries: int
     output_changed: bool
+    source_files: tuple[str, ...] = ()
 
 
 def resolve_path(value: str, base_dir: Path = REPO_ROOT) -> Path:
@@ -109,17 +113,63 @@ def load_settings(args: argparse.Namespace) -> Settings:
     if interval_seconds <= 0:
         raise ValueError("interval_seconds must be greater than 0")
 
+    include_rotated_logs = config.get("include_rotated_logs", True)
+    if not isinstance(include_rotated_logs, bool):
+        raise ValueError("include_rotated_logs must be a boolean")
+    protected_markers = config.get("protected_markers", [])
+    if not isinstance(protected_markers, list) or any(
+        not isinstance(marker, str) or not marker.strip()
+        for marker in protected_markers
+    ):
+        raise ValueError("protected_markers must be a list of non-empty strings")
+
     return Settings(
         source_log=resolve_path(str(source_log), config_path.parent),
         output_log=resolve_path(str(output_log), config_path.parent),
         vanilla_filters=resolve_path(str(vanilla_filters), config_path.parent),
         interval_seconds=interval_seconds,
+        include_rotated_logs=include_rotated_logs and not args.current_only,
+        protected_markers=tuple(marker.casefold() for marker in protected_markers),
     )
 
 
 def read_text(path: Path) -> str:
     with path.open("r", encoding="utf-8-sig", errors="replace", newline="") as handle:
         return handle.read()
+
+
+def session_start_time(source_log: Path) -> float | None:
+    """Use the game's startup log to exclude rotations from earlier launches."""
+    startup_log = source_log.with_name("code_revisions.log")
+    if not startup_log.is_file():
+        return None
+
+    modified = datetime.fromtimestamp(startup_log.stat().st_mtime)
+    for line in read_text(startup_log).splitlines():
+        if TIMESTAMP_RE.match(line):
+            clock = datetime.strptime(line[1:9], "%H:%M:%S").time()
+            started = datetime.combine(modified.date(), clock)
+            # The buffered startup log can be flushed after midnight.
+            if started > modified:
+                started -= timedelta(days=1)
+            return started.timestamp()
+    return startup_log.stat().st_mtime
+
+
+def source_log_paths(settings: Settings) -> list[Path]:
+    if not settings.include_rotated_logs:
+        return [settings.source_log]
+
+    source = settings.source_log
+    pattern = re.compile(rf"{re.escape(source.stem)}\.(\d+){re.escape(source.suffix)}")
+    started = session_start_time(source)
+    rotations: list[tuple[int, Path]] = []
+    for path in source.parent.iterdir():
+        match = pattern.fullmatch(path.name)
+        if match and path.is_file():
+            if started is None or path.stat().st_mtime >= started:
+                rotations.append((int(match.group(1)), path))
+    return [path for _, path in sorted(rotations, reverse=True)] + [source]
 
 
 def write_text_if_changed(path: Path, content: str) -> bool:
@@ -165,7 +215,7 @@ def entry_body_without_timestamp(entry: str) -> str:
 
 
 def match_key(entry: str) -> str:
-    return entry_body_without_timestamp(entry).rstrip()
+    return entry_body_without_timestamp(entry).replace("\r\n", "\n").rstrip()
 
 
 def escape_filter_value(value: str) -> str:
@@ -267,8 +317,18 @@ def load_filter_rules(path: Path) -> list[FilterRule]:
     return rules
 
 
-def is_vanilla_filtered(entry_key: str, rules: list[FilterRule]) -> bool:
+def is_vanilla_filtered(
+    entry_key: str,
+    rules: list[FilterRule],
+    protected_markers: tuple[str, ...] = (),
+) -> bool:
+    folded_key = entry_key.casefold()
+    protected = any(marker.casefold() in folded_key for marker in protected_markers)
     for rule in rules:
+        # A captured exact diagnostic remains an explicit suppression. Broad
+        # engine/file rules cannot classify a protected mod message as vanilla.
+        if protected and rule.mode != "exact":
+            continue
         if rule.mode == "contains" and rule.value in entry_key:
             return True
         if rule.mode == "exact" and rule.value.rstrip() == entry_key:
@@ -278,7 +338,11 @@ def is_vanilla_filtered(entry_key: str, rules: list[FilterRule]) -> bool:
     return False
 
 
-def filter_entries(entries: list[str], rules: list[FilterRule]) -> tuple[list[str], int, int]:
+def filter_entries(
+    entries: list[str],
+    rules: list[FilterRule],
+    protected_markers: tuple[str, ...] = (),
+) -> tuple[list[str], int, int]:
     seen: set[str] = set()
     kept: list[str] = []
     duplicate_entries_removed = 0
@@ -291,7 +355,7 @@ def filter_entries(entries: list[str], rules: list[FilterRule]) -> tuple[list[st
             continue
         seen.add(key)
 
-        if is_vanilla_filtered(key, rules):
+        if is_vanilla_filtered(key, rules, protected_markers):
             vanilla_entries_removed += 1
             continue
 
@@ -305,12 +369,16 @@ def run_once(settings: Settings) -> FilterStats | None:
         print(f"[WARN] Source log not found: {settings.source_log}")
         return None
 
-    source = read_text(settings.source_log)
+    paths = source_log_paths(settings)
+    # Join before splitting: rotation can separate a timestamp from the rest
+    # of its multiline diagnostic.
+    source = "".join(read_text(path) for path in paths)
     rules = load_filter_rules(settings.vanilla_filters)
     entries = split_log_entries(source)
     kept_entries, duplicate_entries_removed, vanilla_entries_removed = filter_entries(
         entries,
         rules,
+        settings.protected_markers,
     )
     output_changed = write_text_if_changed(settings.output_log, "".join(kept_entries))
 
@@ -320,12 +388,14 @@ def run_once(settings: Settings) -> FilterStats | None:
         vanilla_entries_removed=vanilla_entries_removed,
         output_entries=len(kept_entries),
         output_changed=output_changed,
+        source_files=tuple(path.name for path in paths),
     )
 
 
 def format_stats(stats: FilterStats) -> str:
     changed = "updated" if stats.output_changed else "unchanged"
     return (
+        f"sources={','.join(stats.source_files)}, "
         f"entries={stats.source_entries}, "
         f"duplicates_removed={stats.duplicate_entries_removed}, "
         f"vanilla_removed={stats.vanilla_entries_removed}, "
@@ -344,6 +414,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Path to JSON config file.",
     )
     parser.add_argument("--source-log", help="Override the source error.log path.")
+    parser.add_argument(
+        "--current-only",
+        action="store_true",
+        help="Read only the source log, without its numbered rotations.",
+    )
     parser.add_argument("--output-log", help="Override the filtered output log path.")
     parser.add_argument(
         "--vanilla-filters",

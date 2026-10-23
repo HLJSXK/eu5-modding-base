@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
- prospect_for_coal.title: "勘探煤矿"
- prospect_for_coal.desc: "蒸汽与钢铁的时代靠煤炭运转，而我们自己的土地或许仍蕴藏着我们的工业迫切渴求之物。让我们拨出政治资本，派遣地质学家与矿业工程师团队深入产煤地带，勘测地形，沿有希望的煤层开挖试井，并在煤炭蕴藏最丰富之处开辟新的矿井。勘测队将从产出最少的乡间田地入手，这些田地改作煤矿开采所失甚微，新矿场起初规模不大，日后自会不断扩展，以供我们的炉火所需。"
- prospect_for_coal.a: "下令展开勘测。"
- prospect_for_coal_effect_tt: "[coal_prospect_location.GetName] 现在将产出 [ShowGoodsName('coal')]，而非 [coal_prospect_location.GetRawMaterial.GetName]"
- prospect_for_coal.historical_info: "鲁尔、上西里西亚与南威尔士的大煤田为工业革命提供了动力，系统性的煤炭勘探将宁静的乡村地区变成了地球上最密集的工业区之一。地质勘测在十八世纪末与十九世纪初逐渐发展为一门专业学科，各国政府与企业家竞相寻找新机械时代所依赖的燃料。"
+ prospect_for_coal.title: "勘探煤炭"
+ prospect_for_coal.desc: "蒸汽与钢铁的时代靠煤炭运转，我们自己的土地里或许还藏着工业极度渴求的资源。我们动用政治资源，派遣地质学家和采矿工程师团队进入含煤区域，勘测地层，在有开采前景的矿脉沿线开凿试验竖井，在能产出最丰富矿藏的地方新开一座矿坑。勘测人员会先从我们产出最低的乡村地产开始，把这些田地交给煤矿几乎不会造成损失，新矿场会从小规模起步，之后逐步扩大产能，为我们的熔炉供应燃料。"
+ prospect_for_coal.a: "委托勘测。"
+ prospect_for_coal_effect_tt: "[coal_prospect_location.GetName]现在将生产[ShowGoodsName('coal')]，而非[coal_prospect_location.GetRawMaterial.GetName]"
+ prospect_for_coal.historical_info: "鲁尔、上西里西亚和南威尔士的大煤田为工业革命提供了动力，对煤炭的系统性勘探，把原本安静的乡村地区变成了地球上工业密度最高的部分区域。18世纪末到19世纪初，地质勘探发展成了一门专业学科，各国政府和企业家都争相寻找新机器时代赖以运转的这种燃料。"
