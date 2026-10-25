@@ -121,6 +121,15 @@ def build_context(files: list[str]) -> dict[str, Any]:
     files = sorted({_norm(path) for path in files if path})
     generated = _generated_map()
     routed = {path: sorted({path, *_generated_sources(generated.get(path))}) for path in files}
+    consumer_routes = [route for route in routes.get("domain_routes", []) if route.get("route_generated_consumers")]
+    for output, entry in generated.items():
+        if not any(_path_matches(output, route, routes) for route in consumer_routes):
+            continue
+        sources = _generated_sources(entry)
+        for original in files:
+            if any(original == source or original.startswith(source.rstrip("/") + "/") for source in sources):
+                routed[original] = sorted({*routed[original], output})
+    domain_sources: dict[str, tuple[str, str]] = {}
     domains: dict[str, dict[str, str]] = {}
     cards: dict[str, dict[str, str]] = {}
     reads: dict[str, str] = {}
@@ -137,12 +146,14 @@ def build_context(files: list[str]) -> dict[str, Any]:
                 if _path_matches(path, route, routes):
                     domain = str(route.get("id", ""))
                     domains[domain] = {"id": domain, "reason": str(route.get("reason", ""))}
+                    domain_sources.setdefault(domain, (original, path))
                     _add_card(cards, route, domain)
             for route in routes.get("content_routes", []):
                 if _content_excluded(path, route) or not _contains(path, [str(m) for m in route.get("markers", []) or []]):
                     continue
                 domain = str(route.get("id", ""))
                 domains[domain] = {"id": domain, "reason": str(route.get("reason", ""))}
+                domain_sources.setdefault(domain, (original, path))
                 for read in route.get("reads", []) or []:
                     reads[str(read.get("path", ""))] = str(read.get("reason", ""))
                 _add_card(cards, route, domain)
@@ -158,8 +169,17 @@ def build_context(files: list[str]) -> dict[str, Any]:
                 if _path_matches(path, route, routes):
                     domain = str(route.get("id", ""))
                     domains[domain] = {"id": domain, "reason": str(route.get("reason", ""))}
+                    domain_sources.setdefault(domain, (original, path))
                     for read in route.get("reads", []) or []:
                         reads[str(read.get("path", ""))] = str(read.get("reason", ""))
+
+    for route in routes.get("domain_routes", []):
+        check = route.get("required_check")
+        if not check or route["id"] not in domain_sources:
+            continue
+        original, source = domain_sources[route["id"]]
+        alerts.setdefault(check["id"], {"id": check["id"], "severity": "required", "path": original,
+                                     "source": source, "message": check["message"], "card": _card_path(route)})
 
     patterns = load_anti_patterns(REPO_ROOT)
     matched = []

@@ -1021,15 +1021,19 @@ building's `allow = { scope:actor = { ... } }` block with no actor target and sp
 
 #### Generic Action Message Types
 
-Generic actions also need notification message types in `main_menu/gui/messagetypes.txt`. This project keeps those entries in `scripts/gen_messagetypes.py`; after adding a new generic action, add a `PERFORM_<action_id>_ACTION` block there and rerun the script.
+EU5 1.4.3 reads notification message types additively from `main_menu/gui/messagetypes/*.txt`. The vanilla definitions are in `reference_game_files/game/main_menu/gui/messagetypes/00_messagetypes.txt`; the old `main_menu/gui/messagetypes.txt` path is not read. Generate a uniquely named file containing only the current mod root's entries. Do not copy the vanilla entries or repeat another mod root's types: duplicate ids report both source paths. Each generic action needs `PERFORM_<action_id>_ACTION` and its matching localization. This behavior was verified against the 1.4.3 reference layout and runtime `message_handler.cpp:448` diagnostics on 2026-10-23.
 
 Each message type should have matching localization keys in every supported language:
 
 ```yaml
+PERFORM_my_action_ACTION_HEADER: "Action notification"
+PERFORM_my_action_ACTION_TITLE: "Action performed"
 PERFORM_my_action_ACTION_SETUP: "When this action is performed."
 PERFORM_my_action_ACTION_LOG: "The action was performed."
 PERFORM_my_action_ACTION_MAP: ""
 ```
+
+All five suffixes (`HEADER`, `TITLE`, `SETUP`, `LOG`, `MAP`) are required for the complete notification. Runtime verification on 2026-10-23 found missing `HEADER`/`TITLE` logged as humanized raw keys even when `SETUP`/`LOG`/`MAP` existed. Validate all five; local aliases must resolve to real localized labels.
 
 If the message type block is missing, the engine logs `Failed to find message type: PERFORM_<action_id>_ACTION`.
 
@@ -1050,16 +1054,9 @@ guarded `effect`, AI-list entry, message type, and localization. This is confirm
 
 #### Cross-Mod Singleton Copies
 
-`messagetypes.txt` and customizable-localization databases such as
-`character_title.txt` are winner-takes-all full-file databases, not additive
-registries. A later winning copy must contain every entry needed by the enabled
-mods whose earlier copies it overrides. Dependency metadata alone is not enough:
-in this project the Engineering Department copy loaded last despite the main
-mod declaring it as a dependency, which hid 81 main-mod message types at
-runtime. If the playset manually sorts the main TV mod after Engineering
-Department, the standalone Engineering Department copy may contain only its own
-entries, while the main TV copy must contain the TV + Engineering Department
-union. Validate the vanilla prefix and each root's expected singleton coverage.
+Customizable-localization databases such as `in_game/common/customizable_localization/character_title.txt` remain winner-takes-all full-file databases. Their top-level keys do not merge additively; a winning full copy must contain all entries needed by enabled mods it replaces. The 1.4.3 reference still has one `character_title.txt`, so retain that generation and load-order contract.
+
+Message types are a separate contract in EU5 1.4.3: `main_menu/gui/messagetypes/*.txt` is additive. Each mod root owns a distinct file and disjoint ids; omit vanilla types, types owned by dependencies, and files for roots with no actions. Validate exact root coverage, uniqueness across all mod files and vanilla `00_messagetypes.txt`, and absence of the obsolete `gui/messagetypes.txt`.
 
 ### 5.5. Variable Arithmetic (`change_variable`)
 
@@ -1410,6 +1407,8 @@ Countries are defined in two parts: a **country definition** file in `in_game/se
 All text displayed to the player is handled through the localization system. Localization files are in `.yml` format and must be encoded in **UTF-8-BOM**. Each language has its own subfolder and file naming convention (e.g., `_l_english.yml`). The system supports dynamic text, color formatting, and icons. [9]
 
 Keep each localization key/value on one physical line. When a value needs an intentional line break, emit `\n` inside the quoted string; a real newline inside the value makes the next physical line parse as a new key and can produce `Invalid character` / `Missing colon` startup errors.
+
+Keep title-like values free of colons. This covers modifier names, option names, legends, tooltip/map/log titles and "label: value" lines, and applies to both ":" and "：". Value breakdowns split a name at the colon and right-align the remainder next to the number. In-game example (2026-10-24): "SOL生活水平：移民吸引力" showed "移民吸引力：" detached on the right of the migration breakdown. You cannot know which strings the engine will show in a breakdown, so use parentheses ("商品替代（$wheat$）") or a space ("生活水平 [value]") instead. Descriptive sentences may keep colons; vanilla does.
 
 When using color formatting, put a separator after the color tag before player-facing text or generated placeholders. Use `#Y Text#!`, `#G {group}#!`, or `#R 30#!`, not `#YText#!`, `#G{group}#!`, or `#R30#!`. The localization formatter can otherwise read the adjacent content as part of the formatting tag and drop or mangle the highlighted span.
 

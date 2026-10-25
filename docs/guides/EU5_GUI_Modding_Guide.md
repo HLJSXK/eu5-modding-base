@@ -61,6 +61,13 @@ gameplay-specific branches stay in workspace tests. Verified by offline tests,
 
 ## 1. Files, composition and overrides
 
+**[Runtime error log + vanilla source, 2026-10-24.]** Declare `template` at
+file scope, outside `types` / `Types` groups. A template directly in a type
+group produces `Unexpected token: template` and cascading brace/equals errors.
+Vanilla `main_menu/gui/shared/main_menu_cooltip_types.gui:6-27` places templates
+before its type group. The shared parser rejects this nesting with a source
+line diagnostic; top-level templates still compose through `using` in types.
+
 | Rule | Level |
 |---|---|
 | `.gui` files override **by whole relative path**; there is no INJECT/REPLACE for GUI. Owning one button in `location_window.gui` means owning the full file (so a generator owns the complete file). | 源 |
@@ -107,6 +114,7 @@ gameplay-specific branches stay in workspace tests. Verified by offline tests,
 | **`using = X` inlines a `type X`, it is not a texture reference.** A `progressbar` whose `using` names a non-existent type resolves no texture and draws **nothing while still occupying its layout slot and reporting a full size** - invisible to any measurement check. Name `progresstexture` / `noprogresstexture` outright (progressbars.gui:285) and carry `texture_density` / `spriteType` / `spriteborder` on the element. Verify bars by pixel. | 源 |
 | **`TooltipListBase` already contains a `TooltipTableHeader`.** A section caption needs only to override `tableheader_text` / `table_header_background`; adding a body child stacks a second header and roughly doubles the band height (~60px vs ~33px). | 实机 |
 | **A `blockoverride` replaces a block entirely, and an instance's own override beats one inherited from outside.** One shared block name therefore cannot carry different values into sibling instances - each keeps its own default. Expose one container block per repeated row and let the caller fill it with children that each carry their own override. Getting this wrong duplicates elements silently rather than erroring: emitting five cells *alongside* a block that already held five defaults produced ten per row. | 实机 |
+| **Vanilla icon art is one painted object on a transparent canvas.** `icons/map_modes/` and `icons/situations/` are 128×128 with a ~5-8 px margin (alpha bbox e.g. `population` (9,7,120,121), `food` (15,7,112,122)); `icons/modifier_types/` are 64×64. Related map modes keep the main object and add a small lower-right badge (`peasants` → `peasants_percentage`, `control` → `missing_control`). An opaque medallion or glow background stands out in the map-mode selector; `stability.dds` is already a balance scale. | 源 |
 
 ## 4. Text, numbers and icons
 
@@ -167,3 +175,29 @@ register their children, preserving type-name case. Vanilla hud_topbar.gui:46
 uses Types HUD_TopbarTypes; panels/left_panel/left_panel.gui:93 uses Types
 LeftPanelTypes. Ignoring these groups silently drops both HUD bars. This is
 handled by the shared parser, not a scenario-specific AST repair.
+### Estate labels and existence
+
+**[Source, 2026-10-24; native hover acceptance pending in SOL.]** Bind an estate
+name's own `datacontext` to `[Player.GetGovernment.GetEstateFromKey('nobles_estate')]`
+and add `tooltipwidget = { using = Estate_tooltip }`. Keep the label hit-testable
+with `alwaystransparent = no`. Vanilla binds this context/template together in
+`panels/disaster/ambrosian_republic_disaster.gui:51-53`; the template's title reads
+`Estate.GetLongNameWithNoTooltip` (`shared/government_tooltips.gui:2861`).
+
+Hide the entire row with
+`visible = "[Player.GetGovernment.GetEstateFromKey('nobles_estate').ExistsForCountry]"`,
+following `shared/cards.gui:3908`. The official API lists
+`Estate.ExistsForCountry` as bool (`data_types_uncategorized.txt:69879`). An
+existing estate can have zero population; a population check has different
+semantics. No `GetEstateFromKey(...).IsValid` example was found in the checked
+vanilla/reference-mod corpus. Commoners map to `peasants_estate`, tribesmen to
+`tribes_estate`; the other keys are `nobles_estate`, `clergy_estate`, `burghers_estate`.
+Use `Location.GetOwner` for locations, `Player` for player panels/HUD, and the
+retained primary `Scope.GetCountry` for map country tooltips. Ownerless location
+buttons can use `[Location.HasOwner]` (`location_window.gui:3774`). Keep aggregate
+rows outside estate context. Offline binding/layout checks do not execute hover.
+
+For an already known static goods key, `[ShowGoodsName('incense')]` supplies a
+localized name (`buildings_l_english.yml:1087`; official global CString helper at
+`data_types_uncategorized.txt:9559`). This does not establish a typed accessor on
+`GetVariable(...)`; keep the existing restriction on guessed `.GetGoods` chains.

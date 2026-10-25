@@ -1592,3 +1592,57 @@ exact:[localization_util.cpp:103]: trinity_lavra_st_sergius_work_of_art: "Trinit
 exact:[localization_util.cpp:103]: trinity_lavra_st_sergius_work_of_art_desc: "TODO : Write a desc"
 exact:[localization_util.cpp:103]: batalha_monastery_work_of_art: "Batalha monastery work of art"
 exact:[localization_util.cpp:103]: batalha_monastery_work_of_art_desc: "TODO : Write a desc"
+
+# Expected ED early event overrides; exact complete diagnostics only (2026-10-23).
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_cas.46' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:7', Previous Location: 'events/DHE/flavor_CAS.txt:2888'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_cas.69' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:69', Previous Location: 'events/DHE/flavor_CAS.txt:4245'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_cas.117' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:132', Previous Location: 'events/DHE/flavor_CAS.txt:7343'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_chi.2' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:236', Previous Location: 'events/DHE/flavor_chi.txt:138'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_chi.30' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:413', Previous Location: 'events/DHE/flavor_chi.txt:2377'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_chi.52' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:480', Previous Location: 'events/DHE/flavor_chi.txt:3750'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_chi.53' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:518', Previous Location: 'events/DHE/flavor_chi.txt:3783'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_chi.54' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:595', Previous Location: 'events/DHE/flavor_chi.txt:3854'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_chi.87' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:665', Previous Location: 'events/DHE/flavor_chi.txt:5984'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_chi.124' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:711', Previous Location: 'events/DHE/flavor_chi.txt:8860'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_chk.3' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:746', Previous Location: 'events/DHE/flavor_CHK.txt:116'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_chk.6' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:807', Previous Location: 'events/DHE/flavor_CHK.txt:286'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_flo.28' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:854', Previous Location: 'events/DHE/flavor_flo.txt:441'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_fra.10' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:937', Previous Location: 'events/DHE/flavor_FRA.txt:521'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_fra.305' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:995', Previous Location: 'events/DHE/flavor_FRA.txt:9287'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_fra.426' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1068', Previous Location: 'events/DHE/flavor_FRA.txt:12973'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_fra.428' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1138', Previous Location: 'events/DHE/flavor_FRA.txt:13114'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_fra.550' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1198', Previous Location: 'events/DHE/flavor_FRA.txt:15724'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_gra.14' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1267', Previous Location: 'events/DHE/flavor_gra.txt:743'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_hab.25' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1383', Previous Location: 'events/DHE/flavor_HAB.txt:1256'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_hsa.7' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1476', Previous Location: 'events/DHE/flavor_HSA.txt:489'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_ira.38' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1558', Previous Location: 'events/DHE/flavor_ira.txt:2256'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_khm.1000' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1631', Previous Location: 'events/DHE/flavor_khm.txt:3'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_khm.1001' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1689', Previous Location: 'events/DHE/flavor_khm.txt:61'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mam.40' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1741', Previous Location: 'events/DHE/flavor_MAM.txt:2273'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mei.110' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1791', Previous Location: 'events/DHE/flavor_MEI.txt:740'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mlo.24' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1850', Previous Location: 'events/DHE/flavor_mlo.txt:1324'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.6' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:1928', Previous Location: 'events/DHE/flavor_MOS.txt:395'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.7' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:2066', Previous Location: 'events/DHE/flavor_MOS.txt:528'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.11' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:2161', Previous Location: 'events/DHE/flavor_MOS.txt:1005'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.12' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:2352', Previous Location: 'events/DHE/flavor_MOS.txt:1207'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.28' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:2462', Previous Location: 'events/DHE/flavor_MOS.txt:2278'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.34' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:2572', Previous Location: 'events/DHE/flavor_MOS.txt:2789'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.35' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:2691', Previous Location: 'events/DHE/flavor_MOS.txt:2909'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.37' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:2857', Previous Location: 'events/DHE/flavor_MOS.txt:3220'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.38' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:3019', Previous Location: 'events/DHE/flavor_MOS.txt:3383'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.57' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:3107', Previous Location: 'events/DHE/flavor_MOS.txt:5950'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.58' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:3232', Previous Location: 'events/DHE/flavor_MOS.txt:6070'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.62' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:3326', Previous Location: 'events/DHE/flavor_MOS.txt:6465'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mos.92' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:3464', Previous Location: 'events/DHE/flavor_MOS.txt:9035'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mug.6' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:3618', Previous Location: 'events/DHE/flavor_mug.txt:309'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mug.8' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:3690', Previous Location: 'events/DHE/flavor_mug.txt:426'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mug.10' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:3756', Previous Location: 'events/DHE/flavor_mug.txt:565'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_mug.11' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:3827', Previous Location: 'events/DHE/flavor_mug.txt:631'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_pap.1501' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:3886', Previous Location: 'events/DHE/flavor_pap.txt:3302'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_pis.4' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:3979', Previous Location: 'events/DHE/flavor_PIS.txt:197'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_por.5' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:4050', Previous Location: 'events/DHE/flavor_por.txt:194'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_rus.70' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:4119', Previous Location: 'events/DHE/flavor_RUS.txt:6009'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'flavor_ven.28' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:4260', Previous Location: 'events/DHE/flavor_VEN.txt:1309'\n
+exact:[jomini_eventmanager.cpp:440]: Duplicated event ID 'grand_tour_events.2' found. New Location: 'events/0000_tv_vw_vanilla_event_overrides.txt:4294', Previous Location: 'events/expeditions/grand_tour_events.txt:56'\n
+exact:[jomini_script_system.cpp:256]: Script system error!\n  Error: custom_tooltip trigger [ Unknown loc key flavor_mos.38.tt1 ]\n  Script location: events/0000_tv_vw_vanilla_event_overrides.txt:3038\n\n
+exact:[jomini_script_system.cpp:256]: Script system error!\n  Error: custom_tooltip trigger [ Unknown loc key flavor_mos.38.tt2 ]\n  Script location: events/0000_tv_vw_vanilla_event_overrides.txt:3043\n\n

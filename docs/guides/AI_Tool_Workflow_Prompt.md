@@ -20,6 +20,16 @@ The context command merges the base and workspace anti-pattern registries,
 route tables, required reads, risk cards, and generated-file ownership. Read
 every required card and immediate alert it reports.
 
+## Required generic-action registration checks
+
+Before action edits, run context for the action, generator or registered data.
+The default Markdown and JSON include the untruncated `generic_action_registration`
+required alert: AI-list `actions` membership, a message type owned by this mod root,
+and all five `HEADER/TITLE/SETUP/LOG/MAP` localization fields. Read the generic-action
+risk card and regenerate owned outputs; validate before handoff. The reminder is
+independent of the capped advisory anti-pattern list and does not need `--full`.
+Path-only routes also work before a proposed action or generator file exists.
+
 ## EU5 Resolution Rule
 
 EU5 uses Jomini; do not assume EU4 syntax. For uncertain syntax, consult these
@@ -60,3 +70,10 @@ workspace's local registry and risk cards.
 Use the direct EU5 interpreter for validation. Do not use `conda run` in managed
 sandboxes. Run the workspace validator and routing tests after workflow or
 knowledge changes.
+## Verified GUI findings (2026-10-24)
+
+| Date | Pitfall | Verified behavior |
+| --- | --- | --- |
+| 2026-10-24 | Generic estate hover or population substituted for government estate existence | Bind GetEstateFromKey to the label and use Estate_tooltip; gate the row with ExistsForCountry (ambrosian_republic_disaster.gui:51-53; shared/cards.gui:3908). Guard ownerless location entry buttons with Location.HasOwner. |
+| 2026-10-24 | Guessing a goods accessor for a known static key | ShowGoodsName('key') is a global CString helper, used by vanilla buildings localization; it does not imply GetVariable(...).GetGoods support. |
+| 2026-10-24 | Template nested directly inside a types/Types group | Emit templates at file scope; the engine rejects this nesting. The shared parser now reports the declaration line (main_menu_cooltip_types.gui:6-27; runtime log gui/SOL_lshud_glorp_compat.gui:6-34). |

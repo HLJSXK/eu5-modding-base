@@ -20,6 +20,25 @@ class TypeGroupTests(unittest.TestCase):
                 self.assertEqual(element.children[0].kind, 'widget')
                 self.assertEqual(element.children[0].props['size'], ['640', '40'])
 
+    def test_templates_inside_type_groups_are_rejected(self):
+        for spelling in ('types', 'Types'):
+            with self.subTest(spelling=spelling):
+                source = spelling + ' HUD {\n template tip { widget = {} }\n type bar = widget {} }'
+                with self.assertRaisesRegex(ValueError, r'hud.gui:2: template declarations must be outside'):
+                    parse(source, 'hud.gui')
+
+    def test_top_level_template_composes_with_grouped_type(self):
+        for spelling in ('types', 'Types'):
+            with self.subTest(spelling=spelling), tempfile.TemporaryDirectory() as folder:
+                path = Path(folder) / 'hud.gui'
+                path.write_text('template appearance { size = { 64 40 } } '
+                                + spelling + ' HUD { type bar = widget { using = appearance } } '
+                                'bar = {}', encoding='utf-8')
+                db = GuiDB([path])
+                node = db.roots[str(path)][2]
+                element = Expander(db).build(node.key, node.value, {})
+                self.assertEqual(element.props['size'], ['64', '40'])
+
     def test_type_names_remain_case_sensitive(self):
         nodes = parse('Types HUD { type TopBar = widget {} type topbar = icon {} }')
         self.assertEqual(nodes[0].key, 'types')

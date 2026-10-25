@@ -7,9 +7,30 @@ core_reads:
 domain_routes:
   - id: generic_actions
     expand_mod_roots: true
-    path_prefixes: [in_game/common/generic_actions/]
+    route_generated_consumers: true
+    path_prefixes:
+      - in_game/common/generic_actions/
+      - in_game/common/generic_action_ai_lists/
+      - main_menu/gui/messagetypes/
+      - scripts/in_game/common/generic_actions/
+      - scripts/in_game/common/generic_action_ai_lists/
+      - scripts_engineering_department/in_game/common/generic_actions/
+      - scripts_engineering_department/in_game/common/generic_action_ai_lists/
+      - scripts_court_positions/in_game/common/generic_actions/
+      - scripts_court_positions/in_game/common/generic_action_ai_lists/
+      - scripts_eureka/in_game/common/generic_actions/
+      - scripts_eureka/in_game/common/generic_action_ai_lists/
+      - scripts/gen_messagetypes.py
+    required_check:
+      id: generic_action_registration
+      message: >-
+        Generic action changes require THREE companion registrations in the action's own mod root:
+        (1) action id inside an AI list's actions = { ... } block;
+        (2) PERFORM_<action_id>_ACTION in main_menu/gui/messagetypes/<mod>.txt (EU5 1.4.3+, additive; no vanilla copy);
+        (3) PERFORM_<action_id>_ACTION_HEADER, _TITLE, _SETUP, _LOG and _MAP in supported languages, with UTF-8 BOM and resolving aliases.
+        Update the owning generator and its declared data inputs, regenerate, then run scripts/validate.py --changed --fix --ai-report.
     card: generic_actions.md
-    summary: selector, scope, and hover pre-evaluation
+    summary: action registration, five-field notifications, selector and hover risks
     reason: generic actions can evaluate before confirmation
   - id: gui
     expand_mod_roots: true
@@ -42,6 +63,13 @@ filename_routes:
     summary: full-panel override and compatibility implications
     reason: Europedia has no verified data registration API
 content_routes:
+  - id: generic_actions
+    markers: [generic_actions, generic_action_ai_lists, PERFORM_, "def actions(", action_name]
+    excluded_prefixes: [docs/, tests/, tmp/, .tmp/, .editor_state/, assets/, reference_game_files/, reference_mods/]
+    excluded_paths: [AGENTS.md, CLAUDE.md, scripts/ai_context.py]
+    card: generic_actions.md
+    summary: AI list, message type and all five notification fields
+    reason: generator, data, localization or GUI caller uses generic actions
   - id: variable_map
     markers: ["variable_map(", "global_variable_map(", "local_variable_map(", add_to_variable_map, add_to_global_variable_map, add_to_local_variable_map]
     excluded_prefixes: [docs/, tests/, reference_game_files/, reference_mods/]

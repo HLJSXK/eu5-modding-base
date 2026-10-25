@@ -1321,24 +1321,13 @@
 - id: eu5_vanilla_copy_singleton_file_cannot_split_across_mods
   pattern: ''
   detectability: advisory
-  bad: Treating a winner-takes-all 'full vanilla copy with mod entries inserted' file (e.g. `character_title.txt`, `messagetypes.txt`)
-    as an additive registry, or assuming dependency metadata alone makes the intended superset copy load last.
-  correction: 'Files in this category are NOT name-keyed registries where independent per-file entries accumulate: the winning
-    whole-file definition must contain every entry needed by the enabled mods it overrides. Standalone roots may carry only
-    their own insertions when the playset manually sorts a later superset root after them; for TV+Engineering this means Engineering
-    Department carries only Engineering entries, while the main TV copy carries the TV + Engineering Department union and
-    must be sorted after Engineering Department. Validate the vanilla prefix and each root''s expected singleton coverage.'
+  bad: Treating character_title.txt as additive, or continuing to copy vanilla messagetypes.txt after the EU5 1.4.3 directory migration.
+  correction: Preserve the full-copy and load-order contract for customizable-localization character_title.txt. For EU5 1.4.3 message types, generate only root-owned ids in a unique main_menu/gui/messagetypes/<mod>.txt file; do not copy vanilla entries or another root's actions. Delete the obsolete gui/messagetypes.txt and check coverage and cross-file uniqueness.
   category: localization
   scope: any
-  source: scripts/in_game/common/customizable_localization/gen_character_title.py; scripts/gen_messagetypes.py; scripts/validate.py
-    check_vanilla_copy_integrity; runtime error.log message_handler.cpp:421, 2026-07-28
-  notes: 'Found 2026-07 while splitting the Engineering Department subsystem into `src_engineering_department/`; an initial
-    standalone-subset/main-superset strategy assumed the main dependency would load later. Runtime logs on 2026-07-28 showed
-    the Engineering Department singleton winning instead: all 81 main-only `PERFORM_`, `WE_PERFORM_`, and `ACTION_*_PERFORMED_ON_US`
-    message types failed lookup despite appearing in the main copy. The other shared multi-IO files are genuine name-keyed
-    registries and split cleanly. Updated 2026-08-01 after the user chose to manually sort TV after Engineering Department:
-    `gen_character_title.py`, `gen_messagetypes.py`, and `check_vanilla_copy_integrity()` now enforce root-specific standalone
-    subsets plus the main TV+Engineering superset instead of byte equality.'
+  source: reference_game_files/game/main_menu/gui/messagetypes/00_messagetypes.txt; reference_game_files/game/in_game/common/customizable_localization/character_title.txt; runtime message_handler.cpp:448, 2026-10-23
+  notes: The old singleton message-type guidance described earlier versions. In 1.4.3 message files are additive and duplicate ids name both source paths. Character-title storage has not migrated to a directory; do not change it as part of this message-type fix.
+
 - id: europedia_custom_scrollbox_missing_size_contract
   pattern: ''
   detectability: advisory
@@ -1850,15 +1839,15 @@
   detectability: needs_parser
   only_in_paths:
   - generic_actions
-  bad: Defining a generic action without a PERFORM_<action_id>_ACTION message type or all matching SETUP/LOG/MAP localization
+  bad: Defining a generic action without a PERFORM_<action_id>_ACTION message type or all matching HEADER/TITLE/SETUP/LOG/MAP localization
     keys
   correction: Add a PERFORM_<action_id>_ACTION block to scripts/gen_messagetypes.py TV_ENTRIES, rerun scripts/gen_messagetypes.py,
-    and define SETUP/LOG/MAP localization keys for supported languages.
+    and define HEADER/TITLE/SETUP/LOG/MAP localization keys for supported languages.
   category: script
   scope: country
   source: 'scripts/gen_messagetypes.py:3; scripts/gen_messagetypes.py:39; runtime error.log: message_handler.cpp:421, localization_util.cpp:103'
-  notes: 'EU5 expects a message type and its SETUP/LOG/MAP localization trio for generic action notifications. Missing message
-    types log ''Failed to find message type: PERFORM_<action_id>_ACTION''; missing members of the localization trio log the
+  notes: 'EU5 expects a message type and its HEADER/TITLE/SETUP/LOG/MAP localization fields for generic action notifications. Missing message
+    types log ''Failed to find message type: PERFORM_<action_id>_ACTION''; missing localization fields log the
     key with ''TODO : Write a desc''. scripts/validate.py cross-checks every generic action against the English and Simplified
     Chinese localization key sets.'
 - id: generic_action_nullable_numeric_comparison_direct
@@ -2515,6 +2504,20 @@
   notes: In Jomini GUI, multiline text can contribute its natural text width back into hbox layout. A right-side size = {
     -1 H } text column in the Engineering Department proposal row expanded to 446px and pushed its parent vbox from 470px
     to 548.3px even though the outer card bounds were correct.
+- id: gui_texticon_inside_large_header_font_text
+  pattern: ''
+  detectability: advisory
+  bad: 'Appending an inline texticon (@icon!) to a large Font_Type_Headers number, for example "[value|1] @sol_living_standard!"
+    at fontsize 16 or 26'
+  correction: 'Split the number and the icon into two texts in an hbox. The number keeps the header font; the icon is its
+    own default-font text_single at the row text size (about 14), so it matches the icons in the surrounding table rows.'
+  category: gui
+  scope: any
+  source: 'In-game screenshot, 2026-10-24, SOL topbar slot 1 (fontsize 16 header) and tooltip hero (fontsize 26 header). The
+    20px/16pt texticon rendered oversized and overlapped the last digit. The same texticon in default-font rows at size
+    13-15 looked correct.'
+  notes: 'A texticon iconsize scales with the host text fontsize, so a 26pt host gives about 32px. The overlap with the
+    header font is inferred from the screenshot; the cause has not been isolated. Default-font rows are unaffected.'
 - id: gui_icon_percent_position_ignored
   pattern: ''
   only_in_paths:
@@ -3815,6 +3818,24 @@
   source: 'runtime error.log: localization_reader.cpp:445 Invalid character in key name; fixed in scripts_engineering_department/wonder_mechanics/_core.py'
   notes: The localization reader treats the continuation line as a new key, causing invalid-character and missing-colon errors.
     scripts/validate.py checks main-menu localization physical lines.
+- id: localization_title_value_contains_colon
+  pattern: ^\s*\w*(?:_NAME|_TITLE|_LEGEND|_name|_title)\w*:\d*\s*"[^"\[\n]*[：:]
+  detectability: advisory
+  only_in_paths:
+  - localization
+  bad: 'Putting a colon (ASCII ":" or full-width "：") in a title-like localization value. This covers modifier names
+    (STATIC_/AUTO_MODIFIER_NAME, MODIFIER_TYPE_NAME), option names, legends, tooltip and map-tooltip titles, log titles,
+    and "label: value" lines.'
+  correction: 'Write title-like values without a colon. Use parentheses for a qualifier, for example "商品替代（$wheat$）"
+    or "SOL Difficulty Balance (AI Hard)". Use a plain space or a reworded phrase for a label/value pair, for example
+    "生活水平 [value]" or "X的生活水平很高（[value]）". Full sentences in descriptions may keep colons.'
+  category: localization
+  scope: any
+  source: 'In-game screenshot, 2026-10-24. The migration-attraction breakdown rendered "SOL生活水平：移民吸引力" as "SOL生活水平"
+    on the left, with "移民吸引力：" moved to the right next to the +0.01 value.'
+  notes: 'Value breakdowns split a name at the colon and right-align the rest. You cannot know in advance which strings the
+    engine will show in a breakdown, so treat every title-like value as colon-free, in both languages and for both colon
+    widths. Vanilla uses colons in sentences and descriptions, so the rule is about title-like strings only.'
 - id: location_auto_modifier_nonfunctional
   pattern: category\s*=\s*location
   only_in_paths:
@@ -3961,6 +3982,17 @@
   source: 'EU5 error.log: Malformed token: yes in gfx/map/map_modes/SOL_map_modes.txt; reference_official_defines/1.3.4-beta/docs/data_types_uncategorized.txt:88402'
   notes: The UI exposes MapMode.IsMapModePinnedByDefault, but the current mapmode data parser does not accept pinned_by_default
     as a writable field and can fail on the yes/no value.
+- id: mapmode_shading_faked_with_dark_map_color
+  pattern: ''
+  bad: Marking an excluded or special category on a custom mapmode by giving map_color a dark or gray solid fill
+  correction: Use the mapmode's secondary_map_color block. It is the engine's striped overlay, with root = location. Return
+    a color only for the locations that should be striped, with no else branch, and add a legend_key with the stripe color.
+  category: gui
+  scope: location
+  source: reference_official_defines/types/map_modes.txt:5 ("secondary_map_color = <script color> striped map color for location");
+    reference_mods/3613232232/in_game/gfx/map/map_modes/pp_population_capacity_map_modes.txt:298-313
+  notes: Branches that return no value leave the location unstriped. Vanilla situations use the same field for the
+    contested-territory hatching. SOL uses it to stripe single-location countries in the ranking map, 2026-10-24.
 - id: marked_local_variable_cleanup_missing
   pattern: ''
   validator: check_marked_local_variable_cleanup
@@ -5870,3 +5902,31 @@
   correction: Pass elements from the fresh expanded panel through preview.render_tree detail_elements. The shared pipeline crops the final bitmap after layout using scaled bounds clipped to the image, omits unplaced or out-of-image elements and writes detail paths with the main diagnostics report. Workspaces own semantic selectors and suffix names only.
   source: ai_gui_assessment/renderer/eu5_gui_renderer/preview.py render_tree; ai_gui_assessment/renderer/tests/test_preview.py test_details_follow_scaled_layout_and_clip_to_the_rendered_image; docs/guides/EU5_GUI_Modding_Guide.md
   notes: Offline synthetic regressions cover fractional scale, partial clipping, hidden/outside elements and report persistence, 2026-10-23. Crops preserve the original panel bitmap and its rendering limits.
+- id: gui_estate_hover_missing_typed_context
+  pattern: ''
+  detectability: advisory
+  category: gui
+  scope: country
+  bad: Estate labels use a generic text tooltip, or estate rows use an unverified IsValid chain or population as a proxy for government estate existence.
+  correction: Bind the label datacontext to Country.GetGovernment.GetEstateFromKey('estate_key'), add tooltipwidget = { using = Estate_tooltip }, and keep the label hit-testable with alwaystransparent = no. Gate the entire row with the same estate object's ExistsForCountry. Use Location.GetOwner for a location, Player for player panels/HUD, and a stable primary Scope.GetCountry in country map tooltips. Guard ownerless location entry buttons with Location.HasOwner.
+  source: reference_game_files/game/in_game/gui/panels/disaster/ambrosian_republic_disaster.gui:51-53; reference_game_files/game/in_game/gui/shared/cards.gui:3908; reference_game_files/game/in_game/gui/location_window.gui:3774; reference_official_defines/docs/data_types_uncategorized.txt:69879
+  notes: Source-verified 2026-10-24. Keys are nobles_estate, clergy_estate, burghers_estate, peasants_estate, tribes_estate; commoners and tribesmen are display/cache names, not those estate keys. ExistsForCountry returns bool and is independent of population, so an existing zero-population estate remains visible. Total rows have no estate context. SOL offline tests cover bindings, hidden rows and owned/unowned buttons; native hover is not verified by rendering.
+- id: gui_goods_name_from_static_key_helper
+  pattern: ''
+  detectability: advisory
+  category: gui
+  scope: any
+  bad: Guessing an unverified typed goods accessor when a static goods key is already available for localized display.
+  correction: Use [ShowGoodsName('key')] for localized goods-name display from a known static key. Do not infer GetVariable(...).GetGoods support from this global CString helper; dynamic saved flags still need verified typed access or generated static branches.
+  source: reference_official_defines/docs/data_types_uncategorized.txt:9559; reference_game_files/game/main_menu/localization/english/buildings_l_english.yml:1087,1121
+  notes: Source-verified 2026-10-24. Vanilla uses ShowGoodsName('incense') and ShowGoodsName('livestock') in localized descriptions. This records the helper without changing existing goods UI behavior.
+
+- id: gui_template_inside_types_group
+  pattern: null
+  detectability: advisory
+  bad: Declaring template directly inside a types or Types group.
+  correction: Emit template declarations at file scope, outside the type group. Keep grouped type declarations and template contents unchanged; using can still reference the template from a grouped type.
+  category: gui
+  scope: any
+  source: Runtime log 2026-10-24 17:11:07 gui/SOL_lshud_glorp_compat.gui:6-34; reference_game_files/game/main_menu/gui/shared/main_menu_cooltip_types.gui:6-27; ai_gui_assessment/renderer/tests/test_type_groups.py
+  notes: The engine rejected template with cascading brace and equals-token errors. The shared parser formerly registered the nested template and concealed the error; it now rejects this direct nesting with a source line diagnostic.

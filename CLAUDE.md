@@ -18,6 +18,14 @@ workspace mounts this repository, use its `.eu5-base/` junction as written.
 
 If `.eu5-base` is missing, stop and run the workspace `scripts/bootstrap_base.py` (or follow its printed repair command), then restart the startup sequence. Never silently continue with only local knowledge.
 
+## Generic action registration
+
+Before adding, renaming, moving or generating a generic action, complete its
+AI-list `actions` entry, root-owned message type and all five localized suffixes:
+`HEADER/TITLE/SETUP/LOG/MAP`. Follow the `generic_action_registration` alert from
+`scripts/ai_context.py`; it is required and is never part of the truncated rule list.
+Use `docs/knowledge/risk_cards/generic_actions.md` for the worked contract.
+
 ## EU5 reference policy
 
 EU5 uses Jomini; do not assume EU4 syntax. For uncertain syntax, consult `.eu5-base/reference_official_defines/`, then `.eu5-base/reference_game_files/`, then `.eu5-base/reference_mods/`. The checked-in source corpus is evidence, not a license to guess. Mandatory-reference categories include block overrides, custom tooltips, GUI templates and expressions, location ranks, modifiers, undeclared scripted triggers/effects, variable maps, localization encoding, and GUI icons.

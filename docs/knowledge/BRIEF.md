@@ -1,7 +1,7 @@
 # EU5 Shared Knowledge Brief
 
 > Generated from this base checkout. Do not edit directly.
-> Last updated: 2026-10-23
+> Last updated: 2026-10-24
 
 ## Startup
 
@@ -25,9 +25,14 @@
 | `location_rank` | rural_settlement, town, city, megalopolis | reference_game_files/game/in_game/common/location_ranks/00_default.txt |
 | `government_type` | monarchy, republic, theocracy, tribe, steppe_horde | reference_game_files/game/in_game/common/government_types/00_default.txt |
 
+## Shared tools
+
+- `scripts/update_workshop_tags.py`: synchronize an existing EU5 Workshop item's tags from explicit `--metadata` and `--item-id`; offline preview by default, `--check` reads Steam, `--apply` submits tags and verifies the result. See `docs/guides/Workshop_Tags.md`.
+- `scripts/test_update_workshop_tags.py`: offline regressions for input validation, tag-only submission, callback handling and shared-path resolution.
+
 ## Shared anti-patterns
 
-The shared registry contains **363** reusable rules. Load the workspace registry cumulatively; do not shadow a shared ID.
+The shared registry contains **369** reusable rules. Load the workspace registry cumulatively; do not shadow a shared ID.
 
 | ID | Category | Scope |
 | --- | --- | --- |
@@ -185,6 +190,7 @@ The shared registry contains **363** reusable rules. Load the workspace registry
 | `gui_guessing_type_blocks` | gui | any |
 | `gui_hbox_assumed_left_aligned` | gui | any |
 | `gui_hbox_unbounded_multiline_text_width` | gui | any |
+| `gui_texticon_inside_large_header_font_text` | gui | any |
 | `gui_icon_percent_position_ignored` | gui | any |
 | `gui_ignoreinvisible_on_plain_widget` | gui | any |
 | `gui_io_member_row_leader_check_wrong_shape` | gui | international_organization |
@@ -279,6 +285,7 @@ The shared registry contains **363** reusable rules. Load the workspace registry
 | `localization_generated_caption_has_one_owner` | localization | any |
 | `localization_getbuilding_function_invalid` | localization | building |
 | `localization_value_raw_physical_newline` | localization | any |
+| `localization_title_value_contains_colon` | localization | any |
 | `location_auto_modifier_nonfunctional` | modifier | location |
 | `location_rank_invalid_hamlet` | enum | location |
 | `location_rank_invalid_metropolis` | enum | location |
@@ -287,6 +294,7 @@ The shared registry contains **363** reusable rules. Load the workspace registry
 | `managed_sandbox_conda_run_hang` | workflow | any |
 | `mapmode_dds_incomplete_mips` | gui | any |
 | `mapmode_pinned_by_default_field_invalid` | gui | any |
+| `mapmode_shading_faked_with_dark_map_color` | gui | location |
 | `marked_local_variable_cleanup_missing` | script | any |
 | `market_scope_set_variable_unsupported` | scope | global |
 | `metadata_requires_empty_relationships_array` | framework | any |
@@ -394,3 +402,6 @@ The shared registry contains **363** reusable rules. Load the workspace registry
 | `gui_parser_uppercase_types_group_ignored` | gui | any |
 | `offline_preview_samples_detached_from_current_data` | workflow | any |
 | `offline_preview_detail_crops_use_fixed_coordinates` | workflow | any |
+| `gui_estate_hover_missing_typed_context` | gui | country |
+| `gui_goods_name_from_static_key_helper` | gui | any |
+| `gui_template_inside_types_group` | gui | any |

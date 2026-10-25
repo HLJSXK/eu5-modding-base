@@ -94,7 +94,7 @@ def parse(text: str, src: str = "", consts: dict | None = None) -> list[Node]:
                 return str(consts[name])
         return tok
 
-    def parse_block() -> list[Node]:
+    def parse_block(*, types_group: bool = False) -> list[Node]:
         nonlocal i
         out: list[Node] = []
         while i < len(toks):
@@ -109,6 +109,10 @@ def parse(text: str, src: str = "", consts: dict | None = None) -> list[Node]:
                 continue
             key = value_of(kind, tok)
             raw_key = tok
+            if types_group and raw_key == "template":
+                raise ValueError(
+                    f"{src or '<script>'}:{line}: template declarations must be outside types/Types groups"
+                )
             i += 1
             # block "name" { ... } / blockoverride "name" { ... }
             if raw_key in ("block", "blockoverride") and i < len(toks) and toks[i][0] == "str":
@@ -126,7 +130,7 @@ def parse(text: str, src: str = "", consts: dict | None = None) -> list[Node]:
                 i += 1
                 if i < len(toks) and toks[i][0] == "lb":
                     i += 1
-                    out.append(Node("types", "=", parse_block(), src, line))
+                    out.append(Node("types", "=", parse_block(types_group=True), src, line))
                 continue
             # type a = b { ... }
             if raw_key == "type" and i + 2 < len(toks) and toks[i + 1][0] == "op":
